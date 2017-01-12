@@ -1,0 +1,24 @@
+\chapter{Conclusiones y Trabajo a Futuro}
+\section{Conclusiones}
+
+En el desarrollo de este trabajo terminal encontramos varios problemas al desarrollar complementos para clientes de correo electrónico comerciales los cuales describiremos a continuación.
+
+El primer problema encontrado fue la gran cantidad  de tiempo que se invierte en la investigación, desarrollo, revisión y correcciones de los complementos que se implementan para los clientes de correo estándar, ya que si deseas publicarlos con la empresa que desarrollo el cliente que deseas ocupar tu complemento sera sometido a  una evaluación para verificar que no altere el funcionamiento de otros módulos de su cliente.
+
+Otro problema a tomar en cuenta es la fase de desarrollo en la  que se encuentra el cliente de correo que deseas ocupar, ya que si se encuentra en una etapa muy temprana de desarrollo encontraras poca documentación; las funciones disponibles son limitadas; y muy probablemente cambien la compatibilidad entre módulos de una versión a otra. 
+
+La solución que se implemento fue desarrollar un cliente de correo electrónico que tuviera las funciones básicas de envío y recepción de mensajes de correo electrónico por los protocolos POP3 y SMTP, como también la implementación de los protocolos P y P’ del esquema Díaz – Chakraborty para el cifrado y descifrado de los mensajes de correo electrónico por medio de CAPTCHAS.
+
+Se observó que el esquema de intercambio de clave y la implementación de los protocolos P y P' del esquema Díaz - Chakraborty se llevó con éxito. También se concluye que estos esquemas pueden implementarse en los esquemas actuales de comunicación de correo electrónico de una manera trasparente al usuario al momento del envío y recepción de los correos electrónicos. Cabe destacar que es la primera implementación funcional que se tiene del esquema de secreto compartido de Adi Shamir para el correo electrónico e inhibiendo los ataques de los agentes clasificadores.
+
+Por último se encontró que las comunicaciones que se establecen actualmente entre los servidores de correo electrónico y los usuarios son canales seguros. Lo cual fue confirmado por las pruebas realizadas a la aplicación, por lo tanto se concluye que el ataque de los adversarios clasificadores se hace en los servidores de correo electrónico donde son almacenados los mensajes en claro y se tiene acceso a un gran número de mensajes para su clasificación.
+
+\section{Trabajo a futuro.}
+
+Las lineas de trabajo que sugieren los autores de este trabajo terminal son las siguientes.
+\begin{itemize}
+\item La implementación del esquema Díaz – Chakraborty y el esquema de intercambio de claves en un cliente de correo electrónico de escritorio comercial o en otros clientes de correo como los clientes web o móviles.
+\item El esquema de intercambio de claves en este trabajo terminal esta basado en los esquemas PGP y GPG por lo tanto se sugiere trabajar en otro tipo de esquema para mejorar el intercambio de claves entre los usuarios.
+\item El cifrado del contenido de los mensaje de correo electrónico no es detectado por los protocolos de SMTP y POP3, pero en algunos casos los mensajes son analizado antes de ser guardado en los servidores de correo electrónico y al detectar el cifrado elimina el mensaje. Para evitar esto y que a su vez los adversarios clasificadores no puedan clasificar los mensajes se sugiere implementar un cifrado semántico como en el esquema Golle – Farahat.
+\item Por último se sugiere una implementación de una biblioteca  de creación de CAPCHAS en el lenguaje PYTHON para mejorar las imágenes generadas.
+\end{itemize}
