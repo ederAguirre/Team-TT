@@ -43,13 +43,20 @@ Un sistema criptográfico es una quintupla $(\cal M,C,K,E,D)$ donde:
 \end{definition}
 
 
-\subsection{Cifrado Simétrico}
-Un sistema de cifrado simétrico~\cite{sime} es un tipo de cifrado que usa una misma clave para cifrar y para descifrar. Las dos partes que se comunican mediante el cifrado simétrico deben estar de acuerdo en la clave a usar de antemano. Una vez de acuerdo, el remitente cifra un mensaje usando la clave, lo envía al destinatario, y éste lo descifra usando la misma clave, esto se ilustra en la Figura~\ref{fig:1-2-1}.
+\subsection{Criptografía Simétrica}
+La criptografía simétrica utiliza la misma clave para cifrar y descifrar el mensaje de datos, es decir se basa en un secreto compartido~\cite{criptosimetrica}. \\ Características de la Criptografía simétrica: \begin{itemize}
+	\item La clave es la misma para cifrar que para descifrar un mensaje, por lo que sólo el emisor y el receptor deben conocerla.
+	\item Se basan en operaciones matemáticas sencillas, por ello son fácilmente implementados en hardware.
+	\item Debido a su simplicidad matemática son capaces de cifrar grandes cantidades de datos en poco tiempo.
+			       \end{itemize} ~\cite{sime} \\
+Los algoritmos criptográficos simétricos tienen dos versiones: cifrador en bloque y cifrador en flujo. Una cifra es una palabra para describir un algoritmo de cifrado. El beneficio del uso de un algoritmo simétrico radica en el procesamiento rápido
+para encriptar y desencriptar un alto volumen de datos. El cifrado simétrico es una eficaz táctica de almacenamiento de información
+sensible en una base de datos, un registro o archivo ~\cite{sime} El cifrado simétrico puede ser representado con el siguiente diagrama ~\ref{fig:1-2-1}.
 
 \begin{figure}[H]
 \centering
-	\includegraphics[width=10cm, height=5cm]{./images/simetrico.jpg}
-	\caption{Diagrama cifrado simétrico}
+	\includegraphics[width=10cm, height=5cm]{./images/Cripto_Simetrica.jpg}
+	\caption{Diagrama Criptografía Simétrica}
 	\label{fig:1-2-1}
 \end{figure}
 La sintaxis de un esquema de cifrado sim\'etrico, esta dada por la siguiente definic\'on.
@@ -66,10 +73,34 @@ todas las llaves posibles en  $\cal K$ y todos los posibles mensajes $\cal M$, $
 \end{itemize}
 \end{definition}
 
+\subsection{Criptografía asimétrica}
+La criptografía asimétrica es por definición aquella que utiliza dos claves diferentes para cada usuario, una para cifrar que se le llama clave pública y otra para descifrar que es la clave privada. Los algoritmos asimétricos son diferentes a los simétricos en un sentido muy importante ~\cite{sime}. Cuando se genera una clave simétrica, simplemente se escoge un número aleatorio de la longitud apropiada. Al generar claves asimétricas el proceso es más complejo. Los algoritmos asimétricos se llaman asimétricos porque en lugar de usar una sola clave para realizar la codificación y la decodificación, se utilizan dos claves diferentes: una para cifrar y otra para descifrar. Estas dos claves se encuentran asociadas matemáticamente, cuya característica fundamental es que una clave no puede descifrar lo que cifra. ~\cite{sime}.
+
+\bigskip Características de la Criptografía simétrica: \begin{itemize}
+	\item Se utiliza una clave para cifrar y otra para descifrar. El emisor emplea la clave pública del receptor para cifrar el mensaje, 	éste último lo descifra con su clave privada.
+	\item Se basan en operaciones matemáticas complejas.
+	\item Se ejecutan de 100 a 1000 veces más lento que los algoritmos simétricos.
+\end{itemize} ~\cite{sime} \\ \\ 
+
+ Los beneficios de la criptografía asimétrica son la solución a los problemas de la criptografía simétrica, pues las claves públicas pueden ser distribuidas con toda tranquilidad, no valen de nada sin las claves privadas. El cifrado asimétrico se le emplea muy frecuente para pasar con seguridad una clave privada, que posteriormente, será la que se utilice para cifrar y/o descifrar otra información. El cifrado asimétrico puede ser representado con el siguiente diagrama ~\ref{fig:2-2-1}.
+
+\begin{figure}[H]
+\centering
+	\includegraphics[width=10cm, height=5cm]{./images/Cripto_Asimetrica.jpg}
+	\caption{Diagrama Criptografía Asimétrica}
+	\label{fig:1-2-1}
+\end{figure}
+
 \subsection{Cifrado por bloques}
-Este tipo de cifrado toma bloques de información del texto plano y produce bloques de información cifrados de un tamaño fijo, normalmente es del mismo tamaño que el bloque de información del texto plano. Los bloques de cifrado tienen que cumplir la condición de ser lo suficientemente grandes como para evitar ataques de texto cifrado, otra condición que se debe cumplir es que la asignación de bloques de entrada a bloques de salida es uno a uno para hacer el proceso reversible.\\
-Formalmente un cifrado en bloque se considera que es seguro si se comporta como una permutación pseudoaleatoria fuerte, es decir, un cifrado de bloques es seguro si un adversario no puede distinguir su salida de una permutación elegida al azar.\\
-Para hacer la asignación de bloques los algoritmos de cifrado utilizan sustituciones y permutaciones en los bloques de texto plano hasta obtener un texto cifrado.\\
+Los algoritmos de cifrado por bloques toman bloques de tamaño fijo del texto en claro y producen un bloque de tamaño fijo de texto cifrado, generalmente del mismo tamaño que la entrada. El tamaño del bloque debe ser lo suficientemente grande como para evitar ataques de texto cifrado. La asignación de bloques de entrada a bloques de salida debe ser uno a uno para hacer el proceso reversible y parecer aleatoria.\\ 
+Para la asignación de bloques los algoritmos de cifrado simétrico realizan sustituciones y permutaciones en el texto en claro hasta obtener el texto cifrado.\\ 
+La sustitución es el reemplazo de un valor de entrada por otro de los posibles valores de salida, en general, si usamos un tamaño de bloque k, el bloque de entrada puede ser sustituido por cualquiera de los 2k bloques posibles.
+La permutación es un tipo especial de sustitución en el que los bits de un bloque de entrada son reordenados para producir el bloque cifrado, de este modo se preservan las estadísticas del bloque de entrada (el número de unos y ceros). \\ \\  Los algoritmos de cifrado por bloques iterativos funcionan aplicando en sucesivas rotaciones una transformación
+(función de rotación) a un bloque de texto en claro. La misma función es aplicada a los datos usando una subclave
+obtenida de la clave secreta proporcionada por el usuario. El número de rotaciones en un algoritmo de cifrado por
+bloques iterativo depende del nivel de seguridad deseado.
+
+
 La sustitución es el reemplazo de un bloque de $n$ bits por otro bloque de $n$ bits en un espacio de 
 $2^{k}$~\cite{bloc}. Los cifradores por bloques mas usados son AES (Advanced Encryption Standard, por sus 
 siglas en ingl\'es) y DES (Data Encryption Standard, por sus siglas en ingl\'es).
