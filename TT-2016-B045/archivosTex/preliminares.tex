@@ -69,18 +69,43 @@ Existen dos tipos de ataques que amenazan las comunicaciones secretas:
 Los ataques activos se dividen en dos tipos: Ataques a los métodos de cifrado y Ataques a los protocolos criptográficos.
 \end{itemize}
 
-\subsection{INTEGRIDAD}
+\subsection{Ataques a los Métodos de Cifrado}
+Este tipo de ataques se realizan con la intención de obtener la clave secreta para poder descifrar libremente cualquier criptograma, para ello se aprovechan las vulnerabilidades que pudiera tener el método de cifrado.
 
-\subsection{INTEGRIDAD}
+\subsection{ATAQUE SÓLO CON TEXTO CIFRADO}
+Este caso es cuando el criptoanalista sólo conoce el criptograma y el algoritmo con que fue generado; con esta información pretende obtener el texto en claro.
 
+\subsection{ATAQUE CON TEXTO ORIGINAL CONOCIDO}
+En esta situación el criptoanalista conoce mensajes en claro seleccionados por él mismo y sus correspondientes criptogramas, así como el algoritmo con que éstos fueron generados; aquí el objetivo es conocer la clave secreta y poder descriptar libremente cualquier texto.
 
+\subsection{ATAQUE CON TEXTO CIFRADO ESCOGIDO}
+El criptoanalista conoce el algoritmo de cifrado, así como un criptograma seleccionado por él mismo y su correspondiente texto en claro, su objetivo es obtener el mensaje en claro de todo criptograma que intercepte.
 
+\subsection{ATAQUE CON TEXTO ESCOGIDO}
+En este caso el criptoanalista además de conocer el algoritmo de cifrado y el criptograma que quiere descriptar, también conoce el criptograma de un texto en claro que él elija y el mensaje en claro de un criptograma también elegido por él.
 
+\subsection{Ataques a los Protocolos Criptográficos}
+Este tipo de ataques no pretenden encontrar la clave secreta para poder conocer el mensaje en claro, sino que buscan obtener la información vulnerando los protocolos criptográficos, es decir, pretenden burlar la serie de pasos establecidos para alcanzar los objetivos de seguridad y que tienen que ser realizados por las entidades involucradas en cierta comunicación. Ejemplos de este tipo de ataques son los siguientes:
 
+\subsection{ATAQUE CON CLAVE CONOCIDA}
+El atacante conoce claves utilizadas en cifrados anteriores y con base en ellas intenta determinar nuevas claves.
 
+\subsection{SUPLANTACIÓN DE PERSONALIDAD}
+El atacante asume la identidad de uno de los agentes autorizados en la red, y de esta manera obtiene libremente y sin tropiezos todos los mensajes en claro.
 
+\subsection{COMPILACIÓN DE UN DICCIONARIO}
+Un diccionario es un archivo guardado en la memoria de la computadora que contiene contraseñas cifradas de los usuarios autorizados en el sistema. Si el método de cifrado con que se cifran las claves es público, el atacante puede generar claves aleatorias y después cifrarlas con el objeto de encontrar alguna contenida en el diccionario (previamente obtenido). Cuando una clave generada por el atacante coincide con una contenida en el diccionario, se ha encontrado una clave de acceso al sistema, mediante el usuario correspondiente a la clave encontrada.
 
+\subsection{BÚSQUEDA EXHAUSTIVA}
+Este ataque se lleva a cabo generando aleatoriamente todos los valores posibles de las claves de acceso y probándolas hasta que una de ellas sea una clave válida en el sistema.
 
+\subsection{ATAQUE DE HOMBRE EN MEDIO}
+El intruso se filtra en la línea de comunicación entre dos agentes autorizados en la red; obtiene la información de uno de ellos y se la envía al otro usuario una vez que la ha utilizado.
+
+\subsection{Ataques en criptoanálisis}
+Aunque para validar la robustez de un criptosistema normalmente se suponen todas las condiciones del peor caso, existen ataques más específicos, en los que no se cumplen todas estas condiciones. Cuando el método de ataque consiste simplemente en probar todas y cada una de las posibles claves del espacio de claves hasta encontrar la correcta, nos encontramos ante un ataque de fuerza bruta o ataque exhaustivo. Si el atacante conoce el algoritmo de cifrado y sólo tiene acceso al criptograma, se plantea un ataque sólo al criptograma; un caso más favorable para el criptoanalista se produce cuando el ataque cumple todas las condiciones del peor caso; en este caso, el criptoanálisis se denomina de texto en claro conocido. Si además el atacante puede cifrar una cantidad indeterminada de texto en claro al ataque se le denomina de texto en claro escogido; este es el caso habitual de los ataques contra el sistema de verificación de usuarios utilizado por Unix, donde un intruso consigue la tabla de contraseñas (generalmente /etc/passwd) y se limita a realizar cifrados de textos en claro de su elección y a comparar los resultados con las claves cifradas (a este ataque también se le llama de diccionario, debido a que el atacante suele utilizar un fichero `diccionario' con los textos en claro que va a utilizar). El caso más favorable para un analista se produce cuando puede obtener el texto en claro correspondiente a criptogramas de su elección; en este caso el ataque se denomina de texto cifrado escogido. 
+
+Cualquier algoritmo de cifrado, para ser considerado seguro, ha de soportar todos estos ataques y otros no citados; sin embargo, en la criptografía, como en cualquier aspecto de la seguridad, informática o no, no debemos olvidar un factor muy importante: las personas. El sistema más robusto caerá fácilmente si se tortura al emisor o al receptor hasta que desvelen el contenido del mensaje, o si se le ofrece a uno de ellos una gran cantidad de dinero; este tipo de ataques (sobornos, amenazas, extorsión, tortura...) se consideran siempre los más efectivos. 
 
 \subsection{Criptografía Simétrica}
 La criptografía simétrica utiliza la misma clave para cifrar y descifrar el mensaje de datos, es decir se basa en un secreto compartido~\cite{criptosimetrica}. \\ Características de la Criptografía simétrica: \begin{itemize}
@@ -144,113 +169,41 @@ La sustitución es el reemplazo de un bloque de $n$ bits por otro bloque de $n$ 
 $2^{k}$~\cite{bloc}. Los cifradores por bloques mas usados son AES (Advanced Encryption Standard, por sus 
 siglas en ingl\'es) y DES (Data Encryption Standard, por sus siglas en ingl\'es).
 
-
+\pagebreak
 
 \subsection{Modos de operación}
-Los modos de operaci\'on fueron desarrollados para el algoritmo DES, estos fueron estandarizados en Diciembre de 1980. 
-Cuando la informaci\'on es cifrada usando la misma clave, surge una serie de problemas de seguridad. En esencia los modos de operaci\'on son una técnica para mejorar el efecto criptogr\'afico de los 
-cifradores por bloques~\cite{modes}.\\\\
-\textit{ECB}(Electronic codebook): Este modo de operación es probablemente el más simple de todos, el texto plano M está segmentado como $ M=M_1||M_2||...||M_m$ donde cada $M_i$ es un bloque de n bits. A continuación la funci\'on de cifrado $E_k$ se aplica por separado a cada bloque $M_i$. \\
-A continuación tenemos el diagrama de este modo de cifrado.\\
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/ecb1.png}
-        \caption{Diagrama ECB Cifrado}
-        \label{fig:1-3-1}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/ECB2.png}
-        \caption{Diagrama ECB Descifrado}
-        \label{fig:1-3-1}
-    \end{subfigure}
-    \label{fig:protocol}
-\end{figure}
+Un modo de operación es una técnica para mejorar el efecto de un algoritmo criptográfico o adaptar el algoritmo para una aplicación, tal como aplicar un cifrador por bloques a una secuencia de bloques de datos o un flujo de datos. Los cuatro modos están destinados a cubrir virtualmente todas las aplicaciones posibles de cifrado para las cuales se podría usar un cifrador por bloques. A medida que han aparecido nuevas aplicaciones y requisitos, el NIST ha ampliado la lista de modos recomendados a cinco en la Publicación Especial 800-38A. Estos modos están diseñados para usarse con cualquier cifra simétrica de bloques, incluyendo DES triple y AES..\\\\
+
+\textit{ECB}(Electronic codebook): Cada bloque de 64 bits de texto sin cifrar se codifica independientemente usando la misma clave.\\
+%A continuación tenemos el diagrama de este modo de cifrado.\\
+%\begin{figure}[h]
+%    \centering
+    %\begin{subfigure}[t]{0.5\textwidth}
+        %\centering
+        %\includegraphics[height=1.7in]{./images/ecb1.png}
+%        \caption{Diagrama ECB Cifrado}
+    %    \label{fig:1-3-1}
+   % \end{subfigure}%
+   % ~ 
+   % \begin{subfigure}[t]{0.5\textwidth}
+   %     \centering
+      %  \includegraphics[height=1.7in]{./images/ECB2.png}
+      %  \caption{Diagrama ECB Descifrado}
+      %  \label{fig:1-3-1}
+    %\end{subfigure}
+   % \label{fig:protocol}
+%\end{figure}
 
 
-\textit{CBC}(Cipher-block chaining): Para este modo de operación la salida de un bloque de cifrado se introduce en el siguiente bloque de cifrado junto con el siguiente bloque del mensaje.\\
+\textit{CBC}(Cipher-block chaining): La entrada al algoritmo de encriptación es el XOR de los siguientes 64 bits de texto plano y los 64 bits de cifrado anteriores.\\
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/cbc1.png}
-        \caption{Diagrama CBC Cifrado}
-        \label{fig:1-4-1}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/CBC2.png}
-        \caption{Diagrama CBC Descifrado}
-        \label{fig:1-4-1}
-    \end{subfigure}
-    \label{fig:protocol}
-\end{figure}
+\textit{CFB}(Cipher Feedback): La entrada se procesa j bits a la vez. El texto cifrado precedente se utiliza como entrada al algoritmo de cifrado para producir la salida pseudoaleatoria, que se le aplica XOR con el texto sin formato para producir la siguiente unidad de texto cifrado.\\
 
- \begin{figure}[H]
- \centering
-	\includegraphics[width=14cm, height=6cm]{./images/pcbc.png}
-	
-\end{figure}
+\textit{OFB}(Output feedback): Similar a CFB, excepto que la entrada al algoritmo de cifrado es la salida DES anterior.\\
 
-CBC toma como bloques de mensajes de entrada M y un vector de inicialización (IV). Durante el cifrado, la salida del i-ésimo bloque depende de los i-1 bloques anteriores. Así, el cifrado CBC es intrínsecamente secuencial.\\
-
-\textit{CFB}(Cipher Feedback): En este modo de operación, los bloques de cifrado también están encadenados pero a la salida se produce de una manera muy diferente de la de CBC. Cada bloque de salida se le aplica XOR con el siguiente bloque de entrada.\\
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/cfb1.png}
-		\caption{Diagrama CFB Cifrado}
-		\label{fig:1-5-1}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/CFB2.png}
-		\caption{Diagrama CFB Descifrado}
-		\label{fig:1-5-1}
-    \end{subfigure}
-    \label{fig:protocol}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[width=14cm, height=6cm]{./images/pcfb.png}
-	
-\end{figure}
+\textit{CTR}(Counter): Cada bloque de texto sin formato se le aplica XOR con un contador cifrado. El contador se incrementa para cada bloque subsiguiente.\\
 
 
-\textit{OFB}(Output feedback): En este modo de operación el IV se cifra varias veces para obtener un flujo de bytes aleatorios, el resultado de esto se aplica XOR con el bloque de texto plano mientras que el flujo de bytes aleatorios se usa como parámetro del siguiente bloque. A diferencia de los otros modos en OFB ninguna parte del texto claro entra directamente a cifrarse.
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/ofb1.png}
-		\caption{Diagrama OFB Cifrado}
-		\label{fig:1-6-1}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{./images/OFB2.png}
-		\caption{Diagrama OFB Descifrado}
-		\label{fig:1-6-1}
-    \end{subfigure}
-    \label{fig:protocol}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-	\includegraphics[width=14cm, height=6cm]{./images/pofb.png}
-	
-\end{figure}
 \pagebreak
 \subsection{Funciones Hash}
 A continuaci\'on se describir\'an las caracter\'isticas de las {\it funciones

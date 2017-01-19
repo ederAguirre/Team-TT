@@ -15,20 +15,30 @@
 \BOOKMARK [2][-]{subsection.2.1.8}{CONTROL DE ACCESO}{section.2.1}% 15
 \BOOKMARK [2][-]{subsection.2.1.9}{DISPONIBILIDAD}{section.2.1}% 16
 \BOOKMARK [2][-]{subsection.2.1.10}{Ataques}{section.2.1}% 17
-\BOOKMARK [2][-]{subsection.2.1.11}{INTEGRIDAD}{section.2.1}% 18
-\BOOKMARK [2][-]{subsection.2.1.12}{INTEGRIDAD}{section.2.1}% 19
-\BOOKMARK [2][-]{subsection.2.1.13}{Criptograf\355a Sim\351trica}{section.2.1}% 20
-\BOOKMARK [2][-]{subsection.2.1.14}{Criptograf\355a asim\351trica}{section.2.1}% 21
-\BOOKMARK [2][-]{subsection.2.1.15}{Cifrado por bloques}{section.2.1}% 22
-\BOOKMARK [2][-]{subsection.2.1.16}{Modos de operaci\363n}{section.2.1}% 23
-\BOOKMARK [2][-]{subsection.2.1.17}{Funciones Hash}{section.2.1}% 24
-\BOOKMARK [0][-]{chapter.3}{Adversarios Clasificadores}{}% 25
-\BOOKMARK [0][-]{chapter.4}{Tecnolog\355as usadas}{}% 26
-\BOOKMARK [0][-]{chapter.5}{An\341lisis y Dise\361o}{}% 27
-\BOOKMARK [1][-]{section.5.1}{Diagramas de caso de uso}{chapter.5}% 28
-\BOOKMARK [0][-]{chapter.6}{Desarrollo de prototipos}{}% 29
-\BOOKMARK [1][-]{section.6.1}{Prototipo 1}{chapter.6}% 30
-\BOOKMARK [0][-]{chapter.7}{Conclusiones y Trabajo a Futuro}{}% 31
-\BOOKMARK [1][-]{section.7.1}{Conclusiones}{chapter.7}% 32
-\BOOKMARK [0][-]{appendix.Alph1}{C\363digo fuente del prototipo 2}{}% 33
-\BOOKMARK [0][-]{appendix.Alph1}{Bibliograf\355a}{}% 34
+\BOOKMARK [2][-]{subsection.2.1.11}{Ataques a los M\351todos de Cifrado}{section.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.1.12}{ATAQUE S\323LO CON TEXTO CIFRADO}{section.2.1}% 19
+\BOOKMARK [2][-]{subsection.2.1.13}{ATAQUE CON TEXTO ORIGINAL CONOCIDO}{section.2.1}% 20
+\BOOKMARK [2][-]{subsection.2.1.14}{ATAQUE CON TEXTO CIFRADO ESCOGIDO}{section.2.1}% 21
+\BOOKMARK [2][-]{subsection.2.1.15}{ATAQUE CON TEXTO ESCOGIDO}{section.2.1}% 22
+\BOOKMARK [2][-]{subsection.2.1.16}{Ataques a los Protocolos Criptogr\341ficos}{section.2.1}% 23
+\BOOKMARK [2][-]{subsection.2.1.17}{ATAQUE CON CLAVE CONOCIDA}{section.2.1}% 24
+\BOOKMARK [2][-]{subsection.2.1.18}{SUPLANTACI\323N DE PERSONALIDAD}{section.2.1}% 25
+\BOOKMARK [2][-]{subsection.2.1.19}{COMPILACI\323N DE UN DICCIONARIO}{section.2.1}% 26
+\BOOKMARK [2][-]{subsection.2.1.20}{B\332SQUEDA EXHAUSTIVA}{section.2.1}% 27
+\BOOKMARK [2][-]{subsection.2.1.21}{ATAQUE DE HOMBRE EN MEDIO}{section.2.1}% 28
+\BOOKMARK [2][-]{subsection.2.1.22}{Ataques en criptoan\341lisis}{section.2.1}% 29
+\BOOKMARK [2][-]{subsection.2.1.23}{Criptograf\355a Sim\351trica}{section.2.1}% 30
+\BOOKMARK [2][-]{subsection.2.1.24}{Criptograf\355a asim\351trica}{section.2.1}% 31
+\BOOKMARK [2][-]{subsection.2.1.25}{Cifrado por bloques}{section.2.1}% 32
+\BOOKMARK [2][-]{subsection.2.1.26}{Modos de operaci\363n}{section.2.1}% 33
+\BOOKMARK [2][-]{subsection.2.1.27}{Funciones Hash}{section.2.1}% 34
+\BOOKMARK [0][-]{chapter.3}{Adversarios Clasificadores}{}% 35
+\BOOKMARK [0][-]{chapter.4}{Tecnolog\355as usadas}{}% 36
+\BOOKMARK [0][-]{chapter.5}{An\341lisis y Dise\361o}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Diagramas de caso de uso}{chapter.5}% 38
+\BOOKMARK [0][-]{chapter.6}{Desarrollo de prototipos}{}% 39
+\BOOKMARK [1][-]{section.6.1}{Prototipo 1}{chapter.6}% 40
+\BOOKMARK [0][-]{chapter.7}{Conclusiones y Trabajo a Futuro}{}% 41
+\BOOKMARK [1][-]{section.7.1}{Conclusiones}{chapter.7}% 42
+\BOOKMARK [0][-]{appendix.Alph1}{C\363digo fuente del prototipo 2}{}% 43
+\BOOKMARK [0][-]{appendix.Alph1}{Bibliograf\355a}{}% 44

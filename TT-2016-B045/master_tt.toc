@@ -16,13 +16,23 @@
 \contentsline {subsection}{\numberline {2.1.8}CONTROL DE ACCESO}{4}{subsection.2.1.8}
 \contentsline {subsection}{\numberline {2.1.9}DISPONIBILIDAD}{4}{subsection.2.1.9}
 \contentsline {subsection}{\numberline {2.1.10}Ataques}{4}{subsection.2.1.10}
-\contentsline {subsection}{\numberline {2.1.11}INTEGRIDAD}{5}{subsection.2.1.11}
-\contentsline {subsection}{\numberline {2.1.12}INTEGRIDAD}{5}{subsection.2.1.12}
-\contentsline {subsection}{\numberline {2.1.13}Criptograf\IeC {\'\i }a Sim\IeC {\'e}trica}{5}{subsection.2.1.13}
-\contentsline {subsection}{\numberline {2.1.14}Criptograf\IeC {\'\i }a asim\IeC {\'e}trica}{6}{subsection.2.1.14}
-\contentsline {subsection}{\numberline {2.1.15}Cifrado por bloques}{7}{subsection.2.1.15}
-\contentsline {subsection}{\numberline {2.1.16}Modos de operaci\IeC {\'o}n}{7}{subsection.2.1.16}
-\contentsline {subsection}{\numberline {2.1.17}Funciones Hash}{11}{subsection.2.1.17}
+\contentsline {subsection}{\numberline {2.1.11}Ataques a los M\IeC {\'e}todos de Cifrado}{5}{subsection.2.1.11}
+\contentsline {subsection}{\numberline {2.1.12}ATAQUE S\IeC {\'O}LO CON TEXTO CIFRADO}{5}{subsection.2.1.12}
+\contentsline {subsection}{\numberline {2.1.13}ATAQUE CON TEXTO ORIGINAL CONOCIDO}{5}{subsection.2.1.13}
+\contentsline {subsection}{\numberline {2.1.14}ATAQUE CON TEXTO CIFRADO ESCOGIDO}{5}{subsection.2.1.14}
+\contentsline {subsection}{\numberline {2.1.15}ATAQUE CON TEXTO ESCOGIDO}{5}{subsection.2.1.15}
+\contentsline {subsection}{\numberline {2.1.16}Ataques a los Protocolos Criptogr\IeC {\'a}ficos}{5}{subsection.2.1.16}
+\contentsline {subsection}{\numberline {2.1.17}ATAQUE CON CLAVE CONOCIDA}{5}{subsection.2.1.17}
+\contentsline {subsection}{\numberline {2.1.18}SUPLANTACI\IeC {\'O}N DE PERSONALIDAD}{5}{subsection.2.1.18}
+\contentsline {subsection}{\numberline {2.1.19}COMPILACI\IeC {\'O}N DE UN DICCIONARIO}{6}{subsection.2.1.19}
+\contentsline {subsection}{\numberline {2.1.20}B\IeC {\'U}SQUEDA EXHAUSTIVA}{6}{subsection.2.1.20}
+\contentsline {subsection}{\numberline {2.1.21}ATAQUE DE HOMBRE EN MEDIO}{6}{subsection.2.1.21}
+\contentsline {subsection}{\numberline {2.1.22}Ataques en criptoan\IeC {\'a}lisis}{6}{subsection.2.1.22}
+\contentsline {subsection}{\numberline {2.1.23}Criptograf\IeC {\'\i }a Sim\IeC {\'e}trica}{7}{subsection.2.1.23}
+\contentsline {subsection}{\numberline {2.1.24}Criptograf\IeC {\'\i }a asim\IeC {\'e}trica}{8}{subsection.2.1.24}
+\contentsline {subsection}{\numberline {2.1.25}Cifrado por bloques}{9}{subsection.2.1.25}
+\contentsline {subsection}{\numberline {2.1.26}Modos de operaci\IeC {\'o}n}{10}{subsection.2.1.26}
+\contentsline {subsection}{\numberline {2.1.27}Funciones Hash}{11}{subsection.2.1.27}
 \contentsline {chapter}{\numberline {3}Adversarios Clasificadores}{12}{chapter.3}
 \contentsline {chapter}{\numberline {4}Tecnolog\IeC {\'\i }as usadas}{13}{chapter.4}
 \contentsline {chapter}{\numberline {5}An\'alisis y Dise\~no}{14}{chapter.5}
