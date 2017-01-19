@@ -1,8 +1,85 @@
 \chapter{Preliminares} % (fold)
 
 \section{Criptografía}
+Es la ciencia que trata las escrituras ocultas, está comprendida por la Criptografía, el Criptoanálisis y la Esteganografía
+La Criptografía es la ciencia que se encarga del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, el objetivo de la Criptografía no es sólo mantener los datos secretos, sino también protegerlos contra modificación y comprobar la fuente de los mismos.
 
-\subsection{Tipos de Ataques}
+\subsection{Criptoanálisis}
+Es la ciencia que se ocupa del análisis de un texto cifrado para obtener la información original sin conocimiento de la clave secreta, esto es, de forma ilícita rompiendo así los procedimientos de cifrado establecidos por la Criptografía, por lo que se dice que Criptoanálisis y Criptografía son ciencias complementarias pero contrarias.
+El criptoanálisis es el arte de descifrar comunicaciones encriptadas sin conocer las llaves correctas
+
+\subsection{Esteganografía}
+ Por su parte, estudia la forma de ocultar la existencia de un mensaje. Esta ciencia consiste en esconder en el interior de un mensaje, otro mensaje secreto, el cual sólo podrá ser entendido por el emisor y el receptor y pasará inadvertido para todos los demás.
+
+\subsection{Servicios de Seguridad}
+Los servicios de seguridad, son aquellos que garantizan en un sistema de información la adquisición, almacenamiento, procesamiento y transmisión de la información y para lograrlo se valen de uno o más mecanismos de seguridad.
+
+\subsection{CONFIDENCIALIDAD}
+Este servicio asegura que sólo las personas o procesos autorizados tengan acceso a la información. Con ello se busca que un agente no autorizado no pueda leer, copiar o modificar la información.
+El servicio de confidencialidad se puede diferenciar en dos tipos:
+\begin{itemize}
+	\item Servicio de confidencialidad de contenido: se busca proteger el contenido de un recurso del sistema, para ello se cifra la información para que en caso ser interceptada por alguien no autorizado, no pueda ser descubierta. Este servicio puede proporcionar protección a todos los datos transmitidos por un usuario durante una conexión o puede proteger sólo parte de ellos por ejemplo sólo a los mensajes con información importante o incluso se pueden proteger sólo algunos campos de un determinado mensaje.
+	\item Servicio de confidencialidad del mensaje: busca ocultar el flujo de un mensaje durante una conexión, para ello se cifra y se utiliza una técnica de envoltura con el objetivo de que si un atacante está realizando un análisis de tráfico, no pueda descubrir por ejemplo quien está enviando la información ni quien la recibe ni la frecuencia con la que se envían los mensajes.
+\end{itemize}
+
+\subsection{AUTENTICACIÓN}
+Este servicio verifica la identidad de un agente que pretende acceder a la información. En una conexión entre dos entidades, el servicio verifica que las entidades sean quienes dicen ser, además de asegurar que un tercer individuo no pueda hacerse pasar por alguna de las entidades autorizadas y realizar una transmisión o recepción de datos.
+
+\subsection{INTEGRIDAD}
+Este servicio asegura que el contenido de los datos no ha sido modificado y que la secuencia de los mismos se ha mantenido a lo largo de toda la transmisión, con ello se evita una réplica o un reordenamiento del mensaje por parte de un atacante.
+Al igual que el servicio de confidencialidad, la integridad puede aplicarse a todos los datos transmitidos por un usuario durante una conexión, sólo a parte de ellos o sólo a algunos campos dentro del mensaje.
+Cuando se tiene un ataque a la integridad de los datos, el sistema puede o no reportar dicha violación, por lo que se puede distinguir entre servicio de integridad con recuperación y servicio de integridad sin recuperación.
+El servicio de integridad también se puede diferenciar entre servicio de integridad del contenido y servicio de integridad de la secuencia del mensaje
+\begin{itemize}
+	\item Servicio de integridad del contenido: proporciona pruebas de que el contenido no ha sido alterado o modificado.
+	\item Servicio de integridad de la secuencia del mensaje: proporciona pruebas de que el orden de una secuencia de mensajes ha sido mantenida durante la transmisión.
+\end{itemize}
+
+\subsection{NO REPUDIO}
+Este servicio evita que las entidades en una conexión nieguen haber transmitido o recibido un mensaje.
+Existen varios tipos de este servicio y cada uno de ellos proporciona pruebas de haberse llevado a cabo:
+\begin{itemize}
+	\item No repudio de origen: con este servicio, el emisor de un mensaje no puede negar haber sido él quien transmitió dicho mensaje.
+	\item No repudio de envío: comprueba que los datos fueron enviados.
+	\item No repudio de presentación: protege contra cualquier intento falso de negar que los datos fueron presentados para el envío.
+	\item No repudio de transporte: protege contra cualquier intento de negar que los datos fueron transportados.
+	\item No repudio de recepción: con este servicio, el receptor de un mensaje no puede negar haber recibido un mensaje.
+\end{itemize}
+
+\subsection{CONTROL DE ACCESO}
+El servicio de control de acceso es utilizado con el fin de restringir el acceso a los medios de almacenamiento de la información. Este servicio está muy relacionado con el de autenticación ya que cualquier agente que quiera tener acceso a algún recurso del sistema primero deberá identificarse para que le sea permitido el acceso a dicha información y de acuerdo a los permisos o privilegios que tenga podrá manipularla.
+
+\subsection{DISPONIBILIDAD}
+El servicio de disponibilidad asegura que los agentes autorizados tengan acceso a la información en el momento en que ellos lo requieran y tantas veces como lo soliciten sin importar si ésta es correcta o no.
+
+\subsection{Ataques}
+Un ataque es una violación a la seguridad de la información realizada por intrusos que tienen acceso físico al sistema sin ningún tipo de restricción, su objetivo es robar la información o hacer que ésta pierda valor relativo, o que disminuyan las posibilidades de su supervivencia a largo plazo.
+Un intruso puede obtener información como:
+\begin{itemize}
+	\item Bloques de direcciones IP
+	\item Localización de sistemas críticos (DNSs, WINS, DHCPs, Servidores de correo, etc.)
+	\item Puntos de acceso para números telefónicos y VPNs
+	\item Información personal de los trabajadores de la organización
+	\item Organizaciones asociadas, subsidiarias, etc.
+\end{itemize}
+Existen dos tipos de ataques que amenazan las comunicaciones secretas:
+\begin{itemize}
+	\item Pasivo: es aquel en el cual el intruso sólo busca obtener la información y al hacerlo no la modifica, por lo que es difícil percatarse de que se está siendo atacado.
+	\item Activo: el intruso además de obtener la información la modifica de tal modo que sirva a sus intereses y al ser modificada es más fácil percatarse de que se está siendo atacado.
+Los ataques activos se dividen en dos tipos: Ataques a los métodos de cifrado y Ataques a los protocolos criptográficos.
+\end{itemize}
+
+\subsection{INTEGRIDAD}
+
+\subsection{INTEGRIDAD}
+
+
+
+
+
+
+
+
 
 
 \subsection{Criptografía Simétrica}
