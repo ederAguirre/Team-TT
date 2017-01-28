@@ -174,34 +174,79 @@ siglas en ingl\'es) y DES (Data Encryption Standard, por sus siglas en ingl\'es)
 \subsection{Modos de operación}
 Un modo de operación es una técnica para mejorar el efecto de un algoritmo criptográfico o adaptar el algoritmo para una aplicación, tal como aplicar un cifrador por bloques a una secuencia de bloques de datos o un flujo de datos. Los cuatro modos están destinados a cubrir virtualmente todas las aplicaciones posibles de cifrado para las cuales se podría usar un cifrador por bloques. A medida que han aparecido nuevas aplicaciones y requisitos, el NIST ha ampliado la lista de modos recomendados a cinco en la Publicación Especial 800-38A. Estos modos están diseñados para usarse con cualquier cifra simétrica de bloques, incluyendo DES triple y AES..\\\\
 
-\textit{ECB}(Electronic codebook): Cada bloque de 64 bits de texto sin cifrar se codifica independientemente usando la misma clave.\\
-%A continuación tenemos el diagrama de este modo de cifrado.\\
-%\begin{figure}[h]
-%    \centering
-    %\begin{subfigure}[t]{0.5\textwidth}
-        %\centering
-        %\includegraphics[height=1.7in]{./images/ecb1.png}
-%        \caption{Diagrama ECB Cifrado}
-    %    \label{fig:1-3-1}
-   % \end{subfigure}%
-   % ~ 
-   % \begin{subfigure}[t]{0.5\textwidth}
-   %     \centering
-      %  \includegraphics[height=1.7in]{./images/ECB2.png}
-      %  \caption{Diagrama ECB Descifrado}
-      %  \label{fig:1-3-1}
-    %\end{subfigure}
-   % \label{fig:protocol}
-%\end{figure}
-
 
 \textit{CBC}(Cipher-block chaining): La entrada al algoritmo de encriptación es el XOR de los siguientes 64 bits de texto plano y los 64 bits de cifrado anteriores.\\
+\begin{itemize}
+	\item La salida de uno de los bloques de cifrado se mete a otro bloque de cifrado junto con el siguiente bloque de mensaje.
+	\item Toma como entradas un vector de inicialización (IV) y un bloque de mensaje (m).
+	\item Durante el encriptado la salida del i - ésimo bloque depende del anterior i -1 bloques.
+	\item La salida de cada uno de los bloques depende de todo lo anterior y esto lo hace mas seguro que ECB.
+	\item  El descifrado de CBC es no secuencial.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=3in]{./images/CBC.png}
+        \caption{Diagrama CBC Cifrado}
+        \label{fig:1-3-1}
+    \end{subfigure}
+\end{figure}
+\pagebreak
 
 \textit{CFB}(Cipher Feedback): La entrada se procesa j bits a la vez. El texto cifrado precedente se utiliza como entrada al algoritmo de cifrado para producir la salida pseudoaleatoria, que se le aplica XOR con el texto sin formato para producir la siguiente unidad de texto cifrado.\\
+\begin{itemize}
+	\item Los bloques de cifrado también están encadenados pero la salida es muy diferente a los demás.
+	\item Para cada bloque, el cifrado es producido haciendo XOR con el mensaje.
+	\item Una ventaja de implementación es que no es necesaria la operación de descifrar no es necesario.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=3in]{./images/CFB.png}
+        \caption{Diagrama CFB Cifrado}
+        \label{fig:1-3-1}
+    \end{subfigure}
+\end{figure}
+\pagebreak
 
 \textit{OFB}(Output feedback): Similar a CFB, excepto que la entrada al algoritmo de cifrado es la salida DES anterior.\\
+\begin{itemize}
+	\item En OFB la salida del bloque de cifrado es alimentada de nuevo en la siguiente bloque de cifrado.
+	\item El IV es cifrado varias veces para obtener una corriente de bytes aleatorios.
+	\item Estas corrientes de bytes aleatorios se les hace XOR con el texto en plano para generar el texto cifrado.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=3in]{./images/OFB.png}
+        \caption{Diagrama OFB Cifrado}
+        \label{fig:1-3-1}
+    \end{subfigure}
+\end{figure}
+\pagebreak
 
 \textit{CTR}(Counter): Cada bloque de texto sin formato se le aplica XOR con un contador cifrado. El contador se incrementa para cada bloque subsiguiente.\\
+\begin{itemize}
+	\item CTR toma un vector de inicialización (IV) y en cada iteración el valor de IV se incrementa en 1 y queda cifrado.
+	\item Para obtener el mensaje cifrado se hace una XOR con el IV y el bloque de mensaje.
+	\item En términos de eficiencia CTR es mejor que CBC, OFB o CFB, ya que en este modo se pueden hacer las operaciones en paralelo ya que no dependen de algo para poder ser cifradas.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=3in]{./images/CTR.png}
+        \caption{Diagrama CTR Cifrado}
+        \label{fig:1-3-1}
+    \end{subfigure}
+\end{figure}
 
 
 \pagebreak
