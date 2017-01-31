@@ -5,41 +5,12 @@
 \contentsline {subsection}{\numberline {1.2.1}Objetivos Generales}{1}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Objetivos Espec\IeC {\'\i }ficos}{1}{subsection.1.2.2}
 \contentsline {chapter}{\numberline {2}Preliminares}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Criptograf\IeC {\'\i }a}{2}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Criptoan\IeC {\'a}lisis}{2}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Esteganograf\IeC {\'\i }a}{2}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Servicios de Seguridad}{2}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}CONFIDENCIALIDAD}{2}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}AUTENTICACI\IeC {\'O}N}{3}{subsection.2.1.5}
-\contentsline {subsection}{\numberline {2.1.6}INTEGRIDAD}{3}{subsection.2.1.6}
-\contentsline {subsection}{\numberline {2.1.7}NO REPUDIO}{3}{subsection.2.1.7}
-\contentsline {subsection}{\numberline {2.1.8}CONTROL DE ACCESO}{4}{subsection.2.1.8}
-\contentsline {subsection}{\numberline {2.1.9}DISPONIBILIDAD}{4}{subsection.2.1.9}
-\contentsline {subsection}{\numberline {2.1.10}Ataques}{4}{subsection.2.1.10}
-\contentsline {subsection}{\numberline {2.1.11}Ataques a los M\IeC {\'e}todos de Cifrado}{5}{subsection.2.1.11}
-\contentsline {subsection}{\numberline {2.1.12}ATAQUE S\IeC {\'O}LO CON TEXTO CIFRADO}{5}{subsection.2.1.12}
-\contentsline {subsection}{\numberline {2.1.13}ATAQUE CON TEXTO ORIGINAL CONOCIDO}{5}{subsection.2.1.13}
-\contentsline {subsection}{\numberline {2.1.14}ATAQUE CON TEXTO CIFRADO ESCOGIDO}{5}{subsection.2.1.14}
-\contentsline {subsection}{\numberline {2.1.15}ATAQUE CON TEXTO ESCOGIDO}{5}{subsection.2.1.15}
-\contentsline {subsection}{\numberline {2.1.16}Ataques a los Protocolos Criptogr\IeC {\'a}ficos}{5}{subsection.2.1.16}
-\contentsline {subsection}{\numberline {2.1.17}ATAQUE CON CLAVE CONOCIDA}{5}{subsection.2.1.17}
-\contentsline {subsection}{\numberline {2.1.18}SUPLANTACI\IeC {\'O}N DE PERSONALIDAD}{5}{subsection.2.1.18}
-\contentsline {subsection}{\numberline {2.1.19}COMPILACI\IeC {\'O}N DE UN DICCIONARIO}{6}{subsection.2.1.19}
-\contentsline {subsection}{\numberline {2.1.20}B\IeC {\'U}SQUEDA EXHAUSTIVA}{6}{subsection.2.1.20}
-\contentsline {subsection}{\numberline {2.1.21}ATAQUE DE HOMBRE EN MEDIO}{6}{subsection.2.1.21}
-\contentsline {subsection}{\numberline {2.1.22}Ataques en criptoan\IeC {\'a}lisis}{6}{subsection.2.1.22}
-\contentsline {subsection}{\numberline {2.1.23}Criptograf\IeC {\'\i }a Sim\IeC {\'e}trica}{7}{subsection.2.1.23}
-\contentsline {subsection}{\numberline {2.1.24}Criptograf\IeC {\'\i }a asim\IeC {\'e}trica}{8}{subsection.2.1.24}
-\contentsline {subsection}{\numberline {2.1.25}Cifrado por bloques}{9}{subsection.2.1.25}
-\contentsline {subsection}{\numberline {2.1.26}Modos de operaci\IeC {\'o}n}{10}{subsection.2.1.26}
-\contentsline {subsection}{\numberline {2.1.27}Funciones Hash}{14}{subsection.2.1.27}
-\contentsline {chapter}{\numberline {3}Adversarios Clasificadores}{15}{chapter.3}
-\contentsline {chapter}{\numberline {4}Tecnolog\IeC {\'\i }as usadas}{16}{chapter.4}
-\contentsline {chapter}{\numberline {5}An\'alisis y Dise\~no}{17}{chapter.5}
-\contentsline {section}{\numberline {5.1}Diagramas de caso de uso}{17}{section.5.1}
-\contentsline {chapter}{\numberline {6}Desarrollo de prototipos}{18}{chapter.6}
-\contentsline {section}{\numberline {6.1}Prototipo 1}{18}{section.6.1}
-\contentsline {chapter}{\numberline {7}Conclusiones y Trabajo a Futuro}{19}{chapter.7}
-\contentsline {section}{\numberline {7.1}Conclusiones}{19}{section.7.1}
-\contentsline {chapter}{\numberline {A}C\IeC {\'o}digo fuente del prototipo 2}{20}{appendix.Alph1}
-\contentsline {chapter}{Bibliograf\'ia}{21}{appendix.Alph1}
+\contentsline {section}{\numberline {2.1}Definiciones}{2}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Servicios criptogr\IeC {\'a}ficos}{2}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Ataques a servicios criptogr\IeC {\'a}ficos}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Criptograf\IeC {\'\i }a Sim\IeC {\'e}trica}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Criptograf\IeC {\'\i }a asim\IeC {\'e}trica}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}Cifrado por bloques}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Modos de operaci\IeC {\'o}n}{8}{section.2.6}
+\contentsline {section}{\numberline {2.7}Funciones Hash}{12}{section.2.7}
+\contentsline {chapter}{Bibliograf\'ia}{13}{definition.2.2}

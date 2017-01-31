@@ -1,20 +1,18 @@
 \chapter{Preliminares} % (fold)
 
-\section{Criptografía}
+\section{Definiciones}
+\textbf{Criptografía.}
 Es la ciencia que trata las escrituras ocultas, está comprendida por la Criptografía, el Criptoanálisis y la Esteganografía
 La Criptografía es la ciencia que se encarga del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, el objetivo de la Criptografía no es sólo mantener los datos secretos, sino también protegerlos contra modificación y comprobar la fuente de los mismos.
 
-\subsection{Criptoanálisis}
+\textbf{Criptoanálisis}
 Es la ciencia que se ocupa del análisis de un texto cifrado para obtener la información original sin conocimiento de la clave secreta, esto es, de forma ilícita rompiendo así los procedimientos de cifrado establecidos por la Criptografía, por lo que se dice que Criptoanálisis y Criptografía son ciencias complementarias pero contrarias.
 El criptoanálisis es el arte de descifrar comunicaciones encriptadas sin conocer las llaves correctas
 
-\subsection{Esteganografía}
- Por su parte, estudia la forma de ocultar la existencia de un mensaje. Esta ciencia consiste en esconder en el interior de un mensaje, otro mensaje secreto, el cual sólo podrá ser entendido por el emisor y el receptor y pasará inadvertido para todos los demás.
-
-\subsection{Servicios de Seguridad}
+\subsection{Servicios criptográficos}
 Los servicios de seguridad, son aquellos que garantizan en un sistema de información la adquisición, almacenamiento, procesamiento y transmisión de la información y para lograrlo se valen de uno o más mecanismos de seguridad.
 
-\subsection{CONFIDENCIALIDAD}
+\textbf{Confidencialidad}
 Este servicio asegura que sólo las personas o procesos autorizados tengan acceso a la información. Con ello se busca que un agente no autorizado no pueda leer, copiar o modificar la información.
 El servicio de confidencialidad se puede diferenciar en dos tipos:
 \begin{itemize}
@@ -22,10 +20,10 @@ El servicio de confidencialidad se puede diferenciar en dos tipos:
 	\item Servicio de confidencialidad del mensaje: busca ocultar el flujo de un mensaje durante una conexión, para ello se cifra y se utiliza una técnica de envoltura con el objetivo de que si un atacante está realizando un análisis de tráfico, no pueda descubrir por ejemplo quien está enviando la información ni quien la recibe ni la frecuencia con la que se envían los mensajes.
 \end{itemize}
 
-\subsection{AUTENTICACIÓN}
+\textbf{Autenticación}
 Este servicio verifica la identidad de un agente que pretende acceder a la información. En una conexión entre dos entidades, el servicio verifica que las entidades sean quienes dicen ser, además de asegurar que un tercer individuo no pueda hacerse pasar por alguna de las entidades autorizadas y realizar una transmisión o recepción de datos.
 
-\subsection{INTEGRIDAD}
+\textbf{Integridad}
 Este servicio asegura que el contenido de los datos no ha sido modificado y que la secuencia de los mismos se ha mantenido a lo largo de toda la transmisión, con ello se evita una réplica o un reordenamiento del mensaje por parte de un atacante.
 Al igual que el servicio de confidencialidad, la integridad puede aplicarse a todos los datos transmitidos por un usuario durante una conexión, sólo a parte de ellos o sólo a algunos campos dentro del mensaje.
 Cuando se tiene un ataque a la integridad de los datos, el sistema puede o no reportar dicha violación, por lo que se puede distinguir entre servicio de integridad con recuperación y servicio de integridad sin recuperación.
@@ -35,7 +33,7 @@ El servicio de integridad también se puede diferenciar entre servicio de integr
 	\item Servicio de integridad de la secuencia del mensaje: proporciona pruebas de que el orden de una secuencia de mensajes ha sido mantenida durante la transmisión.
 \end{itemize}
 
-\subsection{NO REPUDIO}
+\textbf{No repudio}
 Este servicio evita que las entidades en una conexión nieguen haber transmitido o recibido un mensaje.
 Existen varios tipos de este servicio y cada uno de ellos proporciona pruebas de haberse llevado a cabo:
 \begin{itemize}
@@ -46,68 +44,63 @@ Existen varios tipos de este servicio y cada uno de ellos proporciona pruebas de
 	\item No repudio de recepción: con este servicio, el receptor de un mensaje no puede negar haber recibido un mensaje.
 \end{itemize}
 
-\subsection{CONTROL DE ACCESO}
-El servicio de control de acceso es utilizado con el fin de restringir el acceso a los medios de almacenamiento de la información. Este servicio está muy relacionado con el de autenticación ya que cualquier agente que quiera tener acceso a algún recurso del sistema primero deberá identificarse para que le sea permitido el acceso a dicha información y de acuerdo a los permisos o privilegios que tenga podrá manipularla.
 
-\subsection{DISPONIBILIDAD}
-El servicio de disponibilidad asegura que los agentes autorizados tengan acceso a la información en el momento en que ellos lo requieran y tantas veces como lo soliciten sin importar si ésta es correcta o no.
-
-\subsection{Ataques}
+\section{Ataques a servicios criptográficos}
 Un ataque es una violación a la seguridad de la información realizada por intrusos que tienen acceso físico al sistema sin ningún tipo de restricción, su objetivo es robar la información o hacer que ésta pierda valor relativo, o que disminuyan las posibilidades de su supervivencia a largo plazo.
-Un intruso puede obtener información como:
-\begin{itemize}
-	\item Bloques de direcciones IP
-	\item Localización de sistemas críticos (DNSs, WINS, DHCPs, Servidores de correo, etc.)
-	\item Puntos de acceso para números telefónicos y VPNs
-	\item Información personal de los trabajadores de la organización
-	\item Organizaciones asociadas, subsidiarias, etc.
-\end{itemize}
-Existen dos tipos de ataques que amenazan las comunicaciones secretas:
-\begin{itemize}
-	\item Pasivo: es aquel en el cual el intruso sólo busca obtener la información y al hacerlo no la modifica, por lo que es difícil percatarse de que se está siendo atacado.
-	\item Activo: el intruso además de obtener la información la modifica de tal modo que sirva a sus intereses y al ser modificada es más fácil percatarse de que se está siendo atacado.
-Los ataques activos se dividen en dos tipos: Ataques a los métodos de cifrado y Ataques a los protocolos criptográficos.
-\end{itemize}
+%Un intruso puede obtener información como:
+%\begin{itemize}
+%	\item Bloques de direcciones IP
+%	\item Localización de sistemas críticos (DNSs, WINS, DHCPs, Servidores de correo, etc.)
+%	\item Puntos de acceso para números telefónicos y VPNs
+%	\item Información personal de los trabajadores de la organización
+%	\item Organizaciones asociadas, subsidiarias, etc.
+%\end{itemize}
+%Existen dos tipos de ataques que amenazan las comunicaciones secretas:
+%\begin{itemize}
+%	\item Pasivo: es aquel en el cual el intruso sólo busca obtener la información y al hacerlo no la modifica, por lo que es difícil percatarse de que se está siendo atacado.
+%	\item Activo: el intruso además de obtener la información la modifica de tal modo que sirva a sus intereses y al ser modificada es más fácil percatarse de que se está siendo atacado.
+%Los ataques activos se dividen en dos tipos: Ataques a los métodos de cifrado y Ataques a los protocolos criptográficos.
+%\end{itemize}
 
-\subsection{Ataques a los Métodos de Cifrado}
-Este tipo de ataques se realizan con la intención de obtener la clave secreta para poder descifrar libremente cualquier criptograma, para ello se aprovechan las vulnerabilidades que pudiera tener el método de cifrado.
+%\textbf{Ataques a los Métodos de Cifrado}
+%Este tipo de ataques se realizan con la intención de obtener la clave secreta para poder descifrar libremente cualquier criptograma, para ello se aprovechan las vulnerabilidades que pudiera tener el método de cifrado.
 
-\subsection{ATAQUE SÓLO CON TEXTO CIFRADO}
+\textbf{Ataque sólo con texto cifrado}
 Este caso es cuando el criptoanalista sólo conoce el criptograma y el algoritmo con que fue generado; con esta información pretende obtener el texto en claro.
 
-\subsection{ATAQUE CON TEXTO ORIGINAL CONOCIDO}
+\textbf{Ataque con texto original conocido}
 En esta situación el criptoanalista conoce mensajes en claro seleccionados por él mismo y sus correspondientes criptogramas, así como el algoritmo con que éstos fueron generados; aquí el objetivo es conocer la clave secreta y poder descriptar libremente cualquier texto.
 
-\subsection{ATAQUE CON TEXTO CIFRADO ESCOGIDO}
+\textbf{Ataque con texto cifrado escogido}
 El criptoanalista conoce el algoritmo de cifrado, así como un criptograma seleccionado por él mismo y su correspondiente texto en claro, su objetivo es obtener el mensaje en claro de todo criptograma que intercepte.
 
-\subsection{ATAQUE CON TEXTO ESCOGIDO}
+\textbf{Ataque con texto escogido}
 En este caso el criptoanalista además de conocer el algoritmo de cifrado y el criptograma que quiere descriptar, también conoce el criptograma de un texto en claro que él elija y el mensaje en claro de un criptograma también elegido por él.
 
-\subsection{Ataques a los Protocolos Criptográficos}
-Este tipo de ataques no pretenden encontrar la clave secreta para poder conocer el mensaje en claro, sino que buscan obtener la información vulnerando los protocolos criptográficos, es decir, pretenden burlar la serie de pasos establecidos para alcanzar los objetivos de seguridad y que tienen que ser realizados por las entidades involucradas en cierta comunicación. Ejemplos de este tipo de ataques son los siguientes:
+%\subsection{Ataques a los Protocolos Criptográficos}
+%Este tipo de ataques no pretenden encontrar la clave secreta para poder conocer el mensaje en claro, sino que buscan obtener la información vulnerando los protocolos criptográficos, es decir, pretenden burlar la serie de pasos establecidos para alcanzar los objetivos de seguridad y que tienen que ser realizados por las entidades involucradas en cierta comunicación. Ejemplos de este tipo de ataques son los siguientes:
 
-\subsection{ATAQUE CON CLAVE CONOCIDA}
+\textbf{Ataque con clave conocida}
 El atacante conoce claves utilizadas en cifrados anteriores y con base en ellas intenta determinar nuevas claves.
 
-\subsection{SUPLANTACIÓN DE PERSONALIDAD}
-El atacante asume la identidad de uno de los agentes autorizados en la red, y de esta manera obtiene libremente y sin tropiezos todos los mensajes en claro.
+%\subsection{SUPLANTACIÓN DE PERSONALIDAD}
+%El atacante asume la identidad de uno de los agentes autorizados en la red, y de esta manera obtiene libremente y sin tropiezos todos los mensajes en claro.
 
-\subsection{COMPILACIÓN DE UN DICCIONARIO}
-Un diccionario es un archivo guardado en la memoria de la computadora que contiene contraseñas cifradas de los usuarios autorizados en el sistema. Si el método de cifrado con que se cifran las claves es público, el atacante puede generar claves aleatorias y después cifrarlas con el objeto de encontrar alguna contenida en el diccionario (previamente obtenido). Cuando una clave generada por el atacante coincide con una contenida en el diccionario, se ha encontrado una clave de acceso al sistema, mediante el usuario correspondiente a la clave encontrada.
+%\subsection{COMPILACIÓN DE UN DICCIONARIO}
+%Un diccionario es un archivo guardado en la memoria de la computadora que contiene contraseñas cifradas de los usuarios autorizados en el sistema. Si el método de cifrado con que se cifran las claves es público, el atacante puede generar claves aleatorias y después cifrarlas con el objeto de encontrar alguna contenida en el diccionario (previamente obtenido). Cuando una clave generada por el atacante coincide con una contenida en el diccionario, se ha encontrado una clave de acceso al sistema, mediante el usuario correspondiente a la clave encontrada.
 
-\subsection{BÚSQUEDA EXHAUSTIVA}
-Este ataque se lleva a cabo generando aleatoriamente todos los valores posibles de las claves de acceso y probándolas hasta que una de ellas sea una clave válida en el sistema.
+%\subsection{BÚSQUEDA EXHAUSTIVA}
+%Este ataque se lleva a cabo generando aleatoriamente todos los valores posibles de las claves de acceso y probándolas hasta que una de ellas sea una clave válida en el sistema.
 
-\subsection{ATAQUE DE HOMBRE EN MEDIO}
+\textbf{Ataque de hombre en medio}
 El intruso se filtra en la línea de comunicación entre dos agentes autorizados en la red; obtiene la información de uno de ellos y se la envía al otro usuario una vez que la ha utilizado.
 
-\subsection{Ataques en criptoanálisis}
-Aunque para validar la robustez de un criptosistema normalmente se suponen todas las condiciones del peor caso, existen ataques más específicos, en los que no se cumplen todas estas condiciones. Cuando el método de ataque consiste simplemente en probar todas y cada una de las posibles claves del espacio de claves hasta encontrar la correcta, nos encontramos ante un ataque de fuerza bruta o ataque exhaustivo. Si el atacante conoce el algoritmo de cifrado y sólo tiene acceso al criptograma, se plantea un ataque sólo al criptograma; un caso más favorable para el criptoanalista se produce cuando el ataque cumple todas las condiciones del peor caso; en este caso, el criptoanálisis se denomina de texto en claro conocido. Si además el atacante puede cifrar una cantidad indeterminada de texto en claro al ataque se le denomina de texto en claro escogido; este es el caso habitual de los ataques contra el sistema de verificación de usuarios utilizado por Unix, donde un intruso consigue la tabla de contraseñas (generalmente /etc/passwd) y se limita a realizar cifrados de textos en claro de su elección y a comparar los resultados con las claves cifradas (a este ataque también se le llama de diccionario, debido a que el atacante suele utilizar un fichero `diccionario' con los textos en claro que va a utilizar). El caso más favorable para un analista se produce cuando puede obtener el texto en claro correspondiente a criptogramas de su elección; en este caso el ataque se denomina de texto cifrado escogido. 
+%\subsection{Ataques en criptoanálisis}
+%Aunque para validar la robustez de un criptosistema normalmente se suponen todas las condiciones del peor caso, existen ataques más específicos, en los que no se cumplen todas estas condiciones. Cuando el método de ataque consiste simplemente en probar todas y cada una de las posibles claves del espacio de claves hasta encontrar la correcta, nos encontramos ante un ataque de fuerza bruta o ataque exhaustivo. Si el atacante conoce el algoritmo de cifrado y sólo tiene acceso al criptograma, se plantea un ataque sólo al criptograma; un caso más favorable para el criptoanalista se produce cuando el ataque cumple todas las condiciones del peor caso; en este caso, el criptoanálisis se denomina de texto en claro conocido. Si además el atacante puede cifrar una cantidad indeterminada de texto en claro al ataque se le denomina de texto en claro escogido; este es el caso habitual de los ataques contra el sistema de verificación de usuarios utilizado por Unix, donde un intruso consigue la tabla de contraseñas (generalmente /etc/passwd) y se limita a realizar cifrados de textos en claro de su elección y a comparar los resultados con las claves cifradas (a este ataque también se le llama de diccionario, debido a que el atacante suele utilizar un fichero `diccionario' con los textos en claro que va a utilizar). El caso más favorable para un analista se produce cuando puede obtener el texto en claro correspondiente a criptogramas de su elección; en este caso el ataque se denomina de texto cifrado escogido. 
 
-Cualquier algoritmo de cifrado, para ser considerado seguro, ha de soportar todos estos ataques y otros no citados; sin embargo, en la criptografía, como en cualquier aspecto de la seguridad, informática o no, no debemos olvidar un factor muy importante: las personas. El sistema más robusto caerá fácilmente si se tortura al emisor o al receptor hasta que desvelen el contenido del mensaje, o si se le ofrece a uno de ellos una gran cantidad de dinero; este tipo de ataques (sobornos, amenazas, extorsión, tortura...) se consideran siempre los más efectivos. 
+%Cualquier algoritmo de cifrado, para ser considerado seguro, ha de soportar todos estos ataques y otros no citados; sin embargo, en la criptografía, como en cualquier aspecto de la seguridad, informática o no, no debemos olvidar un factor muy importante: las personas. El sistema más robusto caerá fácilmente si se tortura al emisor o al receptor hasta que desvelen el contenido del mensaje, o si se le ofrece a uno de ellos una gran cantidad de dinero; este tipo de ataques (sobornos, amenazas, extorsión, tortura...) se consideran siempre los más efectivos. 
 
-\subsection{Criptografía Simétrica}
+\section{Criptografía Simétrica}
 La criptografía simétrica utiliza la misma clave para cifrar y descifrar el mensaje de datos, es decir se basa en un secreto compartido~\cite{criptosimetrica}. \\ Características de la Criptografía simétrica: \begin{itemize}
 	\item La clave es la misma para cifrar que para descifrar un mensaje, por lo que sólo el emisor y el receptor deben conocerla.
 	\item Se basan en operaciones matemáticas sencillas, por ello son fácilmente implementados en hardware.
@@ -137,7 +130,7 @@ todas las llaves posibles en  $\cal K$ y todos los posibles mensajes $\cal M$, $
 \end{itemize}
 \end{definition}
 
-\subsection{Criptografía asimétrica}
+\section{Criptografía asimétrica}
 La criptografía asimétrica es por definición aquella que utiliza dos claves diferentes para cada usuario, una para cifrar que se le llama clave pública y otra para descifrar que es la clave privada. Los algoritmos asimétricos son diferentes a los simétricos en un sentido muy importante ~\cite{sime}. Cuando se genera una clave simétrica, simplemente se escoge un número aleatorio de la longitud apropiada. Al generar claves asimétricas el proceso es más complejo. Los algoritmos asimétricos se llaman asimétricos porque en lugar de usar una sola clave para realizar la codificación y la decodificación, se utilizan dos claves diferentes: una para cifrar y otra para descifrar. Estas dos claves se encuentran asociadas matemáticamente, cuya característica fundamental es que una clave no puede descifrar lo que cifra. ~\cite{sime}.
 
 \bigskip Características de la Criptografía simétrica: \begin{itemize}
@@ -155,7 +148,7 @@ La criptografía asimétrica es por definición aquella que utiliza dos claves d
 	\label{fig:1-2-1}
 \end{figure}
 
-\subsection{Cifrado por bloques}
+\section{Cifrado por bloques}
 Los algoritmos de cifrado por bloques toman bloques de tamaño fijo del texto en claro y producen un bloque de tamaño fijo de texto cifrado, generalmente del mismo tamaño que la entrada. El tamaño del bloque debe ser lo suficientemente grande como para evitar ataques de texto cifrado. La asignación de bloques de entrada a bloques de salida debe ser uno a uno para hacer el proceso reversible y parecer aleatoria.\\ 
 Para la asignación de bloques los algoritmos de cifrado simétrico realizan sustituciones y permutaciones en el texto en claro hasta obtener el texto cifrado.\\ 
 La sustitución es el reemplazo de un valor de entrada por otro de los posibles valores de salida, en general, si usamos un tamaño de bloque k, el bloque de entrada puede ser sustituido por cualquiera de los 2k bloques posibles.
@@ -169,16 +162,16 @@ La sustitución es el reemplazo de un bloque de $n$ bits por otro bloque de $n$ 
 $2^{k}$~\cite{bloc}. Los cifradores por bloques mas usados son AES (Advanced Encryption Standard, por sus 
 siglas en ingl\'es) y DES (Data Encryption Standard, por sus siglas en ingl\'es). \\ \\ Los cifradores por bloques pueden ser representados mediante el siguiente diagrama. ~\ref{fig:2-2-2}.
 
-\begin{figure}[H]
-\centering
-	\includegraphics[width=10cm, height=5cm]{./images/CifradoBloques.jpg}
-	\caption{Diagrama Cifradores por Bloques}
-	\label{fig:2-2-2}
-\end{figure}
+%\begin{figure}[H]
+%\centering
+%	\includegraphics[width=10cm, height=5cm]{./images/CifradoBloques.jpg}
+%	\caption{Diagrama Cifradores por Bloques}
+%	\label{fig:2-2-2}
+%\end{figure}
 
 \pagebreak
 
-\subsection{Modos de operación}
+\section{Modos de operación}
 Un modo de operación es una técnica para mejorar el efecto de un algoritmo criptográfico o adaptar el algoritmo para una aplicación, tal como aplicar un cifrador por bloques a una secuencia de bloques de datos o un flujo de datos. Los cuatro modos están destinados a cubrir virtualmente todas las aplicaciones posibles de cifrado para las cuales se podría usar un cifrador por bloques. A medida que han aparecido nuevas aplicaciones y requisitos, el NIST ha ampliado la lista de modos recomendados a cinco en la Publicación Especial 800-38A. Estos modos están diseñados para usarse con cualquier cifra simétrica de bloques, incluyendo DES triple y AES..\\\\
 
 
@@ -257,7 +250,7 @@ Un modo de operación es una técnica para mejorar el efecto de un algoritmo cri
 
 
 \pagebreak
-\subsection{Funciones Hash}
+\section{Funciones Hash}
 A continuaci\'on se describir\'an las caracter\'isticas de las {\it funciones
 hash}, tambi\'en conocidas como {\it funciones de resumen}. Las funciones hash basan
 su definici\'on en funciones de un solo sentido  ({\it one-way functions}, en ingl\'es).
