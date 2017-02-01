@@ -108,13 +108,13 @@ La criptografía simétrica utiliza la misma clave para cifrar y descifrar el me
 			       \end{itemize} ~\cite{sime} \\
 Los algoritmos criptográficos simétricos tienen dos versiones: cifrador en bloque y cifrador en flujo. Una cifra es una palabra para describir un algoritmo de cifrado. El beneficio del uso de un algoritmo simétrico radica en el procesamiento rápido
 para encriptar y desencriptar un alto volumen de datos. El cifrado simétrico es una eficaz táctica de almacenamiento de información
-sensible en una base de datos, un registro o archivo ~\cite{sime} El cifrado simétrico puede ser representado con el siguiente diagrama ~\ref{fig:1-2-1}.
+sensible en una base de datos, un registro o archivo ~\cite{sime} El cifrado simétrico puede ser representado con el siguiente diagrama ~\ref{fig:1-2-3}.
 
 \begin{figure}[H]
 \centering
 	\includegraphics[width=10cm, height=5cm]{./images/Cripto_Simetrica.jpg}
 	\caption{Diagrama Criptografía Simétrica}
-	\label{fig:1-2-1}
+	\label{fig:1-2-3}
 \end{figure}
 La sintaxis de un esquema de cifrado sim\'etrico, esta dada por la siguiente definic\'on.
 \begin{definition} 
@@ -139,13 +139,13 @@ La criptografía asimétrica es por definición aquella que utiliza dos claves d
 	\item Se ejecutan de 100 a 1000 veces más lento que los algoritmos simétricos.
 \end{itemize} ~\cite{sime} \\ \\ 
 
- Los beneficios de la criptografía asimétrica son la solución a los problemas de la criptografía simétrica, pues las claves públicas pueden ser distribuidas con toda tranquilidad, no valen de nada sin las claves privadas. El cifrado asimétrico se le emplea muy frecuente para pasar con seguridad una clave privada, que posteriormente, será la que se utilice para cifrar y/o descifrar otra información. El cifrado asimétrico puede ser representado con el siguiente diagrama ~\ref{fig:2-2-1}.
+ Los beneficios de la criptografía asimétrica son la solución a los problemas de la criptografía simétrica, pues las claves públicas pueden ser distribuidas con toda tranquilidad, no valen de nada sin las claves privadas. El cifrado asimétrico se le emplea muy frecuente para pasar con seguridad una clave privada, que posteriormente, será la que se utilice para cifrar y/o descifrar otra información. El cifrado asimétrico puede ser representado con el siguiente diagrama ~\ref{fig:1-2-4}.
 
 \begin{figure}[H]
 \centering
 	\includegraphics[width=10cm, height=5cm]{./images/Cripto_Asimetrica.jpg}
 	\caption{Diagrama Criptografía Asimétrica}
-	\label{fig:1-2-1}
+	\label{fig:1-2-4}
 \end{figure}
 
 \section{Cifrado por bloques}
@@ -160,16 +160,16 @@ bloques iterativo depende del nivel de seguridad deseado.
 
 La sustitución es el reemplazo de un bloque de $n$ bits por otro bloque de $n$ bits en un espacio de 
 $2^{k}$~\cite{bloc}. Los cifradores por bloques mas usados son AES (Advanced Encryption Standard, por sus 
-siglas en ingl\'es) y DES (Data Encryption Standard, por sus siglas en ingl\'es). \\ \\ Los cifradores por bloques pueden ser representados mediante el siguiente diagrama. ~\ref{fig:2-2-2}.
+siglas en ingl\'es) y DES (Data Encryption Standard, por sus siglas en ingl\'es). \\ \\ Los cifradores por bloques pueden ser representados mediante el siguiente diagrama. ~\ref{fig:1-2-5}.
 
-%\begin{figure}[H]
-%\centering
-%	\includegraphics[width=10cm, height=5cm]{./images/CifradoBloques.jpg}
-%	\caption{Diagrama Cifradores por Bloques}
-%	\label{fig:2-2-2}
-%\end{figure}
+\begin{figure}[H]
+\centering
+	\includegraphics[width=10cm, height=5cm]{./images/CifradoBloques.jpeg}
+	\caption{Diagrama Cifradores por Bloques}
+	\label{fig:1-2-5}
+\end{figure}
 
-\pagebreak
+
 
 \section{Modos de operación}
 Un modo de operación es una técnica para mejorar el efecto de un algoritmo criptográfico o adaptar el algoritmo para una aplicación, tal como aplicar un cifrador por bloques a una secuencia de bloques de datos o un flujo de datos. Los cuatro modos están destinados a cubrir virtualmente todas las aplicaciones posibles de cifrado para las cuales se podría usar un cifrador por bloques. A medida que han aparecido nuevas aplicaciones y requisitos, el NIST ha ampliado la lista de modos recomendados a cinco en la Publicación Especial 800-38A. Estos modos están diseñados para usarse con cualquier cifra simétrica de bloques, incluyendo DES triple y AES..\\\\
