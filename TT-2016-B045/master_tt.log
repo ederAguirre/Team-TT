@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.11.14)  31 JAN 2017 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.11.14)  3 FEB 2017 00:46
 entering extended mode
 **./master_tt.tex
 (master_tt.tex
@@ -974,9 +974,6 @@ LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
  (archivosTex/introduccion.aux) (archivosTex/preliminares.aux
 
-LaTeX Warning: Label `fig:1-2-1' multiply defined.
-
-
 LaTeX Warning: Label `fig:1-3-1' multiply defined.
 
 
@@ -1114,20 +1111,20 @@ LaTeX Info: Redefining \nameref on input line 84.
 
 \c@lstlisting=\count161
 
-<./images/IPN.jpg, id=63, 361.35pt x 597.9138pt>
+<./images/IPN.jpg, id=66, 361.35pt x 597.9138pt>
 File: ./images/IPN.jpg Graphic file (type jpg)
  <use ./images/IPN.jpg>
 Package pdftex.def Info: ./images/IPN.jpg used on input line 92.
 (pdftex.def)             Requested size: 56.90189pt x 85.35869pt.
 
-<./images/lineaAzul.jpg, id=64, 20.075pt x 711.65875pt>
+<./images/lineaAzul.jpg, id=67, 20.075pt x 711.65875pt>
 File: ./images/lineaAzul.jpg Graphic file (type jpg)
 
 <use ./images/lineaAzul.jpg>
 Package pdftex.def Info: ./images/lineaAzul.jpg used on input line 92.
 (pdftex.def)             Requested size: 14.22668pt x 520.70107pt.
 
-<./images/ESCOM.jpg, id=65, 131.03902pt x 89.34479pt>
+<./images/ESCOM.jpg, id=68, 131.03902pt x 89.34479pt>
 File: ./images/ESCOM.jpg Graphic file (type jpg)
  <use ./images/ESCOM.jpg>
 Package pdftex.def Info: ./images/ESCOM.jpg used on input line 92.
@@ -1510,10 +1507,7 @@ Package babel Info: Redefining spanish shorthand "?
 LaTeX Warning: Citation `criptosimetrica' on page 4 undefined on input line 104
 .
 
-
-LaTeX Warning: Reference `fig:1-2-3' on page 4 undefined on input line 111.
-
-<./images/Cripto_Simetrica.jpg, id=127, 285.31593pt x 156.585pt>
+<./images/Cripto_Simetrica.jpg, id=132, 285.31593pt x 156.585pt>
 File: ./images/Cripto_Simetrica.jpg Graphic file (type jpg)
 
 <use ./images/Cripto_Simetrica.jpg>
@@ -1590,10 +1584,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
-
-LaTeX Warning: Reference `fig:1-2-4' on page 6 undefined on input line 142.
-
-<./images/Cripto_Asimetrica.jpg, id=148, 262.73157pt x 157.33781pt>
+<./images/Cripto_Asimetrica.jpg, id=154, 262.73157pt x 157.33781pt>
 File: ./images/Cripto_Asimetrica.jpg Graphic file (type jpg)
 
 <use ./images/Cripto_Asimetrica.jpg>
@@ -1616,9 +1607,6 @@ Package babel Info: Redefining spanish shorthand "?
 Underfull \hbox (badness 10000) in paragraph at lines 152--159
 
  []
-
-
-LaTeX Warning: Reference `fig:1-2-5' on page 6 undefined on input line 163.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 161--164
@@ -1650,7 +1638,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 164.
 [6 <./images/Cripto_Asimetrica.jpg>]
-<./images/CifradoBloques.jpeg, id=154, 664.73344pt x 308.65312pt>
+<./images/CifradoBloques.jpeg, id=161, 664.73344pt x 308.65312pt>
 File: ./images/CifradoBloques.jpeg Graphic file (type jpg)
 
 <use ./images/CifradoBloques.jpeg>
@@ -1683,7 +1671,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
-<./images/CBC.png, id=155, 415.5525pt x 322.95656pt>
+<./images/CBC.png, id=162, 415.5525pt x 322.95656pt>
 File: ./images/CBC.png Graphic file (type png)
  <use ./images/CBC.png>
 Package pdftex.def Info: ./images/CBC.png used on input line 191.
@@ -1725,7 +1713,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
-<./images/CFB.png, id=162, 392.21532pt x 350.05782pt>
+<./images/CFB.png, id=169, 392.21532pt x 350.05782pt>
 File: ./images/CFB.png Graphic file (type png)
  <use ./images/CFB.png>
 Package pdftex.def Info: ./images/CFB.png used on input line 209.
@@ -1764,7 +1752,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-<./images/OFB.png, id=172, 371.88937pt x 348.55219pt>
+<./images/OFB.png, id=179, 371.88937pt x 348.55219pt>
 File: ./images/OFB.png Graphic file (type png)
  <use ./images/OFB.png>
 Package pdftex.def Info: ./images/OFB.png used on input line 227.
@@ -1799,7 +1787,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-<./images/CTR.png, id=180, 416.30531pt x 321.45094pt>
+<./images/CTR.png, id=187, 416.30531pt x 321.45094pt>
 File: ./images/CTR.png Graphic file (type png)
  <use ./images/CTR.png>
 Package pdftex.def Info: ./images/CTR.png used on input line 245.
@@ -1846,32 +1834,134 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 253.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 253.
-)
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 288.
  [11]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 289.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 289.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 289.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 289.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 289.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 289.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.293 \\ \\
+             \textbf{Características: }
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.293 \\ \\  \textbf
+                    {Características: }
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.302 \\ \\
+            \textbf{Modelos de servicio: }
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.302 \\ \\ \textbf
+                   {Modelos de servicio: }
+? 
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 306.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 306.
+[12])
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 122.
+ [13]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 130.
 Package babel Info: Redefining spanish shorthand >>
@@ -1886,8 +1976,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 130.
  (master_tt.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Underfull \hbox (badness 10000) in paragraph at lines 46--52
@@ -1949,7 +2038,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 87.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 87.
-[12
+[14
 
 
 
@@ -2000,7 +2089,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 182.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 182.
-[13])
+[15])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 133.
@@ -2026,7 +2115,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 133.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 133.
- [14]
+ [16]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
  (master_tt.aux
 LaTeX Info: Redefining \. on input line 23.
@@ -2036,7 +2125,7 @@ LaTeX Info: Redefining \% on input line 23.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `master_tt.out' has not changed.
-(rerunfilecheck)             Checksum: D1FC632CD3A074E44F527E20C3A0970E;1001.
+(rerunfilecheck)             Checksum: D77B816FD00BE5532D7B4D06EFE3D288;1081.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2051,10 +2140,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
- 12263 strings out of 493334
+ 12264 strings out of 493334
  177010 string characters out of 3139254
- 284428 words of memory out of 3000000
- 15473 multiletter control sequences out of 15000+200000
+ 284494 words of memory out of 3000000
+ 15471 multiletter control sequences out of 15000+200000
  18494 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,43p,1586b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2076,9 +2165,9 @@ iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmsy8.pfb>
-Output written on master_tt.pdf (18 pages, 1140001 bytes).
+Output written on master_tt.pdf (20 pages, 1159604 bytes).
 PDF statistics:
- 750 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 171 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 782 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
