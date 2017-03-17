@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Keelveedhi}
 R.~Bellare, Keelveedhi.
@@ -50,6 +50,11 @@ s/a.
 \newblock Cifrado simetrico.
 \newblock Guía de Gnu Privacy Guard, 2015.
 \newblock \url{https://www.gnupg.org/gph/es/manual/c190.html#AEN201}.
+
+\bibitem{bloques}
+T.~O. Sergio.
+\newblock Introducción a la criptología.
+\newblock {\em InfoCentre{UV}}, 2003.
 
 \bibitem{modes}
 W.~Stallings.
