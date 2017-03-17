@@ -251,9 +251,7 @@ En cuanto a las longitudes de claves, el sistema RSA permite longitudes variable
 
 RSA basa su seguridad es ser una función computacionalmente segura, ya que si bien realizar la exponenciación modular es fácil, su operación inversa, la extracción de raices de módulo Ø no es factible a menos que se conozca la factorización de e, clave privada del sistema.
 
-RSA es el más conocido y usado de los sistemas de clave pública, y también el más rápido de ellos. Presenta todas las ventajas de los sistemas asimétricos, incluyendo la firma digital, aunque resulta más útil a la hora de implementar la confidencialidad el uso de sistemas simétricos, por ser más rápidos. Se suele usar también en los sistemas mixtos para encriptar y enviar la clave simétrica que se usará posteriormente en la comunicación cifrada.
-
-http://neo.lcc.uma.es/evirtual/cdd/tutorial/presentacion/rsa.html
+RSA es el más conocido y usado de los sistemas de clave pública, y también el más rápido de ellos. Presenta todas las ventajas de los sistemas asimétricos, incluyendo la firma digital, aunque resulta más útil a la hora de implementar la confidencialidad el uso de sistemas simétricos, por ser más rápidos. Se suele usar también en los sistemas mixtos para encriptar y enviar la clave simétrica que se usará posteriormente en la comunicación cifrada. ~\cite{rsa}
 
 \section{Firmas a ciegas. }
 
@@ -261,10 +259,8 @@ Las firmas a ciegas son un tipo especial de firmas digitales en las que se firma
 Por lo tanto, el prop´osito de una firma a ciegas es evitar que el firmante B conozca el mensaje que firma; y as´ı posteriormente, sea incapaz de asociar el mensaje que firm´o con el remitente A. Entonces, las firmas a ciegas tienen aplicaci´on en varias situaciones. A continuaci´on se mencionan dos de ellas:
 \begin{itemize}
 	\item Cuando se utiliza dinero electr´onico. En este caso, m representa un valor monetario que A (el cliente) tiene derecho a gastar. Y as´ı, cuando m y s(m) se presentan a B (el banco) para efectuar el pago, B es incapaz de identificar al cliente que originalmente le dio ese dinero electr´onico a firmar, pues le fue enviado de manera oculta. Lo anterior permite que la identidad de A 	permanezca an´onima, y sus movimientos financieros no puedan ser monitoreados.
-	\item En las elecciones electr´onicas tambi´en pueden utilizarse las firmas a ciegas, ya que se requiere que B (una autoridad electoral) no conozca la identidad de A (el votante) debido a que el voto debe efectuarse de manera an´onima. Sin embargo, es necesario que A demuestre que su voto m es v´alido. Lo cual se logra cuando A presenta ante B la firma s(m). Y se sabe de antemano que B no puede asociar s(m) a A, debido a que el votante previamente le env´ıo a B su voto m pero de forma oculta para que se lo firmara.
+	\item En las elecciones electr´onicas tambi´en pueden utilizarse las firmas a ciegas, ya que se requiere que B (una autoridad electoral) no conozca la identidad de A (el votante) debido a que el voto debe efectuarse de manera an´onima. Sin embargo, es necesario que A demuestre que su voto m es v´alido. Lo cual se logra cuando A presenta ante B la firma s(m). Y se sabe de antemano que B no puede asociar s(m) a A, debido a que el votante previamente le env´ıo a B su voto m pero de forma oculta para que se lo firmara. ~\cite{ciegas}
 \end{itemize} 
-
-http://delta.cs.cinvestav.mx/~francisco/Repository/tesisCPGZ.pdf
 
 \section{Funciones Hash. }
 A continuaci\'on se describir\'an las caracter\'isticas de las {\it funciones hash}, tambi\'en conocidas como {\it funciones de resumen}. Las funciones hash basan su definici\'on en funciones de un solo sentido  ({\it one-way functions}, en ingl\'es). Una funci\'on de un s\'olo sentido es aquella que para un valor $x$, es  muy f\'acil calcular $f(x)$, pero es muy dif\'icil hallar $f^{-1}(x)$. Es complicado en general, hallar funciones de \'este tipo y probar que lo son.

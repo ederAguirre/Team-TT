@@ -13,6 +13,6 @@
 \contentsline {section}{\numberline {2.5}Cifrado por bloques. }{7}{section.2.5}
 \contentsline {section}{\numberline {2.6}RSA. }{8}{section.2.6}
 \contentsline {section}{\numberline {2.7}Firmas a ciegas. }{9}{section.2.7}
-\contentsline {section}{\numberline {2.8}Funciones Hash. }{10}{section.2.8}
+\contentsline {section}{\numberline {2.8}Funciones Hash. }{9}{section.2.8}
 \contentsline {section}{\numberline {2.9}C\IeC {\'o}mputo Nube. }{10}{section.2.9}
 \contentsline {chapter}{Bibliograf\'ia}{14}{section.2.9}
