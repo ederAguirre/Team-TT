@@ -17,19 +17,33 @@ D.~Chakraborty and F.~Rodr{\'{\i}}guez{-}Henr{\'{\i}}quez.
 \newblock In {\c{C}}.~K. Ko{\c{c}}, editor, {\em Cryptographic Engineering},
   pages 321--363. Springer, 2009.
 
-\bibitem{Aguillon}
+\bibitem{cripto}
 A.~M. Erika.
 \newblock Fundamentos de criptografía.
 \newblock Universidad Nacional Autónoma de México, 2012.
 \newblock
   \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-de-criptografia}.
 
-\bibitem{Aguillon2}
+\bibitem{servicios}
 A.~M. Erika.
 \newblock Fundamentos de criptografía.
 \newblock Universidad Nacional Autónoma de México, 2012.
 \newblock
   \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/13-servicios-y-mecanismos-de-seguridad/131-servicios-de-seguridad}.
+
+\bibitem{ataques}
+A.~M. Erika.
+\newblock Fundamentos de seguridad informática.
+\newblock Universidad Nacional Autónoma de México, 2012.
+\newblock
+  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/14-ataques/142-ataques-a-los-metodos-de-cifrado}.
+
+\bibitem{norepudio}
+L.~L. Erika.
+\newblock Fundamentos de seguridad informática.
+\newblock Universidad Nacional Autónoma de México, 2012.
+\newblock
+  \url{http://redyseguridad.fi-p.unam.mx/proyectos/seguridad/ServNoRepudio.php}.
 
 \bibitem{sime}
 s/a.
