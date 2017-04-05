@@ -26,12 +26,12 @@
 \multicolumn{2}{|c|}{\textbf{Servidor de Llaves}} \\ \hline
 \textbf{ID} &  \textbf{Descripción} \\
 \hline \hline
-RF – SLL1 & El sistema permitirá la generación de llaves de usuario a través de una clave secreta (Ks) propia del servidor de llaves. \\ \hline
+RF – SLL1 & El sistema permitirá la generación de llaves de usuario a través de una clave secreta (Kg) propia del servidor de llaves. \\ \hline
 %RF – SLL2 & El sistema debe gestionar 3 estados en el servidor de llaves: Generación, Cambios y Eliminación de llaves de usuarios para manipular un archivo. \\ \hline
 %RF – SLL3 & El sistema comenzará la creación de una llave (K) cuando el usuario solicite la carga de un archivo a almacenar. \\ \hline
 %RF – SLL4 & El sistema deberá enviar al cliente la llave generada en el servidor de llaves (K) del archivo que el usuario solicitó carga al servicio de almacenamiento. \\ \hline
 RF – SLL2 & El sistema almacenará en la base de datos del servidor de llaves, la firma a ciegas (y) generada por cada nuevo archivo que se solicite cargar al servicio de almacenamiento. \\ \hline
-RF – SLL3 & El sistema actualizará la base de datos del servidor de llaves cada vez que una nueva firma (y) sea generada dentro de éste. \\ \hline
+%RF – SLL3 & El sistema actualizará la base de datos del servidor de llaves cada vez que una nueva firma (y) sea generada dentro de éste. \\ \hline
 %RF – SLL7 & El sistema detectará mediante la función hash del archivo [H(F)] si se le ha generado anteriormente una llave (K), si ésta existe en la base de datos se procederá a enviarla al usuario que la solicita. \\ \hline
 %RF – SLL8 & El sistema modificará la llave (K) para un archivo cuando este sea modificado por el propietario del archivo (F). \\ \hline
 %RF – SLL9 & El sistema eliminará la llave (K) para un archivo cuando este sea eliminado del servicio de almacenamiento por el usuario. \\ \hline
@@ -48,32 +48,31 @@ RF – SLL3 & El sistema actualizará la base de datos del servidor de llaves ca
 \multicolumn{2}{|c|}{\textbf{Cliente}} \\ \hline
 \textbf{ID} &  \textbf{Descripción} \\
 \hline \hline
-RF – CL1 & El sistema permitirá al usuario gestionar archivos: Subir, Descargar y Eliminar \\ \hline
-RF – CL2 & El sistema permitirá al usuario calcular a su archivo (F) una función hash [H(F)] cuando dicho usuario solicite una nueva carga de éste. \\ \hline
-RF – CL3 & El sistema permitirá al usuario iniciar el proceso de carga de un archivo (F) al enviar al servidor de llaves la función hash [H(F)] calculada de éste. \\ \hline
-RF – CL4 & El sistema entregará al cliente la llave (K) generada en el servidor de llaves del archivo (F) que el usuario solicitó cargar al servicio de almacenamiento.  \\ \hline
-RF – CL5 & El sistema mandará a cifrar la llave (K) obtenida del servidor de llaves junto con el archivo (F) que el usuario desea cargar al servicio de almacenamiento. \\ \hline
-RF – CL6 & El sistema obtendrá el cifrado C1 correspondiente al archivo original (F)  y lo mandará al cliente, cifrado que el usuario cargará al servicio de almacenamiento.  \\ \hline
-RF – CL7  & El sistema calculará al cifrado C1 una función hash [H(C1)] \\ \hline
-RF – CL8  & El sistema mandará a cifrar la llave secreta (Ka) del usuario junto con la llave (K) obtenida del servidor de llaves del archivo (F) que éste usuario desea cargar al servicio de almacenamiento. \\ \hline
-RF – CL9  & El sistema obtendrá el cifrado C2 correspondiente a la llave secreta (Ka) del usuario y lo mandará al cliente, cifrado que el usuario cargará al servicio de almacenamiento. \\ \hline
-RF – CL10 & El sistema enviará [H(C1)] hacia el servicio de almacenamiento para su evaluación. \\ \hline
-RF – CL11 & El sistema permitirá al usuario cargar los cifrados C1 y C2 servicio de almacenamiento. \\ \hline
-RF – CL12 & El sistema notificará al usuario el estatus final de la gestión de sus archivos en el servicio de almacenamiento.  \\ \hline
-RF – CL13 & El sistema permitirá al usuario iniciar el proceso de descarga de un archivo (F) cuando el usuario elige de su lista de archivos el nombre de este. \\ \hline
-RF – CL14 & El sistema entregará al cliente el cifrado C1 correspondiente al archivo (F) que el usuario eligió y el cifrado C2 que corresponde a la llave (K) del mismo archivo. \\ \hline
-RF – CL15 & El sistema enviará desde el cliente al módulo cifrador la llave secreta (Ka) del usuario junto con el cifrado C1 y C2.  \\ \hline
-RF – CL16 & El sistema obtendrá el archivo original (F) que solicitó el usuario para la descarga.  \\ \hline
-RF – CL17 & El sistema permitirá al usuario eliminar un archivo (F) cuando el usuario elige alguno de su lista de archivos cargados en el servicio de almacenamiento.  \\ \hline
-RF – CL18 & El sistema enviará al servidor de almacenamiento el nombre del archivo (F) que el usuario solicite eliminar.  \\ \hline
+RF – CL1 & El sistema permitirá al usuario gestionar archivos: Subir, Descargar, Eliminar \\ \hline
+%RF – CL2 & El sistema permitirá al usuario calcular a su archivo (F) una función hash [H(F)] cuando dicho usuario solicite una nueva carga de éste. \\ \hline
+RF – CL2 & El sistema permitirá al usuario subir un archivo (F) cifrado al servicio de almacenamiento  \\ \hline
+%RF – CL4 & El sistema entregará al cliente la llave (K) generada en el servidor de llaves del archivo (F) que el usuario solicitó cargar al servicio de almacenamiento.  \\ \hline
+%RF – CL5 & El sistema mandará a cifrar la llave (K) obtenida del servidor de llaves junto con el archivo (F) que el usuario desea cargar al servicio de almacenamiento. \\ \hline
+%RF – CL6 & El sistema obtendrá el cifrado C1 correspondiente al archivo original (F)  y lo mandará al cliente, cifrado que el usuario cargará al servicio de almacenamiento.  \\ \hline
+%RF – CL7  & El sistema calculará al cifrado C1 una función hash [H(C1)] \\ \hline
+%RF – CL8  & El sistema mandará a cifrar la llave secreta (Ka) del usuario junto con la llave (K) obtenida del servidor de llaves del archivo (F) que éste usuario desea cargar al servicio de almacenamiento. \\ \hline
+%RF – CL9  & El sistema obtendrá el cifrado C2 correspondiente a la llave secreta (Ka) del usuario y lo mandará al cliente, cifrado que el usuario cargará al servicio de almacenamiento. \\ \hline
+%RF – CL10 & El sistema enviará [H(C1)] hacia el servicio de almacenamiento para su evaluación. \\ \hline
+RF – CL3 & El sistema permitirá al usuario descargar un archivo (F) descifrado elejido de su lista de archivos en el servicio de almacenamiento\\ \hline
+%RF – CL12 & El sistema notificará al usuario el estatus final de la gestión de sus archivos en el servicio de almacenamiento.  \\ \hline
+RF – CL4 &El sistema permitirá al usuario eliminar un archivo (F) cuando el usuario elige alguno de su lista de archivos cargados en el servicio de almacenamiento  \\ \hline
+%RF – CL14 & El sistema entregará al cliente el cifrado C1 correspondiente al archivo (F) que el usuario eligió y el cifrado C2 que corresponde a la llave (K) del mismo archivo. \\ \hline
+%RF – CL15 & El sistema enviará desde el cliente al módulo cifrador la llave secreta (Ka) del usuario junto con el cifrado C1 y C2.  \\ \hline
+%RF – CL16 & El sistema obtendrá el archivo original (F) que solicitó el usuario para la descarga.  \\ \hline
+RF – CL5 & El sistema generará la llave (K) correspondiente a la firma (Y) que envió el servidor de llaves  \\ \hline
+%RF – CL18 & El sistema enviará al servidor de almacenamiento el nombre del archivo (F) que el usuario solicite eliminar.  \\ \hline
 %RF – MC1 & El sistema recibirá en el modulo cifrador la llave (K) obtenida del servidor de llaves junto con el archivo (F) que el usuario desea cargar. \\ \hline
-RF – CL19 & El sistema cifrará la llave (K) junto con el archivo (F) que el usuario a solicitado, y generara el cifrado C1.\\ \hline
+RF – CL6 & El sistema cifrará el archivo (F) que el usuario a solicitado \\ \hline
 %RF – MC3 & El sistema enviará al cliente el archivo C1 obtenido en el módulo cifrador. \\ \hline
 %RF – MC4 & El sistema recibirá en el módulo cifrador la llave secreta (Ka) del usuario junto con la llave (K) obtenida del servidor de llaves del archivo (F) que éste usuario desea cargar \\ \hline
-RF – CL20 & El sistema cifrará  la llave secreta (Ka) junto con la llave (K) que el usuario a solicitado, y generará el cifrado C2 \\ \hline
+RF – CL7 & El sistema descifrará el archivo (F) que el usuario a solicitado  \\ \hline
 %RF – MC6 & El sistema enviará al cliente el archivo C2 obtenido en el módulo cifrador. \\ \hline
 %RF – MC7 & El sistema recibirá en el modulo cifrador la llave secreta (Ka) junto con el cifrado C1 y el cifrado C2 que el usuario solicite descargar.\\ \hline
-RF – CL21 & El sistema descifrará el C1 junto con la llave secreta (Ka) que el usuario a solicitado descargar y generará la llave (K) del archivo (F).\\ \hline
 %RF – MC9 & El sistema descifrará el C2 junto con la llave (K) que el usuario a solicitado descargar y generará el archivo original (F).\\ \hline
 \end{tabular}
 \caption{Requerimientos funcionales del cliente}
