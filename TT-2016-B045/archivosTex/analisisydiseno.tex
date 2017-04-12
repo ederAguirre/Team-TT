@@ -30,7 +30,7 @@ RF – SLL1 & El sistema permitirá la generación de llaves de usuario a travé
 %RF – SLL2 & El sistema debe gestionar 3 estados en el servidor de llaves: Generación, Cambios y Eliminación de llaves de usuarios para manipular un archivo. \\ \hline
 %RF – SLL3 & El sistema comenzará la creación de una llave (K) cuando el usuario solicite la carga de un archivo a almacenar. \\ \hline
 %RF – SLL4 & El sistema deberá enviar al cliente la llave generada en el servidor de llaves (K) del archivo que el usuario solicitó carga al servicio de almacenamiento. \\ \hline
-RF – SLL2 & El sistema permitirá la firma a ciegas (y) de cualquier archivo que se desee almacenar. \\ \hline
+RF – SLL2 & El sistema almacenará en la base de datos del servidor de llaves, la firma a ciegas (y) generada por cada nuevo archivo que se solicite cargar al servicio de almacenamiento. \\ \hline
 %RF – SLL3 & El sistema actualizará la base de datos del servidor de llaves cada vez que una nueva firma (y) sea generada dentro de éste. \\ \hline
 %RF – SLL7 & El sistema detectará mediante la función hash del archivo [H(F)] si se le ha generado anteriormente una llave (K), si ésta existe en la base de datos se procederá a enviarla al usuario que la solicita. \\ \hline
 %RF – SLL8 & El sistema modificará la llave (K) para un archivo cuando este sea modificado por el propietario del archivo (F). \\ \hline
@@ -105,47 +105,4 @@ RF – SA4 & El sistema permitirá al servicio de almacenamiento eliminar cualqu
 \end{tabular}
 \caption{Requerimientos funcionales del Servicio de almacenamiento (Nube)}
 \label{Servicio de almacenamiento (Nube) }
-\end{table}
-
-\section{Requerimientos No Funcionales. }
-
-\begin{table}[htb]
-\centering
-\begin{tabular}{| p{1.5cm} |  p{2.5cm} | p{11.5cm}|}
-\hline
-\multicolumn{3}{|c|}{\textbf{Requerimientos No Funcionales del Sistema}} \\ \hline
-\textbf{ID} &  \textbf{Atributo} & \textbf{Descripción}\\
-\hline \hline
-RNF1 & Eficiencia &  \begin{itemize} 
-   \item El servidor de llaves tendrá la capacidad de realizar 1000 peticiones de gestión de almacenamiento de archivos por segundo. 
-   \item El sistema podrá funcionar de forma correcta con usuarios conectados de manera concurrente. 
-   \item Los archivos que sean gestionados dentro del servidor de almacenamiento, deben ser actualizados en la base datos y la visualización de cada cliente de manera casi inmediata. 
- \end{itemize}
-\\ \hline
-
-RNF2 & Fiabilidad &  \begin{itemize} 
-    \item La pérdida de consultas en el servidor de llaves es menor a 3 veces el máximo de consultas realizadas. 
-    \item Los archivos almacenados en el servidor de almacenamiento deben ser recuperados por el usuario al instante en que este lo solicite. 
-    \item El tiempo de latencia que existe entre el servidor de llaves y el cleinte será de máximo 118ms. 
- \end{itemize}
-\\ \hline
-
-RNF3 & Seguridad & \begin{itemize} 
-    \item El sistema almacenará los datos de los usuarios y sus contraseñas en una base de datos MySQL, dichos datos serán modificados mínimo 2  veces al año.  
-   \item Se autenticarán los clientes antes de comenzar el proceso de generación de llaves de archivo. 
-   \item El servidor de llaves firmará claves para un sólo mensaje a la vez sin saber el contenido de éste. 
-   \item El inicio de sesión de usuarios estará protegido en un canal seguro utilizando almoritmos criptográficos. 
-   \item Las funciones hash de archivos a almacenar utilizarán la función criptográfica SHA-(256)
- \end{itemize}
-
-\\ \hline
-RNF4 & Mantenibilidad & \begin{itemize}
-   \item Cuaquier nuevo requerimiento funcional o no funcional tendrá que ser analizado y diseñado para poder cuantificar las implicaciones que este tendrá sobre el funcionamiento del sistema. 
-   \item El sistema contará con un plan de pruebas que facilitará la identificación de posibles fallas existentes en el funcionamiento de este. 
- \end{itemize}
-\\ \hline
-
-\end{tabular}
-\caption{Requerimientos No Funcionales del Sistema}
-\label{Requerimientos No Funcionales del Sistema }
 \end{table}

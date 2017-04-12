@@ -1,0 +1,126 @@
+\begin{thebibliography}{10}
+
+\bibitem{Keelveedhi}
+R.~Bellare, Keelveedhi.
+\newblock {\em Message-locked encryption and secure deduplication.}, volume
+  7881.
+\newblock EUROCRYPT, 2013.
+
+\bibitem{Bellare}
+R.~Bellare, Keelveedhi.
+\newblock Dupless: Server-aided encryption for deduplicated storage., 2013:429.
+
+\bibitem{bloc}
+D.~Chakraborty and F.~Rodr{\'{\i}}guez{-}Henr{\'{\i}}quez.
+\newblock Block cipher modes of operation from a hardware implementation
+  perspective.
+\newblock In {\c{C}}.~K. Ko{\c{c}}, editor, {\em Cryptographic Engineering},
+  pages 321--363. Springer, 2009.
+
+\bibitem{abs}
+T.~C. y. P.~A. Cooley~J.
+\newblock Abs: the apportioned backup system.
+\newblock MIT Laboratory for Computer, 2004.
+
+\bibitem{sigops}
+M.~C. y. N.~B. Cox~L.
+\newblock {\em SIGOPS Oper. Syst.}
+\newblock Pastiche: making backup cheap and easy.
+
+\bibitem{donceur}
+B.~W. J. S. D. y. T.~M. Donceur J.~R., Adya~A.
+\newblock {\em Reclaiming space from duplicate files in a serverless
+  distributed file system.}
+\newblock ICDCS, 2002.
+
+\bibitem{norepudio}
+L.~L. Erika.
+\newblock Fundamentos de seguridad informática.
+\newblock Universidad Nacional Autónoma de México, 2012.
+\newblock
+  \url{http://redyseguridad.fi-p.unam.mx/proyectos/seguridad/ServNoRepudio.php}.
+
+\bibitem{popa}
+P.~HP.
+\newblock Estadísticas que todos deberían conocer sobre cloud computing,
+  2016.
+\newblock
+  \url{http://www.popa.hn/index.php/es/soluciones/96-otras-noticias/152-20-
+  estadisticas-que-todos-los-cios-deberian-conocer-sobre-cloud-computing.}
+
+\bibitem{fundamentos}
+L.~B. Jaquelina.
+\newblock Fundamentos de criptografía.
+\newblock Universidad Nacional Autónoma de México, 2012.
+\newblock
+  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-decriptografia}.
+
+\bibitem{microsoft}
+Microsoft.
+\newblock Data deduplication overview.
+\newblock Biblioteca TechNet, 2015.
+\newblock
+  \url{https://technet.microsoft.com/enus/library/hh831602(v=ws.11).aspx}.
+
+\bibitem{ciegas}
+G.~Z.~C. Patricia.
+\newblock Diseño y desarrollo de un sistema para elecciones electrónicas
+  seguras (seles) .
+\newblock Master's thesis, Centro de Investigación y de Estudios Avanzados del
+  Instituto Politécnico Nacional, 2005.
+
+\bibitem{rsa}
+s/a.
+\newblock Rsa.
+\newblock Herramientas WEB para la enseñanza de Protocolos de Comunicación.
+\newblock
+  \url{http://neo.lcc.uma.es/evirtual/cdd/tutorial/presentacion/rsa.html}.
+
+\bibitem{flud}
+s/a.
+\newblock Flud backup, 2011.
+\newblock \url{ http://flud.org/wiki/Flud_Backup.}
+
+\bibitem{sime}
+s/a.
+\newblock Cifrado simetrico.
+\newblock Guía de Gnu Privacy Guard, 2015.
+\newblock \url{https://www.gnupg.org/gph/es/manual/c190.html#AEN201}.
+
+\bibitem{bloques}
+T.~O. Sergio.
+\newblock Introducción a la criptología.
+\newblock {\em InfoCentre{UV}}, 2003.
+
+\bibitem{modes}
+W.~Stallings.
+\newblock {\em Cryptography and Network Security: Principles and Practice}.
+\newblock Pearson Education, 5a edition, 2002.
+
+\bibitem{tahoe}
+H.~D. y. W.~N. Wilcox-O´Hearn~Z.
+\newblock {\em Tahoe: The least-authority}.
+\newblock In Proceedings of the 4th ACM, 2008.
+
+\bibitem{cripto}
+E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
+\newblock Fundamentos de criptografía.
+\newblock Universidad Nacional Autónoma de México, 2012.
+\newblock
+  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-de-criptografia}.
+
+\bibitem{servicios}
+E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
+\newblock Fundamentos de criptografía.
+\newblock Universidad Nacional Autónoma de México, 2012.
+\newblock
+  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/13-servicios-y-mecanismos-de-seguridad/131-servicios-de-seguridad}.
+
+\bibitem{ataques}
+E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
+\newblock Fundamentos de seguridad informática.
+\newblock Universidad Nacional Autónoma de México, 2012.
+\newblock
+  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/14-ataques/142-ataques-a-los-metodos-de-cifrado}.
+
+\end{thebibliography}
