@@ -1,35 +1,39 @@
 \chapter{Preliminares. } % (fold)
 
+El contenido de este capítulo abordará temas estrechamente relacionados con la criptografía, la seguridad de la información y las implicaciones que ésta podria traer si esta se encuentra corrompida por algun adversario. También, este capítulo contiene información acerca de los 2 tipos de criptografía que existen mencionando los diferentes esquemas de cifrado y los modos de operación que son utilizados por algunos de estos. De igual forma se describe con detalle los servicios que ofrece el cómputo nube, haciendo énfasis en un servicio en particular que es el de almacenamiento que se utilizará para la implementación de este protocolo criptogrráfico. 
+
+
 \section{Definiciones. }
 \textbf{Criptografía. }
-La Criptografía es la ciencia que se encarga del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, el objetivo de la Criptografía no es sólo mantener los datos secretos, sino también protegerlos contra modificación y comprobar la fuente de los mismos. 
+
+La Criptografía es la ciencia que se encarga del estudio de técnicas matemáticas relacionadas con aspectos de seguridad  para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, el objetivo de la Criptografía no es sólo mantener los datos secretos, sino también protegerlos contra modificación y comprobar la fuente de los mismos. 
 
 
 \textbf{Criptoanálisis. }
 Es la ciencia que se ocupa del análisis de un texto cifrado para obtener la información original sin conocimiento de la clave secreta, esto es, de forma ilícita rompiendo así los procedimientos de cifrado establecidos por la Criptografía, por lo que se dice que Criptoanálisis y Criptografía son ciencias complementarias pero contrarias.
-El criptoanálisis es el arte de descifrar comunicaciones cifradas sin conocer las llaves.  ~\cite{cripto}
+El criptoanálisis es el arte de descifrar comunicaciones cifradas sin conocer las llaves  ~\cite{cripto}.
 
 
 \subsection{Servicios criptográficos. }
-Los servicios de seguridad, son aquellos que garantizan en un sistema de información la adquisición, almacenamiento, procesamiento y transmisión de la información y para lograrlo se valen de uno o más mecanismos de seguridad. 
+Los servicios criptográficos son aquellos que garantizan en un sistema de información la adquisición, almacenamiento, procesamiento y transmisión de la información y para lograrlo se valen de uno o más objetivos fundamentales. 
 
 \textbf{Confidencialidad. }
-Este servicio asegura que sólo las personas o procesos autorizados tengan acceso a la información. Con ello se busca que un agente no autorizado no pueda leer, copiar o modificar la información. 
+Es un servicio utilizado para mantener el contenido de la información de todos, excepto los autorizados a tenerla. El secreto es un término sinónimo de confidencialidad y privacidad.
+Hay numerosos enfoques para proporcionar confidencialidad, que van desde la protección física a los algoritmos matemáticos que hacen que los datos sean ininteligibles.
 
 \textbf{Autenticación. }
-Este servicio verifica la identidad de un agente que pretende acceder a la información. En una conexión entre dos entidades, el servicio verifica que las entidades sean quienes dicen ser, además de asegurar que un tercer individuo no pueda hacerse pasar por alguna de las entidades autorizadas y realizar una transmisión o recepción de datos. 
+Es un servicio relacionado con la identificación. Esta función se aplica tanto a las entidades como a la propia información. Dos partes que participan en una comunicación deben identificarse entre sí. La información entregada a través de un canal debe ser autenticada en cuanto al origen, fecha de origen, contenido de los datos, tiempo enviado, etc. Por estas razones este aspecto de la criptografía suele subdividirse en dos clases principales: autenticación de entidad y autenticación de origen de datos. La autenticación de origen de datos proporciona implícitamente la integridad de los datos (si se modifica un mensaje, la fuente ha cambiado).
 
 \textbf{Integridad. }
-Este servicio asegura que el contenido de los datos no ha sido modificado y que la secuencia de los mismos se ha mantenido a lo largo de toda la transmisión, con ello se evita una réplica o un reordenamiento del mensaje por parte de un atacante.
-Al igual que el servicio de confidencialidad, la integridad puede aplicarse a todos los datos transmitidos por un usuario durante una conexión, sólo a parte de ellos o sólo a algunos campos dentro del mensaje.  ~\cite{servicios}
-
+Es un servicio que se ocupa de la alteración no autorizada de los datos. Para asegurar la integridad de los datos, se debe tener la capacidad de detectar la manipulación de datos por parte de algún adversario. La manipulación de datos incluye cosas tales como inserción, supresión y sustitución.  
 
 \textbf{No repudio. }
-El no repudio sirve a los emisores o a los receptores para negar un mensaje transmitido. Por lo que cuando un mensaje es enviado, el receptor puede probar que el mensaje fue enviado por el presunto emisor. De manera similar, cuando un mensaje es recibido, el remitente puede probar que el mensaje fue recibido por el presunto receptor.  ~\cite{norepudio}
+Es un servicio que impide a una entidad negar compromisos o acciones anteriores. Cuando surgen disputas debido a que una entidad niega que se tomaron ciertas acciones, es necesario un medio para resolver la situación. Por ejemplo, una entidad puede autorizar la compra de una propiedad por otra entidad y posteriormente denegar que se concedió dicha autorización. Se necesita un procedimiento que involucre a un tercero de confianza para resolver la disputa  ~\cite{menezes}.
 
 
 \section{Ataques a servicios criptográficos. }
 Un ataque es una violación a la seguridad de la información realizada por intrusos que tienen acceso físico al sistema sin ningún tipo de restricción, su objetivo es robar la información o hacer que ésta pierda valor relativo, o que disminuyan las posibilidades de su supervivencia a largo plazo.
+
 %Un intruso puede obtener información como:
 %\begin{itemize}
 %	\item Bloques de direcciones IP
@@ -84,6 +88,11 @@ En este caso el criptoanalista además de conocer el algoritmo de cifrado y el c
 %Cualquier algoritmo de cifrado, para ser considerado seguro, ha de soportar todos estos ataques y otros no citados; sin embargo, en la criptografía, como en cualquier aspecto de la seguridad, informática o no, no debemos olvidar un factor muy importante: las personas. El sistema más robusto caerá fácilmente si se tortura al emisor o al receptor hasta que desvelen el contenido del mensaje, o si se le ofrece a uno de ellos una gran cantidad de dinero; este tipo de ataques (sobornos, amenazas, extorsión, tortura...) se consideran siempre los más efectivos. 
 
 \section{Criptografía Simétrica. }
+Los esquemas criptográficos simétricos también se conocen como esquemas o algoritmos de clave simétrica, clave secreta y de clave única. Consideremos un esquema de cifrado que consiste en los conjuntos de transformaciones de cifrado y descifrado \textit{Ee: $e \in {\cal K}$} y \textit{Dd: $d \in {\cal K}$}, respectivamente, donde \textit{K} es el espacio clave. El esquema de cifrado se dice que es de clave simétrica si para cada par asociado de cifrado / descifrado de claves \textit{(e, d)}, es computacionalmente “fácil” para determinar \textit{d} conociendo sólo \textit{e}, y determinar \textit{e} a partir de \textit{d}. Desde\textit{ e = d} en los esquemas de cifrado de clave simétrica más prácticos, la clave simétrica término se convierte apropiado. Otros términos usados en la literatura son una sola clave, una clave, clave privada, cifrado convencional. ~\cite{menezes} 
+\\
+Cuando exisen dos usuarios, que quieren comunicarse para compartir información a través de un canal inseguro (Fig. 1.4). Este puede ser Internet, teléfonos móviles o comunicación LAN inalámbrica, o cualquier otro medio de comunicación, Se presenta un problema, ya que existe algún adversario que tiene acceso a ese canal de comunicación, por ejemplo, mediante la piratería en un enrutador de Internet o escuchando las señales de radio de una comunicación Wi-Fi. Este tipo de escucha no autorizada se llama espionaje. \\
+En esta situación, la criptografía simétrica ofrece una solución poderosa: el usuario cifra su mensaje \textit{x} usando un algoritmo simétrico, dando el texto cifrado \textit{y}. El usuario destinatario recibe el texto cifrado y descifra el mensaje, si se tiene un algoritmo de cifrado fuerte, el texto cifrado se verá como bits aleatorios al adversario y no contendrá ninguna información que le sea útil ~\cite{paar}.
+
 La criptografía simétrica utiliza la misma clave para cifrar y descifrar el mensaje de datos, es decir se basa en un secreto compartido  ~\cite{sime}. \\ Características de la Criptografía simétrica: \begin{itemize}
 	\item La clave es la misma para cifrar que para descifrar un mensaje, por lo que sólo el emisor y el receptor deben conocerla.
 	\item Se basa en operaciones matemáticas sencillas, por ello son fácilmente implementados en hardware.
@@ -98,10 +107,10 @@ El cifrado simétrico se muestra en la figura ~\ref{fig:1-2-3}.
 	\caption{Diagrama de Criptografía Simétrica.}
 	\label{fig:1-2-3}
 \end{figure}
-La sintaxis de un esquema de cifrado sim\'etrico, esta dada por la siguiente definic\'on.
+La sintaxis de un esquema de cifrado sim\'etrico, esta dada por la siguiente definición.
 \begin{definition} 
 Un esquema de cifrado sim\'etrico est\'a conformado por una tripleta de algoritmos 
-$\sf \Pi=(Gen, Enc, Dec)$, definidos como se describe a continuaci\'on:
+$\sf \Pi=(Gen, Enc, Dec)$, definidos como se describe a continuación:
 \begin{itemize}
 \item  El algoritmo generador de claves $\sf Gen$ selecciona una llave  $K$ al azar del conjunto de llaves $\cal K$, esto se denotar\'a como $K \rand {\cal K}$.
 Esta clave $K$  ser\'a usada por los algoritmos  $\sf Enc$ y $\sf Dec$, esta clave la compartir\'an  emisor y receptor. 

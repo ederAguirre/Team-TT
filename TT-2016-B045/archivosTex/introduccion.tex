@@ -1,20 +1,36 @@
 \chapter{Introducci\'on} % (fold)
 \label{cha:introduccion}
 %\addcontentsline{toc}{chapter}{Introducción}
+\section{Contexto}
+
+En el nuevo ambiente de las tecnologías de la información se encuentran los usuarios de estas tecnologías y las organizaciones, cualquier movimiento de almacenamiento masivo puede ser realizado mediante  modelos basados en el cómputo nube, es decir, el almacenamiento en la nube. Asimismo, al manejar un gran volumen de información, los usuarios buscan la posibilidad de que al almacenar esos datos puedan ser accedidos a ellos de manera fácil~\cite{Nubei}. \\ \\ 
+El cómputo nube es un término general utilizado para nombrar así a la provisión de servicios de almacenamiento a través de Internet que ha sido utilizado para facilitar el cambio de los modelos de negocios, agilizar procesos y reducir los costos de operación. Uno de los mayores beneficios que ofrece este servicio es la virtualización de los centros de datos, que pueden operar de manera automatizada, sin  necesidad de la presencia de una persona física y ser pueden ser gestionados en cualquier momento y tiempo.De acuerdo con un estudio realizado por la consultora Market Research Media, el cloud computing generará \$270,000 millones de dólares en 2020, por lo que empresas como Google, Amazon, IBM, Oracle y Apple han adoptado este sistema como parte del servicio brindado a sus consumidores, por ejemplo Google Drive o iCloud, a través de los cuales, con sólo estar conectados a Internet, los usuarios tienen la posibilidad de utilizarlos ~\cite{Nubecomp}. \\ \\ Básicamente el almacenamiento en la nube se caracteriza por 5 puntos esenciales que son: 
+	\begin{itemize}
+		\item \textbf{Autoservicio on-demand o pago por evento}  
+		\item \textbf{Acceso ubicuo a la red (uso de los servicios cuando sea y donde sea)}  
+		\item \textbf{Fondo común de recursos} 
+		\item \textbf{Rápida elasticidad} 
+ 		\item \textbf{Servicio medido}  ~\cite{Compnube}.
+ \end{itemize}
+
+\section{Problemática}
 Hoy en día el manejo de información en la sociedad juega un papel importante en el desarrollo de las actividades que la conforman. Millones de personas en el mundo tienen la facilidad de acceder a un dispositivo electrónico que les permite manipular esta información o almacenarla para posteriormente darle un uso específico. La información que circula en dispositivos electrónicos es mayor a la memoria disponible que ofrecen estos, a medida que el volumen de información aumenta, también lo hace la demanda para los servicios de almacenamiento en línea ~\cite{Bellare}. Un gran incremento en el uso de estos servicios implica tener más infraestructura y personal para que los sistemas de almacenamiento tengan más capacidad y puedan cubrir la demanda que se presenta en el mercado. Si bien el almacenamiento logró dar buenos resultados al cliente en sus primeras etapas, ahora la preocupación por el incremento de infraestructura para seguir dando esos resultados se ha incrementado considerablemente  ~\cite{Keelveedhi}.
 
 Una de las principales razones del incremento en el tamaño en la estructura de almacenamiento de servicios en linea, es la duplicación de archivos por varios y diferentes usuarios, por ejemplo \textbf{\textit{n}} usuarios pueden subir la misma canción, por lo tanto esta se encuentra almacenada en las \textbf{\textit{n}} cuentas de la nube, lo cuál implica un gasto innecesario de almacenamiento. Según un estudio ~\cite{popa} realizado por HP se estima que hay 1 Exabyte de datos almacenados en la nube, además de 2012 a 2017, las cargas de trabajo de los centros de datos crecerán 2,3 veces, mientras que en la nube aumentarán 3,7 veces, lo cual implica que el Exabyte que se estima se podría llegar a triplicar y las empresas que proporcionan estos servicios disminuyen su oferta en el mercado. 
 
 Sumado al agraviante problema de crecimiento en la estructura de almacenamiento en línea, existe un elemento que pocas organizaciones y usuarios contemplan para el almacenamiento de su información, y es la seguridad. Las plataformas que ahora ofrecen el servicio de almacenamiento en la nube, no contemplan la protección e integridad de la información, este servicio está sujeto a los ataques de adversarios que están interesados en el robo, manipulación o alteración de la información importante para los usuarios. Dicho servicio carece de algún esquema de seguridad y por tanto no se puede garantizar la permanencia de los usuarios en la plataforma de almacenamiento. 
 Dejar sin resolver la seguridad de la infofrmación, puede generar negativas consecuenicias hacia cualquier usuario de la plataforma de almacencamiento, cualquier individuo que tenga acceso a los archivos almacenados en ésta plataforma, podrá visualizar el contenido de estos, comprometiendo la fidelidad e integridad de la información para poder usarla en situaciones que pudieran llegar a perjudicar al usuario. 
-
-Hoy en día existen soluciones para cada uno de los problemas, una de ellas consiste en encontrar y eliminar la duplicación dentro de los datos sin comprometer su integridad o la fidelidad. El objetivo es almacenar más datos en menos espacio mediante la segmentación de los archivos en pequeños trozos de tamaño variable\textit{(32 a 128 KB)}, la identificación de fragmentos duplicados, manteniendo una sola copia de cada trozo. Las copias repetidas del trozo se sustituyen por una referencia a la única copia. Los trozos se comprimen y luego son organizados en contenedores especiales de archivos en la carpeta Información del volumen del sistema. Para garantizar la privacidad de los datos obtenidos después del proceso de eliminación de duplicación, es posible utilizar algoritmos criptográficos ~\cite{microsoft}.
-
-Una posible solución para la protección a los datos y eliminar duplicaciones de estos, es echar mano de la criptografía. Ciencia que se encarga del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, el objetivo de la Criptografía no es sólo mantener los datos secretos, sino también protegerlos contra modificación o manipulación y comprobar la fuente de los mismos ~\cite{fundamentos}. 
 \\ \\
-Está ciencia que matiene la información segura se encuentra dividida en dos grandes tipos: \textbf{Criptográfia simétrica} y la \textbf{Criptografía asimétrica}. La criptografía simétrica o también llamada criptografía de llave privada, basa su seguridad en una sóla llave que se comparte entre dos usuarios que quieren compartir información, dicha llave es utilizada para cifrar un archivo al ser enviado al otro usuario y este utilizará la misma llave para descifrarlo cuando lo reciba. 
+Existen soluciones para cada uno de los problemas, una de ellas consiste en encontrar y eliminar la duplicación dentro de los datos sin comprometer su integridad o la fidelidad. El objetivo es almacenar más datos en menos espacio mediante la segmentación de los archivos en pequeños trozos de tamaño variable\textit{(32 a 128 KB)}, la identificación de fragmentos duplicados, manteniendo una sola copia de cada trozo. Las copias repetidas del trozo se sustituyen por una referencia a la única copia. Los trozos se comprimen y luego son organizados en contenedores especiales de archivos en la carpeta Información del volumen del sistema. Para garantizar la privacidad de los datos obtenidos después del proceso de eliminación de duplicación, es posible utilizar algoritmos criptográficos ~\cite{microsoft}.
+\\ \\ 
+Una posible solución para la protección a los datos y eliminar duplicaciones de estos, es echar mano de la criptografía. Ciencia que se encarga del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, el objetivo de la Criptografía no es sólo mantener los datos secretos, sino también protegerlos contra modificación o manipulación y comprobar la fuente de los mismos ~\cite{fundamentos}. 
 \\
-La criptografía asimétrica o criptografía de llave pública7
+Está ciencia que matiene la información segura se encuentra dividida en dos grandes tipos: \textbf{Criptográfia simétrica} y la \textbf{Criptografía asimétrica}. 
+
+\begin{itemize} 
+   \item \textit{La criptografía simétrica} o también llamada criptografía de llave privada, basa su seguridad en una sóla llave que se comparte entre dos usuarios que quieren compartir información, dicha llave es utilizada para cifrar un archivo al ser enviado al otro usuario y este utilizará la misma llave para descifrarlo cuando lo reciba. 
+\item \textit{La criptografía asimétrica} o criptografía de llave pública involucra el uso de un par de llaves para cada usuario que desea comunicarse, estas llaves llamadas pública y privada. Para que un usuario envíe un archivo a otro usuario necesita cifrar el archivo con la llave pública de ese usuario al que se desea enviar, y cuando lo reciba ese usuario lo deberá descifrar con su llave privada o secreta. De esta manera se evita el compartir llaves para cifrar y descifrar como sucede en la criptografía simétrica y reduce los riesgos de un ataque de adversarios. 
+ \end{itemize}
 
 Puesto que ambas cuestiones, la eliminación de duplicados y la privacidad de la información, son importantes, se ha comenzado a
 proponer mecanismos que solucionen ambos problemas de manera conjunta, que son: Dupless ~\cite{Bellare}, ABS: the apportioned backup
@@ -37,13 +53,14 @@ Es por ello que este trabajo terminal tiene como principal meta atacar esta prob
 
 \section{Objetivos} % (fold)
 
-Diseñar un sistema que evite la duplicación de archivos, garantizando la privacidad de los usuarios contra adversarios cuando el espacio de mensajes es pequeño, utilizando algoritmos criptográficos para su implementación.
-
-    \subsection{Objetivos Generales} % (fold)
-    
-    
+    \subsection{Objetivo General} % (fold)
+    Desarrollar un protocolo criptográfico para evitar la duplicación de archivos almacenados en la nube, garantizando la privacidad de los usuarios contra adversarios cuando el espacio de mensajes es pequeño, utilizando algoritmos criptográficos para su implementación. 
      
     \subsection{Objetivos Específicos} % (fold)
+	\begin{itemize}
+		\item Evitar la duplicación de archivos que sean almacenados por los usuarios de la nube
+		\item Proteger ante los adversarios la información de los usuarios de la nube
+		\item Establecer un esquema de autenticación de usuarios 
+		\item Reducir la pérdida y filtración de información de los usuarios de la nube
+ 	\end{itemize}
     
-    
-                
