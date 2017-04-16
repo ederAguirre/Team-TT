@@ -1,16 +1,6 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: master_tt.aux
 A level-1 auxiliary file: archivosTex/introduccion.aux
 A level-1 auxiliary file: archivosTex/preliminares.aux
+A level-1 auxiliary file: archivosTex/analisisydiseno.aux
 The style file: abbrv.bst
 Database file #1: bibliografia.bib
-I was expecting a `,' or a `}'---line 63 of file bibliografia.bib
- :  
- :  @book{tahoe,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Too many commas in name 1 of "Donceur J. R., Adya A., Bolosky W. J., Simon D. y Theimer M." for entry donceur
-while executing---line 1049 of file abbrv.bst
-Warning--empty year in sigops
-Too many commas in name 1 of "Donceur J. R., Adya A., Bolosky W. J., Simon D. y Theimer M." for entry donceur
-while executing---line 1090 of file abbrv.bst
-(There were 3 error messages)

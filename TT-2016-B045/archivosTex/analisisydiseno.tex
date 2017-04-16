@@ -112,13 +112,29 @@ RF – SA4 & El sistema permitirá al servicio de almacenamiento eliminar cualqu
 
 
 \section{Requerimientos No Funcionales. }
-\begin{table}[htb]
-\centering
-\begin{tabular}{| p{1.5cm} |  p{3cm} | p{11cm}|}
+
+\begin{longtable}{| p{1.5cm} | p{3cm} | p{11cm} |}
+
+% aquí añadimos el encabezado de la primera hoja.
 \hline
 \multicolumn{3}{|c|}{\textbf{Requerimientos No Funcionales}} \\ \hline
+\hline \hline
+\endfirsthead
+
+% aquí añadimos el encabezado del resto de hojas.
+\hline
 \textbf{ID} &  \textbf{Atributo} & \textbf{Descripción}\\
 \hline \hline
+\endhead
+
+% aquí añadimos el fondo de todas las hojas, excepto de la última.
+\multicolumn{3}{|c|}{Sigue en la página siguiente.}
+\endfoot
+
+% aquí añadimos el fondo de la última hoja.
+\endlastfoot
+
+% aquí añadimos el cuerpo de la tabla.
 RNF1 & Eficiencia &  \begin{itemize} 
    \item El servidor de llaves tendrá la capacidad de realizar 1000 peticiones de gestión de almacenamiento de archivos por segundo. 
    \item El sistema podrá funcionar de forma correcta con usuarios conectados de manera concurrente. 
@@ -147,9 +163,6 @@ RNF4 & Mantenibilidad & \begin{itemize}
    \item El sistema contará con un plan de pruebas que facilitará la identificación de posibles fallas existentes en el funcionamiento de este. 
  \end{itemize}
 \\ \hline
-\end{tabular}
 \caption{Requerimientos no funcionales del sistema}
 \label{Servidor de Llaves }
-\end{table}
-
-
+\end{longtable}

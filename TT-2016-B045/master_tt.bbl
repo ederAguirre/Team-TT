@@ -10,6 +10,11 @@ R.~Bellare, Keelveedhi.
 R.~Bellare, Keelveedhi.
 \newblock Dupless: Server-aided encryption for deduplicated storage., 2013:429.
 
+\bibitem{Nubecomp}
+F.~Ceballos.
+\newblock Cloud computing, detonador de competitividad.
+\newblock {\em Forbes}, 2013.
+
 \bibitem{bloc}
 D.~Chakraborty and F.~Rodr{\'{\i}}guez{-}Henr{\'{\i}}quez.
 \newblock Block cipher modes of operation from a hardware implementation
@@ -25,20 +30,7 @@ T.~C. y. P.~A. Cooley~J.
 \bibitem{sigops}
 M.~C. y. N.~B. Cox~L.
 \newblock {\em SIGOPS Oper. Syst.}
-\newblock Pastiche: making backup cheap and easy.
-
-\bibitem{donceur}
-B.~W. J. S. D. y. T.~M. Donceur J.~R., Adya~A.
-\newblock {\em Reclaiming space from duplicate files in a serverless
-  distributed file system.}
-\newblock ICDCS, 2002.
-
-\bibitem{norepudio}
-L.~L. Erika.
-\newblock Fundamentos de seguridad informática.
-\newblock Universidad Nacional Autónoma de México, 2012.
-\newblock
-  \url{http://redyseguridad.fi-p.unam.mx/proyectos/seguridad/ServNoRepudio.php}.
+\newblock Pastiche: making backup cheap and easy, 2002.
 
 \bibitem{popa}
 P.~HP.
@@ -55,6 +47,17 @@ L.~B. Jaquelina.
 \newblock
   \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-decriptografia}.
 
+\bibitem{menezes}
+A.~Menezes, P.~C. van Oorschot, and S.~A. Vanstone.
+\newblock {\em Handbook of Applied Cryptography}.
+\newblock {CRC} Press, 1996.
+
+\bibitem{Compnube}
+Microsoft.
+\newblock “cómputo en la nube”: nuevo detonador para la competitividad de
+  méxico.
+\newblock {\em Instituto Mexicano pala la Competitividad}, 2012.
+
 \bibitem{microsoft}
 Microsoft.
 \newblock Data deduplication overview.
@@ -62,12 +65,24 @@ Microsoft.
 \newblock
   \url{https://technet.microsoft.com/enus/library/hh831602(v=ws.11).aspx}.
 
+\bibitem{paar}
+C.~Paar and J.~Pelzl.
+\newblock {\em Understanding Cryptography - {A} Textbook for Students and
+  Practitioners}.
+\newblock Springer, 2010.
+
 \bibitem{ciegas}
 G.~Z.~C. Patricia.
 \newblock Diseño y desarrollo de un sistema para elecciones electrónicas
-  seguras (seles) .
+  seguras (seles).
 \newblock Master's thesis, Centro de Investigación y de Estudios Avanzados del
   Instituto Politécnico Nacional, 2005.
+
+\bibitem{donceur}
+D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
+\newblock {\em Reclaiming space from duplicate files in a serverless
+  distributed file system.}
+\newblock ICDCS, 2002.
 
 \bibitem{rsa}
 s/a.
@@ -75,6 +90,11 @@ s/a.
 \newblock Herramientas WEB para la enseñanza de Protocolos de Comunicación.
 \newblock
   \url{http://neo.lcc.uma.es/evirtual/cdd/tutorial/presentacion/rsa.html}.
+
+\bibitem{Nubei}
+S/A.
+\newblock Almacenamiento en la nube, ventajas y retos.
+\newblock {\em D-Link {Building Networks for people}}, 2011.
 
 \bibitem{flud}
 s/a.
@@ -108,13 +128,6 @@ E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
 \newblock Universidad Nacional Autónoma de México, 2012.
 \newblock
   \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-de-criptografia}.
-
-\bibitem{servicios}
-E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
-\newblock Fundamentos de criptografía.
-\newblock Universidad Nacional Autónoma de México, 2012.
-\newblock
-  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/13-servicios-y-mecanismos-de-seguridad/131-servicios-de-seguridad}.
 
 \bibitem{ataques}
 E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
