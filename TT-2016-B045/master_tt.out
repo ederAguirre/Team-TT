@@ -6,7 +6,7 @@
 \BOOKMARK [1][-]{section.1.5}{Objetivos}{chapter.1}% 6
 \BOOKMARK [2][-]{subsection.1.5.1}{Objetivo General}{section.1.5}% 7
 \BOOKMARK [2][-]{subsection.1.5.2}{Objetivos Espec\355ficos}{section.1.5}% 8
-\BOOKMARK [0][-]{chapter.2}{Preliminares. }{}% 9
+\BOOKMARK [0][-]{chapter.2}{Preliminares}{}% 9
 \BOOKMARK [1][-]{section.2.1}{Definiciones. }{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.2}{Definiciones. }{chapter.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.1}{Servicios criptogr\341ficos. }{section.2.2}% 12
@@ -18,8 +18,13 @@
 \BOOKMARK [1][-]{section.2.8}{Firmas a ciegas. }{chapter.2}% 18
 \BOOKMARK [1][-]{section.2.9}{Funciones Hash. }{chapter.2}% 19
 \BOOKMARK [1][-]{section.2.10}{C\363mputo Nube. }{chapter.2}% 20
-\BOOKMARK [0][-]{chapter.3}{An\341lisis y Dise\361o}{}% 21
+\BOOKMARK [0][-]{chapter.3}{An\341lisis y dise\361o}{}% 21
 \BOOKMARK [1][-]{section.3.1}{Business Process Model and Notation \(BPMN\)}{chapter.3}% 22
 \BOOKMARK [1][-]{section.3.2}{Requerimientos Funcionales. }{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.3}{Requerimientos No Funcionales. }{chapter.3}% 24
-\BOOKMARK [0][-]{table.3.4}{Bibliograf\355a}{}% 25
+\BOOKMARK [1][-]{section.3.3}{Requerimientos No Funcionales }{chapter.3}% 24
+\BOOKMARK [0][-]{chapter.4}{Casos de Uso}{}% 25
+\BOOKMARK [1][-]{subsection.4.0.1}{CUE1 Consultar calificaciones semestrales actuales}{chapter.4}% 26
+\BOOKMARK [2][-]{section*.12}{Descripci\363n completa}{subsection.4.0.1}% 27
+\BOOKMARK [3][-]{section*.13}{Atributos importantes}{section*.12}% 28
+\BOOKMARK [3][-]{section*.14}{Trayectorias del Caso de Uso}{section*.12}% 29
+\BOOKMARK [0][-]{Item.10}{Bibliograf\355a}{}% 30

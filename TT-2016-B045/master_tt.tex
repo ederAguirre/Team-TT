@@ -27,6 +27,8 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{verbatim} 
+%\usepackage{usecases}
+\usepackage{casouso_estilo} 
 
 
 \AtBeginDocument{%
@@ -114,21 +116,40 @@
 \end{titlepage}
 
 \frontmatter
-
+%----------------------------INDICE------------------------------------------------------------------------------------------
 \tableofcontents
 \listoffigures
 
 \listoftables
 \mainmatter
-\include{archivosTex/introduccion}
-\include{archivosTex/preliminares}
+%------------------------------------------------------------------------------------------------------------------------------------
+\chapter{Introducción}
+
+\cfinput{archivosTex/introduccion}
+
+%------------------------------------------------------------------------------------------------------------------------------------
+\chapter{Preliminares}
+
+\cfinput{archivosTex/preliminares}
+
+%------------------------------------------------------------------------------------------------------------------------------------
+\chapter{Análisis y diseño}
+
+\cfinput{archivosTex/analisisydiseno}
+
+%------------------------------------------------------------------------------------------------------------------------------------
+\chapter{Casos de Uso}
+
+\cfinput{casosUso/Servidor/CUEIndex}
+
 %\include{archivosTex/requerimientos}
 %\include{archivosTex/adv-clasificadores}
 %\include{archivosTex/propuesta}
-\include{archivosTex/analisisydiseno}
 %\include{archivosTex/desarrollo}
 %\include{archivosTex/conclusiones2}
 %\include{archivosTex/anexos}
+
+%\include{casosUso/Servidor/CUEIndex}
 \backmatter
 \addcontentsline{toc}{chapter}{Bibliograf\'ia}
 \bibliographystyle{abbrv} %{plain}
