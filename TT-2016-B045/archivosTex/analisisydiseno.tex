@@ -3,22 +3,129 @@
 
 
 
-\section{Business Process Model and Notation (BPMN)}
+\section{Descripcion de procesos}
+
+\subsubsection{Descripción del proceso subir archivo.}
+
+El proceso inicia cuando el cliente desea subir un archivo nuevo, el cliente debe dar clic en la opción de subir archivo y seleccionar el archivo que desee subir, el sistema va a calcular el hash del archivo elegido, después hará unas operaciones aritméticas con el has para generar una x que se enviara al servidor para que realice una firma a ciegas, y con esta firma que se le regresara al cliente, se va a generar del lado del cliente su llave "k" que será la llave con la cual cifrara el archivo, y así si otro archivo que se quiera subir es igual a este tendrá la misma k y podrá el sistema detectar que son duplicados, también el sistema va a cifrar la llave k por si se le llega a perder al cliente, para poder almacenarlo en la nube el sistema mandara el hash del archivo cifrado para ver si ya está registrado en la base de datos, si es así solo guarda la llave y actualiza la lista de los usuario que comparten el archivo, de lo contrario solicita la llave cifrada y el archivo cifrado para almacenarlos y actualiza su lista de usuario añadiendo un archivo en ella, y por último se le notificará al cliente que su archivo ha sido almacenado.
+
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Participantes}
+
+\begin{tabular}{ |p{2cm}|p{6cm}|p{6cm}|  }
+\hline
+\multicolumn{3}{|c|}{  Participantes  } \\
+\hline
+
+{ Nombre }  & { Descripción } & { Responsabilidades} \\
+\hline
+{ Servidor } &  Actor que realiza la firma a ciegas del archivo.  &  
+			\begin{itemize}	
+				\item Frima a ciegas.
+
+			\end{itemize}   \\ 
+\hline
+{ Cliente } &   Actor que sube archivos a la Nube.  &  
+			\begin{itemize}	
+				\item Selecciona archivo a subir.
+				\item Genera hash del archivo. 
+				\item Calcula la llave k.
+				\item Cifra los archivos a subir.
+			\end{itemize}   \\ 
+\hline
+{ Nube } &   Actor que almacena los archivos.  &  
+			\begin{itemize}	
+				\item Almacena los archivos seleccionados.
+				\item Genera lista de usuarios relacionados.
+			\end{itemize}   \\ 
+\hline
+\end{tabular}
 
 
 \begin{figure}[H]
 \centering
-	\includegraphics[width=16cm, height=7cm]{./images/bp_descargar.png}
+	\includegraphics[width=16cm, height=7cm]{./images/BPM_Subir.png}
 	\caption{BPMN Subir archivo.}
 
 \end{figure}
 
+
+\subsubsection{Descripción del proceso Descargar archivo.}
+
+El proceso inicia cuando el cliente desea descargar un archivo, el cliente debe dar clic en la opción de descargar archivo y seleccionar el archivo que desee descargar, el sistema va a mandar el nombre del archivo a la nube para que busque en su base de datos los archivos correspondientes al usuario y nombre del archivo, se le regresaran al cliente y el sistema en el lado del cliente deberá descifrar el archivo C2 que contiene la llave k para poder descifrar el otro archivo C1 donde se encuentra el archivo original, el sistema notificara al cliente que su archivo se ha descargado con éxito y este podrá abrirlo.
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Participantes}
+
+\begin{tabular}{ |p{2cm}|p{6cm}|p{6cm}|  }
+\hline
+\multicolumn{3}{|c|}{  Participantes  } \\
+\hline
+
+{ Nombre }  & { Descripción } & { Responsabilidades} \\
+\hline
+{ Cliente } &   Actor que descarga archivos de la Nube.  &  
+			\begin{itemize}	
+				\item Selecciona archivo a descargar.
+				\item Descifra los archivos descargados.
+			\end{itemize}   \\ 
+\hline
+{ Nube } &   Actor que almacena los archivos.  &  
+			\begin{itemize}	
+				\item Almacena los archivos seleccionados.
+				\item Genera lista de usuarios relacionados.
+				\item Enviar los archivos a descargar.
+			\end{itemize}   \\ 
+\hline
+\end{tabular}
+
 \begin{figure}[H]
 \centering
-	\includegraphics[width=16cm, height=7cm]{./images/bp_subir.png}
+	\includegraphics[width=16cm, height=7cm]{./images/BPM_Descargar.png}
 	\caption{BPMN Descargar archivo.}
 
 \end{figure}
+
+
+\subsubsection{Descripción del proceso eliminar archivo.}
+
+El proceso inicia cuando el cliente desea eliminar un archivo nuevo, el cliente debe dar clic en la opción de eliminar archivo y seleccionar el archivo que desee eliminar, el sistema va a enviar el nombre del archivo a la nube donde este buscara en su base de datos los archivos que corresponden al usuario y nombre del archivo, los va a eliminar de su base de datos y actualizara su lista de usuarios eliminado de ella los datos del archivo y usuario que coinciden con el archivo eliminado, se le enviara una notificación al cliente que su archivo ha sido eliminado con éxito de la nube.
+
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Participantes}
+
+\begin{tabular}{ |p{2cm}|p{6cm}|p{6cm}|  }
+\hline
+\multicolumn{3}{|c|}{  Participantes  } \\
+\hline
+
+{ Nombre }  & { Descripción } & { Responsabilidades} \\
+\hline
+{ Cliente } &   Actor que elimina archivos de la Nube.  &  
+			\begin{itemize}	
+				\item Selecciona archivo a elminar.
+			\end{itemize}   \\ 
+\hline
+{ Nube } &   Actor que almacena los archivos.  &  
+			\begin{itemize}	
+				\item Elimina los archivos seleccionados.
+				\item Genera lista de usuarios relacionados.
+			\end{itemize}   \\ 
+\hline
+\end{tabular}
+
+\begin{figure}[H]
+\centering
+	\includegraphics[width=16cm, height=7cm]{./images/BPM_Eliminar.png}
+	\caption{BPMN Eliminar archivo.}
+
+\end{figure}
+
 
 \section{Requerimientos Funcionales. }
 

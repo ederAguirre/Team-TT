@@ -97,7 +97,7 @@ S/A.
 \newblock {\em D-Link {Building Networks for people}}, 2011.
 
 \bibitem{flud}
-s/a.
+S/A.
 \newblock Flud backup, 2011.
 \newblock \url{ http://flud.org/wiki/Flud_Backup.}
 
@@ -111,6 +111,12 @@ s/a.
 T.~O. Sergio.
 \newblock Introducción a la criptología.
 \newblock {\em InfoCentre{UV}}, 2003.
+
+\bibitem{rededup}
+R.~Sharma.
+\newblock Data de-duplication in cloud computing: A review.
+\newblock {\em International Journal of Engineering Applied Sciences and
+  Technology, 2017}, 2017.
 
 \bibitem{modes}
 W.~Stallings.

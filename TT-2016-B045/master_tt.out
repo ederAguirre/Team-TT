@@ -19,12 +19,18 @@
 \BOOKMARK [1][-]{section.2.9}{Funciones Hash. }{chapter.2}% 19
 \BOOKMARK [1][-]{section.2.10}{C\363mputo Nube. }{chapter.2}% 20
 \BOOKMARK [0][-]{chapter.3}{An\341lisis y dise\361o}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Business Process Model and Notation \(BPMN\)}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Requerimientos Funcionales. }{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.3}{Requerimientos No Funcionales }{chapter.3}% 24
-\BOOKMARK [0][-]{chapter.4}{Casos de Uso}{}% 25
-\BOOKMARK [1][-]{subsection.4.0.1}{CUE1 Consultar calificaciones semestrales actuales}{chapter.4}% 26
-\BOOKMARK [2][-]{section*.12}{Descripci\363n completa}{subsection.4.0.1}% 27
-\BOOKMARK [3][-]{section*.13}{Atributos importantes}{section*.12}% 28
-\BOOKMARK [3][-]{section*.14}{Trayectorias del Caso de Uso}{section*.12}% 29
-\BOOKMARK [0][-]{Item.10}{Bibliograf\355a}{}% 30
+\BOOKMARK [1][-]{section.3.1}{Descripcion de procesos}{chapter.3}% 22
+\BOOKMARK [2][-]{section*.7}{Descripci\363n del proceso subir archivo.}{section.3.1}% 23
+\BOOKMARK [3][-]{section*.8}{Participantes}{section*.7}% 24
+\BOOKMARK [3][-]{section*.10}{Descripci\363n del proceso Descargar archivo.}{section*.7}% 25
+\BOOKMARK [3][-]{section*.11}{Participantes}{section*.7}% 26
+\BOOKMARK [3][-]{section*.13}{Descripci\363n del proceso eliminar archivo.}{section*.7}% 27
+\BOOKMARK [3][-]{section*.14}{Participantes}{section*.7}% 28
+\BOOKMARK [1][-]{section.3.2}{Requerimientos Funcionales. }{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.3}{Requerimientos No Funcionales }{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{Casos de Uso}{}% 31
+\BOOKMARK [1][-]{subsection.4.0.1}{CUE1 Consultar calificaciones semestrales actuales}{chapter.4}% 32
+\BOOKMARK [2][-]{section*.19}{Descripci\363n completa}{subsection.4.0.1}% 33
+\BOOKMARK [3][-]{section*.20}{Atributos importantes}{section*.19}% 34
+\BOOKMARK [3][-]{section*.21}{Trayectorias del Caso de Uso}{section*.19}% 35
+\BOOKMARK [0][-]{Item.10}{Bibliograf\355a}{}% 36
