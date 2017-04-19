@@ -25,6 +25,14 @@ Modifica los datos de un documento con el objeto de alcanzar algunas caracterís
 \end{description}
 
 
+\section{Arquitectura del sistema. }
+\begin{figure}[H]
+\centering
+	\includegraphics[width=16cm, height=10cm]{./images/Arquitectura.png}
+	\caption{Arquitectura del sistema.}
+
+\end{figure}
+
 \section{Descripcion de procesos}
 
 \subsubsection{Descripción del proceso subir archivo.}
@@ -111,7 +119,7 @@ El proceso inicia cuando el cliente desea descargar un archivo, el cliente debe 
 
 \end{figure}
 
-
+\vspace{3cm}
 \subsubsection{Descripción del proceso eliminar archivo.}
 
 El proceso inicia cuando el cliente desea eliminar un archivo nuevo, el cliente debe dar clic en la opción de eliminar archivo y seleccionar el archivo que desee eliminar, el sistema va a enviar el nombre del archivo a la nube donde este buscara en su base de datos los archivos que corresponden al usuario y nombre del archivo, los va a eliminar de su base de datos y actualizara su lista de usuarios eliminado de ella los datos del archivo y usuario que coinciden con el archivo eliminado, se le enviara una notificación al cliente que su archivo ha sido eliminado con éxito de la nube.
@@ -239,7 +247,7 @@ RF – SA4 & El sistema permitirá al servicio de almacenamiento eliminar cualqu
 \label{Servicio de almacenamiento (Nube) }
 \end{table}
 
-
+\vspace{9cm}
 \section{Requerimientos No Funcionales }
 \begin{longtable}{| p{1.5cm} | p{3cm} | p{11cm} |}
 

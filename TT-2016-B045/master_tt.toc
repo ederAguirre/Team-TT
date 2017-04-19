@@ -21,18 +21,19 @@
 \contentsline {section}{\numberline {2.9}C\IeC {\'o}mputo Nube. }{14}{section.2.9}
 \contentsline {chapter}{\numberline {3}An\IeC {\'a}lisis y dise\IeC {\~n}o}{18}{chapter.3}
 \contentsline {section}{\numberline {3.1}Glosario de T\IeC {\'e}rminos}{18}{section.3.1}
-\contentsline {section}{\numberline {3.2}Descripcion de procesos}{19}{section.3.2}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n del proceso subir archivo.}{19}{section*.7}
-\contentsline {subsubsection}{Participantes}{20}{section*.8}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n del proceso Descargar archivo.}{21}{section*.10}
-\contentsline {subsubsection}{Participantes}{21}{section*.11}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n del proceso eliminar archivo.}{22}{section*.13}
-\contentsline {subsubsection}{Participantes}{22}{section*.14}
-\contentsline {section}{\numberline {3.3}Requerimientos Funcionales. }{23}{section.3.3}
-\contentsline {section}{\numberline {3.4}Requerimientos No Funcionales }{23}{section.3.4}
+\contentsline {section}{\numberline {3.2}Arquitectura del sistema. }{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Descripcion de procesos}{20}{section.3.3}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n del proceso subir archivo.}{20}{section*.8}
+\contentsline {subsubsection}{Participantes}{20}{section*.9}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n del proceso Descargar archivo.}{21}{section*.11}
+\contentsline {subsubsection}{Participantes}{22}{section*.12}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n del proceso eliminar archivo.}{23}{section*.14}
+\contentsline {subsubsection}{Participantes}{23}{section*.15}
+\contentsline {section}{\numberline {3.4}Requerimientos Funcionales. }{24}{section.3.4}
+\contentsline {section}{\numberline {3.5}Requerimientos No Funcionales }{25}{section.3.5}
 \contentsline {chapter}{\numberline {4}Casos de Uso}{27}{chapter.4}
 \contentsline {subsection}{\numberline {4.0.1}CUE1 Consultar calificaciones semestrales actuales}{27}{subsection.4.0.1}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{27}{section*.19}
-\contentsline {subsubsection}{Atributos importantes}{27}{section*.20}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{28}{section*.21}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{27}{section*.20}
+\contentsline {subsubsection}{Atributos importantes}{27}{section*.21}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{28}{section*.22}
 \contentsline {chapter}{Bibliograf\'ia}{29}{Item.10}

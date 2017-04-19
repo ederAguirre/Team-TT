@@ -20,18 +20,19 @@
 \BOOKMARK [1][-]{section.2.9}{C\363mputo Nube. }{chapter.2}% 20
 \BOOKMARK [0][-]{chapter.3}{An\341lisis y dise\361o}{}% 21
 \BOOKMARK [1][-]{section.3.1}{Glosario de T\351rminos}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Descripcion de procesos}{chapter.3}% 23
-\BOOKMARK [2][-]{section*.7}{Descripci\363n del proceso subir archivo.}{section.3.2}% 24
-\BOOKMARK [3][-]{section*.8}{Participantes}{section*.7}% 25
-\BOOKMARK [3][-]{section*.10}{Descripci\363n del proceso Descargar archivo.}{section*.7}% 26
-\BOOKMARK [3][-]{section*.11}{Participantes}{section*.7}% 27
-\BOOKMARK [3][-]{section*.13}{Descripci\363n del proceso eliminar archivo.}{section*.7}% 28
-\BOOKMARK [3][-]{section*.14}{Participantes}{section*.7}% 29
-\BOOKMARK [1][-]{section.3.3}{Requerimientos Funcionales. }{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.4}{Requerimientos No Funcionales }{chapter.3}% 31
-\BOOKMARK [0][-]{chapter.4}{Casos de Uso}{}% 32
-\BOOKMARK [1][-]{subsection.4.0.1}{CUE1 Consultar calificaciones semestrales actuales}{chapter.4}% 33
-\BOOKMARK [2][-]{section*.19}{Descripci\363n completa}{subsection.4.0.1}% 34
-\BOOKMARK [3][-]{section*.20}{Atributos importantes}{section*.19}% 35
-\BOOKMARK [3][-]{section*.21}{Trayectorias del Caso de Uso}{section*.19}% 36
-\BOOKMARK [0][-]{Item.10}{Bibliograf\355a}{}% 37
+\BOOKMARK [1][-]{section.3.2}{Arquitectura del sistema. }{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.3}{Descripcion de procesos}{chapter.3}% 24
+\BOOKMARK [2][-]{section*.8}{Descripci\363n del proceso subir archivo.}{section.3.3}% 25
+\BOOKMARK [3][-]{section*.9}{Participantes}{section*.8}% 26
+\BOOKMARK [3][-]{section*.11}{Descripci\363n del proceso Descargar archivo.}{section*.8}% 27
+\BOOKMARK [3][-]{section*.12}{Participantes}{section*.8}% 28
+\BOOKMARK [3][-]{section*.14}{Descripci\363n del proceso eliminar archivo.}{section*.8}% 29
+\BOOKMARK [3][-]{section*.15}{Participantes}{section*.8}% 30
+\BOOKMARK [1][-]{section.3.4}{Requerimientos Funcionales. }{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.5}{Requerimientos No Funcionales }{chapter.3}% 32
+\BOOKMARK [0][-]{chapter.4}{Casos de Uso}{}% 33
+\BOOKMARK [1][-]{subsection.4.0.1}{CUE1 Consultar calificaciones semestrales actuales}{chapter.4}% 34
+\BOOKMARK [2][-]{section*.20}{Descripci\363n completa}{subsection.4.0.1}% 35
+\BOOKMARK [3][-]{section*.21}{Atributos importantes}{section*.20}% 36
+\BOOKMARK [3][-]{section*.22}{Trayectorias del Caso de Uso}{section*.20}% 37
+\BOOKMARK [0][-]{Item.10}{Bibliograf\355a}{}% 38
