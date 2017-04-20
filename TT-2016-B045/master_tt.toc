@@ -32,8 +32,8 @@
 \contentsline {section}{\numberline {3.4}Requerimientos Funcionales. }{24}{section.3.4}
 \contentsline {section}{\numberline {3.5}Requerimientos No Funcionales }{25}{section.3.5}
 \contentsline {chapter}{\numberline {4}Casos de Uso}{27}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}CUE1 Consultar calificaciones semestrales actuales}{27}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {4.0.1}CUSLL1 Generar las llaves del servidor de llaves}{27}{subsection.4.0.1}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{27}{section*.20}
 \contentsline {subsubsection}{Atributos importantes}{27}{section*.21}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{28}{section*.22}
-\contentsline {chapter}{Bibliograf\'ia}{29}{Item.10}
+\contentsline {chapter}{Bibliograf\'ia}{30}{Item.15}

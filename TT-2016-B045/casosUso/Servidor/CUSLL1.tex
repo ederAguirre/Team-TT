@@ -1,0 +1,69 @@
+% Copie este bloque por cada caso de uso:
+%-------------------- COMIENZA descripción del caso de uso.
+
+
+
+\begin{UseCase}{CUSLL1}{Generar las llaves del servidor de llaves}{El servidor de llaves realizará un proceso el cuál involucra la implementación de algoritmos criptográficos de clave pública, dichos algoritmos crearán la  llave pública \textit{e} y la llave privada \textit{d}, la cuál servirá para la firma a ciegas de archivos que se almacenarán en la nube.}
+
+	\UCitem{Versión}{1.0 - 15/04/17}
+	\UCitem{Autor}{Eder Jonathan Aguirre Cruz}
+	\UCitem{Prioridad}{Alta}
+	\UCitem{Módulo}{Servidor de Llaves}
+	\UCitem{Actor}{Servidor}
+	\UCitem{Propósito}{Tener las llaves del servidor para poder comenzar el proceso de firma a ciegas de un archivo}
+	\UCitem{Entradas}{}
+	\UCitem{Salidas}{
+				\begin{itemize}
+					\item Llave pública \textit{e}
+					\item Llave privada \textit{d}
+				\end{itemize}
+}
+				
+	\UCitem{Precondiciones}{}
+	\UCitem{Postcondiciones}{El servidor de llaves esta listo para realizar formas a ciegas de archivos a almacenar}
+	\UCitem{Reglas del negocio}{
+		\begin{itemize}	
+			\item \BRref{RN-E1}{Alumno inscrito} 
+			\item \BRref{RN-E4}{Calificación} 
+			\item \BRref{RN-E6}{Calificación registrada}
+		\end{itemize}
+		}
+	\UCitem{Mensajes}{
+		\begin{itemize}	
+			\item \MSGref{MSG-SLL1}{Generación de llaves}
+		\end{itemize}
+		}
+\end{UseCase}
+
+
+% ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
+\begin{UCtrayectoria}{Principal}
+	\UCpaso Seleccionar dos números primos aleatorios. \Trayref{A} \label{CUSLL1Regreso}
+	\UCpaso Encontrar el producto de esos números primos denominado N.
+	\UCpaso Calcular la función de euler $\varphi $ (N).
+	\UCpaso Elegir un número aleatorio \textit{e} menor a $\varphi${N}, tal que ese número sea \textbf{\textit{gcd(e,$\varphi${N})=1}}. \Trayref{B} \label{CUSLL1Regreso2}
+	\UCpaso Elegir un número aleatorio \textit{d}, tal que cumpla con la congruencia  \textit{e $\cdot$ d $\equiv$ 1 (mod $\varphi${N})}. \Trayref{C} \label{CUSLL1Regreso3}
+	\UCpaso Se generan las llaves pública \textit{e} y \textit{d} y muestra un mensaje \MSGref{MSG-SLL1}{Generación de llaves}
+\end{UCtrayectoria}
+
+% ---------------- Trayectorias alternativas -------------- Colocar los mensajes  {\bf MSG1-}
+
+		
+\begin{UCtrayectoriaA}{A}{Numeros aleatorios iguales}
+	\UCpaso Seleccionar números aleatorios iguales o no primos.
+	\UCpaso Muestra el Mensaje \MSGref{MSG-SLL2}{Números Iguales}.
+	\UCpaso Continua en el paso \ref{CUSLL1Regreso} del \UCref{CUSLL1}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Número aleatorio menor}
+	\UCpaso Elegir un número aleatorio menor al tamaño establecido de $\varphi${N}.
+	\UCpaso Muestra el Mensaje \MSGref{MSG-SLL3}{Número incorrecto}
+	\UCpaso Continua en el paso \ref{CUSLL1Regreso2} del \UCref{CUSLL1}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Número aleatorio incorrecto}
+	\UCpaso Elegir un número aleatorio incongruente con \textit{e $\cdot$ d $\equiv$ 1 (mod $\varphi${N})} 
+	\UCpaso Muestra el Mensaje \MSGref{MSG-SLL3}{Número incorrecto}
+	\UCpaso Continua en el paso \ref{CUSLL1Regreso3} del \UCref{CUSLL1}.
+\end{UCtrayectoriaA}
+
