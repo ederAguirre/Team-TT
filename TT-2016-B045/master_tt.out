@@ -30,17 +30,26 @@
 \BOOKMARK [3][-]{section*.15}{Participantes}{section*.8}% 30
 \BOOKMARK [1][-]{section.3.4}{Requerimientos Funcionales. }{chapter.3}% 31
 \BOOKMARK [1][-]{section.3.5}{Requerimientos No Funcionales }{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.6}{Casos de Uso}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.6.1}{CUSLL1 Generar las llaves del servidor de llaves}{section.3.6}% 34
-\BOOKMARK [3][-]{section*.20}{Descripci\363n completa}{subsection.3.6.1}% 35
-\BOOKMARK [3][-]{section*.21}{Atributos importantes}{subsection.3.6.1}% 36
-\BOOKMARK [3][-]{section*.22}{Trayectorias del Caso de Uso}{subsection.3.6.1}% 37
-\BOOKMARK [2][-]{subsection.3.6.2}{CUN3 Almacenar archivo cifrado}{section.3.6}% 38
-\BOOKMARK [3][-]{section*.23}{Descripci\363n completa}{subsection.3.6.2}% 39
-\BOOKMARK [3][-]{section*.24}{Atributos importantes}{subsection.3.6.2}% 40
-\BOOKMARK [3][-]{section*.25}{Trayectorias del Caso de Uso}{subsection.3.6.2}% 41
-\BOOKMARK [2][-]{subsection.3.6.3}{CUN4 Descargar archivo cifrado}{section.3.6}% 42
-\BOOKMARK [3][-]{section*.26}{Descripci\363n completa}{subsection.3.6.3}% 43
-\BOOKMARK [3][-]{section*.27}{Atributos importantes}{subsection.3.6.3}% 44
-\BOOKMARK [3][-]{section*.28}{Trayectorias del Caso de Uso}{subsection.3.6.3}% 45
-\BOOKMARK [0][-]{Item.39}{Bibliograf\355a}{}% 46
+\BOOKMARK [1][-]{section.3.6}{Reglas de Negocio}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.7}{Casos de Uso}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.7.1}{CUSLL1 Generar las llaves del servidor de llaves}{section.3.7}% 35
+\BOOKMARK [3][-]{section*.20}{Descripci\363n completa}{subsection.3.7.1}% 36
+\BOOKMARK [3][-]{section*.21}{Atributos importantes}{subsection.3.7.1}% 37
+\BOOKMARK [3][-]{section*.22}{Trayectorias del Caso de Uso}{subsection.3.7.1}% 38
+\BOOKMARK [2][-]{subsection.3.7.2}{CUSLL2 Generar firma ciega \(y\). }{section.3.7}% 39
+\BOOKMARK [3][-]{section*.23}{Descripci\363n completa}{subsection.3.7.2}% 40
+\BOOKMARK [3][-]{section*.24}{Atributos importantes}{subsection.3.7.2}% 41
+\BOOKMARK [3][-]{section*.25}{Trayectorias del Caso de Uso}{subsection.3.7.2}% 42
+\BOOKMARK [2][-]{subsection.3.7.3}{CUN3 Almacenar archivo cifrado}{section.3.7}% 43
+\BOOKMARK [3][-]{section*.26}{Descripci\363n completa}{subsection.3.7.3}% 44
+\BOOKMARK [3][-]{section*.27}{Atributos importantes}{subsection.3.7.3}% 45
+\BOOKMARK [3][-]{section*.28}{Trayectorias del Caso de Uso}{subsection.3.7.3}% 46
+\BOOKMARK [2][-]{subsection.3.7.4}{CUN4 Descargar archivo cifrado}{section.3.7}% 47
+\BOOKMARK [3][-]{section*.29}{Descripci\363n completa}{subsection.3.7.4}% 48
+\BOOKMARK [3][-]{section*.30}{Atributos importantes}{subsection.3.7.4}% 49
+\BOOKMARK [3][-]{section*.31}{Trayectorias del Caso de Uso}{subsection.3.7.4}% 50
+\BOOKMARK [2][-]{subsection.3.7.5}{CUCL5 Generar llave \(k\) para archivo.}{section.3.7}% 51
+\BOOKMARK [3][-]{section*.32}{Descripci\363n completa}{subsection.3.7.5}% 52
+\BOOKMARK [3][-]{section*.33}{Atributos importantes}{subsection.3.7.5}% 53
+\BOOKMARK [3][-]{section*.34}{Trayectorias del Caso de Uso}{subsection.3.7.5}% 54
+\BOOKMARK [0][-]{Item.46}{Bibliograf\355a}{}% 55

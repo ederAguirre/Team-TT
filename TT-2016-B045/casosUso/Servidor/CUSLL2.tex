@@ -1,0 +1,42 @@
+% Copie este bloque por cada caso de uso:
+%-------------------- COMIENZA descripción del caso de uso.
+
+
+
+\begin{UseCase}{CUSLL2}{Generar firma ciega (y). }{El servidor realizara una firma a ciegas de un archivo solicitado, este archivo ha sido ocultado para que el servidor no sepa de donde proviene o que contiene, esta firma ayudara para la generación de una llave para cifrar el archivo solicitado.}
+
+	\UCitem{Versión}{1.0 - 16/04/17}
+	\UCitem{Autor}{Diana Leslie González Olivier}
+	\UCitem{Prioridad}{Alta}
+	\UCitem{Módulo}{Servidor de Llaves}
+	\UCitem{Actor}{Servidor}
+	\UCitem{Propósito}{Que el servidor firme el archivo solicitado sin saber a que cliente corresponde.}
+	\UCitem{Entradas}{Archivo oculto (x)}
+	\UCitem{Salidas}{Firma a ciegas (y)}
+	\UCitem{Precondiciones}{}
+	\UCitem{Postcondiciones}{}
+	\UCitem{Reglas del negocio}{
+		%\begin{itemize}	
+		%	\item \BRref{RN-E1}{Alumno inscrito} 
+		%\end{itemize}
+		}
+	\UCitem{Mensajes}{
+		%\begin{itemize}	
+		%	\item \MSGref{MSG-E8}{Calificaciones no registradas}
+		%\end{itemize}
+		}
+\end{UseCase}
+
+
+% ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
+\begin{UCtrayectoria}{Principal}
+	\UCpaso Recibe el archivo oculto (x) .
+	\UCpaso Firma el archivo generando un nuevo archivo (y).
+	\UCpaso Guarda en la base de datos el archivo (y).
+	\UCpaso Envía al cliente el archivo (y).
+\end{UCtrayectoria}
+
+% ---------------- Trayectorias alternativas -------------- Colocar los mensajes  {\bf MSG1-}
+
+		
+

@@ -1,0 +1,40 @@
+% Copie este bloque por cada caso de uso:
+%-------------------- COMIENZA descripción del caso de uso.
+
+
+
+\begin{UseCase}{CUCL5}{Generar llave (k) para archivo.}{El cliente creara una llave llamada k con la cual posteriormente podrá cifrar el archivo con esa llave con el fin de poder detectar los archivos duplicados en el servicio de almacenamiento.}
+
+	\UCitem{Versión}{1.0 - 16/04/17}
+	\UCitem{Autor}{Jhonatan Saulés Cortés}
+	\UCitem{Prioridad}{Alta}
+	\UCitem{Módulo}{Cliente}
+	\UCitem{Actor}{Cliente}
+	\UCitem{Propósito}{Que el cleinte genere la llave k para poder cifrar el archivo.}
+	\UCitem{Entradas}{Firma a ciegas (y).}
+	\UCitem{Salidas}{Llave k}
+	\UCitem{Precondiciones}{}
+	\UCitem{Postcondiciones}{}
+	\UCitem{Reglas del negocio}{
+		%\begin{itemize}	
+		%	\item \BRref{RN-E1}{Alumno inscrito} 
+		%\end{itemize}
+		}
+	\UCitem{Mensajes}{
+		\begin{itemize}	
+			\item \MSGref{MSG-CL1}{Llave generada con éxito}
+		\end{itemize}
+		}
+\end{UseCase}
+
+
+% ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
+\begin{UCtrayectoria}{Principal}
+	\UCpaso Recibe la firma a ciegas (y) del servidor.
+	\UCpaso Genera la llave k utilizadno la firma a ciegas.
+	\UCpaso Almacena la llave en una base de datos, junto con el nombre del achivo al que le corresponde.
+\end{UCtrayectoria}
+
+% ---------------- Trayectorias alternativas -------------- Colocar los mensajes  {\bf MSG1-}
+
+

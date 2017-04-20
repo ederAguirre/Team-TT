@@ -304,4 +304,21 @@ RNF4 & Mantenibilidad & \begin{itemize}
 \label{Servidor de Llaves }
 \end{longtable}
 
+\section{Reglas de Negocio}
+
+\begin{BussinesRule}{RN1}{Datos requeridos} 
+	\BRitem[Descripción:]  El usuario debe ingresar toda la información marcada como requerida en el modelo conceptual del negocio.
+	\BRitem[Tipo:] Restricción de operación.	
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN2}{Datos correctos} 
+	\BRitem[Descripción:] La información que el usuario proporcione, debe ser del tipo y longitud definida en el modelo conceptual del negocio.
+	\BRitem[Tipo:] Restricción de operación.	
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN3}{Unicidad de elementos} 
+	\BRitem[Descripción:] Hay ciertos elementos que no pueden repetirse, ya sea por ser idénticos o por coincidir en uno o más datos. Esto se define como dato único en la tabla de atributos del modelo conceptual del negocio para cada entidad.
+	\BRitem[Tipo:] Restricción de operación.	
+\end{BussinesRule}
+
 \section{Casos de Uso}
