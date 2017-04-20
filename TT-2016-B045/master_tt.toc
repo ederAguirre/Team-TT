@@ -43,5 +43,5 @@
 \contentsline {subsection}{\numberline {3.6.3}CUN4 Descargar archivo cifrado}{31}{subsection.3.6.3}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{31}{section*.26}
 \contentsline {subsubsection}{Atributos importantes}{31}{section*.27}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{32}{section*.28}
-\contentsline {chapter}{Bibliograf\'ia}{33}{Item.43}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{31}{section*.28}
+\contentsline {chapter}{Bibliograf\'ia}{33}{Item.39}

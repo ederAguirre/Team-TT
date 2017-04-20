@@ -11,21 +11,17 @@
 	\UCitem{Módulo}{Servidor de Llaves}
 	\UCitem{Actor}{Usuario}
 	\UCitem{Propósito}{Entregar al usuario archivos que desea obtener para un uso posterior. }
-	\UCitem{Entradas}{	\begin{itemize}			
-						\item Archivo cifrado \textit{C1}.
-						\item  Llave secreta cifrada \textit{C2}. 
-						\item  Función hash del archivo cifrado.
-					\end{itemize}}
-	\UCitem{Salidas}{ Lista de archivos del usuario actualizada. }
+	\UCitem{Entradas}{ Nombre archivo a descargar}
+	\UCitem{Salidas}{ \begin{itemize}
+				\item  Archivo cifrado \textit{C1}
+				\item  Archivo cifrado \textit{C2}
+			 \end{itemize} }
 	\UCitem{Precondiciones}{
 					\begin{itemize}			
-						\item El servicio de almacenamiento debe estar disponible.
-						\item El archivo a almacenar debe estar cifrado bajo un algoritmo criptográfico
+						\item El usuario debe tener el nombre del archivo que desea descargar
+						\item El archivo a descargar debe estar almacenado en la nube						
 					\end{itemize}}
-	\UCitem{Postcondiciones}{\begin{itemize}			
-						\item El archivo quedará almacenado en el servicio de almacenamiento.
-						\item El usuario tendrá actualizada su lista de archivos en la nube. 
-					\end{itemize}}
+	\UCitem{Postcondiciones}{El archivo estará descargado para que el usuario pueda descifrarlo}
 	\UCitem{Reglas del negocio}{
 		%\begin{itemize}	
 		%	\item \BRref{RN-E1}{Alumno inscrito} 
@@ -35,7 +31,8 @@
 		}
 	\UCitem{Mensajes}{
 		\begin{itemize}	
-			\item \MSGref{MSG-SLL1}{Generación de llaves}
+			\item \MSGref{MSG1}{Operación exitosa}
+			\item  \MSGref{MSG - N1}{Archivo no encontrado}	
 		\end{itemize}
 		}
 \end{UseCase}
@@ -43,25 +40,21 @@
 
 % ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
 \begin{UCtrayectoria}{Principal}
-	\UCpaso [\UCactor] Envía la función hash del archivo \textit{H(C1)}.
-	\UCpaso Recibe la función hash del archivo \textit{H(C1)} a almacenar y corrobora la inexistencia de esta. \Trayref{A}
-	\UCpaso Solicita los archivos cifrados a almacenar \textit{C1} y \textit{C2}.
-	\UCpaso [\UCactor] Selecciona de su carpeta personal los archivos \textit{C1} y \textit{C2} que va almacenar en la nube.
-	\UCpaso Almacena los archivos \textit{C1} y \textit{C2} en la nube. 
-	\UCpaso Asocia la función hash \textit{H(C1)} al usuario con el archivo \textit{C1} y \textit{C2}. 
-	\UCpaso Actualiza la lista de usuarios y archivos almacenados en la nube. \label{CUN3Regreso}
+	\UCpaso [\UCactor] Selecciona de su lista de archivos en la nube el nombre del archivo que desea descargar.
+	\UCpaso Recibe el nombre del archivo a descargar. 
+	\UCpaso Realiza la busqueda del archivo asociado al nombre que recibió. \Trayref{A} 
+	\UCpaso Envía los archivos encontrados \textit{C1} y \textit{C2}.
+	\UCpaso [\UCactor] Recibe los archivos \textit{C1} y \textit{C2} asociados al nombre que selecciono.
 	\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}.	
 \end{UCtrayectoria}
 
 % ---------------- Trayectorias alternativas -------------- Colocar los mensajes  {\bf MSG1-}
 
 		
-\begin{UCtrayectoriaA}{A}{Archivo existente}
-	\UCpaso Detecta la existencia de la función hash \textit{H(C1)} almacenada en la nube. 
-	\UCpaso Solicita el archivo cifrado a almacenar \textit{C2}.
-	\UCpaso [\UCactor] Selecciona de su carpeta personal el archivos \textit{C2} que va almacenar en la nube.
-	\UCpaso Almacena el archivo \textit{C2} en la nube. 
-	\UCpaso Asocia la función hash \textit{H(C1)} al usuario con el archivo \textit{C2}. 
-	\UCpaso Continua en el paso \ref{CUN3Regreso} del \UCref{CUN3}.
+\begin{UCtrayectoriaA}{A}{Archivo inexistente}
+	\UCpaso Detecta la inexistencia del nombre recibido por el usuario. 
+	\UCpaso  Muestra el mensaje \MSGref{MSG - N1}{Archivo no encontrado}.	
+	\UCpaso[\UCactor]  Da clic en el botón \IUbuttonAceptar
+	\UCpaso Termina el caso de uso.
 \end{UCtrayectoriaA}
 
