@@ -31,9 +31,17 @@
 \contentsline {subsubsection}{Participantes}{23}{section*.15}
 \contentsline {section}{\numberline {3.4}Requerimientos Funcionales. }{24}{section.3.4}
 \contentsline {section}{\numberline {3.5}Requerimientos No Funcionales }{25}{section.3.5}
-\contentsline {chapter}{\numberline {4}Casos de Uso}{27}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.1}CUSLL1 Generar las llaves del servidor de llaves}{27}{subsection.4.0.1}
+\contentsline {section}{\numberline {3.6}Casos de Uso}{26}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}CUSLL1 Generar las llaves del servidor de llaves}{27}{subsection.3.6.1}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{27}{section*.20}
 \contentsline {subsubsection}{Atributos importantes}{27}{section*.21}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{28}{section*.22}
-\contentsline {chapter}{Bibliograf\'ia}{30}{Item.15}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{27}{section*.22}
+\contentsline {subsection}{\numberline {3.6.2}CUN3 Almacenar archivo cifrado}{29}{subsection.3.6.2}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{29}{section*.23}
+\contentsline {subsubsection}{Atributos importantes}{29}{section*.24}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{30}{section*.25}
+\contentsline {subsection}{\numberline {3.6.3}CUN4 Descargar archivo cifrado}{31}{subsection.3.6.3}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{31}{section*.26}
+\contentsline {subsubsection}{Atributos importantes}{31}{section*.27}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{32}{section*.28}
+\contentsline {chapter}{Bibliograf\'ia}{33}{Item.43}

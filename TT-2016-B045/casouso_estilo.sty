@@ -32,7 +32,6 @@
 }%
 
 
-
 \newcommand{\UCRealization}[2]{%
 	\hyperlink{#1}{ $[$Realizado por #1 #2$]$}%
 }
@@ -60,9 +59,14 @@
 	\hyperlink{#1}{#1 #2}%
 }
 
-\newcommand{\Trayref}[1]{$[$Trayectoria #1$]$}
+\newcommand{\Trayref}[1]{%
+%\hyperlink{#1}{#1}%
+$[$Trayectoria #1$]$
+}
+
+
 \newcommand{\RFref}[1]{%
-\hyperlink{#1}{#1}%
+\hyperlink{#1}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -119,7 +123,7 @@
 %   ...
 % \end{UseCase}
 \newenvironment{UseCase}[4][default]
-{%\newpage%
+{\newpage%
 %\noindent\hypertarget{#2}{\includegraphics[width=1.1\textwidth]{images/uc/#1}}%
 \subsection{#2 #3}%
 \subsubsection{Descripción completa}%
@@ -184,7 +188,7 @@
 % Al final se agrega automáticamente el paso de fin.
 \newenvironment{UCtrayectoria}[1]
 {%
-	\bigskip\noindent {\large {\bf Trayectoria principal:}  #1\\}%
+	\bigskip\noindent {\large {\bf Trayectoria:}  #1\\}%
 	\renewcommand{\labelenumi}{\textcolor{black}{\bf \theenumi}}%
 	\begin{enumerate}\addtolength{\itemsep}{-0.5\baselineskip}%
 }
