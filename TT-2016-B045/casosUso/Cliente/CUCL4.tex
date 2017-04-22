@@ -1,0 +1,45 @@
+% Copie este bloque por cada caso de uso:
+%-------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CUCL4}{Eliminar archivos cifrado.}{El cliente podrá elegir la opción de eliminar un archivo cifrado del servicio de almacenamiento en la nube.}
+
+	\UCitem{Versión}{1.0 - 16/04/17}	
+	\UCitem{Autor}{Diana Leslie González Olivier}
+	\UCitem{Prioridad}{Alta}
+	\UCitem{Módulo}{Cliente}
+	\UCitem{Actor}{Cliente}
+	\UCitem{Propósito}{Que el cliente pueda eliminar un archivo}
+	\UCitem{Entradas}{}
+	\UCitem{Salidas}{Archivo eliminado}
+	\UCitem{Precondiciones}{El archivo debe existir en la Nube}
+	\UCitem{Postcondiciones}{}
+	\UCitem{Reglas del negocio}{
+		%\begin{itemize} 
+			% \item \BRref{RN-E1}{} 
+		%\end{itemize}
+	}
+	\UCitem{Mensajes}{
+\begin{itemize} 
+	\item \MSGref{MSG-CL1}{Archivo Eliminado}
+\end{itemize}
+	}
+\end{UseCase}
+
+
+% ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
+\begin{UCtrayectoria}{Principal}
+	\UCpaso [\UCactor] El cliente da clic en el botón eliminar archivo.
+	\UCpaso  El sistema despliega la pantalla para seleccionar el archivo que se desea eliminar.
+	\UCpaso [\UCactor] El cliente selecciona el archivo que desea eliminar.
+	\UCpaso  El sistema recibe petición para eliminar archivo.
+	\UCpaso  El sistema busca el nombre de archivo asociado en su base de datos.\Trayref{A}
+	\UCpaso  El sistema elimina C1 y C2.
+	\UCpaso  El sistema despliega la lista de usuarios en la base de datos.
+	\UCpaso Muestra el mensaje \MSGref{MSG1}{El archivo fue eliminado correctamente}.\end{UCtrayectoria}
+
+% ---------------- Trayectorias alternativas -------------- Colocar los mensajes {\bf MSG1-}
+\begin{UCtrayectoriaA}{A}
+	{El archivo no existe}
+	\UCpaso [\UCactor] El cliente da clic en el botón aceptar.
+	\UCpaso El sistema despliega la pantalla principal.
+\end{UCtrayectoriaA}
