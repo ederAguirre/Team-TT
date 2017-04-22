@@ -32,33 +32,34 @@
 \contentsline {section}{\numberline {3.4}Requerimientos Funcionales. }{26}{section.3.4}
 \contentsline {section}{\numberline {3.5}Requerimientos No Funcionales }{26}{section.3.5}
 \contentsline {section}{\numberline {3.6}Reglas de Negocio}{28}{section.3.6}
-\contentsline {section}{\numberline {3.7}Casos de Uso}{29}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}CUSLL1 Generar las llaves del servidor de llaves}{30}{subsection.3.7.1}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{30}{section*.20}
-\contentsline {subsubsection}{Atributos importantes}{30}{section*.21}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{30}{section*.22}
-\contentsline {subsection}{\numberline {3.7.2}CUSLL2 Generar firma ciega (y). }{32}{subsection.3.7.2}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{32}{section*.23}
-\contentsline {subsubsection}{Atributos importantes}{32}{section*.24}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{32}{section*.25}
-\contentsline {subsection}{\numberline {3.7.3}CUN3 Almacenar archivo cifrado}{33}{subsection.3.7.3}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{33}{section*.26}
-\contentsline {subsubsection}{Atributos importantes}{33}{section*.27}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{34}{section*.28}
-\contentsline {subsection}{\numberline {3.7.4}CUN4 Descargar archivo cifrado}{35}{subsection.3.7.4}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{35}{section*.29}
-\contentsline {subsubsection}{Atributos importantes}{35}{section*.30}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{35}{section*.31}
-\contentsline {subsection}{\numberline {3.7.5}CUCL3 Descargar archivos descifrados.}{37}{subsection.3.7.5}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{37}{section*.32}
-\contentsline {subsubsection}{Atributos importantes}{37}{section*.33}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{37}{section*.34}
-\contentsline {subsection}{\numberline {3.7.6}CUCL4 Eliminar archivos cifrado.}{38}{subsection.3.7.6}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{38}{section*.35}
-\contentsline {subsubsection}{Atributos importantes}{38}{section*.36}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{38}{section*.37}
-\contentsline {subsection}{\numberline {3.7.7}CUCL5 Generar llave (k) para archivo.}{40}{subsection.3.7.7}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{40}{section*.38}
-\contentsline {subsubsection}{Atributos importantes}{40}{section*.39}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{40}{section*.40}
-\contentsline {chapter}{Bibliograf\'ia}{41}{Item.63}
+\contentsline {section}{\numberline {3.7}Especificaci\IeC {\'o}n de Plataforma}{29}{section.3.7}
+\contentsline {section}{\numberline {3.8}Casos de Uso}{30}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}CUSLL1 Generar las llaves del servidor de llaves}{31}{subsection.3.8.1}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{31}{section*.21}
+\contentsline {subsubsection}{Atributos importantes}{31}{section*.22}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{31}{section*.23}
+\contentsline {subsection}{\numberline {3.8.2}CUSLL2 Generar firma ciega (y). }{33}{subsection.3.8.2}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{33}{section*.24}
+\contentsline {subsubsection}{Atributos importantes}{33}{section*.25}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{33}{section*.26}
+\contentsline {subsection}{\numberline {3.8.3}CUN3 Almacenar archivo cifrado}{34}{subsection.3.8.3}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{34}{section*.27}
+\contentsline {subsubsection}{Atributos importantes}{34}{section*.28}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{35}{section*.29}
+\contentsline {subsection}{\numberline {3.8.4}CUN4 Descargar archivo cifrado}{36}{subsection.3.8.4}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{36}{section*.30}
+\contentsline {subsubsection}{Atributos importantes}{36}{section*.31}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{36}{section*.32}
+\contentsline {subsection}{\numberline {3.8.5}CUCL3 Descargar archivos descifrados.}{38}{subsection.3.8.5}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{38}{section*.33}
+\contentsline {subsubsection}{Atributos importantes}{38}{section*.34}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{38}{section*.35}
+\contentsline {subsection}{\numberline {3.8.6}CUCL4 Eliminar archivos cifrado.}{39}{subsection.3.8.6}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{39}{section*.36}
+\contentsline {subsubsection}{Atributos importantes}{39}{section*.37}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{39}{section*.38}
+\contentsline {subsection}{\numberline {3.8.7}CUCL5 Generar llave (k) para archivo.}{41}{subsection.3.8.7}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{41}{section*.39}
+\contentsline {subsubsection}{Atributos importantes}{41}{section*.40}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{41}{section*.41}
+\contentsline {chapter}{Bibliograf\'ia}{42}{Item.69}
