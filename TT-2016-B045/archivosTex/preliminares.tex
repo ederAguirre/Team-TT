@@ -11,7 +11,7 @@ El contenido de este capítulo abordará temas estrechamente relacionados con la
 		Es la ciencia que se ocupa del análisis de un texto cifrado para obtener la información original sin conocimiento de la clave secreta, esto es, de forma ilícita rompiendo así los procedimientos de cifrado establecidos por la Criptografía, por lo que se dice que 		Criptoanálisis y Criptografía son ciencias complementarias pero contrarias. El criptoanálisis es el arte de descifrar comunicaciones cifradas sin conocer las llaves  ~\cite{cripto}.
  \end{itemize}
 
-
+%==================================================================================================================================================================
 \subsection{Servicios criptográficos. }
 Los servicios criptográficos son aquellos que garantizan en un sistema de información la adquisición, almacenamiento, procesamiento y transmisión de la información y para lograrlo se valen de uno o más objetivos fundamentales. 
  \begin{itemize}
@@ -29,6 +29,7 @@ Es un servicio que se ocupa de la alteración no autorizada de los datos. Para a
 Es un servicio que impide a una entidad negar compromisos o acciones anteriores. Cuando surgen disputas debido a que una entidad niega que se tomaron ciertas acciones, es necesario un medio para resolver la situación. Por ejemplo, una entidad puede autorizar la compra de una propiedad por otra entidad y posteriormente denegar que se concedió dicha autorización. Se necesita un procedimiento que involucre a un tercero de confianza para resolver la disputa  ~\cite{menezes}.
  \end{itemize}
 
+%==================================================================================================================================================================
 \section{Ataques a servicios criptográficos. }
 Un ataque es una violación a la seguridad de la información realizada por intrusos que tienen acceso físico al sistema sin ningún tipo de restricción, su objetivo es robar la información o hacer que ésta pierda valor relativo, o que disminuyan las posibilidades de su supervivencia a largo plazo.
 
@@ -87,6 +88,8 @@ En este caso el criptoanalista además de conocer el algoritmo de cifrado y el c
 
 %Cualquier algoritmo de cifrado, para ser considerado seguro, ha de soportar todos estos ataques y otros no citados; sin embargo, en la criptografía, como en cualquier aspecto de la seguridad, informática o no, no debemos olvidar un factor muy importante: las personas. El sistema más robusto caerá fácilmente si se tortura al emisor o al receptor hasta que desvelen el contenido del mensaje, o si se le ofrece a uno de ellos una gran cantidad de dinero; este tipo de ataques (sobornos, amenazas, extorsión, tortura...) se consideran siempre los más efectivos. 
 
+
+%==================================================================================================================================================================
 \section{Criptografía Simétrica. }
 Los esquemas criptográficos simétricos también se conocen como esquemas o algoritmos de clave simétrica, clave secreta y de clave única. Consideremos un esquema de cifrado que consiste en los conjuntos de transformaciones de cifrado y descifrado \textit{Ee: $e \in {\cal K}$} y \textit{Dd: $d \in {\cal K}$}, respectivamente, donde \textit{K} es el espacio clave. El esquema de cifrado se dice que es de clave simétrica si para cada par asociado de cifrado/descifrado de claves \textit{(e, d)}, es computacionalmente “fácil” para determinar \textit{d} conociendo sólo \textit{e}, y determinar \textit{e} a partir de \textit{d}. Desde\textit{ e = d} en los esquemas de cifrado de clave simétrica más prácticos, la clave simétrica término se convierte apropiado ~\cite{menezes}.
 \\
@@ -107,7 +110,7 @@ Así como la criptografía tiene grandes ventajas para la solución en la comuni
 	\item La seguridad depende de un secreto compartido entre el emisor y el receptor.
 	\item La administración de las claves no es escalable.
 	\item La distribución manual de llaves es costosa, ocupa mucho tiempo y es propensa a errores.
-	\item La distribución de claves debe hacerse a través de algún medio seguro como centros de distribución de llaves, implementación de algoritmos, etc [ ]. 
+	\item La distribución de claves debe hacerse a través de algún medio seguro como centros de distribución de llaves, implementación de algoritmos, etc ~\cite{ventajasime}. 
 \end{itemize}
 
 El esquema de cifrado simétrico se puede representar a través de la siguiente figura ~\ref{fig:2-3-1}.
@@ -119,37 +122,40 @@ El esquema de cifrado simétrico se puede representar a través de la siguiente 
 \end{figure}
 
 
-La sintaxis de un esquema de cifrado simétrico, esta dada por la siguiente definición.
-\begin{definition} 
-Un esquema de cifrado simétrico está conformado por una tripleta de algoritmos 
-$\sf \Pi=(Gen, Enc, Dec)$, definidos como se describe a continuación:
-\begin{itemize}
-\item  El algoritmo generador de claves $\sf Gen$ selecciona una llave  $K$ al azar del conjunto de llaves $\cal K$, esto se denotará como $K \rand {\cal K}$.
-Esta clave $K$  será usada por los algoritmos  $\sf Enc$ y $\sf Dec$, esta clave la compartirán  emisor y receptor. 
-\item El algoritmo de cifrado $\sf Enc$, toma como entrada un texto en claro  $M \in {\cal M}$ y una clave $K$ generada por  $\sf Gen$  y regresa un texto cifrado $C \in {\cal C}$.  Usualmente esto se denota como $C \leftarrow {\sf Enc}_K(M)$.
- \item El algoritmo de descifrado $\sf Dec$, toma como entrada un texto cifrado $C$ y una llave $K$ y regresa $M$. Esta operación se denota por  $M \leftarrow {\sf Dec}_K(C)$.
-Para que cualquier algoritmo de cifrado simétrico funcione correctamente, se debe garantizar que para
-todas las llaves posibles en  $\cal K$ y todos los posibles mensajes $\cal M$, $$ {\sf Dec}_K({\sf Enc}_K(M)) = M.$$
-\end{itemize}
-\end{definition}
+%La sintaxis de un esquema de cifrado simétrico, esta dada por la siguiente definición.
+%\begin{definition} 
+%Un esquema de cifrado simétrico está conformado por una tripleta de algoritmos 
+%$\sf \Pi=(Gen, Enc, Dec)$, definidos como se describe a continuación:
+%\begin{itemize}
+%\item  El algoritmo generador de claves $\sf Gen$ selecciona una llave  $K$ al azar del conjunto de llaves $\cal K$, esto se denotará como $K \rand {\cal K}$.
+%Esta clave $K$  será usada por los algoritmos  $\sf Enc$ y $\sf Dec$, esta clave la compartirán  emisor y receptor. 
+%\item El algoritmo de cifrado $\sf Enc$, toma como entrada un texto en claro  $M \in {\cal M}$ y una clave $K$ generada por  $\sf Gen$  y regresa un texto cifrado $C \in {\cal C}$.  Usualmente esto se denota como $C \leftarrow {\sf Enc}_K(M)$.
+ %\item El algoritmo de descifrado $\sf Dec$, toma como entrada un texto cifrado $C$ y una llave $K$ y regresa $M$. Esta operación se denota por  $M \leftarrow {\sf Dec}_K(C)$.
+%Para que cualquier algoritmo de cifrado simétrico funcione correctamente, se debe garantizar que para
+%todas las llaves posibles en  $\cal K$ y todos los posibles mensajes $\cal M$, $$ {\sf Dec}_K({\sf Enc}_K(M)) = M.$$
+%\end{itemize}
+%\end{definition}
 
-\section{Criptografía asimétrica. }
-La criptografía asimétrica es por definición aquella que utiliza dos claves diferentes para cada usuario, una para cifrar que se le llama clave pública y otra para descifrar que es la clave privada. Los algoritmos asimétricos son diferentes a los simétricos en un sentido muy importante ~\cite{sime}. Cuando se genera una clave simétrica, simplemente se escoge un número aleatorio de la longitud apropiada. Al generar claves asimétricas el proceso es más complejo. ~\cite{sime}.
+%==================================================================================================================================================================
+\section{Criptografía Asimétrica. }
+En el modelo clásico de criptografía, dos entidades escogen secretamente la clave \textit{K}. \textit{K} da lugar a una regla de cifrado \textit{ek} y una regla de descifrado \textit{dk}. En este criptosistema, \textit{dk} es el mismo que \textit{ek} o fácilmente derivado de él, a este se le llama criptosistema de clave simétrica, ya que la exposición de cualquiera \textit{ek} o \textit{dk} hace que el sistema sea inseguro. Un inconveniente de un sistema de clave simétrica es que requiere la comunicación previa de la clave \textit{K} entre estas dos entidades, utilizando un canal seguro antes de que se transmita cualquier texto cifrado ~\cite{stinson}.
+\\
+La idea detrás de un criptosistema de clave pública es que podría ser posible encontrar un criptosistema donde es computacionalmente imposible determinar \textit{dk} dado \textit{ek}.Si es así, entonces la regla de cifrado \textit{ek} es una clave pública que podría ser publicada en un directorio, por ejemplo (de ahí el término sistema de clave pública). La ventaja de un sistema de clave pública es que una entidad puede enviar un mensaje cifrado a otra entidad (sin la comunicación previa de una clave secreta compartida) utilizando la regla de cifrado pública \textit{ek}. La entidad que recibe la comunicación será la única que puede descifrar el texto cifrado, utilizando la regla de descifrado \textit{dk}, que se llama la clave privada ~\cite{stinson}.
+\\ 
+Sea  \textit{Ee: $e \in {\cal K}$} un conjunto de transformaciones de cifrado, y sea \textit{Dd: $d \in {\cal K}$} el conjunto de transformaciones de descifrado correspondientes, donde  \textit{K} es el espacio clave. Considere cualquier par de transformaciones asociadas de cifrado/descifrado  \textit{(Ee, Dd)} y suponga que cada par tiene la propiedad de que saber  \textit{Ee} es computacionalmente inviable, dado un texto cifrado$c \in {\cal C}$, para encontrar el mensaje $m \in {\cal M}$ tal que \textit{Ee (m) = C}. Esta propiedad implica que dada \textit{e} es imposible determinar la clave de descifrado correspondiente \textit{d}. (Por supuesto, \textit{e} y \textit{d} son simplemente medios para describir las funciones de cifrado y descifrado, respectivamente) ~\cite{menezes}.
 
-\bigskip Características de la Criptografía asimétrica: \begin{itemize}
-	\item Se basa en operaciones matemáticas complejas.
-	\item Se ejecuta de 100 a 1000 veces más lento que los algoritmos simétricos.
-\end{itemize} ~\cite{sime} \\ \\ 
-
- Los beneficios de la criptografía asimétrica son la solución a los problemas de la criptografía simétrica, pues las claves públicas pueden ser distribuidas con toda tranquilidad, no valen de nada sin las claves privadas. El cifrado asimétrico se emplea muy frecuentemente para pasar con seguridad una clave privada, que posteriormente, será la que se utilice para cifrar y/o descifrar otra información. El cifrado asimétrico puede ser representado como aparece en la figura ~\ref{fig:1-2-4}.
+El cifrado asimétrico puede ser representado como aparece en la figura ~\ref{fig:2-4-1}.
 
 \begin{figure}[H]
 \centering
 	\includegraphics[width=10cm, height=5cm]{./images/Cripto_Asimetrica.jpg}
 	\caption{Diagrama de Criptografía Asimétrica.}
-	\label{fig:2-3-2}
+	\label{fig:2-4-1}
 \end{figure}
 
+ Los beneficios de la criptografía asimétrica son la solución a los problemas de la criptografía simétrica, pues las claves públicas pueden ser distribuidas con toda tranquilidad, no valen de nada sin las claves privadas. El cifrado asimétrico se emplea muy frecuentemente para pasar con seguridad una clave privada, que posteriormente, será la que se utilice para cifrar y/o descifrar otra información.
+
+%==================================================================================================================================================================
 \section{Cifrado por bloques. }
 Los algoritmos de cifrado por bloques toman bloques de tamaño fijo del texto en claro y producen un bloque de tamaño fijo de texto cifrado, generalmente del mismo tamaño que la entrada. El tamaño del bloque debe ser lo suficientemente grande como para evitar ataques de texto cifrado. La asignación de bloques de entrada a bloques de salida debe ser uno a uno para hacer el proceso reversible y parecer aleatoria.\\ 
 Para la asignación de bloques los algoritmos de cifrado simétrico realizan sustituciones y permutaciones en el texto en claro hasta obtener el texto cifrado.\\ 
@@ -160,13 +166,13 @@ La sustitución es el reemplazo de un bloque de $n$ bits por otro bloque de $n$ 
 $2^{k}$~\cite{bloc}. Los cifradores por bloques mas usados son AES (Advanced Encryption Standard, por sus 
 siglas en ingl\'es) y DES (Data Encryption Standard, por sus siglas en ingl\'es). ~\cite{bloques}\\ \\ 
 
-Los cifradores por bloques pueden ser representados como se ve en la figura ~\ref{fig:1-2-5}.
+Los cifradores por bloques pueden ser representados como se ve en la figura ~\ref{fig:2-5-1}.
 
 \begin{figure}[H]
 \centering
 	\includegraphics[width=10cm, height=5cm]{./images/CifradoBloques.jpeg}
 	\caption{Diagrama de Cifradores por Bloques}
-	\label{fig:2-4-1}
+	\label{fig:2-5-1}
 \end{figure}
 
 
@@ -250,6 +256,7 @@ Los cifradores por bloques pueden ser representados como se ve en la figura ~\re
 
 %\pagebreak
 
+%==================================================================================================================================================================
 \section{RSA}
 
 El algoritmo de clave pública RSA fué creado en 1978 por Rivest, Shamir y Adlman, y es el sistema criptográfico asimétrico más conocido y usado. Estos señores se basaron en el artículo de Diffie-Hellman sobre sistemas de llave pública, crearon su algoritmo y fundaron la empresa RSA Data Security Inc., que es actualmente una de las más prestigiosas en el entorno de la protección de datos.
@@ -274,6 +281,7 @@ RSA basa su seguridad es ser una función computacionalmente segura, ya que si b
 
 RSA es el más conocido y usado de los sistemas de clave pública, y también el más rápido de ellos. Presenta todas las ventajas de los sistemas asimétricos, incluyendo la firma digital, aunque resulta más útil a la hora de implementar la confidencialidad el uso de sistemas simétricos, por ser más rápidos. Se suele usar también en los sistemas mixtos para encriptar y enviar la clave simétrica que se usará posteriormente en la comunicación cifrada. ~\cite{rsa}
 
+%==================================================================================================================================================================
 \section{Firmas a ciegas. }
 
 Las firmas a ciegas son un tipo especial de firmas digitales en las que se firma algo que no se conoce. Para hacer firmas a ciegas se utilizan factores de opacidad, para ocultar el mensaje original que se requiere que esté firmado, y así la autoridad no pueda conocer lo que está firmando.
@@ -283,6 +291,7 @@ Por lo tanto, el propósito de una firma a ciegas es evitar que el firmante B co
 	\item En las elecciones electrónicas también pueden utilizarse las firmas a ciegas, ya que se requiere que B (una autoridad electoral) no conozca la identidad de A (el votante) debido a que el voto debe efectuarse de manera anónima. Sin embargo, es necesario que A demuestre que su voto m es válido. Lo cual se logra cuando A presenta ante B la firma s(m). Y se sabe de antemano que B no puede asociar s(m) a A, debido a que el votante previamente le envió a B su voto m pero de forma oculta para que se lo firmara. ~\cite{ciegas}
 \end{itemize} 
 
+%==================================================================================================================================================================
 \section{Funciones Hash. }
 A continuación se describirán las características de las {\it funciones hash}, también conocidas como {\it funciones de resumen}. Las funciones hash basan su definición en funciones de un solo sentido  ({\it one-way functions}, en inglés). Una función de un solo sentido es aquella que para un valor $x$, es  muy fácil calcular $f(x)$, pero es muy difícil hallar $f^{-1}(x)$. Es complicado en general, hallar funciones de este tipo y probar que lo son.
 \begin{definition}
@@ -301,9 +310,11 @@ El mensaje de entrada se procesa por bloques de 512 bits.  La SHA 256 fue dise\~
 como salida se obtiene una cadena binaria de 160 bits. Al igual que el MD5, se procesa en bloques de 512 bits ~\cite{modes}.
 
 
+%==================================================================================================================================================================
 \section{Cómputo Nube. }
 El cómputo nube definido así por el NIST, es un modelo para permitir un acceso a la red ubicuo, es decir, que se encuentra presente en todas partes al mismo tiempo y conveniente a un conjunto de recursos informáticos configurables (por ejemplo, redes, servidores, almacenamiento, aplicaciones y servicios) que se puede aprovisionar y liberar rápidamente con un esfuerzo mínimo de gestión o una interacción entre el proveedor de servicios.
 Este modelo de cómputo nube se compone de 5 características esenciales, 3 modelos de servicio y 4  modelos de despliegue. \\ \\  
+
 
 \textbf{Características: }
 \begin{itemize}
@@ -314,6 +325,7 @@ Este modelo de cómputo nube se compone de 5 características esenciales, 3 mode
 	\item \textbf{Servicio medido. } \\ Los sistemas de cómputo nube controlan y optimizan automáticamente el uso de recursos aprovechando una capacidad de medición en algún nivel de abstracción apropiado al tipo de servicio (por ejemplo, almacenamiento, procesamiento, ancho de banda y cuentas de usuario activas). El uso de recursos puede ser monitoreado, controlado y reportado, proporcionando transparencia tanto para el proveedor como para el consumidor del servicio utilizado.
 \end{itemize}    
 
+
  \textbf{Modelos de servicio. }
 
 \begin{itemize}
@@ -322,6 +334,8 @@ Este modelo de cómputo nube se compone de 5 características esenciales, 3 mode
 	\item \textbf {Infraestructura como Servicio (IaaS). } \\  La capacidad proporcionada al consumidor es proveer procesamiento, almacenamiento, redes y otros recursos de computación fundamentales donde el consumidor es capaz de desplegar y ejecutar software arbitrario, que puede incluir sistemas operativos y aplicaciones. El consumidor no gestiona ni controla la infraestructura subyacente de la nube, sino que tiene control sobre los sistemas operativos, el almacenamiento y las aplicaciones implementadas; Y posiblemente un control limitado de componentes de red selectos (por ejemplo, firewalls de host). 
 \end{itemize}  
 
+
+
  \textbf{Modelos de despliegue. }
 \begin{itemize}
 	\item \textbf {Nube privada. } \\ La infraestructura de la nube está preparada para el uso exclusivo de una sola organización que comprende varios consumidores (por ejemplo, unidades de negocio). Puede ser propiedad, administrado y operado por el órgano.
@@ -329,6 +343,8 @@ Este modelo de cómputo nube se compone de 5 características esenciales, 3 mode
 	\item \textbf{Nube pública. } \\ La infraestructura de la nube está preparada para el uso abierto por el público en general. Puede ser propiedad, administrado y operado por una organización comercial, académica u gubernamental, o alguna combinación de ellos. Existe en las instalaciones del proveedor de la nube.
 	\item \textbf{Nube híbrida. } \\  La infraestructura de la nube es una composición de dos o más infraestructuras de nube distintas (privadas, comunitarias o públicas) que siguen siendo entidades únicas, pero están unidas por una tecnología estandarizada o propietaria que permite la portabilidad de datos y aplicaciones (por ejemplo, burbujas de nube para equilibrar la carga entre Nubes).
 \end{itemize}   
+
+
 
 
  \textbf{Problemas en Cómputo Nube. }

@@ -118,10 +118,22 @@ R.~Sharma.
 \newblock {\em International Journal of Engineering Applied Sciences and
   Technology, 2017}, 2017.
 
+\bibitem{ventajasime}
+D.~I.~G. Sánchez.
+\newblock Seguridad en redes y criptografÍa.
+\newblock Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus
+  Monterrey, 2004.
+\newblock \url{https://repositorio.itesm.mx/ortec/handle/11285/571244}.
+
 \bibitem{modes}
 W.~Stallings.
 \newblock {\em Cryptography and Network Security: Principles and Practice}.
 \newblock Pearson Education, 5a edition, 2002.
+
+\bibitem{stinson}
+D.~R. Stinson.
+\newblock {\em Cryptography - theory and practice}.
+\newblock Discrete mathematics and its applications series. {CRC} Press, 1995.
 
 \bibitem{tahoe}
 H.~D. y. W.~N. Wilcox-O´Hearn~Z.
