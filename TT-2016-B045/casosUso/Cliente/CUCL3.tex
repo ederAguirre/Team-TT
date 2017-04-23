@@ -20,7 +20,8 @@
 }
 \UCitem{Mensajes}{
 \begin{itemize} 
-\item \MSGref{MSG-CL1}{Archivo Descargado}
+\item \MSGref{MSG1}{Operación exitosa}
+\item \MSGref{MSG-CL4}{Archivo inexistente}
 \end{itemize}
 }
 \end{UseCase}
@@ -32,11 +33,12 @@
 \UCpaso Recibe los archivos C1 y C2 asociados al nombre que envió
 \UCpaso Descifra C2 con la llave “Ka” del cliente y obtiene un archivo con la llave “K”
 \UCpaso Descifra C1 con la llave “K” y obtiene su archivo “F” en claro
-\UCpaso Muestra el mensaje \MSGref{MSG1}{El archivo fue descargado correctamente}.\end{UCtrayectoria}
+\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}.
+\end{UCtrayectoria}
 
 % ---------------- Trayectorias alternativas -------------- Colocar los mensajes {\bf MSG1-}
 \begin{UCtrayectoria}{Trayectoria Alternativa}
 \UCpaso [\UCactor] Envía a la nube una petición con el nombre del archivo que desea descargar.
-\UCpaso Muestra el mensaje \MSGref{MSG1}{El archivo no existe}.\end{UCtrayectoria}
+\UCpaso Muestra el mensaje \MSGref{MSG-CL4}{Archivo inexistente}.\end{UCtrayectoria}
 
 

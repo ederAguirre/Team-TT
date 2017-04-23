@@ -20,7 +20,7 @@
 	}
 	\UCitem{Mensajes}{
 \begin{itemize} 
-	\item \MSGref{MSG-CL1}{Archivo Eliminado}
+	\item \MSGref{MSG1}{Operación exitosa}
 \end{itemize}
 	}
 \end{UseCase}
@@ -35,11 +35,11 @@
 	\UCpaso  El sistema busca el nombre de archivo asociado en su base de datos.\Trayref{A}
 	\UCpaso  El sistema elimina C1 y C2.
 	\UCpaso  El sistema despliega la lista de usuarios en la base de datos.
-	\UCpaso Muestra el mensaje \MSGref{MSG1}{El archivo fue eliminado correctamente}.\end{UCtrayectoria}
+	\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}.\end{UCtrayectoria}
 
 % ---------------- Trayectorias alternativas -------------- Colocar los mensajes {\bf MSG1-}
 \begin{UCtrayectoriaA}{A}
-	{El archivo no existe}
-	\UCpaso [\UCactor] El cliente da clic en el botón aceptar.
+	{Archivo inexistente}
+	\UCpaso [\UCactor] El cliente da clic en el botón \IUbuttonAceptar.
 	\UCpaso El sistema despliega la pantalla principal.
 \end{UCtrayectoriaA}
