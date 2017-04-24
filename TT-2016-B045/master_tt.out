@@ -2,67 +2,68 @@
 \BOOKMARK [1][-]{section.1.1}{Definiciones, acr\363nimos y abreviaturas}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Contexto}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Problem\341tica}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{Soluci\363n propuesta}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.5}{Justificaci\363n}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.6}{Objetivos}{chapter.1}% 7
-\BOOKMARK [2][-]{subsection.1.6.1}{Objetivo General}{section.1.6}% 8
-\BOOKMARK [2][-]{subsection.1.6.2}{Objetivos Espec\355ficos}{section.1.6}% 9
-\BOOKMARK [0][-]{chapter.2}{Preliminares}{}% 10
-\BOOKMARK [1][-]{section.2.1}{Definiciones. }{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.1.1}{Servicios criptogr\341ficos. }{section.2.1}% 12
-\BOOKMARK [1][-]{section.2.2}{Ataques a servicios criptogr\341ficos. }{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.3}{Criptograf\355a Sim\351trica. }{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.4}{Criptograf\355a Asim\351trica. }{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.5}{Cifrado por bloques. }{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.6}{RSA}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.7}{Firmas a ciegas. }{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.8}{Funciones Hash. }{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.9}{C\363mputo Nube. }{chapter.2}% 20
-\BOOKMARK [0][-]{chapter.3}{An\341lisis y dise\361o}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Glosario de T\351rminos}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Arquitectura del sistema. }{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.3}{Descripcion de procesos}{chapter.3}% 24
-\BOOKMARK [2][-]{section*.8}{Descripci\363n del proceso subir archivo.}{section.3.3}% 25
-\BOOKMARK [3][-]{section*.9}{Participantes}{section*.8}% 26
-\BOOKMARK [3][-]{section*.11}{Descripci\363n del proceso Descargar archivo.}{section*.8}% 27
-\BOOKMARK [3][-]{section*.12}{Participantes}{section*.8}% 28
-\BOOKMARK [3][-]{section*.14}{Descripci\363n del proceso eliminar archivo.}{section*.8}% 29
-\BOOKMARK [3][-]{section*.15}{Participantes}{section*.8}% 30
-\BOOKMARK [1][-]{section.3.4}{Requerimientos Funcionales. }{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.5}{Requerimientos No Funcionales }{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.6}{Reglas de Negocio}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.7}{Especificaci\363n de Plataforma}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.8}{Casos de Uso}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.8.1}{CUSLL1 Generar las llaves del servidor de llaves}{section.3.8}% 36
-\BOOKMARK [3][-]{section*.21}{Descripci\363n completa}{subsection.3.8.1}% 37
-\BOOKMARK [3][-]{section*.22}{Atributos importantes}{subsection.3.8.1}% 38
-\BOOKMARK [3][-]{section*.23}{Trayectorias del Caso de Uso}{subsection.3.8.1}% 39
-\BOOKMARK [2][-]{subsection.3.8.2}{CUSLL2 Generar firma ciega \(y\). }{section.3.8}% 40
-\BOOKMARK [3][-]{section*.24}{Descripci\363n completa}{subsection.3.8.2}% 41
-\BOOKMARK [3][-]{section*.25}{Atributos importantes}{subsection.3.8.2}% 42
-\BOOKMARK [3][-]{section*.26}{Trayectorias del Caso de Uso}{subsection.3.8.2}% 43
-\BOOKMARK [2][-]{subsection.3.8.3}{CUN3 Almacenar archivo cifrado}{section.3.8}% 44
-\BOOKMARK [3][-]{section*.27}{Descripci\363n completa}{subsection.3.8.3}% 45
-\BOOKMARK [3][-]{section*.28}{Atributos importantes}{subsection.3.8.3}% 46
-\BOOKMARK [3][-]{section*.29}{Trayectorias del Caso de Uso}{subsection.3.8.3}% 47
-\BOOKMARK [2][-]{subsection.3.8.4}{CUN4 Descargar archivo cifrado}{section.3.8}% 48
-\BOOKMARK [3][-]{section*.30}{Descripci\363n completa}{subsection.3.8.4}% 49
-\BOOKMARK [3][-]{section*.31}{Atributos importantes}{subsection.3.8.4}% 50
-\BOOKMARK [3][-]{section*.32}{Trayectorias del Caso de Uso}{subsection.3.8.4}% 51
-\BOOKMARK [2][-]{subsection.3.8.5}{CUN5 Eliminar archivo cifrado}{section.3.8}% 52
-\BOOKMARK [3][-]{section*.33}{Descripci\363n completa}{subsection.3.8.5}% 53
-\BOOKMARK [3][-]{section*.34}{Atributos importantes}{subsection.3.8.5}% 54
-\BOOKMARK [3][-]{section*.35}{Trayectorias del Caso de Uso}{subsection.3.8.5}% 55
-\BOOKMARK [2][-]{subsection.3.8.6}{CUCL1 Subir archivo}{section.3.8}% 56
-\BOOKMARK [3][-]{section*.36}{Descripci\363n completa}{subsection.3.8.6}% 57
-\BOOKMARK [3][-]{section*.37}{Atributos importantes}{subsection.3.8.6}% 58
-\BOOKMARK [3][-]{section*.38}{Trayectorias del Caso de Uso}{subsection.3.8.6}% 59
-\BOOKMARK [2][-]{subsection.3.8.7}{CUCL3 Descargar archivos descifrados.}{section.3.8}% 60
-\BOOKMARK [3][-]{section*.39}{Descripci\363n completa}{subsection.3.8.7}% 61
-\BOOKMARK [3][-]{section*.40}{Atributos importantes}{subsection.3.8.7}% 62
-\BOOKMARK [3][-]{section*.41}{Trayectorias del Caso de Uso}{subsection.3.8.7}% 63
-\BOOKMARK [2][-]{subsection.3.8.8}{CUCL4 Eliminar archivos cifrado.}{section.3.8}% 64
-\BOOKMARK [3][-]{section*.42}{Descripci\363n completa}{subsection.3.8.8}% 65
-\BOOKMARK [3][-]{section*.43}{Atributos importantes}{subsection.3.8.8}% 66
-\BOOKMARK [3][-]{section*.44}{Trayectorias del Caso de Uso}{subsection.3.8.8}% 67
-\BOOKMARK [0][-]{Item.112}{Bibliograf\355a}{}% 68
+\BOOKMARK [1][-]{section.1.4}{\277Qu\351 se ha hecho antes?}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Soluci\363n propuesta}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.6}{Justificaci\363n}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.7}{Objetivos}{chapter.1}% 8
+\BOOKMARK [2][-]{subsection.1.7.1}{Objetivo General}{section.1.7}% 9
+\BOOKMARK [2][-]{subsection.1.7.2}{Objetivos Espec\355ficos}{section.1.7}% 10
+\BOOKMARK [0][-]{chapter.2}{Preliminares}{}% 11
+\BOOKMARK [1][-]{section.2.1}{Definiciones. }{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.1.1}{Servicios criptogr\341ficos. }{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Ataques a servicios criptogr\341ficos. }{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Criptograf\355a Sim\351trica. }{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.4}{Criptograf\355a Asim\351trica. }{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.5}{Cifrado por bloques. }{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.6}{RSA}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.7}{Firmas a ciegas. }{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.8}{Funciones Hash. }{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.9}{C\363mputo Nube. }{chapter.2}% 21
+\BOOKMARK [0][-]{chapter.3}{An\341lisis y dise\361o}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Glosario de T\351rminos}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.2}{Arquitectura del sistema. }{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.3}{Descripcion de procesos}{chapter.3}% 25
+\BOOKMARK [2][-]{section*.8}{Descripci\363n del proceso subir archivo.}{section.3.3}% 26
+\BOOKMARK [3][-]{section*.9}{Participantes}{section*.8}% 27
+\BOOKMARK [3][-]{section*.11}{Descripci\363n del proceso Descargar archivo.}{section*.8}% 28
+\BOOKMARK [3][-]{section*.12}{Participantes}{section*.8}% 29
+\BOOKMARK [3][-]{section*.14}{Descripci\363n del proceso eliminar archivo.}{section*.8}% 30
+\BOOKMARK [3][-]{section*.15}{Participantes}{section*.8}% 31
+\BOOKMARK [1][-]{section.3.4}{Requerimientos Funcionales. }{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.5}{Requerimientos No Funcionales }{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.6}{Reglas de Negocio}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.7}{Especificaci\363n de Plataforma}{chapter.3}% 35
+\BOOKMARK [1][-]{section.3.8}{Casos de Uso}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.8.1}{CUSLL1 Generar las llaves del servidor de llaves}{section.3.8}% 37
+\BOOKMARK [3][-]{section*.21}{Descripci\363n completa}{subsection.3.8.1}% 38
+\BOOKMARK [3][-]{section*.22}{Atributos importantes}{subsection.3.8.1}% 39
+\BOOKMARK [3][-]{section*.23}{Trayectorias del Caso de Uso}{subsection.3.8.1}% 40
+\BOOKMARK [2][-]{subsection.3.8.2}{CUSLL2 Generar firma ciega \(y\). }{section.3.8}% 41
+\BOOKMARK [3][-]{section*.24}{Descripci\363n completa}{subsection.3.8.2}% 42
+\BOOKMARK [3][-]{section*.25}{Atributos importantes}{subsection.3.8.2}% 43
+\BOOKMARK [3][-]{section*.26}{Trayectorias del Caso de Uso}{subsection.3.8.2}% 44
+\BOOKMARK [2][-]{subsection.3.8.3}{CUN3 Almacenar archivo cifrado}{section.3.8}% 45
+\BOOKMARK [3][-]{section*.27}{Descripci\363n completa}{subsection.3.8.3}% 46
+\BOOKMARK [3][-]{section*.28}{Atributos importantes}{subsection.3.8.3}% 47
+\BOOKMARK [3][-]{section*.29}{Trayectorias del Caso de Uso}{subsection.3.8.3}% 48
+\BOOKMARK [2][-]{subsection.3.8.4}{CUN4 Descargar archivo cifrado}{section.3.8}% 49
+\BOOKMARK [3][-]{section*.30}{Descripci\363n completa}{subsection.3.8.4}% 50
+\BOOKMARK [3][-]{section*.31}{Atributos importantes}{subsection.3.8.4}% 51
+\BOOKMARK [3][-]{section*.32}{Trayectorias del Caso de Uso}{subsection.3.8.4}% 52
+\BOOKMARK [2][-]{subsection.3.8.5}{CUN5 Eliminar archivo cifrado}{section.3.8}% 53
+\BOOKMARK [3][-]{section*.33}{Descripci\363n completa}{subsection.3.8.5}% 54
+\BOOKMARK [3][-]{section*.34}{Atributos importantes}{subsection.3.8.5}% 55
+\BOOKMARK [3][-]{section*.35}{Trayectorias del Caso de Uso}{subsection.3.8.5}% 56
+\BOOKMARK [2][-]{subsection.3.8.6}{CUCL1 Subir archivo}{section.3.8}% 57
+\BOOKMARK [3][-]{section*.36}{Descripci\363n completa}{subsection.3.8.6}% 58
+\BOOKMARK [3][-]{section*.37}{Atributos importantes}{subsection.3.8.6}% 59
+\BOOKMARK [3][-]{section*.38}{Trayectorias del Caso de Uso}{subsection.3.8.6}% 60
+\BOOKMARK [2][-]{subsection.3.8.7}{CUCL3 Descargar archivos descifrados.}{section.3.8}% 61
+\BOOKMARK [3][-]{section*.39}{Descripci\363n completa}{subsection.3.8.7}% 62
+\BOOKMARK [3][-]{section*.40}{Atributos importantes}{subsection.3.8.7}% 63
+\BOOKMARK [3][-]{section*.41}{Trayectorias del Caso de Uso}{subsection.3.8.7}% 64
+\BOOKMARK [2][-]{subsection.3.8.8}{CUCL4 Eliminar archivos cifrado.}{section.3.8}% 65
+\BOOKMARK [3][-]{section*.42}{Descripci\363n completa}{subsection.3.8.8}% 66
+\BOOKMARK [3][-]{section*.43}{Atributos importantes}{subsection.3.8.8}% 67
+\BOOKMARK [3][-]{section*.44}{Trayectorias del Caso de Uso}{subsection.3.8.8}% 68
+\BOOKMARK [0][-]{Item.112}{Bibliograf\355a}{}% 69
