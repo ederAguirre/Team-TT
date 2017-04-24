@@ -54,20 +54,16 @@
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{38}{section*.33}
 \contentsline {subsubsection}{Atributos importantes}{38}{section*.34}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{38}{section*.35}
-\contentsline {subsection}{\numberline {3.8.6}CUCL2 Subir archivo}{40}{subsection.3.8.6}
+\contentsline {subsection}{\numberline {3.8.6}CUCL1 Subir archivo}{40}{subsection.3.8.6}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{40}{section*.36}
 \contentsline {subsubsection}{Atributos importantes}{40}{section*.37}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{40}{section*.38}
-\contentsline {subsection}{\numberline {3.8.7}CUCL3 Descargar archivos descifrados.}{42}{subsection.3.8.7}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{42}{section*.39}
-\contentsline {subsubsection}{Atributos importantes}{42}{section*.40}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{42}{section*.41}
-\contentsline {subsection}{\numberline {3.8.8}CUCL4 Eliminar archivos cifrado.}{44}{subsection.3.8.8}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{44}{section*.42}
-\contentsline {subsubsection}{Atributos importantes}{44}{section*.43}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{44}{section*.44}
-\contentsline {subsection}{\numberline {3.8.9}CUCL5 Generar llave (k) para archivo.}{46}{subsection.3.8.9}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{46}{section*.45}
-\contentsline {subsubsection}{Atributos importantes}{46}{section*.46}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{46}{section*.47}
-\contentsline {chapter}{Bibliograf\'ia}{47}{Item.96}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{41}{section*.38}
+\contentsline {subsection}{\numberline {3.8.7}CUCL3 Descargar archivos descifrados.}{43}{subsection.3.8.7}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{43}{section*.39}
+\contentsline {subsubsection}{Atributos importantes}{43}{section*.40}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{43}{section*.41}
+\contentsline {subsection}{\numberline {3.8.8}CUCL4 Eliminar archivos cifrado.}{45}{subsection.3.8.8}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{45}{section*.42}
+\contentsline {subsubsection}{Atributos importantes}{45}{section*.43}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{45}{section*.44}
+\contentsline {chapter}{Bibliograf\'ia}{47}{Item.112}

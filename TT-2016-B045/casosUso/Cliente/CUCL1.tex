@@ -1,0 +1,102 @@
+% Copie este bloque por cada caso de uso:
+%-------------------- COMIENZA descripción del caso de uso.
+
+
+
+\begin{UseCase}{CUCL1}{Subir archivo}{El usuario seleccionara el archivo que desea que sea almacenado en la nube, este archivo será cifrado y enviado de manera transparente para el usuario, y dependiendo si el archivo se detecta duplicado se enviaran distintos archivos.}
+
+	\UCitem{Versión}{1.0 - 19/04/17}
+	\UCitem{Autor}{Jhonatan Saulés Cortés}
+	\UCitem{Prioridad}{Alta}
+	\UCitem{Módulo}{Cliente}
+	\UCitem{Actor}{Usuario}
+	\UCitem{Propósito}{Almacenar un archivo en la nube, el cual debe estar cifrado para que no lo pueda entender el servicio de almacenamiento.}
+	\UCitem{Entradas}{ 
+                                           \begin{itemize}
+					\item Archivo a almacenar \textit{M}
+					\item Llave pública del servidor \textit{d}
+				\end{itemize}
+
+                                          }
+	\UCitem{Salidas}{Archivo X a firmar por el servidor de llaves}
+				
+	\UCitem{Precondiciones}{El servidor de llaves debe tener asignada tanto su llave pública como llave privada. }
+	\UCitem{Postcondiciones}{El archivo del usuario estará listo para ser firmado por el servidor de llaves. }
+	\UCitem{Reglas del negocio}{
+		%\begin{itemize}	
+		%	\item \BRref{RN-E1}{Alumno inscrito} 
+		%	\item \BRref{RN-E4}{Calificación} 
+		%	\item \BRref{RN-E6}{Calificación registrada}
+		%\end{itemize}
+		}
+	\UCitem{Mensajes}{
+		\begin{itemize}	
+			\item \MSGref{MSG-SLL1}{Generación de llaves}
+			\item \MSGref{MSG-CL2}{Archivo incomplatible}
+			\item \MSGref{MSG-CL3}{Número incorrecto}
+			\item \MSGref{MSG-CL4}{Error al generar la llave}.
+			\item \MSGref{MSG-CL5}{Archivo almacenado}.
+		\end{itemize}
+		}
+\end{UseCase}
+
+
+% ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Da un clic en la opción "Subir Archivo" en la pantalla .
+	\UCpaso Despliega una ventana con la carpeta personal que muestra los archivos del usuario. \Trayref{A}
+	\UCpaso[\UCactor] Selecciona el archivo \textit{(M)} que va a subir y da un clic en el botón \IUbuttonAceptar en la pantalla . \Trayref{B}
+	\UCpaso Elige un número aleatorio \textit{r} dentro del campo de números primos de igual o menor tañano a las llaves del servidor de llaves. \Trayref{C} \label{CUCL2Regreso}
+	\UCpaso Calcula una función hash del archivo seleccionado \textit{H(M)}.
+	\UCpaso Eleva el número aleatorio \textit{r} a la potencia llave pública del servidor de llaves,  \textit{$r^{e}$}. 
+	\UCpaso Multiplica \textit{H(M)} por \textit{$r^{e}$}, \textbf{\textit{H(M)} $\cdot$ \textit{$r^{e}$}}.
+	\UCpaso Obtiene Archivo X a firmar y lo envía al servidor de llaves.
+	\UCpaso Recibe la firma a ciegas \textit{Y} del servidor.
+	\UCpaso Calcula el inverso multiplikcativo del numero aleatorio \textit{r}.
+	\UCpaso Multiplica \textit{Y} por \textit{$r^{-1}$}, \textbf{\textit{Y} $\cdot$ \textit{$r^{-1}$}}.
+	\UCpaso Verifica que \textit{$k^{e}$} sea igual a \textit{H(M)}.  \Trayref{D}
+	\UCpaso Obtiene llave \textit{k} y la almacena, junto con el nombre del achivo al que le corresponde.
+	\UCpaso Cifra el archivo \textit{(M)} con su llave \textit{k}.
+	\UCpaso Obtiene el archivo \textit{C1}.
+	\UCpaso Cifra el archivo \textit{k} con su llave publica del usuario \textit{ka}.
+	\UCpaso Obtiene el archivo \textit{C2}.
+	\UCpaso Envia a la nube el hash del archivo \textit{C1}, \textit{H(C1)}.
+	\UCpaso Recibe solicitud de archivos. \Trayref{E}
+	\UCpaso Envía los archivos \textit{C1} y \textit{C2}.
+	\UCpaso Muestra el Mensaje \MSGref{MSG-CL5}{Archivo almacenado}. \label{CUCL2Regreso2}
+	
+
+\end{UCtrayectoria}
+
+% ---------------- Trayectorias alternativas -------------- Colocar los mensajes  {\bf MSG1-}
+
+		
+\begin{UCtrayectoriaA}{A}{Archivos inexistentes}
+	\UCpaso Despliega una ventana con la carpeta personal del usuario sin archivos existentes.
+	\UCpaso Muestra el Mensaje \MSGref{MSG-CL1}{Carpeta vacía}.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Archivo incompatible}
+	\UCpaso [\UCactor] Selecciona el archivo \textit{(M)} en un formato incompatible para el protocolo y su almacenamiento
+	\UCpaso Muestra el Mensaje \MSGref{MSG-CL2}{Archivo incomplatible}.
+	\UCpaso Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Número aleatorio incorrecto}
+	\UCpaso Elegir un número aleatorio no primo o mayor al tamaño de las llaves del servidor de llaves.
+	\UCpaso Muestra el Mensaje \MSGref{MSG-CL3}{Número incorrecto}.
+	\UCpaso Continua en el paso \ref{CUCL2Regreso} del \UCref{CUCL2}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Comparacion es diferente}
+	\UCpaso Detecta que \textit{$k^{e}$} y \textit{H(M)} son diferentes.
+	\UCpaso Muestra el Mensaje \MSGref{MSG-CL4}{Error al generar la llave}.
+	\UCpaso Continua en el paso \ref{CUCL2Regreso} del \UCref{CUCL2}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Archivo duplicado}
+	\UCpaso Detecta que el archivo \textit{H(C1)} ya ha sido almacenado.
+	\UCpaso Envía el archivo \textit{C2}.
+	\UCpaso Continua en el paso \ref{CUCL2Regreso2} del \UCref{CUCL2}.
+\end{UCtrayectoriaA}
