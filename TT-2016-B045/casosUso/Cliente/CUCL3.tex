@@ -29,10 +29,13 @@
 
 % ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
 \begin{UCtrayectoria}{Principal}
+\UCpaso [\UCactor] Selecciona el archivo a descargar y da clic en la opcion de descargar archivo.
 \UCpaso [\UCactor] Envía a la nube una petición con el nombre del archivo que desea descargar.
-\UCpaso Recibe los archivos C1 y C2 asociados al nombre que envió
-\UCpaso Descifra C2 con la llave “Ka” del cliente y obtiene un archivo con la llave “K”
-\UCpaso Descifra C1 con la llave “K” y obtiene su archivo “F” en claro
+\UCpaso Recibe los archivos \textit{C1} y \textit{C2} asociados al nombre que envió.
+\UCpaso Descifra \textit{C2} con la llave \textit{Ka} del cliente.
+\UCpaso Obtiene un archivo con la llave \textit{K}.
+\UCpaso Descifra \textit{C1} con la llave \textit{K}.
+\UCpaso Obtiene su archivo \textit{M} con su informacion visible.
 \UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}.
 \end{UCtrayectoria}
 
