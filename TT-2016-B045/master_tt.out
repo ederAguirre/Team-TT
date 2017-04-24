@@ -49,20 +49,24 @@
 \BOOKMARK [3][-]{section*.30}{Descripci\363n completa}{subsection.3.8.4}% 49
 \BOOKMARK [3][-]{section*.31}{Atributos importantes}{subsection.3.8.4}% 50
 \BOOKMARK [3][-]{section*.32}{Trayectorias del Caso de Uso}{subsection.3.8.4}% 51
-\BOOKMARK [2][-]{subsection.3.8.5}{CUCL2 Subir archivo}{section.3.8}% 52
+\BOOKMARK [2][-]{subsection.3.8.5}{CUN5 Eliminar archivo cifrado}{section.3.8}% 52
 \BOOKMARK [3][-]{section*.33}{Descripci\363n completa}{subsection.3.8.5}% 53
 \BOOKMARK [3][-]{section*.34}{Atributos importantes}{subsection.3.8.5}% 54
 \BOOKMARK [3][-]{section*.35}{Trayectorias del Caso de Uso}{subsection.3.8.5}% 55
-\BOOKMARK [2][-]{subsection.3.8.6}{CUCL3 Descargar archivos descifrados.}{section.3.8}% 56
+\BOOKMARK [2][-]{subsection.3.8.6}{CUCL2 Subir archivo}{section.3.8}% 56
 \BOOKMARK [3][-]{section*.36}{Descripci\363n completa}{subsection.3.8.6}% 57
 \BOOKMARK [3][-]{section*.37}{Atributos importantes}{subsection.3.8.6}% 58
 \BOOKMARK [3][-]{section*.38}{Trayectorias del Caso de Uso}{subsection.3.8.6}% 59
-\BOOKMARK [2][-]{subsection.3.8.7}{CUCL4 Eliminar archivos cifrado.}{section.3.8}% 60
+\BOOKMARK [2][-]{subsection.3.8.7}{CUCL3 Descargar archivos descifrados.}{section.3.8}% 60
 \BOOKMARK [3][-]{section*.39}{Descripci\363n completa}{subsection.3.8.7}% 61
 \BOOKMARK [3][-]{section*.40}{Atributos importantes}{subsection.3.8.7}% 62
 \BOOKMARK [3][-]{section*.41}{Trayectorias del Caso de Uso}{subsection.3.8.7}% 63
-\BOOKMARK [2][-]{subsection.3.8.8}{CUCL5 Generar llave \(k\) para archivo.}{section.3.8}% 64
+\BOOKMARK [2][-]{subsection.3.8.8}{CUCL4 Eliminar archivos cifrado.}{section.3.8}% 64
 \BOOKMARK [3][-]{section*.42}{Descripci\363n completa}{subsection.3.8.8}% 65
 \BOOKMARK [3][-]{section*.43}{Atributos importantes}{subsection.3.8.8}% 66
 \BOOKMARK [3][-]{section*.44}{Trayectorias del Caso de Uso}{subsection.3.8.8}% 67
-\BOOKMARK [0][-]{Item.86}{Bibliograf\355a}{}% 68
+\BOOKMARK [2][-]{subsection.3.8.9}{CUCL5 Generar llave \(k\) para archivo.}{section.3.8}% 68
+\BOOKMARK [3][-]{section*.45}{Descripci\363n completa}{subsection.3.8.9}% 69
+\BOOKMARK [3][-]{section*.46}{Atributos importantes}{subsection.3.8.9}% 70
+\BOOKMARK [3][-]{section*.47}{Trayectorias del Caso de Uso}{subsection.3.8.9}% 71
+\BOOKMARK [0][-]{Item.96}{Bibliograf\355a}{}% 72
