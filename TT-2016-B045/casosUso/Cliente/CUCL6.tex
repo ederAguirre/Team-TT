@@ -25,6 +25,7 @@
 			\item \MSGref{MSG6}{Longitud inválida}. 
 			\item \MSGref{MSG9}{Dato requerido}. 
 			\item \MSGref{MSG10}{No existe información}. 
+			\item \MSGref{MSG11}{Contraseña incorrecta} 
     \end{itemize}
 	}
 \end{UseCase}
@@ -36,7 +37,7 @@
 	\UCpaso Despliega los campos para introducir nombre de usuario y contraseña.
 	\UCpaso[\UCactor] Ingresa su nombre de usuario y contraseña en los campos mostrados. \label{CUCL6Regresa}  
 	\UCpaso[\UCactor] Da clic en el botón \textit{Ingresar}.
-	\UCpaso Autentica y autoriza el nombre usuario y contraseña con base en la regla de negocio \BRref{RN4}{Usuario registrado}.  \Trayref{A}  \Trayref{B}  \Trayref{C}  \Trayref{D}  
+	\UCpaso Autentica y autoriza el nombre usuario y contraseña con base en la regla de negocio \BRref{RN4}{Usuario registrado}.  \Trayref{A}  \Trayref{B}  \Trayref{C}  \Trayref{D}  \Trayref{E}
 	\UCpaso Solicita las llaves privada y pública del usuario. 
 	\UCpaso Almacena las llaves en el dsipositivo actual. 
 	\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}. 
@@ -73,6 +74,14 @@
 	\UCpaso[\UCactor] Continua en el paso \ref{CUCL6Regresa} del \UCref{CUCL6}
 
 \end{UCtrayectoriaA}
+
+
+\begin{UCtrayectoriaA}{E}{Contraseña incorrecta}
+	\UCpaso Muestra el mensaje \MSGref{MSG11}{Contraseña incorrecta} 
+	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL6Regresa} del \UCref{CUCL6}
+
+\end{UCtrayectoriaA} 
 
 		
 %-------------------------------------- TERMINA descripción del caso de uso.

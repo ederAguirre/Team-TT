@@ -23,6 +23,7 @@
 	\UCitem{Mensajes}{
 	\begin{itemize}
 			\item \MSGref{MSG1}{Operación exitosa}. 
+			\item \MSGref{MSG4}{Registro repetido} 
 			\item \MSGref{MSG5}{Dato incorrecto}. 
 			\item \MSGref{MSG6}{Longitud inválida}. 
 			\item \MSGref{MSG9}{Dato requerido}. 
@@ -37,7 +38,7 @@
 	\UCpaso Despliega los campos para introducir nombre, primer apellido, segundo apellido, nombre de usuario, contraseña, fecha de nacimiento, CURP.
 	\UCpaso[\UCactor] Ingresa sus datos que han sido solicitados. \label{CUCL7Regresa}  
 	\UCpaso[\UCactor] Da clic en el botón \textit{Registrar}.
-	\UCpaso Verifica los datos proporcionados por el usuario con base en las reglas de negocios \BRref{RN1}{Datos requeridos},  \BRref{RN2}{Datos correctos}, \BRref{RN3}{Unicidad de elementos} .  \Trayref{A}  \Trayref{B}  \Trayref{C}  
+	\UCpaso Verifica los datos proporcionados por el usuario con base en las reglas de negocios \BRref{RN1}{Datos requeridos},  \BRref{RN2}{Datos correctos}, \BRref{RN3}{Unicidad de elementos} .  \Trayref{A}  \Trayref{B}  \Trayref{C}  \Trayref{D}
 	\UCpaso Genera su llave privada y pública del usuario con RSA. 
 	\UCpaso Almacena sus llaves en el servidor y en el dispositivo actual.
 	\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}. 
@@ -68,6 +69,12 @@
 
 \end{UCtrayectoriaA}
 
+\begin{UCtrayectoriaA}{D}{Registro repetido}
+	\UCpaso Muestra el mensaje \MSGref{MSG4}{Registro repetido}  
+	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
+
+\end{UCtrayectoriaA}
 
 
 		

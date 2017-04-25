@@ -1,0 +1,161 @@
+Mensajes usados en el sistema, que se usan para informar al usuario mediante la interfaz de ciertas situaciones o eventos que ocurren en el prototipo y pueden ser de los siguientes tipos: \\
+\begin{itemize}	
+	\item \textbf{Notificación} : Estos mensajes se utilizan para indicar que la operación solicitada por el usuario se ejecutó correctamente.
+	\item \textbf{Alerta} : Estos mensajes se utilizan para indicar alguna advertencia sobre la operación.
+	\item \textbf{Error} : Estos mensajes se utilizan para indicar que ha ocurrido un error en la operación solicitada.
+\end{itemize}	
+
+Varios mensajes se encuentran parametrizados. Es decir cuando algún mensaje es recurrente, hay palabras que pueden ser sustituidas por otras para transformar el mensaje a la situación. \\
+
+Parámetros más comunes: \\
+
+\begin{description}
+	\item[ARTÍCULO: ] Se refiere a un artículo el cual puede ser DETERMINADO (El | La | Lo | Los | Las) o INDETERMINADO (Un | Una | Uno | Unos |Unas) se aplica generalmente sobre una ENTIDAD, ATRIBUTO o VALOR.
+	\item[CAMPO: ] Se refiere a un campo del formulario. Por lo regular es el nombre de un atributo en una entidad.
+	\item[CAUSA: ] Un razón por lo que la operación aconteció de cierta manera.
+	\item[ENTIDAD: ] Es un sustantivo y generalmente se refiere a una entidad del modelo estructural del negocio.
+	\item[OPERACIÓN: ] Se refiere a una acción que se debe realizar sobre los datos de una o varias entidades. Por ejemplo: registrar, eliminar, modificar, etc.
+	\item[RESTRICCIÓN: ] Se refiere a alguna restricción para un tipo de dato. Por ejemplo: máximo, mínimo, etc.
+	\item[TAMAÑO: ] Es el tamaño del atributo de una entidad, el cual se encuentra definido en el modelo conceptual.
+	\item[VALOR: ] Es un sustantivo concreto y generalmente se refiere a un valor en especifico.
+\end{description}
+
+\section{Mensajes}
+
+\begin{Message}{MSG-SLL1}{Generación de llaves} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-SLL2}{Números iguales} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-SLL3}{Número incorrecto} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-N1}{Archivo no encontrado} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-CL1}{Carpeta vacía} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-CL2}{Archivo incompatible} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-CL3}{Número incorrecto} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-CL4}{Error al generar la llave} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-CL5}{Archivo almacenado} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG-CL6}{Archivo inexistente} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ]
+	\MSGitem[Ejemplo: ] 
+\end{Message}
+
+\begin{Message}{MSG1}{Operación exitosa} 
+	\MSGitem[Tipo: ] Notificación
+	\MSGitem[Objetivo: ] Notificar al actor que la operación se ha realizado de forma exitosa.
+	\MSGitem[Redacción: ] DETERMINADO ENTIDAD ha sido OPERACIÓN exitosamente. 
+	\MSGitem[Parámetros: ] El mensaje se muestra con base en los siguientes parámetros:
+		\begin{itemize}	
+			\item DETERMINADO ENTIDAD: Artículo determinado más el nombre de la entidad sobre la que se realiza la operación.
+			\item OPERACIÓN: Es la acción que el actor solicitó realizar. Puede ser registro,  eliminación,modificación o revisión.
+		\end{itemize}		
+	\MSGitem[Ejemplo: ] El Cliente ha sido registrado exitosamente.
+\end{Message}
+
+\begin{Message}{MSG4}{Registro repetido} 
+	\MSGitem[Tipo: ] Error
+	\MSGitem[Objetivo: ] Notificar al actor que la entidad que desea registrar ya existe en el sistema.
+	\MSGitem[Redacción: ] DETERMINADO ENTIDAD que intentas registrar ya existe.
+	\MSGitem[Parámetros: ] El mensaje se muestra con base en los siguientes parámetros:
+		\begin{itemize}	
+			\item DETERMINADO ENTIDAD: Artículo determinado más el nombre de la entidad sobre la que se realiza la operación.
+		\end{itemize}		
+	\MSGitem[Ejemplo: ] El Cliente que intentas registrar ya existe.
+\end{Message}
+
+\begin{Message}{MSG5}{Dato incorrecto} 
+	\MSGitem[Tipo: ] Error
+	\MSGitem[Objetivo: ] Notificar al actor que el dato no tiene el tipo solicitado.
+	\MSGitem[Redacción: ] DETERMINADO ENTIDAD debe ser INDETERMINADO TIPODATO.
+	\MSGitem[Parámetros: ] El mensaje se muestra con base en los siguientes parámetros:
+		\begin{itemize}	
+			\item DETERMINADO ENTIDAD: Artículo determinado más el nombre de la entidad sobre la que se realiza la operación.
+			\item INDETERMINADO: Artículo indeterminado.
+			\item TIPODATO: Indica el tipo de dato, por ejemplo cadena o número.
+		\end{itemize}		
+	\MSGitem[Ejemplo: ] El dato debe ser un número.
+\end{Message}
+
+\begin{Message}{MSG6}{Longitud inválida} 
+	\MSGitem[Tipo: ] Error
+	\MSGitem[Objetivo: ] Notificar al actor que el dato no tiene la longitud correcta.
+	\MSGitem[Redacción: ] DETERMINADO ENTIDAD debe tener RESTRICCIÓN TAMAÑO TIPODATO.
+	\MSGitem[Parámetros: ] El mensaje se muestra con base en los siguientes parámetros:
+		\begin{itemize}	
+			\item DETERMINADO ENTIDAD: Artículo determinado más el nombre de la entidad sobre la que se realiza la operación.
+			\item RESTRICCIÓN: Puede ser máximo, al menos,, mínimo, etc.
+			\item TAMAÑO: Tamaño del dato.
+			\item TIPODATO: Indica el tipo de dato con el que se mide el campo.
+		\end{itemize}		
+	\MSGitem[Ejemplo: ] La contraseña debe tener mínimo 6 caracteres.
+\end{Message}
+
+\begin{Message}{MSG9}{Dato requerido} 
+	\MSGitem[Tipo: ] Error
+	\MSGitem[Objetivo: ] Notificar al actor que el dato es requerido y se ha omitido.
+	\MSGitem[Redacción: ] Este dato es requerido.
+\end{Message}
+
+\begin{Message}{MSG10}{No existe información} 
+	\MSGitem[Tipo: ] Error
+	\MSGitem[Objetivo: ] Notificar al actor que aún no existe información registrada en el prototipo.
+	\MSGitem[Redacción: ] DETERMINADO ENTIDAD no se encuentra en el sistema.
+\end{Message}
+
+\begin{Message}{MSG11}{Contraseña incorrecta} 
+	\MSGitem[Tipo: ] Error
+	\MSGitem[Objetivo: ] Notificar al actor que la contraseña que introdujo no fue correcta.
+	\MSGitem[Redacción: ] No es correcta su contraseña.
+\end{Message}
