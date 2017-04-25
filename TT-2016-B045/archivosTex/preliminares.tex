@@ -259,27 +259,50 @@ Los cifradores por bloques pueden ser representados como se ve en la figura ~\re
 %==================================================================================================================================================================
 \section{RSA}
 
-El algoritmo de clave pública RSA fué creado en 1978 por Rivest, Shamir y Adlman, y es el sistema criptográfico asimétrico más conocido y usado. Estos señores se basaron en el artículo de Diffie-Hellman sobre sistemas de llave pública, crearon su algoritmo y fundaron la empresa RSA Data Security Inc., que es actualmente una de las más prestigiosas en el entorno de la protección de datos.
-El sistema RSA se basa en el hecho matemático de la dificultad de factorizar números muy grandes. Para factorizar un número el sistema más lógico consiste en empezar a dividir sucesivamente éste entre 2, entre 3, entre 4,..., y así sucesivamente, buscando que el resultado de la división sea exacto, es decir, de resto 0, con lo que ya tendremos un divisor del número.
+El esquema de criptografía RSA, a veces denominado algoritmo Rivest-Shamir-Adleman, es actualmente el esquema criptográfico asimétrico más utilizado, aunque las curvas elípticas y los esquemas de logaritmos discretos están ganando terreno. RSA fue patentado en los Estados Unidos (pero no en el resto del mundo) hasta el 2000. La función unidireccional subyacente de RSA es el problema de factorización de enteros: Multiplicar dos grandes primos es computacionalmente fácil (de hecho, se puede hacer con
+Papel y lápiz), pero factorizar el producto resultante es muy difícil, el teorema de Euler y la función $\varphi$ de Euler desempeñan papeles importantes en RSA ~\cite{paar}.
+\\
+Hay muchas aplicaciones para RSA, pero en la práctica se usa con más frecuencia para:
 
-Ahora bien, si el número considerado es un número primo (el que sólo es divisible por 1 y por él mismo), tendremos que para factorizarlo habría que empezar por 1, 2, 3,........... hasta llegar a él mismo, ya que por ser primo ninguno de los números anteriores es divisor suyo. Y si el número primo es lo suficientemente grande, el proceso de factorización es complicado y lleva mucho tiempo.
+	\begin{itemize}
+		\item Cifrado de pequeñas piezas de datos, especialmente para el transporte de claves.
+		\item Las firmas digitales, por ejemplo, para certificados digitales en Internet ~\cite{paar}.
+	\end{itemize}
 
-Basado en la exponenciación modular de exponente y módulo fijos, el sistema RSA crea sus claves de la siguiente forma:
+\textbf{Cifrado y descifrado} \\
+El cifrado y descifrado RSA se realiza en el campo de los numeros enteros \textit{Zn} y los cálculos modulares desempeñan un papel central. RSA cifra el texto en claro \textit{x}, donde consideramos que la cadena de bits que representa \textit{x} es un elemento en \textit{Zn} = {0,1, ..., n-1}. Como consecuencia, el valor binario del texto en claro \textit{x} debe ser menor que \textit{n}. Lo mismo ocurre con el texto cifrado. El cifrado con la clave pública y el descifrado con la clave privada son los siguientes:
+\\ \\
+\textbf{\textit{Cifrado RSA}}\\ Dada la clave pública \textit{(n, e) = kpub} y el texto en claro \textit{x}, la función de cifrado es:
+\\
+\textit{ y = $ek_{pub}$ (x) $\equiv$ $x^{2}$ mod n }\\
+Donde:  x,y $\in$ \textit{Zn}
+
+
+\textbf{\textit{Descifrado RSA}} \\Dada la clave privada \textit{d = Kpr} y el texto cifrado \textit{y}, la función de descifrado es:
+\\
+\textit{ x = $dk_{pr}$ (y) $\equiv$ $y^{d}$ mod n }\\
+Donde:  x,y $\in$ \textit{Zn} ~\cite{paar}. \\
+
+
+ \textbf{Generación de llaves} \\
+Estos son los pasos involucrados en el cálculo de la clave pública y privada para un criptosistema RSA.
 \begin{itemize}
 
-	\item Se buscan dos números primos lo suficientemente grandes: p y q (de entre 100 y 300 dígitos).
-	\item Se obtienen los números n = p * q y Ø = (p-1) * (q-1).
-	\item Se busca un número e tal que no tenga múltiplos comunes con Ø.
-	\item Se calcula d = e-1 mod Ø, con mod = resto de la división de números enteros. Y ya con estos números obtenidos, n es la clave pública y d es la clave privada. Los números p, q y Ø se destruyen. También se hace público el número e, necesario para alimentar el algoritmo.
+	\item Elegir 2 números primos grandes \textit{p} y \textit{q}.
+	\item Calcular \textit{n = p $\cdot$ q }.
+	\item Calcular \textit{$\varphi$ (n) = (p - 1)(q - 1)}.
+	\item Seleccionar la clave pública \textit{e} $\in$ {1,2,...., $\varphi$ (n) - 1} tal que \\ \textbf{\textit{gcd(e,$\varphi$(N))=1}}.
+	\item Calcular la clave privada \textit{d} tal que, \textit{d $\cdot$ e $\equiv$ mod $\varphi$ (n)} ~\cite{paar}. \\
 \end{itemize} 
 
-El cálculo de estas claves se realiza en secreto en la máquina en la que se va a guardar la clave privada, y una vez generada ésta conviene protegerla mediante un algoritmo criptográfico simétrico.
 
-En cuanto a las longitudes de claves, el sistema RSA permite longitudes variables, siendo aconsejable actualmente el uso de claves de no menos de 1024 bits (se han roto claves de hasta 512 bits, aunque se necesitaron más de 5 meses y casi 300 computadoras trabajando juntas para hacerlo).
-
-RSA basa su seguridad es ser una función computacionalmente segura, ya que si bien realizar la exponenciación modular es fácil, su operación inversa, la extracción de raices de módulo Ø no es factible a menos que se conozca la factorización de e, clave privada del sistema.
-
-RSA es el más conocido y usado de los sistemas de clave pública, y también el más rápido de ellos. Presenta todas las ventajas de los sistemas asimétricos, incluyendo la firma digital, aunque resulta más útil a la hora de implementar la confidencialidad el uso de sistemas simétricos, por ser más rápidos. Se suele usar también en los sistemas mixtos para encriptar y enviar la clave simétrica que se usará posteriormente en la comunicación cifrada. ~\cite{rsa}
+\textbf{Requisitos para el criptosistema RSA:}
+\begin{itemize}
+	\item Dado que un atacante tiene acceso a la clave pública, debe ser computacionalmente imposible determinar la clave privada  \textit{d} dados los valores de clave pública  \textit{e} y  \textit{n}.
+	\item Como  \textit{x} es único hasta el tamaño del módulo  \textit{n}, no podemos cifrar más de  \textit{l} bits con un cifrado RSA, donde  \textit{l} es la longitud de bits de  \textit{n}.
+	\item Debe ser relativamente fácil calcular  \textit{x $\cdot$ e mod n}, es decir, cifrar y  \textit{y $\cdot$ d mod n}, es decir, descifrar. Esto significa que necesitamos un método para una rápida exponenciación con números grandes.
+	\item Para un \textit{n} dado, debe haber muchos pares de clave privada / clave pública, de lo contrario un atacante podría ser capaz de realizar un ataque de fuerza bruta. (Resulta que esta exigencia es fácil de satisfacer.) ~\cite{paar}.
+\end{itemize}
 
 %==================================================================================================================================================================
 \section{Firmas a ciegas. }
