@@ -1,21 +1,23 @@
 % Copie este bloque por cada caso de uso:
 %-------------------- COMIENZA descripción del caso de uso.
 
-\begin{UseCase}{CUCL6}{Iniciar Sesión.}{Permitir el acceso al sistema con su usuario y contraseña correspondientes, el cual es autenticado y autorizado para la utilización del sistema.
+\begin{UseCase}{CUCL7}{Registrar usuario.}{Solicitar los datos importantes de un usuario nuevo, crearle sus llaves pública y privada para darlo de alta en el sistema.
 	}
 	\UCitem{Versión}{1.0 - 19/04/17}
 	\UCitem{Autor}{Jhonatan Saulés Cortés.}
 	\UCitem{Prioridad}{Alta}
 	\UCitem{Módulo}{Cliente}
 	\UCitem{Actor}{Cliente}
-	\UCitem{Propósito}{Dar acceso al usuario al sistema para poder realizar sus actividades.}
-	\UCitem{Entradas}{Nombre de usuario, Contraseña.}
-	\UCitem{Salidas}{Pagina principal del usuario que inicio sesión}
-	\UCitem{Precondiciones}{Estar registrado en el sistema.}
+	\UCitem{Propósito}{Habilitar un nuevo usuario generandole sus llaves privada y pública.}
+	\UCitem{Entradas}{Datos del usuario.}
+	\UCitem{Salidas}{Llaves del usuario}
+	\UCitem{Precondiciones}{}
 	\UCitem{Postcondiciones}{}
 	\UCitem{Reglas del negocio}{  
 	\begin{itemize}
-			\item \BRref{RN4}{Usuario registrado} 
+			\item \BRref{RN1}{Datos requeridos}  
+			\item \BRref{RN2}{Datos correctos} 
+			\item \BRref{RN3}{Unicidad de elementos} 
 	\end{itemize}
 	}	
 	\UCitem{Mensajes}{
@@ -24,7 +26,6 @@
 			\item \MSGref{MSG5}{Dato incorrecto}. 
 			\item \MSGref{MSG6}{Longitud inválida}. 
 			\item \MSGref{MSG9}{Dato requerido}. 
-			\item \MSGref{MSG10}{No existe información}. 
     \end{itemize}
 	}
 \end{UseCase}
@@ -32,13 +33,13 @@
 
 % ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
 \begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] Da clic en la opción \textit{Iniciar sesión}.
-	\UCpaso Despliega los campos para introducir nombre de usuario y contraseña.
-	\UCpaso[\UCactor] Ingresa su nombre de usuario y contraseña en los campos mostrados. \label{CUCL6Regresa}  
-	\UCpaso[\UCactor] Da clic en el botón \textit{Ingresar}.
-	\UCpaso Autentica y autoriza el nombre usuario y contraseña con base en la regla de negocio \BRref{RN4}{Usuario registrado}.  \Trayref{A}  \Trayref{B}  \Trayref{C}  \Trayref{D}  
-	\UCpaso Solicita las llaves privada y pública del usuario. 
-	\UCpaso Almacena las llaves en el dsipositivo actual. 
+	\UCpaso[\UCactor] Da clic en la opción \textit{Registrarse}.
+	\UCpaso Despliega los campos para introducir nombre, primer apellido, segundo apellido, nombre de usuario, contraseña, fecha de nacimiento, CURP.
+	\UCpaso[\UCactor] Ingresa sus datos que han sido solicitados. \label{CUCL7Regresa}  
+	\UCpaso[\UCactor] Da clic en el botón \textit{Registrar}.
+	\UCpaso Verifica los datos proporcionados por el usuario con base en las reglas de negocios \BRref{RN1}{Datos requeridos},  \BRref{RN2}{Datos correctos}, \BRref{RN3}{Unicidad de elementos} .  \Trayref{A}  \Trayref{B}  \Trayref{C}  
+	\UCpaso Genera su llave privada y pública del usuario con RSA. 
+	\UCpaso Almacena sus llaves en el servidor y en el dispositivo actual.
 	\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}. 
 	\UCpaso Muestra el menú principal del usuario.
 	\UCpaso Fin del caso de uso.
@@ -49,30 +50,25 @@
 \begin{UCtrayectoriaA}{A}{Datos incorrectos}
 	\UCpaso Muestra el mensaje \MSGref{MSG5}{Dato incorrecto}. 
 	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continua en el paso \ref{CUCL6Regresa} del \UCref{CUCL6}
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
 
 \end{UCtrayectoriaA} 
 
 \begin{UCtrayectoriaA}{B}{Longitud inválida}
 	\UCpaso Muestra el mensaje \MSGref{MSG6}{Longitud inválida}. 
 	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continua en el paso \ref{CUCL6Regresa} del \UCref{CUCL6}
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
 
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Datos requeridos}
 	\UCpaso Muestra el mensaje \MSGref{MSG9}{Dato requerido}. 
 	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continua en el paso \ref{CUCL6Regresa} del \UCref{CUCL6}
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
 
 \end{UCtrayectoriaA}
 
-\begin{UCtrayectoriaA}{D}{No existe información}
-	\UCpaso Muestra el mensaje \MSGref{MSG10}{No existe información}. 
-	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continua en el paso \ref{CUCL6Regresa} del \UCref{CUCL6}
 
-\end{UCtrayectoriaA}
 
 		
 %-------------------------------------- TERMINA descripción del caso de uso.

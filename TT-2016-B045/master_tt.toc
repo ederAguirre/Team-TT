@@ -71,4 +71,8 @@
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{48}{section*.45}
 \contentsline {subsubsection}{Atributos importantes}{48}{section*.46}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{48}{section*.47}
-\contentsline {chapter}{Bibliograf\'ia}{50}{Item.132}
+\contentsline {subsection}{\numberline {3.8.10}CUCL7 Registrar usuario.}{50}{subsection.3.8.10}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{50}{section*.48}
+\contentsline {subsubsection}{Atributos importantes}{50}{section*.49}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{50}{section*.50}
+\contentsline {chapter}{Bibliograf\'ia}{52}{Item.153}
