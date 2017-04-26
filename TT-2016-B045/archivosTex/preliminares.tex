@@ -257,6 +257,25 @@ Los cifradores por bloques pueden ser representados como se ve en la figura ~\re
 %\pagebreak
 
 %==================================================================================================================================================================
+
+\section{Ataques de fuerza bruta}
+
+Los ataques de fuerza bruta se basan en un concepto simple: Oscar, el atacante, obtiene el texto cifrado escuchando en el canal y pasa a tener un pedazo corto del texto claro, por ejemplo, el encabezado de un archivo que fue cifrado. Oscar ahora simplemente descifra el primer pedazo del texto cifrado con todas las claves posibles. Si el texto claro resultante coincide con el pedazo corto del texto claro, sabe que ha encontrado la clave correcta.\\
+
+\begin{definition} 
+Ataque de fuerza bruta\\
+Sea \textit{(x, y)} el texto claro y el texto cifrado, y sea \textit{K = [K1, ..., Kk]} el espacio clave de todas las claves posibles \textit{ki}. Un ataque de fuerza bruta comprueba que para cada \textit{ki $\in$ K} si \\
+\textit{ \[d_{ki}(y) = x\] }.\\
+Si la igualdad se mantiene, se encuentra una posible clave correcta; Si no, se procede con la siguiente clave.\\
+\end{definition}
+En la práctica, un ataque de fuerza bruta puede ser más complicado porque las claves incorrectas pueden dar resultados positivos falsos. \\
+Es importante señalar que un ataque de fuerza bruta contra cifrados simétricos es siempre posible en un principio. Si es factible en la práctica depende del espacio clave, es decir, en el número de posibles claves que existen para un cifrado dado. Si se están probando todas las claves en muchas computadoras modernas toma demasiado tiempo, es decir, varias décadas, el cifrado es computacionalmente seguro contra un ataque de fuerza bruta ~\cite{paar}.\\
+
+
+
+%==================================================================================================================================================================
+
+
 \section{RSA}
 
 El esquema de criptografía RSA, a veces denominado algoritmo Rivest-Shamir-Adleman, es actualmente el esquema criptográfico asimétrico más utilizado, aunque las curvas elípticas y los esquemas de logaritmos discretos están ganando terreno. RSA fue patentado en los Estados Unidos (pero no en el resto del mundo) hasta el 2000. La función unidireccional subyacente de RSA es el problema de factorización de enteros: Multiplicar dos grandes primos es computacionalmente fácil (de hecho, se puede hacer con
