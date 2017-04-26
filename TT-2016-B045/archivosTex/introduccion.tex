@@ -46,47 +46,45 @@ Una de las principales razones del incremento en el tamaño en la estructura de 
 %Dejar sin resolver la seguridad de la infofrmación, puede generar negativas consecuenicias hacia cualquier usuario de la plataforma de almacencamiento, cualquier individuo que tenga acceso a los archivos almacenados en ésta plataforma, podrá visualizar el contenido de estos, comprometiendo la fidelidad e integridad de la información para poder usarla en situaciones que pudieran llegar a perjudicar al usuario. 
 \\
 
-\section{¿Qué se ha hecho antes?}
+\section{Estado del Arte}
 \begin{tabular}{ |p{3cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}| }
 \hline
-\multicolumn{6}{|c|}{APLICACIONES}\\
+\multicolumn{5}{|c|}{APLICACIONES}\\
 \hline
-{}  & {DupLESS } & {TahoeFS } & {SIGOPS Oper.Syst.}  & {Flud Backup} & {ABS: The Apportioned Backup System} \\
+{}  & {DupLESS } & {TahoeFS } & {Flud Backup} & {ABS: The Apportioned Backup System} \\
 \hline
-{ Evitar duplicación de archivos}  & {Si} & {No} & {Sin información}  & {No} & {Si}  \\
+{ Evitar duplicación de archivos}  & {Si} & {No} & {No} & {Si}  \\
 \hline
-{Seguridad al cliente}  & {Alta} & {Media} & {Sin información }  & {Media} & {Alta}  \\
+{Seguridad al cliente}  & {Alta} & {Media} & {Media} & {Alta}  \\
 \hline
-{Resistencia a ataques por fuerza bruta}  & {Si} & {Media} & { Sin información }  & { No} & {No}  \\
+{Resistencia a ataques por fuerza bruta}  & {Si} & {Media} & { No} & {No}  \\
 \hline
-{Compromiso de resistencia ante fallos}  & {Alto} & {Alto} & { Sin información }  & {Alto} & {Alto}  \\
+{Compromiso de resistencia ante fallos}  & {Alto} & {Alto} & {Alto} & {Alto}  \\
 \hline
-{Privacidad}  & {Si} & {Si} & {Sin información }  & {No} & { Si }  \\
+{Privacidad}  & {Si} & {Si}  & {No} & { Si }  \\
 \hline
-{Servidor Seguro}  & {Si} & {Si} & {Sin información }  & {Si } & {Si} \\
+{Servidor Seguro}  & {Si} & {Si} & {Si } & {Si} \\
 \hline
-{Implementación }  & { Pruebas } & {Actualmente Operacional} & { Sin información }  & { Actualmente Inactivo } & {Pruebas }  \\
+{Implementación }  & { Pruebas } & {Actualmente Operacional} & { Actualmente Inactivo } & {Pruebas }  \\
 \hline
-{Código abierto}  & {Si} & {Si} & {Sin información}  & {Si} & {No}  \\
+{Código abierto}  & {Si} & {Si} & {Si} & {No}  \\
 \hline
-{Gratuita o de paga}  & {Sin información} & {Ambos} & {Sin infromación  }  & {Gratuito} & {Sin información} \\
+{Gratuita o de paga}  & {Sin información} & {Ambos} & {Gratuito} & {Sin información} \\
 \hline
 \end{tabular}
 
 \begin{itemize}
 \item DupLESS\\
-Este protocolo usa un servicio de almacenamiento en la nube, además implementa una interfaz sencilla con operaciones como guardar, recuperar o borrar un archivo. Es más adecuado para aplicaciones backup y busca proteger la confidencialidad de datos de los clientes, para ello usa seguridad semántica. Además promete capacidad de resistencia ante fallos, protección contra un servidor malintencionado, evitar duplicación de archivos y compatibilidad con diferentes sistemas operativos.
+Este protocolo usa un servicio de almacenamiento en la nube, además implementa una interfaz sencilla con operaciones como guardar, recuperar o borrar un archivo. Es más adecuado para aplicaciones backup y busca proteger la confidencialidad de datos de los clientes, para ello usa seguridad semántica. Además promete capacidad de resistencia ante fallos, protección contra un servidor malintencionado, evitar duplicación de archivos y compatibilidad con diferentes sistemas operativos~\cite{Bellare}.
 \item TahoeFS\\
 Este sistema utiliza diez diferentes servidores que se interconectan entre sí y consta de archivos mutables e inmutables. Se basa en la restricción a los usuarios de cierto comportamiento. A los archivos mutables les permite operaciones como leer y verificar y a los inmutables les permite leer, escribir y crear copia de solo lectura. Hace uso de cifrado convergente, el código Reed-Solomon para la tolerancia a fallos, el servicio AllMyData y control de acceso descentralizado.
-Es un servicio que promete almacenamiento seguro, integridad y confidencialidad a largo plazo y va enfocado a aplicaciones backup.
-\item SIGOPS Oper.Syst.\\
-De este sistema no se cuenta con mucha información acerca de su funcionamiento interno, sin embargo sabemos que va mas enfocado al desarrollo de sistemas operativos seguros.
+Es un servicio que promete almacenamiento seguro, integridad y confidencialidad a largo plazo y va enfocado a aplicaciones backup~\cite{tahoe}.
 \item Flud Backup\\
-El proyecto Flud Backup está actualmente inactivo, sin embargo se crearon diversas versiones para Ubuntu y Fedora donde usan paquetes distribuidos y un sistema de confianza. Prometen que los datos que se copian deben ser indestructibles y copias de seguridad descentralizadas.
+El proyecto Flud Backup está actualmente inactivo, sin embargo se crearon diversas versiones para Ubuntu y Fedora donde usan paquetes distribuidos y un sistema de confianza. Prometen que los datos que se copian deben ser indestructibles y copias de seguridad descentralizadas~\cite{flud}.
 \item ABS\\
 Este sistema se centra en el caso de uso de diez PC's conectadas a través de una LAN o a través de conexiones de Internet de Banda Ancha.Se basa en el almacenamiento de fragmentos y algo que denominan 'almacén de instancia única' donde si dos usuarios almacenan el mismo contenido del archivo, el sistema generará los fragmentos independientes de cada archivo y solamente almacenará una copia de cada fragmento en la red. También tiene un esquema de asignación de versione basada en rsync (para generar una firma de diferencia sobre el archivo, la cual es una representación compacta, basada en el hash de un archivo que permita comparar entre dos versiones de archivos y verificar si están duplicadas. 
 Promete el almacenamiento de datos seguro y eficiente, privacidad y seguridad, esto a través de tablas hash distribuidas, firmas de clave privadas, control de versiones y cifrado convergente. 
-Además es tolerante a fallas catastróficas a nodos y permite unir nodos y restaurar operaciones sin pérdida de datos.
+Además es tolerante a fallas catastróficas a nodos y permite unir nodos y restaurar operaciones sin pérdida de datos~\cite{abs}.
 \end{itemize}
 
 \section{Solución propuesta}
