@@ -32,51 +32,54 @@
 \BOOKMARK [1][-]{section.3.4}{Requerimientos No Funcionales }{chapter.3}% 32
 \BOOKMARK [1][-]{section.3.5}{Reglas de Negocio}{chapter.3}% 33
 \BOOKMARK [1][-]{section.3.6}{Especificaci\363n de Plataforma}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.7}{Casos de Uso}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.7.1}{CUSLL1 Generar las llaves del servidor de llaves}{section.3.7}% 36
-\BOOKMARK [3][-]{section*.21}{Descripci\363n completa}{subsection.3.7.1}% 37
-\BOOKMARK [3][-]{section*.22}{Atributos importantes}{subsection.3.7.1}% 38
-\BOOKMARK [3][-]{section*.23}{Trayectorias del Caso de Uso}{subsection.3.7.1}% 39
-\BOOKMARK [2][-]{subsection.3.7.2}{CUSLL2 Generar firma ciega \(y\). }{section.3.7}% 40
-\BOOKMARK [3][-]{section*.24}{Descripci\363n completa}{subsection.3.7.2}% 41
-\BOOKMARK [3][-]{section*.25}{Atributos importantes}{subsection.3.7.2}% 42
-\BOOKMARK [3][-]{section*.26}{Trayectorias del Caso de Uso}{subsection.3.7.2}% 43
-\BOOKMARK [2][-]{subsection.3.7.3}{CUN3 Almacenar archivo cifrado}{section.3.7}% 44
-\BOOKMARK [3][-]{section*.27}{Descripci\363n completa}{subsection.3.7.3}% 45
-\BOOKMARK [3][-]{section*.28}{Atributos importantes}{subsection.3.7.3}% 46
-\BOOKMARK [3][-]{section*.29}{Trayectorias del Caso de Uso}{subsection.3.7.3}% 47
-\BOOKMARK [2][-]{subsection.3.7.4}{CUN4 Descargar archivo cifrado}{section.3.7}% 48
-\BOOKMARK [3][-]{section*.30}{Descripci\363n completa}{subsection.3.7.4}% 49
-\BOOKMARK [3][-]{section*.31}{Atributos importantes}{subsection.3.7.4}% 50
-\BOOKMARK [3][-]{section*.32}{Trayectorias del Caso de Uso}{subsection.3.7.4}% 51
-\BOOKMARK [2][-]{subsection.3.7.5}{CUN5 Eliminar archivo cifrado}{section.3.7}% 52
-\BOOKMARK [3][-]{section*.33}{Descripci\363n completa}{subsection.3.7.5}% 53
-\BOOKMARK [3][-]{section*.34}{Atributos importantes}{subsection.3.7.5}% 54
-\BOOKMARK [3][-]{section*.35}{Trayectorias del Caso de Uso}{subsection.3.7.5}% 55
-\BOOKMARK [2][-]{subsection.3.7.6}{CUCL1 Subir archivo}{section.3.7}% 56
-\BOOKMARK [3][-]{section*.36}{Descripci\363n completa}{subsection.3.7.6}% 57
-\BOOKMARK [3][-]{section*.37}{Atributos importantes}{subsection.3.7.6}% 58
-\BOOKMARK [3][-]{section*.38}{Trayectorias del Caso de Uso}{subsection.3.7.6}% 59
-\BOOKMARK [2][-]{subsection.3.7.7}{CUCL3 Descargar archivos descifrados.}{section.3.7}% 60
-\BOOKMARK [3][-]{section*.39}{Descripci\363n completa}{subsection.3.7.7}% 61
-\BOOKMARK [3][-]{section*.40}{Atributos importantes}{subsection.3.7.7}% 62
-\BOOKMARK [3][-]{section*.41}{Trayectorias del Caso de Uso}{subsection.3.7.7}% 63
-\BOOKMARK [2][-]{subsection.3.7.8}{CUCL4 Eliminar archivos cifrado.}{section.3.7}% 64
-\BOOKMARK [3][-]{section*.42}{Descripci\363n completa}{subsection.3.7.8}% 65
-\BOOKMARK [3][-]{section*.43}{Atributos importantes}{subsection.3.7.8}% 66
-\BOOKMARK [3][-]{section*.44}{Trayectorias del Caso de Uso}{subsection.3.7.8}% 67
-\BOOKMARK [2][-]{subsection.3.7.9}{CUCL6 Iniciar Sesi\363n.}{section.3.7}% 68
-\BOOKMARK [3][-]{section*.45}{Descripci\363n completa}{subsection.3.7.9}% 69
-\BOOKMARK [3][-]{section*.46}{Atributos importantes}{subsection.3.7.9}% 70
-\BOOKMARK [3][-]{section*.47}{Trayectorias del Caso de Uso}{subsection.3.7.9}% 71
-\BOOKMARK [2][-]{subsection.3.7.10}{CUCL7 Registrar usuario.}{section.3.7}% 72
-\BOOKMARK [3][-]{section*.48}{Descripci\363n completa}{subsection.3.7.10}% 73
-\BOOKMARK [3][-]{section*.49}{Atributos importantes}{subsection.3.7.10}% 74
-\BOOKMARK [3][-]{section*.50}{Trayectorias del Caso de Uso}{subsection.3.7.10}% 75
-\BOOKMARK [0][-]{chapter.4}{Mensajes}{}% 76
-\BOOKMARK [1][-]{section.4.1}{Mensajes}{chapter.4}% 77
-\BOOKMARK [0][-]{appendix.Alph1}{Lista de acr\363nimos}{}% 78
-\BOOKMARK [1][-]{section.Alph1.1}{Definiciones, acr\363nimos y abreviaturas}{appendix.Alph1}% 79
-\BOOKMARK [0][-]{appendix.Alph2}{Glosario de t\351rminos}{}% 80
-\BOOKMARK [1][-]{section.Alph2.1}{Glosario de T\351rminos}{appendix.Alph2}% 81
-\BOOKMARK [0][-]{section.Alph2.1}{Bibliograf\355a}{}% 82
+\BOOKMARK [1][-]{section.3.7}{Estudio de Factibilidad}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.7.1}{Factibilidad t\351cnica}{section.3.7}% 36
+\BOOKMARK [2][-]{subsection.3.7.2}{Factibilidad operativa}{section.3.7}% 37
+\BOOKMARK [1][-]{section.3.8}{Casos de Uso}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.8.1}{CUSLL1 Generar las llaves del servidor de llaves}{section.3.8}% 39
+\BOOKMARK [3][-]{section*.21}{Descripci\363n completa}{subsection.3.8.1}% 40
+\BOOKMARK [3][-]{section*.22}{Atributos importantes}{subsection.3.8.1}% 41
+\BOOKMARK [3][-]{section*.23}{Trayectorias del Caso de Uso}{subsection.3.8.1}% 42
+\BOOKMARK [2][-]{subsection.3.8.2}{CUSLL2 Generar firma ciega \(y\). }{section.3.8}% 43
+\BOOKMARK [3][-]{section*.24}{Descripci\363n completa}{subsection.3.8.2}% 44
+\BOOKMARK [3][-]{section*.25}{Atributos importantes}{subsection.3.8.2}% 45
+\BOOKMARK [3][-]{section*.26}{Trayectorias del Caso de Uso}{subsection.3.8.2}% 46
+\BOOKMARK [2][-]{subsection.3.8.3}{CUN3 Almacenar archivo cifrado}{section.3.8}% 47
+\BOOKMARK [3][-]{section*.27}{Descripci\363n completa}{subsection.3.8.3}% 48
+\BOOKMARK [3][-]{section*.28}{Atributos importantes}{subsection.3.8.3}% 49
+\BOOKMARK [3][-]{section*.29}{Trayectorias del Caso de Uso}{subsection.3.8.3}% 50
+\BOOKMARK [2][-]{subsection.3.8.4}{CUN4 Descargar archivo cifrado}{section.3.8}% 51
+\BOOKMARK [3][-]{section*.30}{Descripci\363n completa}{subsection.3.8.4}% 52
+\BOOKMARK [3][-]{section*.31}{Atributos importantes}{subsection.3.8.4}% 53
+\BOOKMARK [3][-]{section*.32}{Trayectorias del Caso de Uso}{subsection.3.8.4}% 54
+\BOOKMARK [2][-]{subsection.3.8.5}{CUN5 Eliminar archivo cifrado}{section.3.8}% 55
+\BOOKMARK [3][-]{section*.33}{Descripci\363n completa}{subsection.3.8.5}% 56
+\BOOKMARK [3][-]{section*.34}{Atributos importantes}{subsection.3.8.5}% 57
+\BOOKMARK [3][-]{section*.35}{Trayectorias del Caso de Uso}{subsection.3.8.5}% 58
+\BOOKMARK [2][-]{subsection.3.8.6}{CUCL1 Subir archivo}{section.3.8}% 59
+\BOOKMARK [3][-]{section*.36}{Descripci\363n completa}{subsection.3.8.6}% 60
+\BOOKMARK [3][-]{section*.37}{Atributos importantes}{subsection.3.8.6}% 61
+\BOOKMARK [3][-]{section*.38}{Trayectorias del Caso de Uso}{subsection.3.8.6}% 62
+\BOOKMARK [2][-]{subsection.3.8.7}{CUCL3 Descargar archivos descifrados.}{section.3.8}% 63
+\BOOKMARK [3][-]{section*.39}{Descripci\363n completa}{subsection.3.8.7}% 64
+\BOOKMARK [3][-]{section*.40}{Atributos importantes}{subsection.3.8.7}% 65
+\BOOKMARK [3][-]{section*.41}{Trayectorias del Caso de Uso}{subsection.3.8.7}% 66
+\BOOKMARK [2][-]{subsection.3.8.8}{CUCL4 Eliminar archivos cifrado.}{section.3.8}% 67
+\BOOKMARK [3][-]{section*.42}{Descripci\363n completa}{subsection.3.8.8}% 68
+\BOOKMARK [3][-]{section*.43}{Atributos importantes}{subsection.3.8.8}% 69
+\BOOKMARK [3][-]{section*.44}{Trayectorias del Caso de Uso}{subsection.3.8.8}% 70
+\BOOKMARK [2][-]{subsection.3.8.9}{CUCL6 Iniciar Sesi\363n.}{section.3.8}% 71
+\BOOKMARK [3][-]{section*.45}{Descripci\363n completa}{subsection.3.8.9}% 72
+\BOOKMARK [3][-]{section*.46}{Atributos importantes}{subsection.3.8.9}% 73
+\BOOKMARK [3][-]{section*.47}{Trayectorias del Caso de Uso}{subsection.3.8.9}% 74
+\BOOKMARK [2][-]{subsection.3.8.10}{CUCL7 Registrar usuario.}{section.3.8}% 75
+\BOOKMARK [3][-]{section*.48}{Descripci\363n completa}{subsection.3.8.10}% 76
+\BOOKMARK [3][-]{section*.49}{Atributos importantes}{subsection.3.8.10}% 77
+\BOOKMARK [3][-]{section*.50}{Trayectorias del Caso de Uso}{subsection.3.8.10}% 78
+\BOOKMARK [0][-]{chapter.4}{Mensajes}{}% 79
+\BOOKMARK [1][-]{section.4.1}{Mensajes}{chapter.4}% 80
+\BOOKMARK [0][-]{appendix.Alph1}{Lista de acr\363nimos}{}% 81
+\BOOKMARK [1][-]{section.Alph1.1}{Definiciones, acr\363nimos y abreviaturas}{appendix.Alph1}% 82
+\BOOKMARK [0][-]{appendix.Alph2}{Glosario de t\351rminos}{}% 83
+\BOOKMARK [1][-]{section.Alph2.1}{Glosario de T\351rminos}{appendix.Alph2}% 84
+\BOOKMARK [0][-]{section.Alph2.1}{Bibliograf\355a}{}% 85
