@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.2)  27 APR 2017 03:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.2)  27 APR 2017 03:54
 entering extended mode
 **./master_tt.tex
 (master_tt.tex
@@ -3244,12 +3244,12 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 65.
 
-<images/CasosDeUso.png, id=872, 593.96906pt x 240.14719pt>
+<images/CasosDeUso.png, id=872, 790.955pt x 438.63875pt>
 File: images/CasosDeUso.png Graphic file (type png)
 
 <use images/CasosDeUso.png>
 Package pdftex.def Info: images/CasosDeUso.png used on input line 69.
-(pdftex.def)             Requested size: 470.0pt x 190.03297pt.
+(pdftex.def)             Requested size: 470.0pt x 260.64859pt.
  (casosUso/Servidor/CUSLLIndex.tex
 (casosUso/Servidor/CUSLL1.tex
 Package babel Info: Redefining spanish shorthand <<
@@ -3345,7 +3345,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--40
 
  []
 
-<images/uc/usecase.png, id=878, 91.34125pt x 61.22874pt>
+<images/uc/usecase.png, id=879, 91.34125pt x 61.22874pt>
 File: images/uc/usecase.png Graphic file (type png)
 
 <use images/uc/usecase.png>
@@ -3678,7 +3678,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--45
 
  []
 
-<images/uc/actor.png, id=937, 96.36pt x 74.2775pt>
+<images/uc/actor.png, id=938, 96.36pt x 74.2775pt>
 File: images/uc/actor.png Graphic file (type png)
  <use images/uc/actor.png>
 Package pdftex.def Info: images/uc/actor.png used on input line 46.
@@ -3698,7 +3698,7 @@ File: images/uc/actor.png Graphic file (type png)
 Package pdftex.def Info: images/uc/actor.png used on input line 49.
 (pdftex.def)             Requested size: 14.26958pt x 11.0pt.
 
-<images/gui/evaluacion/Aceptar.png, id=938, 79.04532pt x 74.52844pt>
+<images/gui/evaluacion/Aceptar.png, id=939, 79.04532pt x 74.52844pt>
 File: images/gui/evaluacion/Aceptar.png Graphic file (type png)
 
 <use images/gui/evaluacion/Aceptar.png>
@@ -5261,14 +5261,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 80.
 
-<images/Registrar_usuario.jpg, id=1256, 1071.00125pt x 868.24374pt>
+<images/Registrar_usuario.jpg, id=1257, 1071.00125pt x 868.24374pt>
 File: images/Registrar_usuario.jpg Graphic file (type jpg)
 
 <use images/Registrar_usuario.jpg>
 Package pdftex.def Info: images/Registrar_usuario.jpg used on input line 84.
 (pdftex.def)             Requested size: 470.0pt x 381.02156pt.
 
-<images/Registrar_trayectoria_a.jpg, id=1257, 717.68124pt x 476.78125pt>
+<images/Registrar_trayectoria_a.jpg, id=1258, 717.68124pt x 476.78125pt>
 File: images/Registrar_trayectoria_a.jpg Graphic file (type jpg)
 
 <use images/Registrar_trayectoria_a.jpg>
@@ -5276,7 +5276,7 @@ Package pdftex.def Info: images/Registrar_trayectoria_a.jpg used on input line
 90.
 (pdftex.def)             Requested size: 470.0pt x 312.2467pt.
 
-<images/Registrar_trayectoria_b.jpg, id=1258, 717.68124pt x 476.78125pt>
+<images/Registrar_trayectoria_b.jpg, id=1259, 717.68124pt x 476.78125pt>
 File: images/Registrar_trayectoria_b.jpg Graphic file (type jpg)
 
 <use images/Registrar_trayectoria_b.jpg>
@@ -5284,7 +5284,7 @@ Package pdftex.def Info: images/Registrar_trayectoria_b.jpg used on input line
 96.
 (pdftex.def)             Requested size: 470.0pt x 312.2467pt.
 
-<images/Registrar_trayectoria_c.jpg, id=1259, 717.68124pt x 476.78125pt>
+<images/Registrar_trayectoria_c.jpg, id=1260, 717.68124pt x 476.78125pt>
 File: images/Registrar_trayectoria_c.jpg Graphic file (type jpg)
 
 <use images/Registrar_trayectoria_c.jpg>
@@ -5405,14 +5405,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 107.
 
-<images/Iniciar_sesion.jpg, id=1276, 765.86125pt x 709.65125pt>
+<images/Iniciar_sesion.jpg, id=1277, 765.86125pt x 709.65125pt>
 File: images/Iniciar_sesion.jpg Graphic file (type jpg)
 
 <use images/Iniciar_sesion.jpg>
 Package pdftex.def Info: images/Iniciar_sesion.jpg used on input line 111.
 (pdftex.def)             Requested size: 470.0pt x 435.5071pt.
 
-<images/Iniciar_trayectoria_a.jpg, id=1277, 749.80125pt x 507.8975pt>
+<images/Iniciar_trayectoria_a.jpg, id=1278, 749.80125pt x 507.8975pt>
 File: images/Iniciar_trayectoria_a.jpg Graphic file (type jpg)
 
 <use images/Iniciar_trayectoria_a.jpg>
@@ -5420,7 +5420,7 @@ Package pdftex.def Info: images/Iniciar_trayectoria_a.jpg used on input line 11
 7.
 (pdftex.def)             Requested size: 470.0pt x 318.3729pt.
 
-<images/Iniciar_trayectoria_b.jpg, id=1278, 492.84125pt x 384.43625pt>
+<images/Iniciar_trayectoria_b.jpg, id=1279, 492.84125pt x 384.43625pt>
 File: images/Iniciar_trayectoria_b.jpg Graphic file (type jpg)
 
 <use images/Iniciar_trayectoria_b.jpg>
@@ -5546,14 +5546,14 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 134.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 134.
- <images/Subir_Archivo.jpg, id=1296, 1037.8775pt x 1143.27126pt>
+ <images/Subir_Archivo.jpg, id=1297, 1037.8775pt x 1143.27126pt>
 File: images/Subir_Archivo.jpg Graphic file (type jpg)
 
 <use images/Subir_Archivo.jpg>
 Package pdftex.def Info: images/Subir_Archivo.jpg used on input line 138.
 (pdftex.def)             Requested size: 470.0pt x 517.7295pt.
 
-<images/Subir_trayectoria_a.jpg, id=1297, 470.75874pt x 230.8625pt>
+<images/Subir_trayectoria_a.jpg, id=1298, 470.75874pt x 230.8625pt>
 File: images/Subir_trayectoria_a.jpg Graphic file (type jpg)
 
 <use images/Subir_trayectoria_a.jpg>
@@ -5561,7 +5561,7 @@ Package pdftex.def Info: images/Subir_trayectoria_a.jpg used on input line 144.
 
 (pdftex.def)             Requested size: 470.0pt x 230.49203pt.
 
-<images/Subir_trayectoria_b.jpg, id=1298, 511.9125pt x 367.3725pt>
+<images/Subir_trayectoria_b.jpg, id=1299, 511.9125pt x 367.3725pt>
 File: images/Subir_trayectoria_b.jpg Graphic file (type jpg)
 
 <use images/Subir_trayectoria_b.jpg>
@@ -5569,7 +5569,7 @@ Package pdftex.def Info: images/Subir_trayectoria_b.jpg used on input line 150.
 
 (pdftex.def)             Requested size: 470.0pt x 337.29729pt.
 
-<images/Subir_trayectoria_c.jpg, id=1299, 1037.8775pt x 1143.27126pt>
+<images/Subir_trayectoria_c.jpg, id=1300, 1037.8775pt x 1143.27126pt>
 File: images/Subir_trayectoria_c.jpg Graphic file (type jpg)
 
 <use images/Subir_trayectoria_c.jpg>
@@ -5664,7 +5664,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 161.
 
-<images/Firma_ciegas.jpg, id=1312, 912.40875pt x 608.2725pt>
+<images/Firma_ciegas.jpg, id=1313, 912.40875pt x 608.2725pt>
 File: images/Firma_ciegas.jpg Graphic file (type jpg)
 
 <use images/Firma_ciegas.jpg>
@@ -5708,14 +5708,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 170.
 
-<images/Descargar_Archivo.jpg, id=1318, 698.61pt x 737.75626pt>
+<images/Descargar_Archivo.jpg, id=1319, 698.61pt x 737.75626pt>
 File: images/Descargar_Archivo.jpg Graphic file (type jpg)
 
 <use images/Descargar_Archivo.jpg>
 Package pdftex.def Info: images/Descargar_Archivo.jpg used on input line 174.
 (pdftex.def)             Requested size: 470.0pt x 496.34294pt.
 
-<images/Descargar_aleternativa_a.jpg, id=1319, 682.55pt x 526.96875pt>
+<images/Descargar_aleternativa_a.jpg, id=1320, 682.55pt x 526.96875pt>
 File: images/Descargar_aleternativa_a.jpg Graphic file (type jpg)
 
 <use images/Descargar_aleternativa_a.jpg>
@@ -5785,7 +5785,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 185.
 
-<images/Eliminar_Archivo.jpg, id=1328, 669.50125pt x 737.75626pt>
+<images/Eliminar_Archivo.jpg, id=1329, 669.50125pt x 737.75626pt>
 File: images/Eliminar_Archivo.jpg Graphic file (type jpg)
 
 <use images/Eliminar_Archivo.jpg>
@@ -6318,9 +6318,9 @@ m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb>
-Output written on master_tt.pdf (93 pages, 2280869 bytes).
+Output written on master_tt.pdf (93 pages, 2289427 bytes).
 PDF statistics:
- 2143 PDF objects out of 2487 (max. 8388607)
+ 2144 PDF objects out of 2487 (max. 8388607)
  453 named destinations out of 1000 (max. 500000)
  962 words of extra memory for PDF output out of 10000 (max. 10000000)
 
