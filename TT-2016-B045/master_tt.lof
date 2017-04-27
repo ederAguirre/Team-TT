@@ -14,5 +14,21 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitectura del sistema.\relax }}{32}{figure.caption.19}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Casos de Uso del sistema.\relax }}{34}{figure.caption.20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de secuencias de Registrar un usuario nuevo.\relax }}{56}{figure.caption.51}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de secuencias de Registrar un usuario nuevo con datos incorrectos.\relax }}{57}{figure.caption.52}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de secuencias de Registrar un usuario nuevo con datos incompletos.\relax }}{58}{figure.caption.53}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama de secuencias de Registrar un usuario nuevo con usuario repetido.\relax }}{59}{figure.caption.54}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagrama de secuencias de Iniciar sesion un usuario.\relax }}{60}{figure.caption.55}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagrama de secuencias de Inicar sesion un usuario con datos incorrectos.\relax }}{61}{figure.caption.56}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagrama de secuencias de Registrar un usuario nuevo con datos incompletos.\relax }}{62}{figure.caption.57}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Diagrama de secuencias de Inicar sesion un usuario con campos vacios.\relax }}{63}{figure.caption.58}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Diagrama de secuencias de subir un archivo nuevo.\relax }}{64}{figure.caption.59}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Diagrama de secuencias de subir un archivo con carpeta vacia.\relax }}{65}{figure.caption.60}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Diagrama de secuencias de subir un archivo incompatible.\relax }}{65}{figure.caption.61}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Diagrama de secuencias de subir un archivo existente.\relax }}{66}{figure.caption.62}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Diagrama de secuencias de la firma a ciegas del servidor de llaves.\relax }}{67}{figure.caption.63}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Diagrama de secuencias de descargar un archivo de la nube.\relax }}{68}{figure.caption.64}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Diagrama de secuencias de descargar un archivo de la nube no encontrado.\relax }}{69}{figure.caption.65}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Diagrama de secuencias de eliminar un archivo de la nube.\relax }}{70}{figure.caption.66}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

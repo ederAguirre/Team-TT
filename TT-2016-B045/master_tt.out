@@ -78,10 +78,17 @@
 \BOOKMARK [3][-]{section*.48}{Descripci\363n completa}{subsection.4.3.10}% 78
 \BOOKMARK [3][-]{section*.49}{Atributos importantes}{subsection.4.3.10}% 79
 \BOOKMARK [3][-]{section*.50}{Trayectorias del Caso de Uso}{subsection.4.3.10}% 80
-\BOOKMARK [1][-]{section.4.4}{Mensajes del sistema}{chapter.4}% 81
-\BOOKMARK [2][-]{subsection.4.4.1}{Mensajes}{section.4.4}% 82
-\BOOKMARK [0][-]{appendix.Alph1}{Lista de acr\363nimos}{}% 83
-\BOOKMARK [1][-]{section.Alph1.1}{Definiciones, acr\363nimos y abreviaturas}{appendix.Alph1}% 84
-\BOOKMARK [0][-]{appendix.Alph2}{Glosario de t\351rminos}{}% 85
-\BOOKMARK [1][-]{section.Alph2.1}{Glosario de T\351rminos}{appendix.Alph2}% 86
-\BOOKMARK [0][-]{section.Alph2.1}{Bibliograf\355a}{}% 87
+\BOOKMARK [1][-]{section.4.4}{Diagramas de secuencia}{chapter.4}% 81
+\BOOKMARK [2][-]{subsection.4.4.1}{Registrar Usuario}{section.4.4}% 82
+\BOOKMARK [2][-]{subsection.4.4.2}{Iniciar Sesi\363n}{section.4.4}% 83
+\BOOKMARK [2][-]{subsection.4.4.3}{Subir Archivo}{section.4.4}% 84
+\BOOKMARK [2][-]{subsection.4.4.4}{Firma a ciegas}{section.4.4}% 85
+\BOOKMARK [2][-]{subsection.4.4.5}{Descargar Archivo}{section.4.4}% 86
+\BOOKMARK [2][-]{subsection.4.4.6}{Eliminar Archivo}{section.4.4}% 87
+\BOOKMARK [1][-]{section.4.5}{Mensajes del sistema}{chapter.4}% 88
+\BOOKMARK [2][-]{subsection.4.5.1}{Mensajes}{section.4.5}% 89
+\BOOKMARK [0][-]{appendix.Alph1}{Lista de acr\363nimos}{}% 90
+\BOOKMARK [1][-]{section.Alph1.1}{Definiciones, acr\363nimos y abreviaturas}{appendix.Alph1}% 91
+\BOOKMARK [0][-]{appendix.Alph2}{Glosario de t\351rminos}{}% 92
+\BOOKMARK [1][-]{section.Alph2.1}{Glosario de T\351rminos}{appendix.Alph2}% 93
+\BOOKMARK [0][-]{section.Alph2.1}{Bibliograf\355a}{}% 94

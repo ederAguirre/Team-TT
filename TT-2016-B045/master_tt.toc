@@ -79,10 +79,17 @@
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{54}{section*.48}
 \contentsline {subsubsection}{Atributos importantes}{54}{section*.49}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{54}{section*.50}
-\contentsline {section}{\numberline {4.4}Mensajes del sistema}{56}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Mensajes}{57}{subsection.4.4.1}
-\contentsline {chapter}{\numberline {A}Lista de acr\IeC {\'o}nimos}{61}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{61}{section.Alph1.1}
-\contentsline {chapter}{\numberline {B}Glosario de t\IeC {\'e}rminos}{63}{appendix.Alph2}
-\contentsline {section}{\numberline {B.1}Glosario de T\IeC {\'e}rminos}{63}{section.Alph2.1}
-\contentsline {chapter}{Bibliograf\'ia}{65}{section.Alph2.1}
+\contentsline {section}{\numberline {4.4}Diagramas de secuencia}{56}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Registrar Usuario}{56}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Iniciar Sesi\IeC {\'o}n}{60}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Subir Archivo}{64}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Firma a ciegas}{67}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Descargar Archivo}{68}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}Eliminar Archivo}{70}{subsection.4.4.6}
+\contentsline {section}{\numberline {4.5}Mensajes del sistema}{71}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Mensajes}{72}{subsection.4.5.1}
+\contentsline {chapter}{\numberline {A}Lista de acr\IeC {\'o}nimos}{76}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{76}{section.Alph1.1}
+\contentsline {chapter}{\numberline {B}Glosario de t\IeC {\'e}rminos}{78}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Glosario de T\IeC {\'e}rminos}{78}{section.Alph2.1}
+\contentsline {chapter}{Bibliograf\'ia}{80}{section.Alph2.1}
