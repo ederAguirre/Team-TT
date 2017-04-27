@@ -10,17 +10,138 @@ Como se expuso anteriormente, el protocolo criptográfico nos arroja excelentes 
 Para la implementación del protocolo criptográfico, se cuentan con las herramientas de software necesarias ya que estas existen y están disponibles para su uso y disponibilidad inmediata al desarrollo del protocolo. Cabe mencionar que las herramientas que involucran todo el desarrollo del protocolo, se encuentran completas en tanto a funcionalidades, soportes, documentación, seguridad, etc. 
 En cuanto a los conocimientos necesarios al protocolo, se cuentan con los suficientes que este protocolo necesita para su applicación. Dichos conocimientos se han adquirido a lo largo de la estadía en la ingeniería mediante las clases recibidas en las instalaciones de la  escuela o por la adquisición por medios externos. Ahora bien, un pequeño inconveniente para la aplicación del protocolo, es el desarrollo del software, ya que existen partes fundamentales del protocolo que requieren de nuevo conocimiento que aun no se adquiere y es necesario aprender, por tanto existe una pequeña posibilidad de que esto signifique un retraso en la producción del protocolo. 
 \\
-\textbf{Lenguaje de programación:} para el desarrollo del sistema se estará trabajando con varios lenguajes de programación, la base de este desarrollo será Python, ya que es un lenguaje de fácil comprensión y con una lógica bastate familiar a lenguajes que anteriormente se habían trabajado, además de que Python nos permite trabajar primitivas criptográficas con una mayor facilidad.
+\textbf{Lenguaje de programación:} para el desarrollo del sistema se estará trabajando con varios lenguajes de programación, la base de este desarrollo será Python, ya que es un lenguaje de fácil comprensión y con una lógica bastate familiar a lenguajes que anteriormente se habían trabajado, además de que Python nos permite trabajar primitivas criptográficas con una mayor facilidad. \\
 \textbf{Sistema gestor de base de datos:} Se implementará MySQL como un manejador de base de datos, ya que es software libre y además se cuenta con una mayor experiencia de manejo y entendimiento. 
+\\
+De acuerdo con los requerimientos del sistema, los componentes necesarios para la implementación de este protocolo son: 
+
+\textbf{Hardware} 
+Se requiere de equipo de cómputo para poder llevar a cabo la codificación del protocolo y la configuración de los servidores que le darán soporte a las actividades realizadas en la interacción del usuario con el sistema. El equipo de trabajo cuenta con 3 computadoras personales (LAPTOP) que son las siguientes: 
+\begin{longtable}{| p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.7cm} |}
+
+% aquí añadimos el encabezado de la primera hoja.
+\hline
+\multicolumn{2}{|c|}{\textbf{Componentes Físicos (Hardware)}} \\ \hline
+\textbf{Componente} & \textbf{Características} \\
+\hline \hline
+\endfirsthead
+
+% aquí añadimos el encabezado del resto de hojas.
+\hline
+\textbf{Componente} & \textbf{Características} \\
+\hline \hline
+\endhead
+
+% aquí añadimos el fondo de todas las hojas, excepto de la última.
+\multicolumn{2}{|c|}{Sigue en la página siguiente.}
+\endfoot
+
+% aquí añadimos el fondo de la última hoja.
+\endlastfoot
+
+Laptop HP Pavilion g4 & \begin{itemize}
+				\item Procesador: AMD A6-4400M APU 2.70Hz
+				\item Memoria RAM: 8.00GB 
+				\item Disco Duro: 750GB
+				\item Tipo Sistema: 64bits x64
+			      \end{itemize} \\ \hline
+
+Acer Aspire V5 &  \begin{itemize}
+				\item Procesador: Intel(R) Celeron(R)  1.50GHz 
+				\item Memoria RAM: 2.00GB
+				\item Disco Duro: 250GB
+				\item Tipo Sistema: 64bits x64
+			      \end{itemize} \\ \hline
+
+HP probook &  \begin{itemize}
+				\item Procesador: AMD Phenom(tm) ll X2 545  3.00GHz 
+				\item Memoria RAM: 4.00GB
+				\item Disco Duro: 350GB
+				\item Tipo Sistema: 64bits x64
+			      \end{itemize} \\ \hline
+
+ownCloud &  \begin{itemize}
+				\item Servicio de alojamiento de archivos con almacenamiento en la nube
+				\item Servidores de instalación: PHP, SQLite. MySQL, PostgreSQL
+				\item Servidor de archivos: WebDAV
+				\item Calendario de sincronzación: CardDAV
+				\item Sistema operativo: MMultiplataforma
+			      \end{itemize} \\ \hline
+\caption{Componentes físicos}
+\label{Hardware}
+\end{longtable}
+
+\textbf{Software}
+Con respecto al software, no se pretende usar un sistema operativo en específico ya que el servicio de la nube es compatible con cualquier sistema operativo en que se esté desarrollando. Sin embargo se cuenta con los siguientes sitemas operativos: 
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{| p{2cm} |  p{13.5cm} |}
+\hline
+\multicolumn{2}{|c|}{\textbf{Sistemas operativos}} \\ \hline
+\textbf{Tipo} &  \textbf{Cantidad} \\
+\hline \hline
+Windows 8.1 Pro & 2\\ \hline
+Windows 10 Pro & 1\\ \hline
+
+\end{tabular}
+\caption{Requerimientos funcionales del servidor de llaves}
+\label{Servidor de Llaves }
+\end{table}
+
+
+
+
 
 \subsection{Factibilidad operativa}
 El uso e implantación de este protocolo criptográfico, tiene como principal objetivo el eliminar las duplicaciones de archivos que se almacenan en la nube y de igual manera el evitar los ataques de adversarios por fuerza bruta a la información de los ususrios en la nube , por lo cual resulta factible la operación del proyecto, ya que se esta proponiendo una solución de bajo costo con grandes eneficios.
 Hoy en día va en aumento el número de usuarios de la nube, ya sean empresas, organizaciones, personas, etc. todos estos usuarios buscan su información rapido y de fácil acceso en cualquier lugar con una conexión a internet, y esto hace que también caumente la cantidad de información almacenada que en ocasiones está replicada en uno o mas usuarios.
 Este protocolo pretende atender al problema del crecimiento en la infraestructura de la nube ofreciendo una solución para contrarestarlo y de esa manera más usuarios podrán tener acceso a la nube sin necesidad de aumentar a la infraestructura de esta.
 
+\subsection{Facctibilidad económica}
+El estudio de factibilidad económica nos permite analizar los costo - beneficios monetarios que se obtendrán con el desarrollo del proyecto, ya que dicho protocolo en un largo plazo podría comenzar en producción industrial para su comercialización y districución en el mercado de las tecnologías de la información, ya que proveerá de servicios en el cómputo nube que hoy en día las empresas están optando por invertir en el y optimizar sus recursos y procesos del negocio. 
+
+En cuanto al análisis de el gasto económico que se requiere para la implementación y la realización de pruebas del protocolo, existe un beneficio ya que todos los componentes para el desarrollo del sistema son libres,es decir que no se realizará la adquisición de licencias de desarrollo ni programas para la implementación. 
+\\ El servidor que nos proveerá del almacenamiento en la nube de nombre \textbf{ownCloud.org} es de libre acceso y no existe restricción alguna la utilización de este. Nos permite una libre manipulación y configuración de tal modo que podamos cumplir nuestros objetivos.
 
 
 \subsection{Análisis de riesgos} 
+
+EL análisis de riesgos consiste en identificar los riesgos que este sistema puede tener en su futura implementación y desarrollo. Este análisis presenta los riesgos identificados en el sistema y 3 indicadores (Prioridad, Probabilidad e Impacto) fundamentales para llevar a cabo la gestión de riesgos y así tener presente cuales son los riesgos más destacados en el sistema para dimensionar las consecuencias que estos podrían traer consigo si llegaran a ocurrir. Para elaborar este análisis de riesgos, se evaluaron los impactos que estos riesgos pueden traer, mediante 5 escalas de impactode un riesgo, dichas escalas son: 
+
+\subsubsection{Escalas de impacto de un riesgo}
+\begin{longtable}{| p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.7cm} |}
+
+% aquí añadimos el encabezado de la primera hoja.
+\hline
+\multicolumn{6}{|c|}{\textbf{Escalas de impacto de un riesgo}} \\ \hline
+\textit{\textbf{Objetivo del proyecto}} &  \textbf{Muy bajo/ 0.05} & \textbf{Bajo/ 0.10} & \textbf{Moderado/ 0.20} & \textbf{Alto/ 0.40} & \textbf{Muy alto/ 0.80}\\
+\hline \hline
+\endfirsthead
+
+% aquí añadimos el encabezado del resto de hojas.
+\hline
+\textit{\textbf{Objetivo del proyecto}} &  \textbf{Muy bajo/ 0.05} & \textbf{Bajo/ 0.10} & \textbf{Moderado/ 0.20} & \textbf{Alto/ 0.40} & \textbf{Muy alto/ 0.80}\\
+\hline \hline
+\endhead
+
+% aquí añadimos el fondo de todas las hojas, excepto de la última.
+\multicolumn{6}{|c|}{Sigue en la página siguiente.}
+\endfoot
+
+% aquí añadimos el fondo de la última hoja.
+\endlastfoot
+
+
+\textbf{Costo} & Aumento insignificante de costo & Aumento del costo <10\% &  Aumento del costo 10 - 20\% & Aumento del costo 20 - 40\% & Aumento del costo >40\%  \\ \hline
+\textbf{Tiempo} & Aumento insignificante de tiempo & Aumento del tiempo <5\% &  Aumento del tiempo 5 - 10\% & Aumento del tiempo 10 - 20\% & Aumento del tiempo >20\%  \\ \hline
+\textbf{Alcance} & Disminución del alcance apenas perceptible & Áreas de alcance secundarias afectadas & Áreas de alcance principales afectadas & Reducción del alcance inaceptable para los objetivos &  El producto terminado es inservible\\ \hline
+\textbf{Calidad} & Degradación de calidad apenas perceptible & Sólo las aplicaciones muy exigentes se ven afectadas & La reducción de la calidad requiere aprobación externa & Reducción de calidad inaceptable &  El producto terminado es inservible\\ \hline
+
+
+\caption{Escalas de impacto de un riesgo}
+\label{Riesgos}
+\end{longtable}
 
 \begin{longtable}{| p{1cm} | p{4cm} | p{2cm} | p{2.5cm} | p{2cm} | p{4cm} |}
 
@@ -51,6 +172,9 @@ R3 & Falta de usuarios y peticiones & ALTA & BAJA &  BAJO & No se localizaron to
 R4 & Equipo de cómputo & ALTA & BAJA & MUY BAJO & El equipo de cómputo empleado falla o no se encuentra funcionando \\ \hline
 R5 & Incumplimiento de acuerdos & ALTA & ALTA & MODERADO & Retrazo en actividades prgramadas \\ \hline
 R6 & Problemas de planeación & MEDIA & ALTA & ALTO & Falta de comunicación por parte del equipo \\ \hline
+R7 & Falta de recursos & ALTA & MEDIA & MUY ALTO & No se cuenta con el poder adquisitivo de recursos e insumos \\ \hline
+R8 & Falta de conocimientos & MEDIA & MEDIA & MUY ALTO & El equipo no se encuentra capacitado para el desarrollo del sistema. \\ \hline
+R9 & Sobre estimación de insumos & MEDIA & MEDIA & MODERADO & Los insumos para la implementación del sistema no son los adeacuados para el desarrollo. 
 
 \\ \hline
 \caption{Análisis de riesgos del sistema}
@@ -58,6 +182,7 @@ R6 & Problemas de planeación & MEDIA & ALTA & ALTO & Falta de comunicación por
 \end{longtable}
 
 %=============================================================================================================================================================
+
 
 \section{Arquitectura del sistema. }
 
