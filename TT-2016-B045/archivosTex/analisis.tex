@@ -1,15 +1,65 @@
-%\usepackage{casouso_estilo}
-%\chapter{An\'alisis y Dise\~no} % (fold)
 
 
-\section{Arquitectura del sistema. }
-\begin{figure}[H]
-\centering
-	\includegraphics[width=16cm, height=12cm]{./images/Arquitectura.jpg}
-	\caption{Arquitectura del sistema.}
+\section{Estudio de Factibilidad}
 
-\end{figure}
-%=======================================================================================================================================
+Como se expuso anteriormente, el protocolo criptográfico nos arroja excelentes beneficios en cuanto a la optimización de espacio de memoria en la nube y garantiza la seguridad e integridad de los datos de usuarios registrados en la nube. Hasta ahora se tiene muy claro cuál será el impacto de la implementación de este protocolo, pero aún queda por establecer cuán viable es la realización de este protocolo en cuanto a facilidades técnicas y operativas.
+
+
+\subsection{Factibilidad técnica}
+
+Para la implementación del protocolo criptográfico, se cuentan con las herramientas de software necesarias ya que estas existen y están disponibles para su uso y disponibilidad inmediata al desarrollo del protocolo. Cabe mencionar que las herramientas que involucran todo el desarrollo del protocolo, se encuentran completas en tanto a funcionalidades, soportes, documentación, seguridad, etc. 
+En cuanto a los conocimientos necesarios al protocolo, se cuentan con los suficientes que este protocolo necesita para su applicación. Dichos conocimientos se han adquirido a lo largo de la estadía en la ingeniería mediante las clases recibidas en las instalaciones de la  escuela o por la adquisición por medios externos. Ahora bien, un pequeño inconveniente para la aplicación del protocolo, es el desarrollo del software, ya que existen partes fundamentales del protocolo que requieren de nuevo conocimiento que aun no se adquiere y es necesario aprender, por tanto existe una pequeña posibilidad de que esto signifique un retraso en la producción del protocolo. 
+\\
+\textbf{Lenguaje de programación:} para el desarrollo del sistema se estará trabajando con varios lenguajes de programación, la base de este desarrollo será Python, ya que es un lenguaje de fácil comprensión y con una lógica bastate familiar a lenguajes que anteriormente se habían trabajado, además de que Python nos permite trabajar primitivas criptográficas con una mayor facilidad.
+\textbf{Sistema gestor de base de datos:} Se implementará MySQL como un manejador de base de datos, ya que es software libre y además se cuenta con una mayor experiencia de manejo y entendimiento. 
+
+\subsection{Factibilidad operativa}
+El uso e implantación de este protocolo criptográfico, tiene como principal objetivo el eliminar las duplicaciones de archivos que se almacenan en la nube y de igual manera el evitar los ataques de adversarios por fuerza bruta a la información de los ususrios en la nube , por lo cual resulta factible la operación del proyecto, ya que se esta proponiendo una solución de bajo costo con grandes eneficios.
+Hoy en día va en aumento el número de usuarios de la nube, ya sean empresas, organizaciones, personas, etc. todos estos usuarios buscan su información rapido y de fácil acceso en cualquier lugar con una conexión a internet, y esto hace que también caumente la cantidad de información almacenada que en ocasiones está replicada en uno o mas usuarios.
+Este protocolo pretende atender al problema del crecimiento en la infraestructura de la nube ofreciendo una solución para contrarestarlo y de esa manera más usuarios podrán tener acceso a la nube sin necesidad de aumentar a la infraestructura de esta.
+
+
+
+\subsection{Análisis de riesgos} 
+
+\begin{longtable}{| p{1cm} | p{4cm} | p{2cm} | p{2.5cm} | p{2cm} | p{4cm} |}
+
+% aquí añadimos el encabezado de la primera hoja.
+\hline
+\multicolumn{6}{|c|}{\textbf{Análisis de riesgos}} \\ \hline
+\textbf{ID} &  \textbf{Riesgo} & \textbf{Prioridad} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Causa}\\
+\hline \hline
+\endfirsthead
+
+% aquí añadimos el encabezado del resto de hojas.
+\hline
+\textbf{ID} &  \textbf{Riesgo} & \textbf{Prioridad} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Causa}\\
+\hline \hline
+\endhead
+
+% aquí añadimos el fondo de todas las hojas, excepto de la última.
+\multicolumn{6}{|c|}{Sigue en la página siguiente.}
+\endfoot
+
+% aquí añadimos el fondo de la última hoja.
+\endlastfoot
+
+% aquí añadimos el cuerpo de la tabla.
+R1 & Modificar requerimientos &  ALTA & MEDIA & ALTO & Nuevas características del protocolo \\ \hline
+R2 & Cambios en tecnología & BAJA & MEDIA & BAJO & La tecnología usada es menos eficiente y causa conflictos \\ \hline
+R3 & Falta de usuarios y peticiones & ALTA & BAJA &  BAJO & No se localizaron todos los involucrados en el protocolo \\ \hline
+R4 & Equipo de cómputo & ALTA & BAJA & MUY BAJO & El equipo de cómputo empleado falla o no se encuentra funcionando \\ \hline
+R5 & Incumplimiento de acuerdos & ALTA & ALTA & MODERADO & Retrazo en actividades prgramadas \\ \hline
+R6 & Problemas de planeación & MEDIA & ALTA & ALTO & Falta de comunicación por parte del equipo \\ \hline
+
+\\ \hline
+\caption{Análisis de riesgos del sistema}
+\label{Análisis de riesgos }
+\end{longtable}
+
+%=============================================================================================================================================================
+
+
 \section{Descripcion de procesos}
 
 \subsection{Descripción del proceso subir archivo.}
@@ -297,125 +347,3 @@ RNF6 & Extensibilidad & \begin{itemize}
 	\BRitem[Descripción:] El usuarios debe tener una cuenta activa en el sistema.
 	\BRitem[Tipo:] Hecho
 \end{BussinesRule}
-
-
-
-%=======================================================================================================================================
-\section{Especificación de Plataforma}
-
-
-%\textbf{Servidor web}
-%\begin{enumerate}
-%\item \textbf{Hardware}
-%\begin{itemize}
-%\item Procesador: Intel Xeon 1220
-%\item RAM: 4 GB DDR3 1600 MHz
-%\end{itemize}
-%\item \textbf{Software}
-%\begin{itemize}
-%\item Sistema operativo: Debian 8 Jessie 64 bits
-%\item Servidor web: Apache 2
-%\begin{itemize}
-%\item Módulo PHP 5 con conector para MongoDB
-%\end{itemize}
-%\item Servidor de base de datos: MongoDB 3.2
-%\end{itemize}
-%\item \textbf{Red}
-%\begin{itemize}
-%\item Conexión a internet cableada de 20 Mb/s
-%\end{itemize}
-%\end{enumerate}
-
-\textbf{Estación de trabajo y computadores personales}
-\begin{enumerate}
-\item \textbf{Hardware}
-\begin{itemize}
-\item Procesador: Intel Celeron N2840 o superior
-\item RAM: 2 GB o superior
-\end{itemize}
-\item \textbf{Software}
-\begin{itemize}
-\item Navegador Web: Chrome 24, Firefox 24, Internet Explorer 10, Safari 7 o superior.
-\begin{itemize}
-\item Soporte para cookies
-\end{itemize}
-\end{itemize}
-
-\item \textbf{Red}
-\begin{itemize}
-\item Conexión a internet de 2 Mb/s
-\end{itemize}
-
-\end{enumerate}
-
-%=======================================================================================================================================
-
-\section{Análisis de riesgos} 
-
-\begin{longtable}{| p{1cm} | p{4cm} | p{2cm} | p{2.5cm} | p{2cm} | p{4cm} |}
-
-% aquí añadimos el encabezado de la primera hoja.
-\hline
-\multicolumn{6}{|c|}{\textbf{Análisis de riesgos}} \\ \hline
-\textbf{ID} &  \textbf{Riesgo} & \textbf{Prioridad} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Causa}\\
-\hline \hline
-\endfirsthead
-
-% aquí añadimos el encabezado del resto de hojas.
-\hline
-\textbf{ID} &  \textbf{Riesgo} & \textbf{Prioridad} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Causa}\\
-\hline \hline
-\endhead
-
-% aquí añadimos el fondo de todas las hojas, excepto de la última.
-\multicolumn{6}{|c|}{Sigue en la página siguiente.}
-\endfoot
-
-% aquí añadimos el fondo de la última hoja.
-\endlastfoot
-
-% aquí añadimos el cuerpo de la tabla.
-R1 & Modificar requerimientos &  ALTA & MEDIA & ALTO & Nuevas características del protocolo \\ \hline
-R2 & Cambios en tecnología & BAJA & MEDIA & BAJO & La tecnología usada es menos eficiente y causa conflictos \\ \hline
-R3 & Falta de usuarios y peticiones & ALTA & BAJA &  BAJO & No se localizaron todos los involucrados en el protocolo \\ \hline
-R4 & Equipo de cómputo & ALTA & BAJA & MUY BAJO & El equipo de cómputo empleado falla o no se encuentra funcionando \\ \hline
-R5 & Incumplimiento de acuerdos & ALTA & ALTA & MODERADO & Retrazo en actividades prgramadas \\ \hline
-R6 & Problemas de planeación & MEDIA & ALTA & ALTO & Falta de comunicación por parte del equipo \\ \hline
-
-
-
-
-\\ \hline
-\caption{Análisis de riesgos del sistema}
-\label{Análisis de riesgos }
-\end{longtable}
-%=======================================================================================================================================
-\section{Estudio de Factibilidad}
-
-Como se expuso anteriormente, el protocolo criptográfico nos arroja excelentes beneficios en cuanto a la optimización de espacio de memoria en la nube y garantiza la seguridad e integridad de los datos de usuarios registrados en la nube. Hasta ahora se tiene muy claro cuál será el impacto de la implementación de este protocolo, pero aún queda por establecer cuán viable es la realización de este protocolo en cuanto a facilidades técnicas y operativas.
-
-
-\subsection{Factibilidad técnica}
-
-Para la implementación del protocolo criptográfico, se cuentan con las herramientas de software necesarias ya que estas existen y están disponibles para su uso y disponibilidad inmediata al desarrollo del protocolo. Cabe mencionar que las herramientas que involucran todo el desarrollo del protocolo, se encuentran completas en tanto a funcionalidades, soportes, documentación, seguridad, etc. 
-En cuanto a los conocimientos necesarios al protocolo, se cuentan con los suficientes que este protocolo necesita para su applicación. Dichos conocimientos se han adquirido a lo largo de la estadía en la ingeniería mediante las clases recibidas en las instalaciones de la  escuela o por la adquisición por medios externos. Ahora bien, un pequeño inconveniente para la aplicación del protocolo, es el desarrollo del software, ya que existen partes fundamentales del protocolo que requieren de nuevo conocimiento que aun no se adquiere y es necesario aprender, por tanto existe una pequeña posibilidad de que esto signifique un retraso en la producción del protocolo. 
-\\
-\textbf{Lenguaje de programación:} para el desarrollo del sistema se estará trabajando con varios lenguajes de programación, la base de este desarrollo será Python, ya que es un lenguaje de fácil comprensión y con una lógica bastate familiar a lenguajes que anteriormente se habían trabajado, además de que Python nos permite trabajar primitivas criptográficas con una mayor facilidad.
-\textbf{Sistema gestor de base de datos:} Se implementará MySQL como un manejador de base de datos, ya que es software libre y además se cuenta con una mayor experiencia de manejo y entendimiento. 
-
-\subsection{Factibilidad operativa}
-El uso e implantación de este protocolo criptográfico, tiene como principal objetivo el eliminar las duplicaciones de archivos que se almacenan en la nube y de igual manera el evitar los ataques de adversarios por fuerza bruta a la información de los ususrios en la nube , por lo cual resulta factible la operación del proyecto, ya que se esta proponiendo una solución de bajo costo con grandes eneficios.
-Hoy en día va en aumento el número de usuarios de la nube, ya sean empresas, organizaciones, personas, etc. todos estos usuarios buscan su información rapido y de fácil acceso en cualquier lugar con una conexión a internet, y esto hace que también caumente la cantidad de información almacenada que en ocasiones está replicada en uno o mas usuarios.
-Este protocolo pretende atender al problema del crecimiento en la infraestructura de la nube ofreciendo una solución para contrarestarlo y de esa manera más usuarios podrán tener acceso a la nube sin necesidad de aumentar a la infraestructura de esta.
-
-
-
-\newpage
-%=======================================================================================================================================
-\section{Casos de Uso}
-
-\begin{figure}[htbp!]
-		\centering
-			\includegraphics[width=1\textwidth]{images/CasosDeUso}
-		\caption{Diagrama de Casos de Uso del sistema.}
-	\end{figure}
