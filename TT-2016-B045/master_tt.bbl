@@ -32,6 +32,11 @@ M.~C. y. N.~B. Cox~L.
 \newblock {\em SIGOPS Oper. Syst.}
 \newblock Pastiche: making backup cheap and easy, 2002.
 
+\bibitem{cisco}
+EFE/Cisco.
+\newblock Estimación del crecimiento del tráfico en la nube en el periodo
+  2013-2018., 2014.
+
 \bibitem{popa}
 P.~HP.
 \newblock Estadísticas que todos deberían conocer sobre cloud computing,
@@ -58,13 +63,6 @@ Microsoft.
   méxico.
 \newblock {\em Instituto Mexicano pala la Competitividad}, 2012.
 
-\bibitem{microsoft}
-Microsoft.
-\newblock Data deduplication overview.
-\newblock Biblioteca TechNet, 2015.
-\newblock
-  \url{https://technet.microsoft.com/enus/library/hh831602(v=ws.11).aspx}.
-
 \bibitem{paar}
 C.~Paar and J.~Pelzl.
 \newblock {\em Understanding Cryptography - {A} Textbook for Students and
@@ -83,13 +81,6 @@ D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
 \newblock {\em Reclaiming space from duplicate files in a serverless
   distributed file system.}
 \newblock ICDCS, 2002.
-
-\bibitem{rsa}
-s/a.
-\newblock Rsa.
-\newblock Herramientas WEB para la enseñanza de Protocolos de Comunicación.
-\newblock
-  \url{http://neo.lcc.uma.es/evirtual/cdd/tutorial/presentacion/rsa.html}.
 
 \bibitem{Nubei}
 S/A.

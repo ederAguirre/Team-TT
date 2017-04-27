@@ -65,6 +65,21 @@ El criptoanalista conoce el algoritmo de cifrado, así como un criptograma selec
 En este caso el criptoanalista además de conocer el algoritmo de cifrado y el criptograma que quiere descriptar, también conoce el criptograma de un texto en claro que él elija y el mensaje en claro de un criptograma también elegido por él ~\cite{ataques}.
  \end{itemize}
 
+
+\subsection{Ataques por fuerza bruta}
+
+Los ataques de fuerza bruta se basan en un concepto simple: Oscar, el atacante, obtiene el texto cifrado escuchando en el canal y pasa a tener un pedazo corto del texto claro, por ejemplo, el encabezado de un archivo que fue cifrado. Oscar ahora simplemente descifra el primer pedazo del texto cifrado con todas las claves posibles. Si el texto claro resultante coincide con el pedazo corto del texto claro, sabe que ha encontrado la clave correcta.\\
+
+\begin{definition} 
+Ataque de fuerza bruta\\
+Sea \textit{(x, y)} el texto claro y el texto cifrado, y sea \textit{K = [K1, ..., Kk]} el espacio clave de todas las claves posibles \textit{ki}. Un ataque de fuerza bruta comprueba que para cada \textit{ki $\in$ K} si \\
+\textit{ \[d_{ki}(y) = x\] }.\\
+Si la igualdad se mantiene, se encuentra una posible clave correcta; Si no, se procede con la siguiente clave.\\
+\end{definition}
+En la práctica, un ataque de fuerza bruta puede ser más complicado porque las claves incorrectas pueden dar resultados positivos falsos. \\
+Es importante señalar que un ataque de fuerza bruta contra cifrados simétricos es siempre posible en un principio. Si es factible en la práctica depende del espacio clave, es decir, en el número de posibles claves que existen para un cifrado dado. Si se están probando todas las claves en muchas computadoras modernas toma demasiado tiempo, es decir, varias décadas, el cifrado es computacionalmente seguro contra un ataque de fuerza bruta ~\cite{paar}.\\
+
+
 %\subsection{Ataques a los Protocolos Criptográficos}
 %Este tipo de ataques no pretenden encontrar la clave secreta para poder conocer el mensaje en claro, sino que buscan obtener la información vulnerando los protocolos criptográficos, es decir, pretenden burlar la serie de pasos establecidos para alcanzar los objetivos de seguridad y que tienen que ser realizados por las entidades involucradas en cierta comunicación. Ejemplos de este tipo de ataques son los siguientes:
 
@@ -257,19 +272,6 @@ Los cifradores por bloques pueden ser representados como se ve en la figura ~\re
 %\pagebreak
 
 %==================================================================================================================================================================
-
-\section{Ataques de fuerza bruta}
-
-Los ataques de fuerza bruta se basan en un concepto simple: Oscar, el atacante, obtiene el texto cifrado escuchando en el canal y pasa a tener un pedazo corto del texto claro, por ejemplo, el encabezado de un archivo que fue cifrado. Oscar ahora simplemente descifra el primer pedazo del texto cifrado con todas las claves posibles. Si el texto claro resultante coincide con el pedazo corto del texto claro, sabe que ha encontrado la clave correcta.\\
-
-\begin{definition} 
-Ataque de fuerza bruta\\
-Sea \textit{(x, y)} el texto claro y el texto cifrado, y sea \textit{K = [K1, ..., Kk]} el espacio clave de todas las claves posibles \textit{ki}. Un ataque de fuerza bruta comprueba que para cada \textit{ki $\in$ K} si \\
-\textit{ \[d_{ki}(y) = x\] }.\\
-Si la igualdad se mantiene, se encuentra una posible clave correcta; Si no, se procede con la siguiente clave.\\
-\end{definition}
-En la práctica, un ataque de fuerza bruta puede ser más complicado porque las claves incorrectas pueden dar resultados positivos falsos. \\
-Es importante señalar que un ataque de fuerza bruta contra cifrados simétricos es siempre posible en un principio. Si es factible en la práctica depende del espacio clave, es decir, en el número de posibles claves que existen para un cifrado dado. Si se están probando todas las claves en muchas computadoras modernas toma demasiado tiempo, es decir, varias décadas, el cifrado es computacionalmente seguro contra un ataque de fuerza bruta ~\cite{paar}.\\
 
 
 

@@ -9,10 +9,10 @@
 	\caption{Arquitectura del sistema.}
 
 \end{figure}
-
+%=======================================================================================================================================
 \section{Descripcion de procesos}
 
-\subsubsection{Descripción del proceso subir archivo.}
+\subsection{Descripción del proceso subir archivo.}
 
 El proceso inicia cuando el cliente desea subir un archivo nuevo, el cliente debe dar clic en la opción de subir archivo y seleccionar el archivo que desee subir, el sistema va a calcular el hash del archivo elegido, después hará unas operaciones aritméticas con el has para generar una x que se enviara al servidor para que realice una firma a ciegas, y con esta firma que se le regresara al cliente, se va a generar del lado del cliente su llave "k" que será la llave con la cual cifrara el archivo, y así si otro archivo que se quiera subir es igual a este tendrá la misma k y podrá el sistema detectar que son duplicados, también el sistema va a cifrar la llave k por si se le llega a perder al cliente, para poder almacenarlo en la nube el sistema mandara el hash del archivo cifrado para ver si ya está registrado en la base de datos, si es así solo guarda la llave y actualiza la lista de los usuario que comparten el archivo, de lo contrario solicita la llave cifrada y el archivo cifrado para almacenarlos y actualiza su lista de usuario añadiendo un archivo en ella, y por último se le notificará al cliente que su archivo ha sido almacenado.
 
@@ -59,7 +59,7 @@ El proceso inicia cuando el cliente desea subir un archivo nuevo, el cliente deb
 \end{figure}
 
 
-\subsubsection{Descripción del proceso Descargar archivo.}
+\subsection{Descripción del proceso Descargar archivo.}
 
 El proceso inicia cuando el cliente desea descargar un archivo, el cliente debe dar clic en la opción de descargar archivo y seleccionar el archivo que desee descargar, el sistema va a mandar el nombre del archivo a la nube para que busque en su base de datos los archivos correspondientes al usuario y nombre del archivo, se le regresaran al cliente y el sistema en el lado del cliente deberá descifrar el archivo C2 que contiene la llave k para poder descifrar el otro archivo C1 donde se encuentra el archivo original, el sistema notificara al cliente que su archivo se ha descargado con éxito y este podrá abrirlo. \\
 
@@ -97,7 +97,7 @@ El proceso inicia cuando el cliente desea descargar un archivo, el cliente debe 
 \end{figure}
 
 \vspace{3cm}
-\subsubsection{Descripción del proceso eliminar archivo.}
+\subsection{Descripción del proceso eliminar archivo.}
 
 El proceso inicia cuando el cliente desea eliminar un archivo nuevo, el cliente debe dar clic en la opción de eliminar archivo y seleccionar el archivo que desee eliminar, el sistema va a enviar el nombre del archivo a la nube donde este buscara en su base de datos los archivos que corresponden al usuario y nombre del archivo, los va a eliminar de su base de datos y actualizara su lista de usuarios eliminado de ella los datos del archivo y usuario que coinciden con el archivo eliminado, se le enviara una notificación al cliente que su archivo ha sido eliminado con éxito de la nube.\\
 
@@ -134,8 +134,28 @@ El proceso inicia cuando el cliente desea eliminar un archivo nuevo, el cliente 
 \end{figure} 
 
 \newpage
-
+%=======================================================================================================================================
 \section{Requerimientos Funcionales. }
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{| p{2cm} |  p{13.5cm} |}
+\hline
+\multicolumn{2}{|c|}{\textbf{Requerimientos funcionales del protocolo}} \\ \hline
+\textbf{ID} &  \textbf{Descripción} \\
+\hline \hline
+RF1 & El sistema permitirá el registro de un nuevo usuario \\ \hline
+RF2 & El sistema permitirá al usuario iniciar sesión para comenzar a manipular su información \\ \hline
+RF3 & El sistema permitirá al usuario gestionar su perfil para la visualización, actualización y configuración de su información \\ \hline
+RF4 & El sistema permitirá al usuario gestionar los archivos que dicho usuario tiene registrado en su perfil \\ \hline
+
+\end{tabular}
+\caption{Requerimientos funcionales del servidor de llaves}
+\label{Servidor de Llaves }
+\end{table}
+
+
+
 
 \begin{table}[htb]
 \centering
@@ -144,15 +164,8 @@ El proceso inicia cuando el cliente desea eliminar un archivo nuevo, el cliente 
 \multicolumn{2}{|c|}{\textbf{Servidor de Llaves}} \\ \hline
 \textbf{ID} &  \textbf{Descripción} \\
 \hline \hline
-RF – SLL1 & El sistema permitirá la generación de llaves de usuario a través de una clave secreta (Kg) propia del servidor de llaves. \\ \hline
-%RF – SLL2 & El sistema debe gestionar 3 estados en el servidor de llaves: Generación, Cambios y Eliminación de llaves de usuarios para manipular un archivo. \\ \hline
-%RF – SLL3 & El sistema comenzará la creación de una llave (K) cuando el usuario solicite la carga de un archivo a almacenar. \\ \hline
-%RF – SLL4 & El sistema deberá enviar al cliente la llave generada en el servidor de llaves (K) del archivo que el usuario solicitó carga al servicio de almacenamiento. \\ \hline
-RF – SLL2 & El sistema permitirá la firma a ciegas (y) de cualquier archivo que se desee almacenar. \\ \hline
-%RF – SLL3 & El sistema actualizará la base de datos del servidor de llaves cada vez que una nueva firma (y) sea generada dentro de éste. \\ \hline
-%RF – SLL7 & El sistema detectará mediante la función hash del archivo [H(F)] si se le ha generado anteriormente una llave (K), si ésta existe en la base de datos se procederá a enviarla al usuario que la solicita. \\ \hline
-%RF – SLL8 & El sistema modificará la llave (K) para un archivo cuando este sea modificado por el propietario del archivo (F). \\ \hline
-%RF – SLL9 & El sistema eliminará la llave (K) para un archivo cuando este sea eliminado del servicio de almacenamiento por el usuario. \\ \hline
+RF – SLL1 &El sistema permitirá la generación de llaves de usuario a través de las llaves pública y privada  del servidor de llaves \\ \hline
+RF – SLL2 & El sistema permitirá la firma a ciegas (y) de cualquier archivo que se desee almacenar\\ \hline
 \end{tabular}
 \caption{Requerimientos funcionales del servidor de llaves}
 \label{Servidor de Llaves }
@@ -167,31 +180,9 @@ RF – SLL2 & El sistema permitirá la firma a ciegas (y) de cualquier archivo q
 \textbf{ID} &  \textbf{Descripción} \\
 \hline \hline
 RF – CL1 & El sistema permitirá al usuario gestionar archivos: Subir, Descargar, Eliminar \\ \hline
-%RF – CL2 & El sistema permitirá al usuario calcular a su archivo (F) una función hash [H(F)] cuando dicho usuario solicite una nueva carga de éste. \\ \hline
-RF – CL2 & El sistema permitirá al usuario subir un archivo (F) cifrado al servicio de almacenamiento  \\ \hline
-%RF – CL4 & El sistema entregará al cliente la llave (K) generada en el servidor de llaves del archivo (F) que el usuario solicitó cargar al servicio de almacenamiento.  \\ \hline
-%RF – CL5 & El sistema mandará a cifrar la llave (K) obtenida del servidor de llaves junto con el archivo (F) que el usuario desea cargar al servicio de almacenamiento. \\ \hline
-%RF – CL6 & El sistema obtendrá el cifrado C1 correspondiente al archivo original (F)  y lo mandará al cliente, cifrado que el usuario cargará al servicio de almacenamiento.  \\ \hline
-%RF – CL7  & El sistema calculará al cifrado C1 una función hash [H(C1)] \\ \hline
-%RF – CL8  & El sistema mandará a cifrar la llave secreta (Ka) del usuario junto con la llave (K) obtenida del servidor de llaves del archivo (F) que éste usuario desea cargar al servicio de almacenamiento. \\ \hline
-%RF – CL9  & El sistema obtendrá el cifrado C2 correspondiente a la llave secreta (Ka) del usuario y lo mandará al cliente, cifrado que el usuario cargará al servicio de almacenamiento. \\ \hline
-%RF – CL10 & El sistema enviará [H(C1)] hacia el servicio de almacenamiento para su evaluación. \\ \hline
-RF – CL3 & El sistema permitirá al usuario descargar un archivo (F) descifrado elejido de su lista de archivos en el servicio de almacenamiento\\ \hline
-%RF – CL12 & El sistema notificará al usuario el estatus final de la gestión de sus archivos en el servicio de almacenamiento.  \\ \hline
-RF – CL4 &El sistema permitirá al usuario eliminar un archivo (F) cuando el usuario elige alguno de su lista de archivos cargados en el servicio de almacenamiento  \\ \hline
-%RF – CL14 & El sistema entregará al cliente el cifrado C1 correspondiente al archivo (F) que el usuario eligió y el cifrado C2 que corresponde a la llave (K) del mismo archivo. \\ \hline
-%RF – CL15 & El sistema enviará desde el cliente al módulo cifrador la llave secreta (Ka) del usuario junto con el cifrado C1 y C2.  \\ \hline
-%RF – CL16 & El sistema obtendrá el archivo original (F) que solicitó el usuario para la descarga.  \\ \hline
-RF – CL5 & El sistema generará la llave (K) correspondiente a la firma (Y) que envió el servidor de llaves  \\ \hline
-%RF – CL18 & El sistema enviará al servidor de almacenamiento el nombre del archivo (F) que el usuario solicite eliminar.  \\ \hline
-%RF – MC1 & El sistema recibirá en el modulo cifrador la llave (K) obtenida del servidor de llaves junto con el archivo (F) que el usuario desea cargar. \\ \hline
-RF – CL6 & El sistema cifrará el archivo (F) que el usuario a solicitado \\ \hline
-%RF – MC3 & El sistema enviará al cliente el archivo C1 obtenido en el módulo cifrador. \\ \hline
-%RF – MC4 & El sistema recibirá en el módulo cifrador la llave secreta (Ka) del usuario junto con la llave (K) obtenida del servidor de llaves del archivo (F) que éste usuario desea cargar \\ \hline
-RF – CL7 & El sistema descifrará el archivo (F) que el usuario a solicitado  \\ \hline
-%RF – MC6 & El sistema enviará al cliente el archivo C2 obtenido en el módulo cifrador. \\ \hline
-%RF – MC7 & El sistema recibirá en el modulo cifrador la llave secreta (Ka) junto con el cifrado C1 y el cifrado C2 que el usuario solicite descargar.\\ \hline
-%RF – MC9 & El sistema descifrará el C2 junto con la llave (K) que el usuario a solicitado descargar y generará el archivo original (F).\\ \hline
+RF – CL2 & El sistema permitirá al usuario subir un archivo (F) cifrado al servicio de almacenamiento   \\ \hline
+RF – CL3 & El sistema permitirá al usuario descargar un archivo (F) descifrado elejido de su lista de archivos en el servicio de almacenamiento. \\ \hline
+RF – CL4 &El sistema permitirá al usuario eliminar un archivo (F) cuando el usuario elige alguno de su lista de archivos cargados en el servicio de almacenamiento.   \\ \hline
 \end{tabular}
 \caption{Requerimientos funcionales del cliente}
 \label{Cliente }
@@ -205,26 +196,14 @@ RF – CL7 & El sistema descifrará el archivo (F) que el usuario a solicitado  
 \multicolumn{2}{|c|}{\textbf{Servicio de almacenamiento (Nube)}} \\ \hline
 \textbf{ID} &  \textbf{Descripción} \\
 \hline \hline
-RF – SA1 & El sistema permitirá al servicio de almacenamiento gestionar archivos: Almacenar, Descargar y Eliminar.\\ \hline
-%RF – SA2 & El sistema creará una base de datos con los cifrados que cada usuario tenga registrados dentro del servicio de almacenamiento.\\ \hline
-RF – SA2 & El sistema permitirá al servicio de almacenamiento guardar cualquier cifrado que el usuario solicite cargar. \\ \hline
-RF – SA3 & El sistema permitirá al servicio de almacenamiento descargar cualquier cifrado que el usuario tenga en su lista de archivos. \\ \hline
-RF – SA4 & El sistema permitirá al servicio de almacenamiento eliminar cualquier cifrado que el usuario tenga en su lista de archivos. \\ \hline
-%RF – SA6 & El sistema actualizará dentro de la base de datos del servicio de almacenamiento, la lista de archivos (F) que el usuario a gestionado dentro de éste. \\ \hline
-%RF – SA7 & El sistema entregará [H(C1)] generado por el cliente al servicio de almacenamiento \\ \hline
-%RF – SA8 & El sistema almacenará en una base de datos dentro del servicio de almacenamiento a [H(C1)] asociando al cliente que lo envió. \\ \hline
-%RF – SA9 & El sistema corroborará la existencia [H(C1)] dentro de la base de datos, si existe procederá al RF – SA6,  si no procederá al RF – SA3\\ \hline
-%RF – SA10 & El sistema entregará al servidor de almacenamiento el nombre del archivo (F) que el usuario solicite eliminar.\\ \hline
-%RF – SA11 & El sistema eliminará el nombre del archivo (F) de la lista de archivos que el usuario tiene registrados en la base de datos del servidor de almacenamiento. \\ \hline
-%RF – SA12 & El sistema enviará una notificación al cliente con el estatus de cada gestión hecha por el usuario sobre sus archivos. \\ \hline
-%RF – SA13 & El sistema recibirá el nombre del archivo (F) que el usuario solicita descargar.\\ \hline
-%RF – SA14 & El sistema buscará el nombre del archivo (F) en la base de datos de los cifrados que tiene el usuario registrados en el servicio de almacenamiento.\\ \hline
-%RF – SA15 & El sistema enviará al cliente el archivo C1 correspondiente al archivo (F) que el usuario eligió y el cifrado C2 que corresponde a la llave (K) del mismo archivo. \\ \hline
+
+RF – N1 & El sistema permitirá al servicio de almacenamiento llevar a cabo un proceso para la detección de archivos duplicados.  \\ \hline
+
 \end{tabular}
 \caption{Requerimientos funcionales del Servicio de almacenamiento (Nube)}
 \label{Servicio de almacenamiento (Nube) }
 \end{table}
-
+%=======================================================================================================================================
 \vspace{9cm}
 \section{Requerimientos No Funcionales }
 \begin{longtable}{| p{1.5cm} | p{3cm} | p{11cm} |}
@@ -270,6 +249,7 @@ RNF3 & Seguridad & \begin{itemize}
    \item El servidor de llaves firmará claves para un sólo mensaje a la vez sin saber el contenido de éste. 
    \item El inicio de sesión de usuarios estará protegido en un canal seguro utilizando almoritmos criptográficos. 
    \item Las funciones hash de archivos a almacenar utilizarán la función criptográfica SHA-(256)
+   \item Los formularios para ingresar datos al sistema estarán validados por tipo de dato, longitud e internamente se utilizará un ORM (Object Relational Maping) paraevitar inyecciones SQL. 
  \end{itemize}
 
 \\ \hline 
@@ -277,11 +257,25 @@ RNF4 & Mantenibilidad & \begin{itemize}
    \item Cuaquier nuevo requerimiento funcional o no funcional tendrá que ser analizado y diseñado para poder cuantificar las implicaciones que este tendrá sobre el funcionamiento del sistema. 
    \item El sistema contará con un plan de pruebas que facilitará la identificación de posibles fallas existentes en el funcionamiento de este. 
  \end{itemize}
+
+\\ \hline
+RNF5 & Usabilidad & \begin{itemize}
+   \item El tiempo de aprendizaje del sistema por un usuario deberá ser menor a 15 días. 
+   \item El sistema debe proporcionar mensajes de error que sean informativos y orientados al usuario final. 
+   \item El sistema debe poseer interfaces gráficas bien formadas.
+ \end{itemize}
+
+\\ \hline
+RNF6 & Extensibilidad & \begin{itemize}
+   \item El sistema podrá tener un crecimiento a futuro ya que este será programado por módulos lo cuál hará más fácil su crecimiento.
+   \item El sistema debe proporcionar mensajes de error que sean informativos y orientados al usuario final. 
+   \item El sistema debe poseer interfaces gráficas bien formadas.
+ \end{itemize}
 \\ \hline
 \caption{Requerimientos no funcionales del sistema}
-\label{Servidor de Llaves }
+\label{Requerimientos no funcionales }
 \end{longtable}
-
+%=======================================================================================================================================
 \section{Reglas de Negocio}
 
 \begin{BussinesRule}{RN1}{Datos requeridos} 
@@ -304,6 +298,9 @@ RNF4 & Mantenibilidad & \begin{itemize}
 	\BRitem[Tipo:] Hecho
 \end{BussinesRule}
 
+
+
+%=======================================================================================================================================
 \section{Especificación de Plataforma}
 
 
@@ -351,9 +348,52 @@ RNF4 & Mantenibilidad & \begin{itemize}
 
 \end{enumerate}
 
+%=======================================================================================================================================
+
+\section{Análisis de riesgos} 
+
+\begin{longtable}{| p{1cm} | p{4cm} | p{2cm} | p{2.5cm} | p{2cm} | p{4cm} |}
+
+% aquí añadimos el encabezado de la primera hoja.
+\hline
+\multicolumn{6}{|c|}{\textbf{Análisis de riesgos}} \\ \hline
+\textbf{ID} &  \textbf{Riesgo} & \textbf{Prioridad} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Causa}\\
+\hline \hline
+\endfirsthead
+
+% aquí añadimos el encabezado del resto de hojas.
+\hline
+\textbf{ID} &  \textbf{Riesgo} & \textbf{Prioridad} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Causa}\\
+\hline \hline
+\endhead
+
+% aquí añadimos el fondo de todas las hojas, excepto de la última.
+\multicolumn{6}{|c|}{Sigue en la página siguiente.}
+\endfoot
+
+% aquí añadimos el fondo de la última hoja.
+\endlastfoot
+
+% aquí añadimos el cuerpo de la tabla.
+R1 & Modificar requerimientos &  ALTA & MEDIA & ALTO & Nuevas características del protocolo \\ \hline
+R2 & Cambios en tecnología & BAJA & MEDIA & BAJO & La tecnología usada es menos eficiente y causa conflictos \\ \hline
+R3 & Falta de usuarios y peticiones & ALTA & BAJA &  BAJO & No se localizaron todos los involucrados en el protocolo \\ \hline
+R4 & Equipo de cómputo & ALTA & BAJA & MUY BAJO & El equipo de cómputo empleado falla o no se encuentra funcionando \\ \hline
+R5 & Incumplimiento de acuerdos & ALTA & ALTA & MODERADO & Retrazo en actividades prgramadas \\ \hline
+R6 & Problemas de planeación & MEDIA & ALTA & ALTO & Falta de comunicación por parte del equipo \\ \hline
+
+
+
+
+\\ \hline
+\caption{Análisis de riesgos del sistema}
+\label{Análisis de riesgos }
+\end{longtable}
+%=======================================================================================================================================
 \section{Estudio de Factibilidad}
 
 Como se expuso anteriormente, el protocolo criptográfico nos arroja excelentes beneficios en cuanto a la optimización de espacio de memoria en la nube y garantiza la seguridad e integridad de los datos de usuarios registrados en la nube. Hasta ahora se tiene muy claro cuál será el impacto de la implementación de este protocolo, pero aún queda por establecer cuán viable es la realización de este protocolo en cuanto a facilidades técnicas y operativas.
+
 
 \subsection{Factibilidad técnica}
 
@@ -371,7 +411,7 @@ Este protocolo pretende atender al problema del crecimiento en la infraestructur
 
 
 \newpage
-
+%=======================================================================================================================================
 \section{Casos de Uso}
 
 \begin{figure}[htbp!]
