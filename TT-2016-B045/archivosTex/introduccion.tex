@@ -105,7 +105,9 @@ En el artículo publicado por Mihir Bellare, Sriram Keelveedhi, Thomas Ristenpar
 
 Si bien esta solución se ocupa de la duplicación de archivos deja muy vulnerable el aspecto de la privacidad, ya que ante un espacio de mensajes pequeño las amenazas del adversario son demasiadas. Si se tuvieran como ejemplo 1000 mensajes, para el adversario sería muy fácil intentar encontrar la clave, probando las 1000 claves posibles generadas con la función hash, hasta descifrar el archivo, por lo tanto se comprueba que un espacio de 1000 mensajes sigue siendo pequeño.
 
-Es por ello que este trabajo terminal tiene como principal meta atacar esta problemática de privacidad, proponiendo una arquitectura del sistema que a través de un servidor de llaves se generaran llaves de acuerdo al contenido del archivo, para con esta se pueda cifrar y luego almacenar en la nube donde se eludirá la duplicación de archivos. Dicha arquitectura se explica con detalle en el siguiente apartado.
+Es por ello que este trabajo terminal tiene como principal meta atacar esta problemática de privacidad, proponiendo una arquitectura del sistema que a través de un servidor de llaves se generaran llaves de acuerdo al contenido del archivo, para con esta se pueda cifrar y luego almacenar en la nube donde se eludirá la duplicación de archivos. 
+
+
 
 \section{Solución propuesta}
 La eliminación de duplicación de datos es una experiencia progresiva que puede disminuir drásticamente la cantidad de información de respaldo almacenada eliminando todos los datos redundantes como se ilustra en la figura ~\ref{fig:1-3-1}. Al evitar la duplicación de datos explota el consumo de almacenamiento mientras que permite a las tecnologías de información recuperar más datos de respaldo de líneas cercanas durante más tiempo. Esto recupera enormemente la capacidad del disco de copia de seguridad establecida, alterando la forma en que los datos están protegidos. En general,
