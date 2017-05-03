@@ -10,18 +10,6 @@ R.~Bellare, Keelveedhi.
 R.~Bellare, Keelveedhi.
 \newblock Dupless: Server-aided encryption for deduplicated storage., 2013:429.
 
-\bibitem{Nubecomp}
-F.~Ceballos.
-\newblock Cloud computing, detonador de competitividad.
-\newblock {\em Forbes}, 2013.
-
-\bibitem{bloc}
-D.~Chakraborty and F.~Rodr{\'{\i}}guez{-}Henr{\'{\i}}quez.
-\newblock Block cipher modes of operation from a hardware implementation
-  perspective.
-\newblock In {\c{C}}.~K. Ko{\c{c}}, editor, {\em Cryptographic Engineering},
-  pages 321--363. Springer, 2009.
-
 \bibitem{abs}
 T.~C. y. P.~A. Cooley~J.
 \newblock Abs: the apportioned backup system.
@@ -37,14 +25,6 @@ EFE/Cisco.
 \newblock Estimación del crecimiento del tráfico en la nube en el periodo
   2013-2018., 2014.
 
-\bibitem{popa}
-P.~HP.
-\newblock Estadísticas que todos deberían conocer sobre cloud computing,
-  2016.
-\newblock
-  \url{http://www.popa.hn/index.php/es/soluciones/96-otras-noticias/152-20-
-  estadisticas-que-todos-los-cios-deberian-conocer-sobre-cloud-computing.}
-
 \bibitem{fundamentos}
 L.~B. Jaquelina.
 \newblock Fundamentos de criptografía.
@@ -56,12 +36,6 @@ L.~B. Jaquelina.
 A.~Menezes, P.~C. van Oorschot, and S.~A. Vanstone.
 \newblock {\em Handbook of Applied Cryptography}.
 \newblock {CRC} Press, 1996.
-
-\bibitem{Compnube}
-Microsoft.
-\newblock “cómputo en la nube”: nuevo detonador para la competitividad de
-  méxico.
-\newblock {\em Instituto Mexicano pala la Competitividad}, 2012.
 
 \bibitem{paar}
 C.~Paar and J.~Pelzl.
@@ -81,11 +55,6 @@ D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
 \newblock {\em Reclaiming space from duplicate files in a serverless
   distributed file system.}
 \newblock ICDCS, 2002.
-
-\bibitem{Nubei}
-S/A.
-\newblock Almacenamiento en la nube, ventajas y retos.
-\newblock {\em D-Link {Building Networks for people}}, 2011.
 
 \bibitem{flud}
 S/A.

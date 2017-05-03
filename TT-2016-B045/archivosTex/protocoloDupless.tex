@@ -1,0 +1,123 @@
+%\chapter{Preliminares. } % (fold)
+
+
+\section{Firma digital}
+
+Una firma digital es un mecanismo de autenticación que permite al creador de un mensaje fijar un código que actúa como una firma. La firma es formada tomando el hash del mensaje y cifrar el mensaje con clave privada del creador. La firma garantiza el origen y la integridad del mensaje ~\cite{modes}. \\
+El estándar de la firma digital (DSS) es un estándar NIST que utiliza el algoritmo de hash seguro (SHA). El desarrollo más importante del trabajo sobre criptografía de clave pública es la firma digital. La firma digital proporciona un conjunto de capacidades de seguridad que sería difícil de aplicar en cualquier otra forma ~\cite{modes}. \\
+Autenticación de mensajes protege dos partes que intercambian mensajes de terceros. Sin embargo, no protege a los dos partidos uno contra el otro. Varias formas de disputa entre los dos son posibles ~\cite{modes}. \\
+En situaciones donde no existe una completa confianza entre el emisor y el receptor, se necesita algo más que la autenticación. La solución más atractiva para este problema es la firma digital. La firma digital es análoga a la firma manuscrita. Debe tener las siguientes propiedades:
+
+	\begin{itemize}
+		\item Debe verificar el autor, la fecha y hora de la firma.
+		\item Debe autenticar el contenido en el momento de la firma.
+		\item Debe ser verificable por terceras personas, para resolver los conflictos ~\cite{modes}.
+	\end{itemize}
+
+Así, la función de firma digital incluye la función de autenticación.
+Sobre la base de estas propiedades, podemos formular los siguientes requisitos para una firma digital:
+
+	\begin{itemize}
+		\item La firma debe ser un patrón de bits que depende del mensaje firmado.
+		\item La firma debe usar cierta información única del remitente, para evitar la falsificación y la negación.
+		\item Debe ser relativamente fácil de realizar la firma digital.
+		\item Debe ser relativamente fácil de reconocer y verificar la firma digital.
+		\item  Debe ser sea computacionalmente imposible falsificar una firma digital, mediante la construcción de un nuevo mensaje para una firma digital existente o mediante la construcción de una fraudulenta firma digital para un mensaje dado.
+		\item Debe ser práctico conservar una copia de la firma digital en almacenamiento de información ~\cite{modes}.
+	\end{itemize}
+
+
+%==================================================================================================================================================================
+
+
+\section{RSA}
+
+El esquema de criptografía RSA, a veces denominado algoritmo Rivest-Shamir-Adleman, es actualmente el esquema criptográfico asimétrico más utilizado, aunque las curvas elípticas y los esquemas de logaritmos discretos están ganando terreno. RSA fue patentado en los Estados Unidos (pero no en el resto del mundo) hasta el 2000. La función unidireccional subyacente de RSA es el problema de factorización de enteros: Multiplicar dos grandes primos es computacionalmente fácil (de hecho, se puede hacer con
+Papel y lápiz), pero factorizar el producto resultante es muy difícil, el teorema de Euler y la función $\varphi$ de Euler desempeñan papeles importantes en RSA ~\cite{paar}.
+\\
+Hay muchas aplicaciones para RSA, pero en la práctica se usa con más frecuencia para:
+
+	\begin{itemize}
+		\item Cifrado de pequeñas piezas de datos, especialmente para el transporte de claves.
+		\item Las firmas digitales, por ejemplo, para certificados digitales en Internet ~\cite{paar}.
+	\end{itemize}
+
+\textbf{Cifrado y descifrado} \\
+El cifrado y descifrado RSA se realiza en el campo de los numeros enteros \textit{Zn} y los cálculos modulares desempeñan un papel central. RSA cifra el texto en claro \textit{x}, donde consideramos que la cadena de bits que representa \textit{x} es un elemento en \textit{Zn} = {0,1, ..., n-1}. Como consecuencia, el valor binario del texto en claro \textit{x} debe ser menor que \textit{n}. Lo mismo ocurre con el texto cifrado. El cifrado con la clave pública y el descifrado con la clave privada son los siguientes:
+\\ \\
+\textbf{\textit{Cifrado RSA}}\\ Dada la clave pública \textit{(n, e) = kpub} y el texto en claro \textit{x}, la función de cifrado es:
+\\
+\textit{ y = $ek_{pub}$ (x) $\equiv$ $x^{2}$ mod n }\\
+Donde:  x,y $\in$ \textit{Zn}
+
+
+\textbf{\textit{Descifrado RSA}} \\Dada la clave privada \textit{d = Kpr} y el texto cifrado \textit{y}, la función de descifrado es:
+\\
+\textit{ x = $dk_{pr}$ (y) $\equiv$ $y^{d}$ mod n }\\
+Donde:  x,y $\in$ \textit{Zn} ~\cite{paar}. \\
+
+
+ \textbf{Generación de llaves} \\
+Estos son los pasos involucrados en el cálculo de la clave pública y privada para un criptosistema RSA.
+\begin{itemize}
+
+	\item Elegir 2 números primos grandes \textit{p} y \textit{q}.
+	\item Calcular \textit{n = p $\cdot$ q }.
+	\item Calcular \textit{$\varphi$ (n) = (p - 1)(q - 1)}.
+	\item Seleccionar la clave pública \textit{e} $\in$ {1,2,...., $\varphi$ (n) - 1} tal que \\ \textbf{\textit{gcd(e,$\varphi$(N))=1}}.
+	\item Calcular la clave privada \textit{d} tal que, \textit{d $\cdot$ e $\equiv$ mod $\varphi$ (n)} ~\cite{paar}. \\
+\end{itemize} 
+
+
+\textbf{Requisitos para el criptosistema RSA:}
+\begin{itemize}
+	\item Dado que un atacante tiene acceso a la clave pública, debe ser computacionalmente imposible determinar la clave privada  \textit{d} dados los valores de clave pública  \textit{e} y  \textit{n}.
+	\item Como  \textit{x} es único hasta el tamaño del módulo  \textit{n}, no podemos cifrar más de  \textit{l} bits con un cifrado RSA, donde  \textit{l} es la longitud de bits de  \textit{n}.
+	\item Debe ser relativamente fácil calcular  \textit{x $\cdot$ e mod n}, es decir, cifrar y  \textit{y $\cdot$ d mod n}, es decir, descifrar. Esto significa que necesitamos un método para una rápida exponenciación con números grandes.
+	\item Para un \textit{n} dado, debe haber muchos pares de clave privada / clave pública, de lo contrario un atacante podría ser capaz de realizar un ataque de fuerza bruta. (Resulta que esta exigencia es fácil de satisfacer.) ~\cite{paar}.
+\end{itemize}
+
+%==================================================================================================================================================================
+\section{Firmas a ciegas. }
+
+Las firmas a ciegas son un tipo especial de firmas digitales en las que se firma algo que no se conoce. Para hacer firmas a ciegas se utilizan factores de opacidad, para ocultar el mensaje original que se requiere que esté firmado, y así la autoridad no pueda conocer lo que está firmando.
+Por lo tanto, el propósito de una firma a ciegas es evitar que el firmante B conozca el mensaje que firma; y así posteriormente, sea incapaz de asociar el mensaje que firmó con el remitente A. Entonces, las firmas a ciegas tienen aplicación en varias situaciones. A continuación se mencionan dos de ellas:
+\begin{itemize}
+	\item Cuando se utiliza dinero electrónico. En este caso, m representa un valor monetario que A (el cliente) tiene derecho a gastar. Y así, cuando m y s(m) se presentan a B (el banco) para efectuar el pago, B es incapaz de identificar al cliente que originalmente le dio ese dinero electr´onico a firmar, pues le fue enviado de manera oculta. Lo anterior permite que la identidad de A permanezca anónima, y sus movimientos financieros no puedan ser monitoreados.
+	\item En las elecciones electrónicas también pueden utilizarse las firmas a ciegas, ya que se requiere que B (una autoridad electoral) no conozca la identidad de A (el votante) debido a que el voto debe efectuarse de manera anónima. Sin embargo, es necesario que A demuestre que su voto m es válido. Lo cual se logra cuando A presenta ante B la firma s(m). Y se sabe de antemano que B no puede asociar s(m) a A, debido a que el votante previamente le envió a B su voto m pero de forma oculta para que se lo firmara. ~\cite{ciegas}
+\end{itemize} 
+
+%==================================================================================================================================================================
+\section{Firmas a ciegas con RSA. }
+
+Un esquema de firmas a ciegas es un protocolo que involucra un remitente \textit{A} y un firmante \textit{B}. La idea básica en un esquema basado en RSA es la siguiente: \textit{A} le envía cierta información \textit{z} a \textit{B}, donde \textit{z} está compuesto por el mensaje que se desea que firme \textit{B} y por un factor de ocultamiento cifrado con la llave pública de \textit{B}, es decir, \textit{z = (m *  $b^{e}$) mod n}.  \textit{B} firma dicha información \textit{s(z)} y se la regresa a \textit{A}. De la firma \textit{s(z)}, \textit{A} puede obtener la firma de \textit{B} para el mensaje \textit{m}, quitando el factor de ocultamiento \textit{b} a \textit{s(z)}. Pues: \\
+
+\textit{s(z) = (m *  $b^{e}$) mod n = ($m^{d}$ *  $b^{ed}$) mod n = ($m^{d}$ mod n) * b} \\
+
+Ahora bien, al dividir \textit{s(z)} entre \textit{b}, obtendremos \textit{s(m)}: \\
+
+\textit{(m) = s(z)/b = (($m^{d}$ mod n) * b)/b = $m^{d}$ mod n} \\
+
+Al finalizar el protocolo, \textit{B} no conoce el mensaje m ni la frma asociada a él \textit{s(m)} que ahora posee \textit{A} ~\cite{ciegas} \\
+%==================================================================================================================================================================
+\section{Funciones Hash. }
+A continuación se describirán las características de las {\it funciones hash}, también conocidas como {\it funciones de resumen}. Las funciones hash basan su definición en funciones de un solo sentido  ({\it one-way functions}, en inglés). Una función de un solo sentido es aquella que para un valor $x$, es  muy fácil calcular $f(x)$, pero es muy difícil hallar $f^{-1}(x)$. Es complicado en general, hallar funciones de este tipo y probar que lo son.
+\begin{definition}
+Una función hash, es una función de un solo sentido cuya entrada $m$  es un mensaje de longitud arbitraria y la salida es una cadena binaria de longitud fija. Al resumen o hash de un mensaje $m$, se le denotará como $h(m)$. Una función hash debe
+tener las siguientes propiedades:
+\begin{itemize}
+	\item Para cualquier mensaje $m$, debe ser posible calcular $h(m)$ eficientemente. 
+	\item Dado $h(m)$, debe ser computacionalmente difícil, hallar un mensaje $m'$, tal que $h(m)=h(m')$.
+	\item Debe ser computacionalmente difícil, hallar dos mensajes $m$ y $m'$ tales que $h(m)=h(m')$.
+\end{itemize}
+\end{definition}
+ 
+Entre las funciones hash que se usan para criptograf\'ia est\'an: MD2, MD4, MD5, donde MD significa {\it Message Digest}, y el algoritmo est\'andar al momento de escribir \'estas notas es el {\it Secure Hash Algorithm} por sus siglas en ingl\'es SHA.
+  La MD5 fue dise\~nada por Ron Rivest, toma como entrada un mensaje de longitud arbitraria y proporciona como salida una cadena binaria de 128 bits.
+El mensaje de entrada se procesa por bloques de 512 bits.  La SHA 256 fue dise\~nada por en NIST \textit{(National Institute of Standards and Technology)} y se estableci\'o como est\'andar en 1993. Recibe como entrada un mensaje con longitud menor a $2^{64}$ bits y
+como salida se obtiene una cadena binaria de 160 bits. Al igual que el MD5, se procesa en bloques de 512 bits ~\cite{modes}.
+
+
+%==================================================================================================================================================================
+
+
