@@ -274,7 +274,30 @@ Los cifradores por bloques pueden ser representados como se ve en la figura ~\re
 %\pagebreak
 
 %==================================================================================================================================================================
+\section{Firma digital}
 
+Una firma digital es un mecanismo de autenticación que permite al creador de un mensaje fijar un código que actúa como una firma. La firma es formada tomando el hash del mensaje y cifrar el mensaje con clave privada del creador. La firma garantiza el origen y la integridad del mensaje ~\cite{modes}. \\
+El estándar de la firma digital (DSS) es un estándar NIST que utiliza el algoritmo de hash seguro (SHA). El desarrollo más importante del trabajo sobre criptografía de clave pública es la firma digital. La firma digital proporciona un conjunto de capacidades de seguridad que sería difícil de aplicar en cualquier otra forma ~\cite{modes}. \\
+Autenticación de mensajes protege dos partes que intercambian mensajes de terceros. Sin embargo, no protege a los dos partidos uno contra el otro. Varias formas de disputa entre los dos son posibles ~\cite{modes}. \\
+En situaciones donde no existe una completa confianza entre el emisor y el receptor, se necesita algo más que la autenticación. La solución más atractiva para este problema es la firma digital. La firma digital es análoga a la firma manuscrita. Debe tener las siguientes propiedades:
+
+	\begin{itemize}
+		\item Debe verificar el autor, la fecha y hora de la firma.
+		\item Debe autenticar el contenido en el momento de la firma.
+		\item Debe ser verificable por terceras personas, para resolver los conflictos ~\cite{modes}.
+	\end{itemize}
+
+Así, la función de firma digital incluye la función de autenticación.
+Sobre la base de estas propiedades, podemos formular los siguientes requisitos para una firma digital:
+
+	\begin{itemize}
+		\item La firma debe ser un patrón de bits que depende del mensaje firmado.
+		\item La firma debe usar cierta información única del remitente, para evitar la falsificación y la negación.
+		\item Debe ser relativamente fácil de realizar la firma digital.
+		\item Debe ser relativamente fácil de reconocer y verificar la firma digital.
+		\item  Debe ser sea computacionalmente imposible falsificar una firma digital, mediante la construcción de un nuevo mensaje para una firma digital existente o mediante la construcción de una fraudulenta firma digital para un mensaje dado.
+		\item Debe ser práctico conservar una copia de la firma digital en almacenamiento de información ~\cite{modes}.
+	\end{itemize}
 
 
 %==================================================================================================================================================================
