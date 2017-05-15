@@ -5,43 +5,36 @@
 
 
 
-\begin{tabular}{ |p{3cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}| }
+\begin{tabular}{ |p{8cm}|p{8cm}| }
 \hline
-\multicolumn{5}{|c|}{APLICACIONES}\\
+{ \textbf{TahoeFS}}  & {\textbf{ABS: The Apportioned Backup System} } \\
 \hline
-{}  & {DupLESS } & {TahoeFS } & {Flud Backup} & {ABS: The Apportioned Backup System} \\
+{Firmas Digitales}  & {Firmas Digitales} \\
 \hline
-{ Evitar duplicación de archivos}  & {Si} & {No} & {No} & {Si}  \\
+{SHA256}  & {SHA256}  \\
 \hline
-{Seguridad al cliente}  & {Alta} & {Media} & {Media} & {Alta}  \\
+{AES-128}  & {Criptografía asimétrica}  \\
 \hline
-{Resistencia a ataques por fuerza bruta}  & {Si} & {Media} & { No} & {No}  \\
+{Modo de operación CTR }  & {Codificado en c++} \\
 \hline
-{Compromiso de resistencia ante fallos}  & {Alto} & {Alto} & {Alto} & {Alto}  \\
+{Cifrado convergente}  & {Cifrado convergente}  \\
 \hline
-{Privacidad}  & {Si} & {Si}  & {No} & { Si }  \\
+{Árbol Merkle}  & {Huella digital} \\
 \hline
-{Servidor Seguro}  & {Si} & {Si} & {Si } & {Si} \\
-\hline
-{Implementación }  & { Pruebas } & {Actualmente Operacional} & { Actualmente Inactivo } & {Pruebas }  \\
-\hline
-{Código abierto}  & {Si} & {Si} & {Si} & {No}  \\
-\hline
-{Gratuita o de paga}  & {Sin información} & {Ambos} & {Gratuito} & {Sin información} \\
+{RSA de 2048 bits (256 bytes) }  & { rsync  } \\
 \hline
 \end{tabular}
-
+\\
 \begin{itemize}
-\item DupLESS\\
-Este protocolo usa un servicio de almacenamiento en la nube, además implementa una interfaz sencilla con operaciones como guardar, recuperar o borrar un archivo. Es más adecuado para aplicaciones backup y busca proteger la confidencialidad de datos de los clientes, para ello usa seguridad semántica. Además promete capacidad de resistencia ante fallos, protección contra un servidor malintencionado, evitar duplicación de archivos y compatibilidad con diferentes sistemas operativos~\cite{Bellare}.
+%\item DupLESS\\
+%Este protocolo usa un servicio de almacenamiento en la nube, además implementa una interfaz sencilla con operaciones como guardar, recuperar o borrar un archivo. Es más adecuado para aplicaciones backup y busca proteger la confidencialidad de datos de los clientes, para ello usa seguridad semántica. Además promete capacidad de resistencia ante fallos, protección contra un servidor malintencionado, evitar duplicación de archivos y compatibilidad con diferentes sistemas operativos~\cite{Bellare}.
 \item TahoeFS\\
-Este sistema utiliza diez diferentes servidores que se interconectan entre sí y consta de archivos mutables e inmutables. Se basa en la restricción a los usuarios de cierto comportamiento. A los archivos mutables les permite operaciones como leer y verificar y a los inmutables les permite leer, escribir y crear copia de solo lectura. Hace uso de cifrado convergente, el código Reed-Solomon para la tolerancia a fallos, el servicio AllMyData y control de acceso descentralizado.
-Es un servicio que promete almacenamiento seguro, integridad y confidencialidad a largo plazo y va enfocado a aplicaciones backup~\cite{tahoe}.
-\item Flud Backup\\
-El proyecto Flud Backup está actualmente inactivo, sin embargo se crearon diversas versiones para Ubuntu y Fedora donde usan paquetes distribuidos y un sistema de confianza. Prometen que los datos que se copian deben ser indestructibles y copias de seguridad descentralizadas~\cite{flud}.
+Tahoe es un sistema para el almacenamiento seguro distribuido. Usa las funciones de control de acceso, criptografía, confidencialidad, integridad y eliminación para tolerancia a fallos. Se ha desplegado en un servicio de copia de seguridad comercial y es actualmente operacional. La aplicación es de código abierto ~\cite{tahoe}.
+%\item Flud Backup\\
+%El proyecto Flud Backup está actualmente inactivo, sin embargo se crearon diversas versiones para Ubuntu y Fedora donde usan paquetes distribuidos y un sistema de confianza. Prometen que los datos que se copian deben ser indestructibles y copias de seguridad descentralizadas~\cite{flud}.
 \item ABS\\
-Este sistema se centra en el caso de uso de diez PC's conectadas a través de una LAN o a través de conexiones de Internet de Banda Ancha.Se basa en el almacenamiento de fragmentos y algo que denominan 'almacén de instancia única' donde si dos usuarios almacenan el mismo contenido del archivo, el sistema generará los fragmentos independientes de cada archivo y solamente almacenará una copia de cada fragmento en la red. También tiene un esquema de asignación de versione basada en rsync (para generar una firma de diferencia sobre el archivo, la cual es una representación compacta, basada en el hash de un archivo que permita comparar entre dos versiones de archivos y verificar si están duplicadas. 
-Promete el almacenamiento de datos seguro y eficiente, privacidad y seguridad, esto a través de tablas hash distribuidas, firmas de clave privadas, control de versiones y cifrado convergente. 
-Además es tolerante a fallas catastróficas a nodos y permite unir nodos y restaurar operaciones sin pérdida de datos~\cite{abs}.
+Proporciona un recurso fiable de copia de seguridad de colaboración, aprovechando estos recursos independientes distribuidos. Con ABS, la adquisición y mantenimiento de hardware especializado de copia de seguridad es innecesaria. ABS hace un uso eficiente de los recursos de red y almacenamiento de información mediante el uso de técnicas, como cifrado convergente, almacenamiento, procesos de verificación y control de versiones eficientes de codificación ~\cite{abs}.
+%Promete el almacenamiento de datos seguro y eficiente, privacidad y seguridad, esto a través de tablas hash distribuidas, firmas de clave privadas, control de versiones y cifrado convergente. 
+%Además es tolerante a fallas catastróficas a nodos y permite unir nodos y restaurar operaciones sin pérdida de datos
 \end{itemize}
 
