@@ -10,6 +10,11 @@ R.~Bellare, Keelveedhi.
 R.~Bellare, Keelveedhi.
 \newblock Dupless: Server-aided encryption for deduplicated storage., 2013:429.
 
+\bibitem{Nubecomp}
+F.~Ceballos.
+\newblock Cloud computing, detonador de competitividad.
+\newblock {\em Forbes}, 2013.
+
 \bibitem{abs}
 T.~C. y. P.~A. Cooley~J.
 \newblock Abs: the apportioned backup system.
@@ -55,6 +60,11 @@ D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
 \newblock {\em Reclaiming space from duplicate files in a serverless
   distributed file system.}
 \newblock ICDCS, 2002.
+
+\bibitem{Nubei}
+S/A.
+\newblock Almacenamiento en la nube, ventajas y retos.
+\newblock {\em D-Link {Building Networks for people}}, 2011.
 
 \bibitem{flud}
 S/A.
