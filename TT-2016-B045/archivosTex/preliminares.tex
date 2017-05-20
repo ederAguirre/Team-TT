@@ -55,6 +55,16 @@ Es un servicio que impide a una entidad negar compromisos o acciones anteriores.
 
 El \textit{ Criptoanálisis } es la ciencia que se ocupa del análisis de un texto cifrado para obtener la información original sin conocimiento de la clave secreta, esto es, de forma ilícita rompiendo así los procedimientos de cifrado establecidos por la Criptografía, por lo que se dice que Criptoanálisis y Criptografía son ciencias complementarias pero contrarias ~\cite{cripto}. \\
 
+
+Los \textit{ataques a servicios criptográficos } son una violación a la seguridad de la información realizada por intrusos que tienen acceso físico al sistema sin ningún tipo de restricción, su objetivo es robar la información o hacer que ésta pierda valor relativo, o que disminuyan las posibilidades de su supervivencia a largo plazo.\\
+\begin{itemize}
+\item Ataque sólo con texto cifrado. Este caso es cuando el criptoanalista sólo conoce el criptograma y el algoritmo con que fue generado; con esta información pretende obtener el texto en claro.
+\item Ataque con texto en claro conocido. En esta situación el criptoanalista conoce mensajes en claro seleccionados por él mismo y sus correspondientes criptogramas, así como el algoritmo con que éstos fueron generados; aquí el objetivo es conocer la clave
+secreta y poder descriptar libremente cualquier texto. 
+\item Ataque con texto cifrado escogido. El criptoanalista conoce el algoritmo de cifrado, así como un criptograma seleccionado por él mismo y su correspondiente texto en claro, su objetivo es obtener el mensaje en claro de todo criptograma que intercepte.
+\item Ataque con texto en claro escogido. En este caso el criptoanalista además de conocer el algoritmo de cifrado y el criptograma que quiere descriptar, también conoce el criptograma de un texto en claro ~\cite{ataques}.
+\end{itemize} 
+
 %==================================================================================================================================================================
 \section{Cifrador por bloques. }
 
@@ -91,18 +101,76 @@ Una función hash, es una función de un solo sentido cuya entrada $m$  es un me
  
 Entre las funciones hash que se usan para criptograf\'ia est\'an: MD2, MD4, MD5, donde MD significa {\it Message Digest}, y el algoritmo est\'andar al momento de escribir \'estas notas es el {\it Secure Hash Algorithm} por sus siglas en ingl\'es SHA.
   La MD5 fue dise\~nada por Ron Rivest, toma como entrada un mensaje de longitud arbitraria y proporciona como salida una cadena binaria de 128 bits.
-El mensaje de entrada se procesa por bloques de 512 bits.  La SHA 256 fue dise\~nada por en NIST \textit{(National Institute of Standards and Technology)} y se estableci\'o como est\'andar en 1993. Recibe como entrada un mensaje con longitud menor a $2^{64}$ bits y
-como salida se obtiene una cadena binaria de 160 bits. Al igual que el MD5, se procesa en bloques de 512 bits ~\cite{modes}.
+
+Dentro de SHA-2 encontramos varios tipos, el SHA-224, SHA-256, SHA-384 y SHA-512. El más seguro, es el que da mayor salida de bits que es el SHA-512, con una salida de 512 bits, que tiene 80 rondas (pasos).
+En la SHA-256, tenemos una longitud de pallabra de 323 bits, con 64 rondas, tamaño del bloque de 512 bits, y con una salida de 256 bits.
+Como ocurre con todos los cifrados y hash, cuanto más seguro, más lento su procesamiento y uso, debemos encontrar un equilibrio entre seguridad y velocidad.
+
+%La SHA 256 fue dise\~nada por el NIST y se estableci\'o como est\'andar en 1993. Recibe como entrada un mensaje con longitud menor a $2^{64}$ bits y
+%como salida se obtiene una cadena binaria de 160 bits. Al igual que el MD5, se procesa en bloques de 512 bits ~\cite{modes}.
 
 
 %==================================================================================================================================================================
 
 
+\section{RSA}
+
+El esquema de criptografía RSA se llama así por los nombres de los autores Ron Rivest, Adi Shamir y Leonard Adleman, es actualmente el esquema criptográfico asimétrico más utilizado. RSA fue patentado en los Estados Unidos (pero no en el resto del mundo) hasta el 2000. Utiliza una clave pública, la cual se distribuye (en forma autenticada preferentemente), y otra privada, la cual es guardada en secreto por su propietario.Cuando se envía un mensaje, el emisor busca la clave pública de cifrado del receptor y una vez que dicho mensaje llega al receptor, éste se ocupa de descifrarlo usando su clave oculta. Los mensajes enviados usando el algoritmo RSA se representan mediante números y el funcionamiento se basa en el producto de dos números primos grandes (mayores que 10100) elegidos al azar para conformar la clave de descifrado. Emplea expresiones exponenciales en aritmética modular. La seguridad de este algoritmo radica en que no hay maneras rápidas conocidas de factorizar un número grande en sus factores primos utilizando computadoras tradicionales.
+La computación cuántica podría proveer una solución a este problema de factorización. Este popular sistema se basa en el problema matemático de la factorización de numeros grandes. \\
+El algoritmo RSA funciona de la siguiente manera: \\
+
+\textbf{Generación de llaves.} Estos son los pasos involucrados en el cálculo de la clave pública y privada para un criptosistema
+RSA. \\
+\begin{itemize}
+\item Inicialmente es necesario generar aleatoriamente dos números primos grandes, a los que llamaremos \textit{p} y \textit{q}.
+\item A continuación calcularemos \textit{n} como producto de \textit{p} y \textit{q: n = p * q}
+\item Se calcula \textit{$ \phi : \phi (n)=(p-1)(q-1)$}
+\item Se calcula un número natural \textit{e} de manera que \textit{MCD(e, fi(n))=1} , es decir \textit{e} debe ser primo relativo de \textit{$\phi(n)$}.
+\item Mediante el algoritmo extendido de Euclides se calcula \textit{$d: e.d mod \phi (n)=1$} Puede calcularse \textit{$d=((Y* \phi (n))+1)/e$} para \textit{Y=1,2,3,…} hasta encontrar un \textit{d} entero.
+\item El par de números \textit{(e,n)} son la clave pública.
+\item El par de números \textit{(d,n)} son la clave privada.
+\end{itemize} 
+\textbf{Cifrado y descifrado.} El cifrado y descifrado RSA se realiza en el campo de los numeros enteros \textit{Zn} y los cálculos modulares desempeñan un papel central. RSA cifra el texto en claro \textit{x}, donde consideramos que la cadena de bits que representa \textit{x} es un elemento en \textit{Zn = 0,1, ..., n-1} . Como consecuencia, el valor binario del texto en claro \textit{x} debe ser menor que \textit{n}. Lo mismo ocurre con el texto cifrado. El cifrado con la clave pública y el descifrado con la clave privada son los siguientes:
+
+\begin{itemize}
+\item Cifrado: la función de cifrado es \textit{C = $M^{e}$ mod n}.
+
+\item Descifrado: la función de descifrado es \textit{M = $C^{d}$ mod n}  ~\cite{paar}.
+\end{itemize} 
+
+Ejemplo:\\
+
+Tomaremos los numeros:    \textit{p = 11} y \textit{q = 23}. \\ 
+
+Calculamos las llaves:\\
+
+\textit{n = 11 * 23 = 253} \\ 
+
+\textit{$ \phi = ( 11 - 1 ) * ( 23 - 1 ) = 220 $}\\
+
+donde: \textit{( 11 - 1 ) = 10}   y   \textit{( 22 - 1 ) = 22 }\\
+
+\textit{e = 3} \\
+
+\textit{MCD ( 220, 3 ) = 1} \\
+
+\textit{d = inv (3, 220) = 147 } \\
+
+
+Clave pública:    \textit{ (e,n) = (3,253) } \\
+
+Clave privada:   \textit { (d,n) = (147,253) } \\
+
+% https://cs.uns.edu.ar/~ldm/mypage/data/ss/info/ejemplo-rsa.pdf
+
+%==================================================================================================================================================================
+
 \section{Firma digital}
 
 Una \textit{firma digital} es un mecanismo de autenticación que permite al creador de un mensaje fijar un código que actúa como una firma. La firma es formada tomando el hash del mensaje y cifrar el mensaje con clave privada del creador. La firma garantiza el origen y la integridad del mensaje ~\cite{modes}. \\
-El estándar de la firma digital \textit{(Digital Signature Standard)} es un estándar NIST \textit{(National Institute of Standards and echnology)} que utiliza el algoritmo de hash seguro (SHA). El desarrollo más importante del trabajo sobre criptografía de clave pública es la firma digital. La firma digital proporciona un conjunto de capacidades de seguridad que sería difícil de aplicar en cualquier otra forma ~\cite{modes}. \\
-Autenticación de mensajes protege dos partes que intercambian mensajes de terceros. Sin embargo, no protege a los dos partidos uno contra el otro. Varias formas de disputa entre los dos son posibles ~\cite{modes}. \\
+El estándar de la firma digital \textit{(Digital Signature Standard)} es un estándar NIST que utiliza el algoritmo de hash seguro (SHA). El desarrollo más importante del trabajo sobre criptografía de clave pública es la firma digital. La firma digital proporciona un conjunto de capacidades de seguridad que sería difícil de aplicar en cualquier otra forma ~\cite{modes}. \\
+La autenticación de mensajes protege dos partes que intercambian mensajes de terceros. Sin embargo, no protege a los dos partidos uno contra el otro. Varias formas de disputa entre los dos son posibles ~\cite{modes}. \\
+Los algoritmos de firma son los siguientes \textit{DSA}, \textit{ECDSA} y \textit{firmas basadas con RSA}.
 En situaciones donde no existe una completa confianza entre el emisor y el receptor, se necesita algo más que la autenticación. La solución más atractiva para este problema es la firma digital. La firma digital es análoga a la firma manuscrita. Debe tener las siguientes propiedades:
 
 	\begin{itemize}
@@ -112,16 +180,10 @@ En situaciones donde no existe una completa confianza entre el emisor y el recep
 	\end{itemize}
 
 Así, la función de firma digital incluye la función de autenticación.
-Sobre la base de estas propiedades, podemos formular los siguientes requisitos para una firma digital:
 
-	\begin{itemize}
-		\item La firma debe ser un patrón de bits que depende del mensaje firmado.
-		\item La firma debe usar cierta información única del remitente, para evitar la falsificación y la negación.
-		\item Debe ser relativamente fácil de realizar la firma digital.
-		\item Debe ser relativamente fácil de reconocer y verificar la firma digital.
-		\item  Debe ser sea computacionalmente imposible falsificar una firma digital, mediante la construcción de un nuevo mensaje para una firma digital existente o mediante la construcción de una fraudulenta firma digital para un mensaje dado.
-		\item Debe ser práctico conservar una copia de la firma digital en almacenamiento de información ~\cite{modes}.
-	\end{itemize}
+%==================================================================================================================================================================
+
+\section{Firma digital con RSA. }
 
 
 %==================================================================================================================================================================
@@ -129,32 +191,8 @@ Sobre la base de estas propiedades, podemos formular los siguientes requisitos p
 \section{Firmas a ciegas. }
 
 Las \textit{firmas a ciegas} son un tipo especial de firmas digitales en las que se firma algo que no se conoce. Para hacer firmas a ciegas se utilizan factores de opacidad, para ocultar el mensaje original que se requiere que esté firmado, y así la autoridad no pueda conocer lo que está firmando.
-Por lo tanto, el propósito de una firma a ciegas es evitar que el firmante \textit{B} conozca el mensaje que firma; y así posteriormente, sea incapaz de asociar el mensaje que firmó con el remitente \textit{A}. Entonces, las firmas a ciegas tienen aplicación en varias situaciones. A continuación se mencionan dos de ellas:
-\begin{itemize}
-	\item Cuando se utiliza dinero electrónico. En este caso, m representa un valor monetario que \textit{A} (el cliente) tiene derecho a gastar. Y así, cuando \textit{m} y \textit{s(m)} se presentan a \textit{B} (el banco) para efectuar el pago, \textit{B} es incapaz de identificar al cliente que originalmente le dio ese dinero electrónico a firmar, pues le fue enviado de manera oculta. Lo anterior permite que la identidad de \textit{A} permanezca anónima, y sus movimientos financieros no puedan ser monitoreados.
-	\item En las elecciones electrónicas también pueden utilizarse las firmas a ciegas, ya que se requiere que \textit{B} (una autoridad electoral) no conozca la identidad de \textit{A} (el votante) debido a que el voto debe efectuarse de manera anónima. Sin embargo, es necesario que \textit{A} demuestre que su voto m es válido. Lo cual se logra cuando \textit{A} presenta ante \textit{B} la firma \textit{s(m)}. Y se sabe de antemano que \textit{B} no puede asociar \textit{s(m)} a \textit{A}, debido a que el votante previamente le envió a \textit{B} su voto m pero de forma oculta para que se lo firmara. ~\cite{ciegas}
-\end{itemize} 
+Por lo tanto, el propósito de una firma a ciegas es evitar que el firmante \textit{B} conozca el mensaje que firma; y así posteriormente, sea incapaz de asociar el mensaje que firmó con el remitente \textit{A}. Entonces, las firmas a ciegas tienen aplicación en varias situaciones, por ejemplo, en las elecciones electrónicas también pueden utilizarse las firmas a ciegas, ya que se requiere que \textit{B} (una autoridad electoral) no conozca la identidad de \textit{A} (el votante) debido a que el voto debe efectuarse de manera anónima. Sin embargo, es necesario que \textit{A} demuestre que su voto m es válido. Lo cual se logra cuando \textit{A} presenta ante \textit{B} la firma \textit{s(m)}. Y se sabe de antemano que \textit{B} no puede asociar \textit{s(m)} a \textit{A}, debido a que el votante previamente le envió a \textit{B} su voto m pero de forma oculta para que se lo firmara. ~\cite{ciegas}
 
-%==================================================================================================================================================================
-
-
-\section{RSA}
-
-El esquema de criptografía RSA (Rivest-Shamir-Adleman), es actualmente el esquema criptográfico asimétrico más utilizado. RSA fue patentado en los Estados Unidos (pero no en el resto del mundo) hasta el 2000. Utiliza una clave pública, la cual se distribuye (en forma autenticada preferentemente), y otra privada, la cual es guardada en secreto por su propietario.Cuando se envía un mensaje, el emisor busca la clave pública de cifrado del receptor y una vez que dicho mensaje llega al receptor, éste se ocupa de descifrarlo usando su clave oculta. Los mensajes enviados usando el algoritmo RSA se representan mediante números y el funcionamiento se basa en el producto de dos números primos grandes (mayores que 10100) elegidos al azar para conformar la clave de descifrado. Emplea expresiones exponenciales en aritmética modular. La seguridad de este algoritmo radica en que no hay maneras rápidas conocidas de factorizar un número grande en sus factores primos utilizando computadoras tradicionales.
-La computación cuántica podría proveer una solución a este problema de factorización. Este popular sistema se basa en el problema matemático de la factorización de numeros grandes. \\
-El algoritmo RSA funciona de la siguiente manera: \\
-\begin{itemize}
-\item Inicialmente es necesario generar aleatoriamente dos números primos grandes, a los que llamaremos \textit{p} y \textit{q}.
-\item A continuación calcularemos n como producto de \textit{p} y \textit{q: n = p * q}
-\item Se calcula \textit{fi: fi(n)=(p-1)(q-1)}
-\item Se calcula un número natural e de manera que \textit{MCD(e, fi(n))=1} , es decir e debe ser primo relativo de \textit{fi(n)}.
-\item Es lo mismo que buscar un numero impar por el que dividir fi(n) que de cero como resto.
-\item Mediante el algoritmo extendido de Euclides se calcula \textit{d: e.d mod fi(n)=1} Puede calcularse \textit{d=((Y*fi(n))+1)/e} para Y=1,2,3,… hasta encontrar un d entero.
-\item El par de números \textit{(e,n)} son la clave pública.
-\item El par de números \textit{(d,n)} son la clave privada.
-\item Cifrado: La función de cifrado es \textit{C = $M^{e}$ mod n}.
-\item Descifrado: La función de descifrado es \textit{M = $C^{d}$ mod n}  ~\cite{paar}.
-\end{itemize} 
 
 %==================================================================================================================================================================
 
@@ -173,29 +211,20 @@ Al finalizar el protocolo, \textit{B} no conoce el mensaje m ni la frma asociada
 
 %==================================================================================================================================================================
 
-\section{Ataques a servicios criptográficos.}
-Un ataque es una violación a la seguridad de la información realizada por intrusos que tienen acceso físico al sistema sin ningún tipo de restricción, su objetivo es robar la información o hacer que ésta pierda valor relativo, o que disminuyan las posibilidades de su supervivencia a largo plazo.\\
-\begin{itemize}
-\item Ataque sólo con texto cifrado. Este caso es cuando el criptoanalista sólo conoce el criptograma y el algoritmo con que fue generado; con esta información pretende obtener el texto en claro.
-\item Ataque con texto en claro conocido. En esta situación el criptoanalista conoce mensajes en claro seleccionados por él mismo y sus correspondientes criptogramas, así como el algoritmo con que éstos fueron generados; aquí el objetivo es conocer la clave
-secreta y poder descriptar libremente cualquier texto. 
-\item Ataque con texto cifrado escogido. El criptoanalista conoce el algoritmo de cifrado, así como un criptograma seleccionado por él mismo y su correspondiente texto en claro, su objetivo es obtener el mensaje en claro de todo criptograma que intercepte.
-\item Ataque con texto en claro escogido. En este caso el criptoanalista además de conocer el algoritmo de cifrado y el criptograma que quiere descriptar, también conoce el criptograma de un texto en claro ~\cite{ataques}.
-\end{itemize} 
-%==================================================================================================================================================================
 
-\subsection{Ataques por fuerza bruta}
 
-Los ataques de fuerza bruta se basan en un concepto simple: Oscar, el atacante, obtiene el texto cifrado escuchando en el canal y pasa a tener un pedazo corto del texto claro, por ejemplo, el encabezado de un archivo que fue cifrado. Oscar ahora simplemente descifra el primer pedazo del texto cifrado con todas las claves posibles. Si el texto claro resultante coincide con el pedazo corto del texto claro, sabe que ha encontrado la clave correcta.\\
+%\subsection{Ataques por fuerza bruta}
 
-\begin{definition} 
-Ataque de fuerza bruta\\
-Sea \textit{(x, y)} el texto claro y el texto cifrado, y sea \textit{K = [K1, ..., Kk]} el espacio clave de todas las claves posibles \textit{ki}. Un ataque de fuerza bruta comprueba que para cada \textit{ki $\in$ K} si \\
-\textit{ \[d_{ki}(y) = x\] }.\\
-Si la igualdad se mantiene, se encuentra una posible clave correcta; Si no, se procede con la siguiente clave.\\
-\end{definition}
-En la práctica, un ataque de fuerza bruta puede ser más complicado porque las claves incorrectas pueden dar resultados positivos falsos. \\
-Es importante señalar que un ataque de fuerza bruta contra cifrados simétricos es siempre posible en un principio. Si es factible en la práctica depende del espacio clave, es decir, en el número de posibles claves que existen para un cifrado dado. Si se están probando todas las claves en muchas computadoras modernas toma demasiado tiempo, es decir, varias décadas, el cifrado es computacionalmente seguro contra un ataque de fuerza bruta ~\cite{paar}.\\
+%Los ataques de fuerza bruta se basan en un concepto simple: Oscar, el atacante, obtiene el texto cifrado escuchando en el canal y pasa a tener un pedazo corto del texto claro, por ejemplo, el encabezado de un archivo que fue cifrado. Oscar ahora simplemente descifra el primer pedazo del texto cifrado con todas las claves posibles. Si el texto claro resultante coincide con el pedazo corto del texto claro, sabe que ha encontrado la clave correcta.\\
+
+%\begin{definition} 
+%Ataque de fuerza bruta\\
+%Sea \textit{(x, y)} el texto claro y el texto cifrado, y sea \textit{K = [K1, ..., Kk]} el espacio clave de todas las claves posibles \textit{ki}. Un ataque de fuerza bruta comprueba que para cada \textit{ki $\in$ K} si \\
+%\textit{ \[d_{ki}(y) = x\] }.\\
+%Si la igualdad se mantiene, se encuentra una posible clave correcta; Si no, se procede con la siguiente clave.\\
+%\end{definition}
+%En la práctica, un ataque de fuerza bruta puede ser más complicado porque las claves incorrectas pueden dar resultados positivos falsos. \\
+%Es importante señalar que un ataque de fuerza bruta contra cifrados simétricos es siempre posible en un principio. Si es factible en la práctica depende del espacio clave, es decir, en el número de posibles claves que existen para un cifrado dado. Si se están probando todas las claves en muchas computadoras modernas toma demasiado tiempo, es decir, varias décadas, el cifrado es computacionalmente seguro contra un ataque de fuerza bruta ~\cite{paar}.\\
 
 
 %\subsection{Ataques a los Protocolos Criptográficos}

@@ -1,4 +1,42 @@
 %\chapter{Preliminares. } % (fold)
+
+\section{Estado del Arte. }
+\begin{tabular}{ |p{8cm}|p{8cm}| }
+\hline
+{ \textbf{TahoeFS}}  & {\textbf{ABS: The Apportioned Backup System} } \\
+\hline
+{Firmas Digitales}  & {Firmas Digitales} \\
+\hline
+{SHA256}  & {SHA256}  \\
+\hline
+{AES-128}  & {Criptografía asimétrica}  \\
+\hline
+{Modo de operación CTR }  & {Codificado en c++} \\
+\hline
+{Cifrado convergente}  & {Cifrado convergente}  \\
+\hline
+{Árbol Merkle}  & {Huella digital} \\
+\hline
+{RSA de 2048 bits (256 bytes) }  & { rsync  } \\
+\hline
+\end{tabular}
+\\
+\begin{itemize}
+%\item DupLESS\\
+%Este protocolo usa un servicio de almacenamiento en la nube, además implementa una interfaz sencilla con operaciones como guardar, recuperar o borrar un archivo. Es más adecuado para aplicaciones backup y busca proteger la confidencialidad de datos de los clientes, para ello usa seguridad semántica. Además promete capacidad de resistencia ante fallos, protección contra un servidor malintencionado, evitar duplicación de archivos y compatibilidad con diferentes sistemas operativos~\cite{Bellare}.
+\item TahoeFS\\
+Tahoe es un sistema para el almacenamiento seguro distribuido. Usa las funciones de control de acceso, criptografía, confidencialidad, integridad y eliminación para tolerancia a fallos. Se ha desplegado en un servicio de copia de seguridad comercial y es actualmente operacional. La aplicación es de código abierto ~\cite{tahoe}.
+%\item Flud Backup\\
+%El proyecto Flud Backup está actualmente inactivo, sin embargo se crearon diversas versiones para Ubuntu y Fedora donde usan paquetes distribuidos y un sistema de confianza. Prometen que los datos que se copian deben ser indestructibles y copias de seguridad descentralizadas~\cite{flud}.
+\item ABS\\
+Proporciona un recurso fiable de copia de seguridad de colaboración, aprovechando estos recursos independientes distribuidos. Con ABS, la adquisición y mantenimiento de hardware especializado de copia de seguridad es innecesaria. ABS hace un uso eficiente de los recursos de red y almacenamiento de información mediante el uso de técnicas, como cifrado convergente, almacenamiento, procesos de verificación y control de versiones eficientes de codificación ~\cite{abs}.
+%Promete el almacenamiento de datos seguro y eficiente, privacidad y seguridad, esto a través de tablas hash distribuidas, firmas de clave privadas, control de versiones y cifrado convergente. 
+%Además es tolerante a fallas catastróficas a nodos y permite unir nodos y restaurar operaciones sin pérdida de datos
+\end{itemize}
+
+
+
+\section{Protocolo DupLESS. }
 Los proveedores de servicios de almacenamiento en la nube como lo son:  Dropbox, Mozy, Mega y otros, realizan la eliminación de archivos duplicados para ahorrar espacio en el servidor, almacenando sólo una copia de cada archivo cargado ~\ref{fig:4-0-1} \\
 . Sin embargo, si los clientes cifran convencionalmente sus archivos es decir usando la criptografía simple (Simétrica y Asimétrica), se pierde ese ahorro de espacio. El cifrado de archivos con bloqueo de mensajes (conocido comunmente como el \textbf{Cifrado convergente} en adelante \textit{CE}) resuelve esta problemática. Sin embargo, está inherentemente sujeto a ataques de fuerza bruta que pueden recuperar archivos que caen en un conjunto conocido.\\
 
@@ -15,14 +53,14 @@ desde un servidor de llaves a través de un protocolo OPRF inconsciente. Esto pe
 
 
 
-\section{Diseño}
+\textbf{Diseño} \\
 
 El protocolo criptográfico para la eliminación de duplicados DupLESS, esta diseñado e implementado para proporcionar una solución más segura y de fácil implementación para el cifrado de archivos que elimina la duplicación de estos. En DupLESS, los usuarios de este protocolo cifran sus archivos con la ayuda de un servidor de claves en adelante \textit{(KS)} que está separado del servicio de almacenamiento en adelante  \textit{Nube}. Los usuarios se autentican en el KS, pero no pierden la información sobre sus datos. Mientras que el KS permanezca inaccesible para los atacantes, el protocolo puede garantizar una alta seguridad (Seguridad semántica). Si en algún momento el KS y la Nube están comprometidos, Dupless conserva la actual garantía MLE de seguridad para mensajes impredecibles.\\ 
 
 El principal objetivo de DupLESS, es hacer que dicho protocolo trabaje de forma transparente con los sistemas en la Nube que hasta ahora se encuentran en funcionamiento, por lo que DupLESS funciona como una capa sobre las interfaces de almacenamiento simples que acceden a la Nube. Esto también significa que DupLESS es desarrollado: para ser lo más incompatible posible con los comandos existentes en las API's de estos sistemas en la Nube exixtentes, para que así no se tenga ningún conocimiento sobre los sistemas que implementan estas API, para dar un rendimiento muy cercano al de usar la Nube sin ningún cifrado, y lograr el mismo nivel de disponibilidad que el proporcionado por la Nube.
 
 
-\section{Funcionamiento}
+\textbf{Funcionamiento}\\
 
 DupLESS contempla que un atque por fuerza bruta a un texto cifrado dentro de un esquema de tipo CE puede tratarse utilizando un servidor de llaves (KS) para derivar llaves a partir de un archivo, en lugar de establecer llaves con funciones hash de los archivos. Para poder acceder al KS, se debe de realizar el procedimiento de autenticación a los usuarios del protocolo, esto detiene a los atacantes externos. El aumento de los costos a los ataques, disminuye los ataques por fuerza bruta hacia los usuarios comprometidos y ahora el KS puede funcionar como un único punto de control para implementar medidas de limitación de velocidad. \\
 
