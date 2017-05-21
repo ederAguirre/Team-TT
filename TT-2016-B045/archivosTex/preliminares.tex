@@ -6,14 +6,11 @@ El contenido de este capítulo abordará temas estrechamente relacionados con la
 
 
 
-\section{Preliminares criptograficos. }
- \begin{itemize}
-\item \textbf{La Criptografía. }
-Tiene como objetivo fundamental habilitar a dos personas usualmente referidas como Alice y Bob para que se comuniquen sobre un canal inseguro de tal manera que un adversario, Oscar, no pueda entender que es lo que están diciendo, éste canal podría ser una línea telefónica o una red de computadora, por ejemplo. La información que quiere enviar Alice a Bob que nosotros llamaremos “texto en claro”, puede ser un texto en inglés, datos numéricos, o cualquier cosa---esta estructura es completamente arbitraria. Alice cifra el texto en claro usando una llave predeterminada y envía el texto cifrado resultante sobre el canal. Oscar, al ver el texto cifrado en el canal que está escuchando a escondidas, no puede determinar qué es el texto en claro; pero Bob, quien sabe la llave con la que se cifró el archivo, puede descifrar el texto y obtener el texto claro ~\cite{stinson}.\\
+\section{Criptografía. }
 
-Está ciencia que mantiene la información segura se encuentra dividida en dos tipos: \textbf{Criptografía Simétrica} y \textbf{Criptografía Asimétrica}.  \\
+La \textit{ criptografía } tiene como objetivo fundamental habilitar a dos personas usualmente referidas como Alice y Bob para que se comuniquen sobre un canal inseguro de tal manera que un adversario, Oscar, no pueda entender que es lo que están diciendo, éste canal podría ser una línea telefónica o una red de computadora, por ejemplo. La información que quiere enviar Alice a Bob que nosotros llamaremos “texto en claro”, puede ser un texto en inglés, datos numéricos, o cualquier cosa---esta estructura es completamente arbitraria. Alice cifra el texto en claro usando una llave predeterminada y envía el texto cifrado resultante sobre el canal. Oscar, al ver el texto cifrado en el canal que está escuchando a escondidas, no puede determinar qué es el texto en claro; pero Bob, quien sabe la llave con la que se cifró el archivo, puede descifrar el texto y obtener el texto claro ~\cite{stinson}.\\
 
-\textbf {\textit{La criptografía simétrica}} o también llamada criptografía de llave secreta, basa su seguridad en una sola llave que se comparte entre dos entidades que quieren compartir información, dicha llave es utilizada para cifrar un archivo al ser enviado a la otra entidad y este utilizará la misma llave para descifrarlo cuando lo reciba. El esquema de cifrado simétrico se puede representar a través de la siguiente figura ~\ref{fig:2-3-1}. \\
+Esta ciencia que mantiene la información segura se encuentra dividida en dos tipos: \textit{Criptografía Simétrica} y \textit{Criptografía Asimétrica}. La \textit{ criptografía simétrica} o también llamada criptografía de llave secreta, basa su seguridad en una sola llave que se comparte entre dos entidades que quieren compartir información, dicha llave es utilizada para cifrar un archivo al ser enviado a la otra entidad y este utilizará la misma llave para descifrarlo cuando lo reciba. El esquema de cifrado simétrico se puede representar a través de la siguiente figura ~\ref{fig:2-3-1}. \\
 
 \begin{figure}[H]
 \centering
@@ -24,7 +21,7 @@ Está ciencia que mantiene la información segura se encuentra dividida en dos t
 
 Los algoritmos criptográficos simétricos tienen dos versiones: cifrador en bloque y cifrador de flujo. El beneficio en cuanto al uso de un algoritmo simétrico se encuentra en el procesamiento rápido para cifrar y descifrar un alto volúmen de datos. El cifrado simétrico es una práctica eficaz de almacenamiento de información sensible en una base de datos, un registro o archivo  ~\cite{sime}. \\
 
-\textbf{\textit{La criptografía asimétrica}} o criptografía de llave pública involucra el uso de un par de llaves para cada entidad que desea comunicarse, estas llaves llamadas pública y privada. Para que una entidad envíe un archivo a otra, necesita cifrar el archivo con la llave pública de esa entidad a la que se desea enviar, y cuando lo reciba esa entidad lo deberá descifrar con su llave privada o secreta. De esta manera se evita el compartir llaves para cifrar y descifrar como sucede en la criptografía simétrica y reduce los riesgos de un ataque de adversarios. El cifrado asimétrico puede ser representado como aparece en la figura ~\ref{fig:2-4-1}. \\
+La \textit{ criptografía asimétrica} o criptografía de llave pública involucra el uso de un par de llaves para cada entidad que desea comunicarse, estas llaves llamadas pública y privada. Para que una entidad envíe un archivo a otra, necesita cifrar el archivo con la llave pública de esa entidad a la que se desea enviar, y cuando lo reciba esa entidad lo deberá descifrar con su llave privada o secreta. De esta manera se evita el compartir llaves para cifrar y descifrar como sucede en la criptografía simétrica y reduce los riesgos de un ataque de adversarios. El cifrado asimétrico puede ser representado como aparece en la figura ~\ref{fig:2-4-1}. \\
 
 \begin{figure}[H]
 \centering
@@ -35,12 +32,9 @@ Los algoritmos criptográficos simétricos tienen dos versiones: cifrador en blo
 
 Los beneficios de la criptografía asimétrica son que las claves públicas pueden ser distribuidas con toda tranquilidad, pues no puedes hacer uso de las llaves públicas sin las llaves privadas. Asimismo, el cifrado asimétrico se emplea  frecuentemente para elaborar firmas digitales, un mecanismo que permite al receptor de un mensaje firmado digitalmente poder identificar a la entidad que origino ese mensaje y de esa manera confirmar que el mensaje no ha sido alterado. \\
 
-\item \textbf{El Criptoanálisis. }
-Es la ciencia que se ocupa del análisis de un texto cifrado para obtener la información original sin conocimiento de la clave secreta, esto es, de forma ilícita rompiendo así los procedimientos de cifrado establecidos por la Criptografía, por lo que se dice que Criptoanálisis y Criptografía son ciencias complementarias pero contrarias ~\cite{cripto}. \\
-\end{itemize}
+
 
 %==================================================================================================================================================================
-\textbf{Servicios criptográficos. }
 Los servicios criptográficos son aquellos que garantizan en un sistema de información la adquisición, almacenamiento, procesamiento y transmisión de la información y para lograrlo se valen de uno o más objetivos fundamentales. 
  \begin{itemize}
 	\item \textbf{Confidencialidad. }
@@ -49,22 +43,25 @@ Es un servicio utilizado para garantizar que solo las personas autorizadas tiene
 %Hay numerosos enfoques para proporcionar confidencialidad, que van desde la protección física a los algoritmos matemáticos que hacen que los datos sean ininteligibles.
 
 	\item \textbf{Autenticación. }
-Esta función se aplica tanto a las entidades como a la propia información. Dos entidades que participan en una comunicación deben identificarse entre sí. La información entregada a través de un canal debe ser autenticada en cuanto al origen, fecha de origen, contenido de los datos, tiempo enviado, etc. Por estas razones este aspecto de la criptografía suele subdividirse en dos clases principales: autenticación de entidad y autenticación de origen de datos. La autenticación de origen de datos proporciona implícitamente la integridad de los datos (si se modifica un mensaje, la fuente ha cambiado).
+Esta función se aplica tanto a las entidades como a la propia información. Dos entidades que participan en una comunicación deben identificarse entre sí. La información entregada a través de un canal debe ser autenticada en cuanto al origen, fecha de origen, contenido de los datos, tiempo enviado, etc. 
 
 	\item \textbf{Integridad. }
-Es un servicio que se ocupa de la alteración no autorizada de los datos. Para asegurar la integridad de los datos, se debe tener la capacidad de detectar la manipulación de datos por parte de algún adversario. La manipulación de datos incluye cosas tales como inserción, supresión y sustitución.  
+Es un servicio que se ocupa de la alteración no autorizada de los datos. Para asegurar la integridad de los datos, se debe tener la capacidad de detectar la manipulación de datos por parte de algún adversario. La manipulación de datos incluye inserción, supresión y sustitución, entre otros.
 
 	\item \textbf{No repudio. }
 Es un servicio que impide a una entidad negar compromisos o acciones anteriores. Cuando surgen disputas debido a que una entidad niega que se tomaron ciertas acciones, es necesario un medio para resolver la situación. Por ejemplo, una entidad puede autorizar la compra de una propiedad por otra entidad y posteriormente negar que se concedió dicha autorización ~\cite{menezes}.
  \end{itemize}
 
+
+El \textit{ Criptoanálisis } es la ciencia que se ocupa del análisis de un texto cifrado para obtener la información original sin conocimiento de la clave secreta, esto es, de forma ilícita rompiendo así los procedimientos de cifrado establecidos por la Criptografía, por lo que se dice que Criptoanálisis y Criptografía son ciencias complementarias pero contrarias ~\cite{cripto}. \\
+
 %==================================================================================================================================================================
 \section{Cifrador por bloques. }
 
-Un cifrador de bloques es una función que convierte bloques de texto de \textit{n} bits a bloques de texto cifrado de \textit{n}  bits; a \textit{n}  se denomina longitud de bloque. La función que convierte los bloques de texto simple está parametrizada por una clave \textit{K} de \textit{ k}-bits , tomando valores de un subconjunto $\cal{K}$ (el espacio de la llave) del conjunto de todos los vectores de \textit{k} bits $V_{\textit{k}}$. Generalmente la clave \textit{K} se elige al azar. El uso de bloques de texto claro y texto cifrado de igual tamaño evita la expansión de datos ~\cite{menezes}. \\
+Un cifrador de bloques es una función que convierte bloques de texto de \textit{n} bits a bloques de texto cifrado de \textit{n}  bits; a \textit{n}  se denomina longitud de bloque. La función que convierte los bloques de texto simple está parametrizada por una clave \textit{K} de \textit{ k}-bits , tomando valores de un subconjunto $\cal{K}$ (el espacio de la llave) del conjunto de todas las palabras númericas de \textit{$ \{ 0,1 \} ^{k}$}. Generalmente la clave \textit{K} se elige al azar. El uso de bloques de texto claro y texto cifrado de igual tamaño evita la expansión de datos ~\cite{menezes}. \\
 
 Para los bloques de texto de \textit{n}-bit, texto cifrado de \textit{n}-bit y una clave fija de \textit{n}-bit, la función de cifrado es
-una biyección, es decir que el texo cifrado debe ser siempre diferente pero cuando se descifre este debe corresponder al texto en claro, definiendo una permutación en vectores de \textit{n}-bits. Cada clave potencial define una biyección diferente. El número de llaves es de longitud | $\cal{K}$ |, y el tamaño efectivo de la clave es de longitud | $\cal{K}$ |. Esto es igual a la longitud de la clave si todos los vectores de \textit{k}-bits son claves válidas ($\cal{K}$ = $V_{\textit{k}}$). Si las llaves son equiprobables (misma probabilidad) y cada una define una biyección diferente, la entropía (medida de incertidumbre) del espacio clave es también de longitud | $\cal K$ | ~\cite{menezes}. \\ \\
+una biyección, es decir que el texo cifrado debe ser siempre diferente pero cuando se descifre este debe corresponder al texto en claro, definiendo una permutación de palabras númericas de \textit{n}-bits. Cada clave potencial define una biyección diferente. El número de llaves es de longitud | $\cal{K}$ |, y el tamaño efectivo de la clave es de longitud | $\cal{K}$ |. Esto es igual a la longitud de la clave si todos las palabras númericas de \textit{k}-bits son claves válidas ($\cal{K}$ = $V_{\textit{k}}$). Si las llaves son equiprobables (misma probabilidad) y cada una define una biyección diferente, la entropía (medida de incertidumbre) del espacio clave es también de longitud | $\cal K$ | ~\cite{menezes}. \\ \\
 
 
 Los cifradores por bloques más usados son AES \textit{(Advanced Encryption Standard}, por sus 
@@ -84,13 +81,12 @@ Los cifradores por bloques pueden ser representados como se ve en la figura ~\re
 \section{Funciones Hash. }
 A continuación se describirán las características de las {\it funciones hash}, también conocidas como {\it funciones de resumen}. Las funciones hash basan su definición en funciones de un solo sentido  ({\it one-way functions}, en inglés). Una función de un solo sentido es aquella que para un valor $x$, es  muy fácil calcular $f(x)$, pero es muy difícil hallar $f^{-1}(x)$. Es complicado en general, hallar funciones de este tipo y probar que lo son.
 \begin{definition}
-Una función hash, es una función de un solo sentido cuya entrada $m$  es un mensaje de longitud arbitraria y la salida es una cadena binaria de longitud fija. Al resumen o hash de un mensaje $m$, se le denotará como $h(m)$. Una función hash debe
-tener las siguientes propiedades:
-\begin{itemize}
-	\item Para cualquier mensaje $m$, debe ser posible calcular $h(m)$ eficientemente. 
-	\item Dado $h(m)$, debe ser computacionalmente difícil, hallar un mensaje $m'$, tal que $h(m)=h(m')$.
-	\item Debe ser computacionalmente difícil, hallar dos mensajes $m$ y $m'$ tales que $h(m)=h(m')$.
-\end{itemize}
+Una función hash, es una función de un solo sentido cuya entrada $m$  es un mensaje de longitud arbitraria y la salida es una cadena binaria de longitud fija. Al resumen o hash de un mensaje $m$, se le denotará como $h(m)$. Una propiedad de las funciones hash es que sea imposible que se produzca una colision ya sea debil o fuerte, ademas de resistir ataques de preimagen.
+%\begin{itemize}
+%	\item Para cualquier mensaje $m$, debe ser posible calcular $h(m)$ eficientemente. 
+%	\item Dado $h(m)$, debe ser computacionalmente difícil, hallar un mensaje $m'$, tal que $h(m)=h(m')$.
+%	\item Debe ser computacionalmente difícil, hallar dos mensajes $m$ y $m'$ tales que $h(m)=h(m')$.
+%\end{itemize}
 \end{definition}
  
 Entre las funciones hash que se usan para criptograf\'ia est\'an: MD2, MD4, MD5, donde MD significa {\it Message Digest}, y el algoritmo est\'andar al momento de escribir \'estas notas es el {\it Secure Hash Algorithm} por sus siglas en ingl\'es SHA.
