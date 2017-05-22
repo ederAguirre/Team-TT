@@ -20,23 +20,6 @@ T.~C. y. P.~A. Cooley~J.
 \newblock Abs: the apportioned backup system.
 \newblock MIT Laboratory for Computer, 2004.
 
-\bibitem{sigops}
-M.~C. y. N.~B. Cox~L.
-\newblock {\em SIGOPS Oper. Syst.}
-\newblock Pastiche: making backup cheap and easy, 2002.
-
-\bibitem{cisco}
-EFE/Cisco.
-\newblock Estimación del crecimiento del tráfico en la nube en el periodo
-  2013-2018., 2014.
-
-\bibitem{fundamentos}
-L.~B. Jaquelina.
-\newblock Fundamentos de criptografía.
-\newblock Universidad Nacional Autónoma de México, 2012.
-\newblock
-  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-decriptografia}.
-
 \bibitem{menezes}
 A.~Menezes, P.~C. van Oorschot, and S.~A. Vanstone.
 \newblock {\em Handbook of Applied Cryptography}.
@@ -55,21 +38,10 @@ G.~Z.~C. Patricia.
 \newblock Master's thesis, Centro de Investigación y de Estudios Avanzados del
   Instituto Politécnico Nacional, 2005.
 
-\bibitem{donceur}
-D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
-\newblock {\em Reclaiming space from duplicate files in a serverless
-  distributed file system.}
-\newblock ICDCS, 2002.
-
 \bibitem{Nubei}
 S/A.
 \newblock Almacenamiento en la nube, ventajas y retos.
 \newblock {\em D-Link {Building Networks for people}}, 2011.
-
-\bibitem{flud}
-S/A.
-\newblock Flud backup, 2011.
-\newblock \url{ http://flud.org/wiki/Flud_Backup.}
 
 \bibitem{sime}
 s/a.
@@ -81,19 +53,6 @@ s/a.
 T.~O. Sergio.
 \newblock Introducción a la criptología.
 \newblock {\em InfoCentre{UV}}, 2003.
-
-\bibitem{rededup}
-R.~Sharma.
-\newblock Data de-duplication in cloud computing: A review.
-\newblock {\em International Journal of Engineering Applied Sciences and
-  Technology, 2017}, 2017.
-
-\bibitem{ventajasime}
-D.~I.~G. Sánchez.
-\newblock Seguridad en redes y criptografÍa.
-\newblock Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus
-  Monterrey, 2004.
-\newblock \url{https://repositorio.itesm.mx/ortec/handle/11285/571244}.
 
 \bibitem{modes}
 W.~Stallings.

@@ -140,9 +140,9 @@ RSA. \\
 
 Ejemplo:\\
 
-Tomaremos los numeros:    \textit{p = 11} y \textit{q = 23}. \\ 
+\textbf{Calculamos las llaves: }\\
 
-Calculamos las llaves:\\
+Tomaremos los numeros:    \textit{p = 11} y \textit{q = 23}. \\ 
 
 \textit{n = 11 * 23 = 253} \\ 
 
@@ -160,6 +160,65 @@ donde: \textit{( 11 - 1 ) = 10}   y   \textit{( 22 - 1 ) = 22 }\\
 Clave pública:    \textit{ (e,n) = (3,253) } \\
 
 Clave privada:   \textit { (d,n) = (147,253) } \\
+
+\textbf{ Cifrado: }\\
+
+Cifraremos la palabra seguridad y para esto le asignaremos números a todas las letras del abecedario dando como resultado para nuestra palabra los siguientes valores: \\
+
+\begin{tabular}{ |p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}| }
+\hline
+{ S } & { E } & { G } & { U } & { R } & { I } & { D } & { A } & { D } \\
+\hline
+{ 18 } & { 4 } & { 6 } & { 20 } & { 17 } & { 8 } & { 3 } & { 0 } & { 3 } \\
+\hline
+\end{tabular}
+\\ \\
+
+Tenemos el mensaje \textit{ M = 18 4 6 20 17 8 3 0 3 } a cifrar\\
+
+\textit{$ 18^{3} = 5832 \mod 253 = 13$} \\
+
+\textit{$ 4^{3} = 64 \mod 253 = 64$} \\
+
+\textit{$ 6^{3} = 216 \mod 253 = 216 $} \\ 
+
+\textit{$ 20^{3} = 8000 \mod 253 = 157 $} \\
+
+\textit{$ 17^{3} = 4913 \mod 253 = 106 $}\\
+
+\textit{$ 8^{3} = 512 \mod 253 = 6 $}\\
+
+\textit{$ 3^{3} = 27 \mod 253 = 27 $}\\
+
+\textit{$ 0^{3} = 0 \mod 253 = 0 $}\\
+
+\textit{$ 3^{3} = 27 \mod 253 = 27 $}\\
+
+Obtenemos el mensaje cifrado \textit{ C = 13 64 216 157 106 6 27 0 27} \\
+
+\textbf{Descifrado: } \\
+
+Tenemos el texto cifrdo, \textit{ C = 13 64 216 157 106 6 27 0 27} \\
+
+\textit{$ 13^{147} \mod 253 = 18$} \\
+
+\textit{$ 64^{147} \mod 253 = 4$} \\
+
+\textit{$ 216^{147} \mod 253 = 6$} \\
+
+\textit{$ 157^{147} \mod 253 = 20$} \\
+
+\textit{$ 106^{147} \mod 253 = 17$} \\
+
+\textit{$ 6^{147} \mod 253 = 8$} \\
+
+\textit{$ 27^{147} \mod 253 = 3$} \\
+
+\textit{$ 0^{147} \mod 253 = 0$} \\
+
+\textit{$ 27^{147} \mod 253 = 3$} \\
+
+Obtenemos el mensaje descifrdo, \textit{ M = 18 4 6 20 17 8 3 0 3} \\
 
 % https://cs.uns.edu.ar/~ldm/mypage/data/ss/info/ejemplo-rsa.pdf
 
@@ -184,6 +243,53 @@ Así, la función de firma digital incluye la función de autenticación.
 %==================================================================================================================================================================
 
 \section{Firma digital con RSA. }
+
+El esquema de firma con RSA se basa en el cifrado RSA. Su seguridad se basa en la dificultad de factorizar un producto de dos grandes primos. Desde su primera descripción en 1978, el esquema de firma con RSA ha surgido como el esquema de firmas digitales más utilizado en la práctica~\cite{paar}. El protocolo para firmar y verificar es el siguiente: \\
+
+\textbf{Bob}\\
+\textit{Calcular las claves con RSA} \\
+
+\textit{$ sk = d $} clave privada.\\
+
+\textit{$ pk = (n, e) $} clave pública. \\
+\textit{Firmar} \\
+
+\textit{$ s = sig_{sk} (x) \equiv x^{d} \mod n $}\\
+
+\textbf{Alice}\\
+\textit{Verificar} \\
+
+\textit{$ ver_{pk} (x,s) $}\\ 
+
+\textit{$ x ' \equiv s^{e} \mod n$}\\ 
+
+Si \textit{$ x ' \equiv x \mod n$} la firma es valida\\ 
+
+Si \textit{$ x ' \not\equiv x \mod n$} la firma es invalida\\ 
+
+Como puede verse en el protocolo, Bob calcula la firma s para un mensaje x que ha sido cifrado con RSA usando su sk (clave privada). Bob es la única persona que puede tener la sk, y por lo tanto la propiedad de sk lo autentica como el autor del mensaje firmado. Bob agrega la firma s al mensaje x y envía ambos a Alice. Alice recibe el mensaje firmado y descifra con RSA usando la pk (clave pública) de Bob, produciendo x2. Si x y x2 coinciden, Alice sabe dos cosas importantes: Primero, el autor del mensaje estaba en posesión de la sk de Bob, y si Bob hubiera tenido acceso a la sk, fue Bob quien firmó el mensaje. Esto se llama autenticación de mensajes. En segundo lugar, el mensaje no se ha cambiado durante el camino, por lo que se da la integridad del mensaje~\cite{paar}, por ejemplo.\\
+
+\textbf{Bob}\\
+\textit{Calcular las claves con RSA} \\
+
+Elije \textit{ p=3 } y\textit{ q=11 } y calcula sus llaves sk y pk que dan como resultado: \\
+
+\textit{ sk = 7 } y \textit{ pk = 3 } con \textit{ n = 33 } \\
+
+\textit{Firmar} \\
+
+Bob quiere firmar el archivo  \textit{ x } que tiene un valor de \textit{ 4 }\\
+
+\textit{$ s =  x^{7} \equiv 4^{7} \equiv 16 \mod 33 $}\\
+
+Se envian los siguientes archivos a Alice: \textit{ x = 4 } y \textit{ s = 16 } \\
+
+\textbf{Alice}\\
+\textit{Verificar} \\
+
+\textit{$ x ' =  s^{e} \equiv 16^{3} \equiv 4 \mod 33 $}\\
+
+Como \textit{$ x ' \equiv x \mod 33 $} la firma es valida.\\
 
 
 %==================================================================================================================================================================
