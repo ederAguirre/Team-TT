@@ -54,6 +54,11 @@ T.~O. Sergio.
 \newblock Introducción a la criptología.
 \newblock {\em InfoCentre{UV}}, 2003.
 
+\bibitem{sommerville}
+I.~Sommerville.
+\newblock {\em Software Engineering, 6. Auflage}.
+\newblock Pearson Studium, 2001.
+
 \bibitem{modes}
 W.~Stallings.
 \newblock {\em Cryptography and Network Security: Principles and Practice}.

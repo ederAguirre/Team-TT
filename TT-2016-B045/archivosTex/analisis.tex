@@ -114,7 +114,7 @@ En cuanto al análisis de el gasto económico que se requiere para la implementa
 
 \subsection{Análisis de riesgos} 
 
-EL análisis de riesgos consiste en identificar los riesgos que este sistema puede tener en su futura implementación y desarrollo. Este análisis presenta los riesgos identificados en el sistema y 3 indicadores (Prioridad, Probabilidad e Impacto) fundamentales para llevar a cabo la gestión de riesgos y así tener presente cuales son los riesgos más destacados en el sistema para dimensionar las consecuencias que estos podrían traer consigo si llegaran a ocurrir. Para elaborar este análisis de riesgos, se evaluaron los impactos que estos riesgos pueden traer, mediante 5 escalas de impactode un riesgo, dichas escalas son: 
+El análisis de riesgos consiste en identificar los riesgos que este sistema puede tener en su implementación y desarrollo. Este análisis realizado a este trabajo terminal, se llevó a cabo bajo la metodología de análisis de riesgos presentada por Ian Sommerville en el libro Ingeniería del software ~\cite{sommerville}, dicho autor presenta los posibles riesgos identificados en un sistema y 3 indicadores (Prioridad, Probabilidad e Impacto) fundamentales para llevar a cabo la gestión de riesgos y así tener presente cuales son los riesgos más destacados en el proyecto para dimensionar las consecuencias que estos podrían traer consigo si llegaran a ocurrir. Para elaborar este análisis de riesgos, se evaluaron los impactos que estos riesgos pueden traer, mediante 5 escalas de impacto de un riesgo, dichas escalas son: 
 
 \subsubsection{Escalas de impacto de un riesgo}
 \begin{longtable}{| p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.5cm} |  p{2.7cm} |}
@@ -145,10 +145,10 @@ EL análisis de riesgos consiste en identificar los riesgos que este sistema pue
 \textbf{Alcance} & Disminución del alcance apenas perceptible & Áreas de alcance secundarias afectadas & Áreas de alcance principales afectadas & Reducción del alcance inaceptable para los objetivos &  El producto terminado es inservible\\ \hline
 \textbf{Calidad} & Degradación de calidad apenas perceptible & Sólo las aplicaciones muy exigentes se ven afectadas & La reducción de la calidad requiere aprobación externa & Reducción de calidad inaceptable &  El producto terminado es inservible\\ \hline
 
-
-\caption{Escalas de impacto de un riesgo}
+\caption{Escalas de impacto de un riesgo ~\cite{sommerville}} 
 \label{Riesgos}
 \end{longtable}
+
 
 \begin{longtable}{| p{1cm} | p{4cm} | p{2cm} | p{2.5cm} | p{2cm} | p{4cm} |}
 
@@ -185,6 +185,50 @@ R9 & Sobre estimación de insumos & MEDIA & MEDIA & MODERADO & Los insumos para 
 
 \\ \hline
 \caption{Análisis de riesgos del proyecto}
+\label{Análisis de riesgos }
+\end{longtable}
+
+
+Dichos riesgos fueron considerados durante la realización de este proyecto, ya que se tomaron en cuanta todos los factores que se ven involucrados en el ambiente que se encuentra este trabajo terminal. Principalmente se tienen muy en cuenta el factor humano, es decir, los errores, mmodificaciones, alteraciones que el equipo de trabajo de este trabajo terminal pudiera cometer o que se encuentre en una situación que pueda comprometer el avance en tiempo y forma de este proyecto.\\ 
+
+Así mismo, el riesg no puede ser mitigado en su totalidad y mucho menos evitar una afectación al desarrollo del trabajo terminal, pero con un plan de acción detallado para cada riesgo identificado se puede disminuir en gran medida las consecuencias que estos reisgos podrían generar, es por ello que se propone el siguiente plan de acción para cada riesgo: 
+
+
+\begin{longtable}{| p{1cm} | p{5cm} | p{9.5cm} |}
+
+% aquí añadimos el encabezado de la primera hoja.
+\hline
+\multicolumn{3}{|c|}{\textbf{Plan de acción para riesgos del proyecto}} \\ \hline
+\textbf{ID} &  \textbf{Riesgo} & \textbf{Acción a realizar} \\
+\hline \hline
+\endfirsthead
+
+% aquí añadimos el encabezado del resto de hojas.
+\hline
+\textbf{ID} &  \textbf{Riesgo} & \textbf{Acción a realizar} \\
+\hline \hline
+\endhead
+
+% aquí añadimos el fondo de todas las hojas, excepto de la última.
+\multicolumn{3}{|c|}{Continúa en la siguiente página.}
+\endfoot
+
+% aquí añadimos el fondo de la última hoja.
+\endlastfoot
+
+% aquí añadimos el cuerpo de la tabla.
+R1 & Modificar requerimientos & Se cuenta como un requerimiento no funcional la mantenibilidad, en la cuál dice que cada nuevo requerimiento tendrá que ser analizado para cuantificar las implicaciones de este y su efectividad  \\ \hline
+R2 & Cambios en tecnología & En cuanto exista una nueva tecnología, se analizarán las ventajas y desventajas de ésta para posteriormente tomar una desición para actualizar o conservar dicha tecnología\\ \hline
+R3 & Falta de usuarios y peticiones & El sistema tendrá como máximo 118ms de latencia, en caso de persistir el problema se volverá a realizar la petición y en el peor escenario se notificará del error al administrador del sistema para su correción \\ \hline
+R4 & Equipo de cómputo & Cuando exista una falla en el equipo de cómputo que opera el sistema, se procederá a poner fuera de línea el sistema para poder cambiar o reparar el equipo que se encuentra dañado \\ \hline
+R5 & Incumplimiento de acuerdos & En caso de retrazo en actividades programadas, se procederá a una reunión con el equipo de trabajo para dar prioridades a las actividades y avanzar en un mínimo periódo de tiempo \\ \hline
+R6 & Problemas de planeación & En caso de presentarse la falta o erronea  comunicación en el equipo, se procederá a una reunión con todo el equipo para revisar los incidentes y re plantear las actividades \\ \hline
+R7 & Falta de recursos & A falta de recursos, se buscará la adquisición de estos a costos más bajos a los actuales o se tendrá que adquirir una deuda con un acreedor ajeno al proyecto \\ \hline
+R8 & Falta de conocimientos & Cuando se presente este problema, el equipo debe inmediatamente reunirse para poder planificar cursos de capacitación, talleres, conferencias, etc. \\ \hline
+R9 & Sobre estimación de insumos & Los insumos utilizados en el proyecto están especificados desde el inicio del proyecto, en caso de que esta especificación falle se tendrá que realizar una nueva valoración de los insumos que sean necesarios.
+
+\\ \hline
+\caption{Plan de acción ante riesgos en el proyecto}
 \label{Análisis de riesgos }
 \end{longtable}
 
