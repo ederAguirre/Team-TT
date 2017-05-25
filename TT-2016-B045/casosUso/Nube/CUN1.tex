@@ -1,0 +1,67 @@
+% Copie este bloque por cada caso de uso:
+%-------------------- COMIENZA descripción del caso de uso.
+
+
+
+\begin{UseCase}{CUN1}{Almacenar archivo cifrado}{Guardar un archivo cifrado en el servicio de almacenamiento (Nube) junto con la llave secreta del usuario que solicita almacenar el archivo cuando este sea cargado por primera vez al almacenamiento}
+
+	\UCitem{Versión}{1.0 - 15/04/17}
+	\UCitem{Autor}{Eder Jonathan Aguirre Cruz}
+	\UCitem{Prioridad}{Alta}
+	\UCitem{Módulo}{Servidor de Llaves}
+	\UCitem{Actor}{Usuario}
+	\UCitem{Propósito}{Almacenar una sóla copia del archivo y reconocer cuando ya existe una copa de este guardada para evitar su almacenamiento. }
+	\UCitem{Entradas}{	\begin{itemize}			
+						\item Archivo cifrado \textit{C1}.
+						\item  Llave secreta cifrada \textit{C2}. 
+						\item  Función hash del archivo cifrado.
+					\end{itemize}}
+	\UCitem{Salidas}{ Lista de archivos del usuario actualizada. }
+	\UCitem{Precondiciones}{
+					\begin{itemize}			
+						\item El servicio de almacenamiento debe estar disponible.
+						\item El archivo a almacenar debe estar cifrado bajo un algoritmo criptográfico
+					\end{itemize}}
+	\UCitem{Postcondiciones}{\begin{itemize}			
+						\item El archivo quedará almacenado en el servicio de almacenamiento.
+						\item El usuario tendrá actualizada su lista de archivos en la nube. 
+					\end{itemize}}
+	\UCitem{Reglas del negocio}{
+		%\begin{itemize}	
+		%	\item \BRref{RN-E1}{Alumno inscrito} 
+		%	\item \BRref{RN-E4}{Calificación} 
+		%	\item \BRref{RN-E6}{Calificación registrada}
+		%\end{itemize}
+		}
+	\UCitem{Mensajes}{
+		\begin{itemize}	
+			\item \MSGref{MSG1}{Operación exitosa}.
+		\end{itemize}
+		}
+\end{UseCase}
+
+
+% ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
+\begin{UCtrayectoria}{Principal}
+	\UCpaso [\UCactor] Envía la función hash del archivo \textit{H(C1)}.
+	\UCpaso Recibe la función hash del archivo \textit{H(C1)} a almacenar y corrobora la inexistencia de esta. \Trayref{A}
+	\UCpaso Solicita los archivos cifrados a almacenar \textit{C1} y \textit{C2}.
+	\UCpaso [\UCactor] Selecciona de su carpeta personal los archivos \textit{C1} y \textit{C2} y da clic en el botón \IUbuttonAceptar.
+	\UCpaso Almacena los archivos \textit{C1} y \textit{C2} en la nube. 
+	\UCpaso Asocia la función hash \textit{H(C1)} al usuario con el archivo \textit{C1} y \textit{C2}. 
+	\UCpaso Actualiza la lista de usuarios y archivos almacenados en la nube. \label{CUN3Regreso}
+	\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}.	
+\end{UCtrayectoria}
+
+% ---------------- Trayectorias alternativas -------------- Colocar los mensajes  {\bf MSG1-}
+
+		
+\begin{UCtrayectoriaA}{A}{Archivo existente}
+	\UCpaso Detecta la existencia de la función hash \textit{H(C1)} almacenada en la nube. 
+	\UCpaso Solicita el archivo cifrado a almacenar \textit{C2}.
+	\UCpaso [\UCactor] Selecciona de su carpeta personal el archivos \textit{C2} que va almacenar en la nube.
+	\UCpaso Almacena el archivo \textit{C2} en la nube. 
+	\UCpaso Asocia la función hash \textit{H(C1)} al usuario con el archivo \textit{C2}. 
+	\UCpaso Continúa en el paso \ref{CUN3Regreso} del \UCref{CUN3}.
+\end{UCtrayectoriaA}
+

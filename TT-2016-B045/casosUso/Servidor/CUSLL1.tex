@@ -39,10 +39,10 @@
 % ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
 \begin{UCtrayectoria}{Principal}
 	\UCpaso Seleccionar dos números primos aleatorios. \Trayref{A} \label{CUSLL1Regreso}
-	\UCpaso Encontrar el producto de esos números primos denominado N.
-	\UCpaso Calcular la función de euler $\varphi$(N).
-	\UCpaso Elegir un número aleatorio \textit{e} menor a $\varphi$(N), tal que ese número sea \textbf{\textit{gcd(e,$\varphi$(N))=1}}. \Trayref{B} \label{CUSLL1Regreso2}
-	\UCpaso Elegir un número aleatorio \textit{d}, tal que cumpla con la congruencia  \textit{e $\cdot$ d $\equiv$ 1 (mod $\varphi$(N))}. \Trayref{C} \label{CUSLL1Regreso3}
+	\UCpaso Encontrar el producto de esos números primos denominado $N$.
+	\UCpaso Calcular la función de euler $\varphi(N)$.
+	\UCpaso Elegir un número aleatorio \textit{e} menor a $\varphi(N)$, tal que ese número sea \textbf{\textit{gcd(e,$\varphi(N))=1$}}. \Trayref{B} \label{CUSLL1Regreso2}
+	\UCpaso Elegir un número aleatorio \textit{d}, tal que cumpla con la congruencia  \textit{e $\cdot$ d $\equiv$ 1 (mod $\varphi(N))$}. \Trayref{C} \label{CUSLL1Regreso3}
 	\UCpaso Se generan las llaves pública \textit{e} y \textit{d} y muestra un mensaje \MSGref{MSG-SLL1}{Generación de llaves}
 \end{UCtrayectoria}
 
@@ -52,18 +52,18 @@
 \begin{UCtrayectoriaA}{A}{Numeros aleatorios iguales}
 	\UCpaso Seleccionar números aleatorios iguales o no primos.
 	\UCpaso Muestra el Mensaje \MSGref{MSG-SLL2}{Números Iguales}.
-	\UCpaso Continua en el paso \ref{CUSLL1Regreso} del \UCref{CUSLL1}.
+	\UCpaso Continúa en el paso \ref{CUSLL1Regreso} del \UCref{CUSLL1}.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{B}{Número aleatorio menor}
 	\UCpaso Elegir un número aleatorio menor al tamaño establecido de $\varphi$(N).
 	\UCpaso Muestra el Mensaje \MSGref{MSG-SLL3}{Número incorrecto}
-	\UCpaso Continua en el paso \ref{CUSLL1Regreso2} del \UCref{CUSLL1}.
+	\UCpaso Continúa en el paso \ref{CUSLL1Regreso2} del \UCref{CUSLL1}.
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Número aleatorio incorrecto}
 	\UCpaso Elegir un número aleatorio incongruente con \textit{e $\cdot$ d $\equiv$ 1 (mod $\varphi$(N))} 
 	\UCpaso Muestra el Mensaje \MSGref{MSG-SLL3}{Número incorrecto}
-	\UCpaso Continua en el paso \ref{CUSLL1Regreso3} del \UCref{CUSLL1}.
+	\UCpaso Continúa en el paso \ref{CUSLL1Regreso3} del \UCref{CUSLL1}.
 \end{UCtrayectoriaA}
 
