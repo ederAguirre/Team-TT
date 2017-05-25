@@ -51,15 +51,15 @@
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{46}{section*.28}
 \contentsline {subsubsection}{Atributos importantes}{46}{section*.29}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{46}{section*.30}
-\contentsline {subsection}{\numberline {5.2.3}CUN3 Almacenar archivo cifrado}{47}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}CUN1 Almacenar archivo cifrado}{47}{subsection.5.2.3}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{47}{section*.31}
 \contentsline {subsubsection}{Atributos importantes}{47}{section*.32}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{48}{section*.33}
-\contentsline {subsection}{\numberline {5.2.4}CUN4 Descargar archivo cifrado}{49}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}CUN2 Descargar archivo cifrado}{49}{subsection.5.2.4}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{49}{section*.34}
 \contentsline {subsubsection}{Atributos importantes}{49}{section*.35}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{49}{section*.36}
-\contentsline {subsection}{\numberline {5.2.5}CUN5 Eliminar archivo cifrado}{51}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.5}CUN3 Eliminar archivo cifrado}{51}{subsection.5.2.5}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{51}{section*.37}
 \contentsline {subsubsection}{Atributos importantes}{51}{section*.38}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{51}{section*.39}

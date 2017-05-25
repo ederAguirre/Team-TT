@@ -3,7 +3,7 @@
 
 
 
-\begin{UseCase}{CUN4}{Descargar archivo cifrado}{Descargar un archivo cifrado del servicio de almacenamiento (Nube) junto con la llave secreta del usuario que este tiene almacenada en la nube}
+\begin{UseCase}{CUN2}{Descargar archivo cifrado}{Descargar un archivo cifrado del servicio de almacenamiento (Nube) junto con la llave secreta del usuario que este tiene almacenada en la nube}
 
 	\UCitem{Versión}{1.0 - 15/04/17}
 	\UCitem{Autor}{Eder Jonathan Aguirre Cruz}
@@ -42,9 +42,9 @@
 \begin{UCtrayectoria}{Principal}
 	\UCpaso [\UCactor] Selecciona de su lista de archivos en la nube el nombre del archivo que desea descargar.
 	\UCpaso Recibe el nombre del archivo a descargar. 
-	\UCpaso Realiza la busqueda del archivo asociado al nombre que recibió. \Trayref{A} 
+	\UCpaso Realiza la búsqueda del archivo asociado al nombre que recibió. \Trayref{A} 
 	\UCpaso Envía los archivos encontrados \textit{C1} y \textit{C2}.
-	\UCpaso [\UCactor] Recibe los archivos \textit{C1} y \textit{C2} asociados al nombre que selecciono.
+	\UCpaso [\UCactor] Recibe los archivos \textit{C1} y \textit{C2} asociados al nombre que seleccionó.
 	\UCpaso Muestra el mensaje \MSGref{MSG1}{Operación exitosa}.	
 \end{UCtrayectoria}
 
