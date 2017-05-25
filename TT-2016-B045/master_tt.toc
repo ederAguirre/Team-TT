@@ -13,9 +13,9 @@
 \contentsline {section}{\numberline {2.4}RSA}{10}{section.2.4}
 \contentsline {section}{\numberline {2.5}Firma digital}{13}{section.2.5}
 \contentsline {section}{\numberline {2.6}Firma digital con RSA. }{14}{section.2.6}
-\contentsline {section}{\numberline {2.7}Firmas a ciegas. }{16}{section.2.7}
+\contentsline {section}{\numberline {2.7}Firmas a ciegas. }{15}{section.2.7}
 \contentsline {section}{\numberline {2.8}Firmas a ciegas con RSA. }{16}{section.2.8}
-\contentsline {section}{\numberline {2.9}C\IeC {\'o}mputo Nube. }{17}{section.2.9}
+\contentsline {section}{\numberline {2.9}C\IeC {\'o}mputo Nube. }{16}{section.2.9}
 \contentsline {chapter}{\numberline {3}Protocolos criptogr\IeC {\'a}ficos para evitar duplicados}{20}{chapter.3}
 \contentsline {section}{\numberline {3.1}Estado del Arte. }{20}{section.3.1}
 \contentsline {section}{\numberline {3.2}Protocolo DupLESS. }{21}{section.3.2}
@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {4.1.4}An\IeC {\'a}lisis de riesgos}{27}{subsection.4.1.4}
 \contentsline {subsubsection}{Escalas de impacto de un riesgo}{27}{section*.10}
 \contentsline {section}{\numberline {4.2}Arquitectura del sistema. }{29}{section.4.2}
-\contentsline {section}{\numberline {4.3}Descripci\IeC {\'o}n de procesos. }{29}{section.4.3}
+\contentsline {section}{\numberline {4.3}Descripcion de procesos}{29}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Descripci\IeC {\'o}n del proceso subir archivo.}{29}{subsection.4.3.1}
 \contentsline {subsubsection}{Participantes}{30}{section*.12}
 \contentsline {subsection}{\numberline {4.3.2}Descripci\IeC {\'o}n del proceso Descargar archivo.}{31}{subsection.4.3.2}
@@ -42,46 +42,58 @@
 \contentsline {section}{\numberline {4.7}Reglas de Negocio}{39}{section.4.7}
 \contentsline {chapter}{\numberline {5}Dise\IeC {\~n}o}{41}{chapter.5}
 \contentsline {section}{\numberline {5.1}Especificaci\IeC {\'o}n de Plataforma}{41}{section.5.1}
-\contentsline {section}{\numberline {5.2}Casos de Uso}{42}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}CUSLL1 Generar las llaves del servidor de llaves}{43}{subsection.5.2.1}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{43}{section*.25}
-\contentsline {subsubsection}{Atributos importantes}{43}{section*.26}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{43}{section*.27}
-\contentsline {subsection}{\numberline {5.2.2}CUSLL2 Generar firma ciega (y). }{45}{subsection.5.2.2}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{45}{section*.28}
-\contentsline {subsubsection}{Atributos importantes}{45}{section*.29}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{45}{section*.30}
-\contentsline {subsection}{\numberline {5.2.3}CUCL1 Subir archivo}{46}{subsection.5.2.3}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{46}{section*.31}
-\contentsline {subsubsection}{Atributos importantes}{46}{section*.32}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{47}{section*.33}
-\contentsline {subsection}{\numberline {5.2.4}CUCL3 Descargar archivos descifrados.}{49}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.2}Casos de Uso}{43}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}CUSLL1 Generar las llaves del servidor de llaves}{44}{subsection.5.2.1}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{44}{section*.25}
+\contentsline {subsubsection}{Atributos importantes}{44}{section*.26}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{44}{section*.27}
+\contentsline {subsection}{\numberline {5.2.2}CUSLL2 Generar firma ciega (y). }{46}{subsection.5.2.2}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{46}{section*.28}
+\contentsline {subsubsection}{Atributos importantes}{46}{section*.29}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{46}{section*.30}
+\contentsline {subsection}{\numberline {5.2.3}CUN3 Almacenar archivo cifrado}{47}{subsection.5.2.3}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{47}{section*.31}
+\contentsline {subsubsection}{Atributos importantes}{47}{section*.32}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{48}{section*.33}
+\contentsline {subsection}{\numberline {5.2.4}CUN4 Descargar archivo cifrado}{49}{subsection.5.2.4}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{49}{section*.34}
 \contentsline {subsubsection}{Atributos importantes}{49}{section*.35}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{49}{section*.36}
-\contentsline {subsection}{\numberline {5.2.5}CUCL4 Eliminar archivos cifrado.}{51}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.5}CUN5 Eliminar archivo cifrado}{51}{subsection.5.2.5}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{51}{section*.37}
 \contentsline {subsubsection}{Atributos importantes}{51}{section*.38}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{51}{section*.39}
-\contentsline {subsection}{\numberline {5.2.6}CUCL6 Iniciar Sesi\IeC {\'o}n.}{53}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.6}CUCL1 Subir archivo}{53}{subsection.5.2.6}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{53}{section*.40}
 \contentsline {subsubsection}{Atributos importantes}{53}{section*.41}
-\contentsline {subsubsection}{Trayectorias del Caso de Uso}{53}{section*.42}
-\contentsline {subsection}{\numberline {5.2.7}CUCL7 Registrar usuario.}{56}{subsection.5.2.7}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{54}{section*.42}
+\contentsline {subsection}{\numberline {5.2.7}CUCL3 Descargar archivos descifrados.}{56}{subsection.5.2.7}
 \contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{56}{section*.43}
 \contentsline {subsubsection}{Atributos importantes}{56}{section*.44}
 \contentsline {subsubsection}{Trayectorias del Caso de Uso}{56}{section*.45}
-\contentsline {section}{\numberline {5.3}Diagramas de secuencia}{58}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Registrar Usuario}{58}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Iniciar Sesi\IeC {\'o}n}{62}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Subir Archivo}{66}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Firma a ciegas}{69}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Descargar Archivo}{70}{subsection.5.3.5}
-\contentsline {subsection}{\numberline {5.3.6}Eliminar Archivo}{72}{subsection.5.3.6}
-\contentsline {section}{\numberline {5.4}Mensajes del sistema}{73}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Mensajes}{74}{subsection.5.4.1}
-\contentsline {chapter}{\numberline {A}Lista de acr\IeC {\'o}nimos}{78}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{78}{section.Alph1.1}
-\contentsline {chapter}{\numberline {B}Glosario de t\IeC {\'e}rminos}{80}{appendix.Alph2}
-\contentsline {section}{\numberline {B.1}Glosario de T\IeC {\'e}rminos}{80}{section.Alph2.1}
-\contentsline {chapter}{Bibliograf\'ia}{82}{section.Alph2.1}
+\contentsline {subsection}{\numberline {5.2.8}CUCL4 Eliminar archivos cifrado.}{58}{subsection.5.2.8}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{58}{section*.46}
+\contentsline {subsubsection}{Atributos importantes}{58}{section*.47}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{58}{section*.48}
+\contentsline {subsection}{\numberline {5.2.9}CUCL6 Iniciar Sesi\IeC {\'o}n.}{60}{subsection.5.2.9}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{60}{section*.49}
+\contentsline {subsubsection}{Atributos importantes}{60}{section*.50}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{60}{section*.51}
+\contentsline {subsection}{\numberline {5.2.10}CUCL7 Registrar usuario.}{63}{subsection.5.2.10}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n completa}{63}{section*.52}
+\contentsline {subsubsection}{Atributos importantes}{63}{section*.53}
+\contentsline {subsubsection}{Trayectorias del Caso de Uso}{63}{section*.54}
+\contentsline {section}{\numberline {5.3}Diagramas de secuencia}{65}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Registrar Usuario}{65}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Iniciar Sesi\IeC {\'o}n}{69}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Subir Archivo}{73}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Firma a ciegas}{76}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Descargar Archivo}{77}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}Eliminar Archivo}{79}{subsection.5.3.6}
+\contentsline {section}{\numberline {5.4}Mensajes del sistema}{80}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Mensajes}{81}{subsection.5.4.1}
+\contentsline {chapter}{\numberline {A}Lista de acr\IeC {\'o}nimos}{85}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{85}{section.Alph1.1}
+\contentsline {chapter}{\numberline {B}Glosario de t\IeC {\'e}rminos}{87}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Glosario de T\IeC {\'e}rminos}{87}{section.Alph2.1}
+\contentsline {chapter}{Bibliograf\'ia}{89}{section.Alph2.1}

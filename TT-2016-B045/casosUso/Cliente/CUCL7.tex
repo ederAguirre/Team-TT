@@ -1,7 +1,7 @@
 % Copie este bloque por cada caso de uso:
 %-------------------- COMIENZA descripción del caso de uso.
 
-\begin{UseCase}{CUCL7}{Registrar usuario.}{Solicitar los datos importantes de un usuario nuevo, generar sus llaves pública y privada para darlo de alta en el sistema.
+\begin{UseCase}{CUCL7}{Registrar usuario.}{Solicitar los datos importantes de un usuario nuevo, crearle sus llaves pública y privada para darlo de alta en el sistema.
 	}
 	\UCitem{Versión}{1.0 - 19/04/17}
 	\UCitem{Autor}{Jhonatan Saulés Cortés.}
@@ -51,28 +51,28 @@
 \begin{UCtrayectoriaA}{A}{Datos incorrectos}
 	\UCpaso Muestra el mensaje \MSGref{MSG5}{Dato incorrecto}. 
 	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continúa en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
 
 \end{UCtrayectoriaA} 
 
 \begin{UCtrayectoriaA}{B}{Longitud inválida}
 	\UCpaso Muestra el mensaje \MSGref{MSG6}{Longitud inválida}. 
 	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continúa en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
 
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{C}{Datos requeridos}
 	\UCpaso Muestra el mensaje \MSGref{MSG9}{Dato requerido}. 
 	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continúa en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
 
 \end{UCtrayectoriaA}
 
 \begin{UCtrayectoriaA}{D}{Registro repetido}
 	\UCpaso Muestra el mensaje \MSGref{MSG4}{Registro repetido}  
 	\UCpaso[\UCactor] Da clic en el botón \textit{Cerrar}.
-	\UCpaso[\UCactor] Continúa en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
+	\UCpaso[\UCactor] Continua en el paso \ref{CUCL7Regresa} del \UCref{CUCL7}
 
 \end{UCtrayectoriaA}
 
