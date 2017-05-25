@@ -235,10 +235,33 @@ En situaciones donde no existe una completa confianza entre el emisor y el recep
 	\begin{itemize}
 		\item Debe verificar el autor, la fecha y hora de la firma.
 		\item Debe autenticar el contenido en el momento de la firma.
-		\item Debe ser verificable por terceras personas, para resolver los conflictos ~\cite{modes}.
+		\item Debe ser verificable por terceras personas, para resolver los conflictos.
 	\end{itemize}
 
-Así, la función de firma digital incluye la función de autenticación.
+Así, la función de firma digital incluye la función de autenticación ~\cite{modes}.\\
+
+El esquema de firma digital es el siguiente:\\
+
+
+\textbf{Bob}\\
+\textit{Calcula sus llaves privada y pública.} \\
+
+\textit{$ sk = d $} clave privada.\\
+
+\textit{$ pk = (n, e) $} clave pública. \\
+
+\textit{Publica su llave pública.} \\
+\textit{Firmar} \\
+
+\textit{$ s = sig_{sk} (x) $}\\
+
+\textit{Envía el mensaje con la firma.} \\
+
+\textbf{Alice}\\
+\textit{Verificar} \\
+
+\textit{$ ver_{pk} (x,s) = true/false $}  ~\cite{paar}\\ 
+
 
 %==================================================================================================================================================================
 
