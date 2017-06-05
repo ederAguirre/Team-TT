@@ -1,28 +1,23 @@
-\chapter{Introducci\'on} % (fold)
+%\chapter{Introducci\'on} % (fold)
 %\label{cha:introduccion}
 %\addcontentsline{toc}{chapter}{Introducción}
 
 
-%Las tecnolog\'ias de la informaci\'on est\'an cada vez m\'as presentes en la vida cotidiana. Un ejemplo de ello, es que cada vez es m\'as com\'un que las personas  almacenen sus
-% archivos en la nube.  Uno de los mayores beneficios que ofrece este servicio es la virtualización de los centros de datos, que pueden operar de manera automatizada, sin necesidad de la presencia de una persona física y pueden ser gestionados en cualquier momento. 
-% 
-% Sin embargo, este servicio también presenta algunas desventajas que tal vez los usuarios no alcanzan a percibir tan fácilmente. Una de ellas es que al almacenar un archivo en la nube, en realidad se est\'a cediendo la informaci\'on a un tercero, que podr\'ia hacer mal uso de la misma. Éste tema se está volviendo cada vez más preocupante sobre todo para instituciones o empresas cuya  información puede ser sensible. Para proteger a los archivos que se almacenan en la nube, es posible utilizar mecanismos criptogr\'aficos.  La criptografía,es una ciencia que se encarga de ocultar información de tal forma que solamente aquellos usuarios autorizados puedan acceder a ella. \\
-%
-% Otro problema asociado con el almacenamiento en la nube, es que los usuarios tienden a creer que el espacio en la nube es ilimitado y comienzan a guardar grandes cantidades de archivos, por lo cual nos enfrentamos al problema de la duplicación de archivos. \\ 
 
- 
-%  y también debido a diversos ataques por adversarios. \\
- 
-% El cómputo nube es un término utilizado para nombrar al conjunto de servicios de almacenamiento a través de Internet que ha sido utilizado para facilitar el cambio de los modelos de negocios, agilizar procesos y reducir costos de operación ~\cite{Nubei}. \\  
+En el nuevo ambiente de las tecnologías de la información el almacenamiento de archivos puede ser realizado mediante modelos basados en el cómputo nube. \\
+El cómputo nube es un término utilizado para nombrar así a la provisión de servicios de almacenamiento a través de Internet que ha sido utilizado para facilitar el cambio de los modelos de negocios, agilizar procesos y reducir costos de operación ~\cite{Nubei}. \\  
 
-%De acuerdo con un estudio realizado por la consultora Market Research Media, estima que el cómputo nube generará \$270,000 millones de dólares en 2020, por lo que empresas como Google, Amazon, IBM, Oracle y Apple han adoptado este sistema como parte del servicio brindado a sus consumidores, por ejemplo, Google Drive o iCloud, a través de los cuales, con sólo estar conectados a Internet, los usuarios tienen la posibilidad de utilizarlos ~\cite{Nubecomp}. \\ 
+Uno de los mayores beneficios que ofrece este servicio es la virtualización de los centros de datos, que pueden operar de manera automatizada, sin necesidad de la presencia de una persona física y pueden ser gestionados en cualquier momento. De acuerdo con un estudio realizado por la consultora Market Research Media, estima que el cómputo nube generará \$270,000 millones de dólares en 2020, por lo que empresas como Google, Amazon, IBM, Oracle y Apple han adoptado este sistema como parte del servicio brindado a sus consumidores, por ejemplo, Google Drive o iCloud, a través de los cuales, con sólo estar conectados a Internet, los usuarios tienen la posibilidad de utilizarlos ~\cite{Nubecomp}. \\ 
 
-%Es por eso que se ha optado por la opción del uso de%del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, su objetivo no es sólo mantener los datos secretos, sino también protegerlos contra posibles modificaciones o manipulaciones y comprobar la fuente de los mismos  ~\cite{fundamentos}. \\
+Sin embargo, este servicio también presenta algunas desventajas que tal vez nosotros como usuarios no podemos percibir tan fácilmente. Una de ellas es que al almacenar un archivo en realidad no sabemos quién o qué entidades tienen acceso a él. Éste tema se está volviendo cada vez más preocupante sobre todo para instituciones o empresas que cuentan con información confidencial y también debido a diversos ataques por adversarios. \\
 
-%Ahora bien, la información que circula en dispositivos electrónicos es mayor a la memoria disponible que ofrecen estos, a medida que el volumen de información aumenta, también lo hace la demanda para los servicios de almacenamiento en la nube. 
-%Entonces 
-%Es por ello que en el presente documento se propone una solución a estos problemas. Se trata de un protocolo criptográfico que nos brinda la confidencialidad de los archivos a la vez que nos ayuda a evitar la duplicación de los mismos. \\
-%
+Es por eso que se ha optado por la opción del uso de la criptografía, la cual es una ciencia que se encarga de ocultar información, de tal forma que cualquier otra persona no pueda acceder al contenido. \\
+%del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, su objetivo no es sólo mantener los datos secretos, sino también protegerlos contra posibles modificaciones o manipulaciones y comprobar la fuente de los mismos  ~\cite{fundamentos}. \\
+
+Ahora bien, la información que circula en dispositivos electrónicos es mayor a la memoria disponible que ofrecen estos, a medida que el volumen de información aumenta, también lo hace la demanda para los servicios de almacenamiento en la nube. Entonces los usuarios tienden a creer que el espacio en la nube es ilimitado y comienzan a guardar grandes cantidades de archivos, por lo cual nos enfrentamos al problema de la duplicación de archivos. \\ 
+
+Es por ello que en el presente documento se propone una solución a estos problemas. Se trata de un protocolo criptográfico que nos brinda la confidencialidad de los archivos a la vez que nos ayuda a evitar la duplicación de los mismos. \\
+
 
 
 
@@ -63,14 +58,16 @@
 
 
 
-%\section{Planteamiento del problema.}
+\section{Planteamiento del problema.}
 Hoy en día millones de personas en el mundo tienen la facilidad de acceder a un dispositivo electrónico que les permite manipular información o almacenarla ya sea en un dispositivo físico o en la nube.
-Debido a los limitados recursos financieros y altos gastos de almacenamiento de datos electrónicos, los usuarios prefieren almacenar sus datos en los entornos de nube provocando enormes demandas a las compañías que ofrecen este servicio. El incremento en el uso de estos servicios implica que los sistemas de almacenamiento necesiten más capacidad para poder cubrir la alta demanda que se presenta en el mercado ~\cite{Keelveedhi}. \\
+Debido a los limitados recursos financieros y altos gastos de almacenamiento de datos electrónicos, los usuarios prefieren almacenar sus datos en los entornos de nube provocando enormes demandas a las compañías que ofrecen este servicio. El incremento en el uso de estos servicios implica que los sistemas de almacenamiento tengan más capacidad y puedan cubrir la alta demanda que se presenta en el mercado ~\cite{Keelveedhi}. \\
 
 %Ahora bien, la información que circula en dispositivos electrónicos es mayor a la memoria disponible que ofrecen estos, a medida que el volumen de información aumenta, también lo hace la demanda para los servicios de almacenamiento en línea ~\cite{Bellare}. Un gran incremento en el uso de estos servicios implica tener más infraestructura y personal para que los sistemas de almacenamiento tengan más capacidad y puedan cubrir la demanda que se presenta en el mercado. Si bien el almacenamiento logró dar buenos resultados al cliente en sus primeras etapas, ahora la preocupación por el incremento de infraestructura para seguir dando esos resultados se ha incrementado considerablemente  ~\cite{Keelveedhi}.
 %\\ 
 
-Para entender un poco más acerca de la problemática a la que se enfrenta el almacenamiento en la nube,  en la figura ~\ref{fig:1-2-1} se puede apreciar un estudio realizado por EFE/Cisco, en el año 2014. En su cuarto informe anual Índice Global sobre la nube (2013-2018),  se puede observar c\'omo el almacenamiento se ha ido incrementado. \\
+Para entender un poco más acerca de la problemática a la que se enfrenta el almacenamiento en la nube, mostramos el siguiente estudio realizado por EFE/Cisco: \\ 
+
+EFE/Cisco realizó una estimación en el año 2014 en su cuarto informe anual Índice Global sobre la nube (2013-2018), donde podemos observar en la figura ~\ref{fig:1-2-1} como el almacenamiento ha ido incrementado y seguirá incrementado \\
 
 \begin{figure}[H]
 \centering
@@ -79,23 +76,16 @@ Para entender un poco más acerca de la problemática a la que se enfrenta el al
 	\label{fig:1-2-1}
 \end{figure}
 
-Una de las principales razones del incremento en el tamaño en la estructura de almacenamiento de servicios en línea es la duplicación de archivos, es decir, existen muchas copias en la nube de un mismo archivo que se encuentra presente en diferentes cuentas de usuarios. Un ejemplo: el usuario registrado e identificado dentro de la nube como \textit{Usuario A}, el día de hoy desea almacenar un archivo \textbf{Archivo F} que corresponde a la especificación de los requisitos para la obtención de una beca escolar. Este usuario para no extraviar o modificar el archivo lo almacena en la nube y ahí queda disponible para cuando él lo solicite. Ahora este usuario comparte este archivo mediante un dispositivo \textit{USB} a su amigo ya que este también desea conocer los requisitos para solicitar una beca escolar, este amigo el cuál es otro usuario registrado e identificado dentro de la nube como \textit{Usuario B} también quiere almacenar este archivo \textbf{Archivo F} en la nube, ya que requiere utilizar el espacio de memoria en su dispositivo \textit{USB} para otras actividades y no desea perder los requisitos para la solicitud de su beca escolar. Ahora en la nube se encuentran almacenados 2 copias del \textbf{Archivo F} por dos diferentes usuarios identificados como \textit{Usuario A} y \textit{Usuario B}, ambos almacenaron el mismo archivo en el mismo lugar, sin darse cuenta que ahora este archivo se encuentra duplicado en la nube. \\
+Una de las principales razones del incremento en el tamaño en la estructura de almacenamiento de servicios en línea es la duplicación de archivos, existen muchas copias en la nube de un mismo archivo que se encuentra presente en diferentes cuentas de usuarios. Un ejemplo: el usuario registrado e identificado dentro de la nube como \textit{Usuario A}, el día de hoy desea almacenar un archivo \textbf{Archivo F} que corresponde a la especificación de los requisitos para la obtención de una beca escolar. Este usuario para no extraviar o modificar el archivo lo almacena en la nube y ahí queda disponible para cuando él lo solicite. Ahora este usuario comparte este archivo mediante un dispositivo \textit{USB} a su amigo ya que este también desea conocer los requisitos para solicitar una beca escolar, este amigo el cuál es otro usuario registrado e identificado dentro de la nube como \textit{Usuario B} también quiere almacenar este archivo \textbf{Archivo F} en la nube, ya que requiere utilizar el espacio de memoria en su dispositivo \textit{USB} para otras actividades y no desea perder los requisitos para la solicitud de su beca escolar. \\
 
-Sin embargo, en este escenario es f\'acil detectar los duplicados. Como se observa en la  Figura ~\ref{fig:1-3-1} varios usuarios realizan peticiones para subir archivos, pero se puede notar que algunos son iguales, por lo que pasan por un proceso de eliminación de duplicados antes descrito y finalmente se almacena una copia de cada uno. \\
+Ahora en la nube se encuentran almacenados 2 copias del \textbf{Archivo F} por dos diferentes usuarios identificados como \textit{Usuario A} y \textit{Usuario B}, ambos almacenaron el mismo archivo en el mismo lugar, sin darse cuenta que ahora este archivo se encuentra duplicado en la nube. \\
 
-\begin{figure}[H]
-\centering
-	\includegraphics[width=10cm, height=5cm]{./images/Deduplicacion.jpg}
-	\caption{Eliminación de Duplicados}
-	\label{fig:1-3-1}
-\end{figure}
+Otro punto importante es la seguridad e integridad de la gran cantidad de información que se almacena en la nube. Este servicio de almacenamiento está sujeto a los ataques de adversarios que están interesados en el robo, manipulación o alteración de la información. Uno de los ataques que se han intentado realizar por dichos adversarios es el ataque por fuerza bruta, el cual es una forma de recuperar una clave probando todas las combinaciones posibles hasta encontrar aquella que permite el acceso al archivo. \\
+
+Por un lado si tenemos la información en claro es relativamente fácil poder detectar que dos archivos son los mismos, ya que solo se compara bit a bit, pero si estos mismos archivos cada usuario cifra su archivo el resultado serian dos archivos diferentes por esto es que no es posible detectar archivos duplicados con este método. \\
+ \\  \\
 
 
-Otro punto importante, es la seguridad e integridad de la gran cantidad de información que se almacena en la nube. Cuando un usuario almacena un archivo en la nube, est\'a cediendo su informaci\'on de manera voluntaria a un tercero, que podr\'ia hacer mal uso de la misma. Éste tema se está volviendo cada vez más preocupante sobre todo para instituciones o empresas cuya  información puede ser sensible. Para proteger a los archivos que se almacenan en la nube, es posible utilizar mecanismos criptogr\'aficos.  La criptografía, es una ciencia que se encarga de ocultar información de tal forma que solamente aquellos usuarios autorizados puedan acceder a ella. \\
-
-Encontrar una soluci\'on para ambos problemas, es decir, evitar la duplicaci\'on y tener confidencialidad de la informaci\'on en la nube, no es trivial. Por un lado si se tiene la información en claro es relativamente fácil poder detectar que dos archivos son los mismos, ya que solo se compara bit a bit, pero si estos mismos archivos cada usuario cifra su archivo el resultado serian dos archivos diferentes por esto es que no es posible detectar archivos duplicados con este método. 
-
-%Este servicio de almacenamiento está sujeto a los ataques de adversarios que están interesados en el robo, manipulación o alteración de la información. Uno de los ataques que se han intentado realizar por dichos adversarios es el ataque por fuerza bruta, el cual es una forma de recuperar una clave probando todas las combinaciones posibles hasta encontrar aquella que permite el acceso al archivo. \\
 
 %\section{Justificación}
 
@@ -111,25 +101,29 @@ Encontrar una soluci\'on para ambos problemas, es decir, evitar la duplicaci\'on
 
 %Es por ello que este trabajo terminal tiene como principal meta atacar esta problemática de privacidad, proponiendo una arquitectura del sistema que a través de un servidor de llaves se generaran llaves de acuerdo al contenido del archivo, para con esta se pueda cifrar y luego almacenar en la nube donde se eludirá la duplicación de archivos. 
 
+
+
 \section{Propuesta de solución. }
 
-Como se mencionó anteriormente se tienen dos  problemas principales, uno es la confidencialidad de los archivos cuando se almacenan en la nube y el otro es la cantidad de archivos duplicados en la misma. Si se utilizara un algoritmo de cifrado est\'andar para combatir el problema de la confidencialidad, entonces  a cada usuario se le proporcionará una llave con la que puede cifrar y descifrar archivos, pero si dos usuarios cifran el mismo archivo daría como resultado dos archivos cifrados distintos, entonces al hacer la comparación de ambos archivos no habría forma de atacar el problema de la duplicación de archivos. En conclusi\'on se garantiza la privacidad de los archivos,  pero no es posible detectar duplicados.\\
+Como se mencionó anteriormente encontramos dos principales problemas, uno es la confidencialidad de los archivos cuando se almacenan en la nube y el otro es la cantidad de archivos duplicados en la misma. \\
 
-Una alternativa para solucionar ambos problemas es usar un protocolo de  {\it cifrado convergente}, donde la llave de cifrado se deriva del texto en claro, es decir, si dos usuarios poseen el mismo archivo, podr\'an obtener la misma llave de cifrado. Posteriormente se utiliza un cifrador por bloques para ocultar la informaci\'on. Aunque este mecanismo es mejor que el descrito previamente,  solamente es seguro si el espacio de mensajes es muy grande, es decir, si un mensaje es {\it impredecible}.  Por el contrario, si el espacio de mensajes es peque\~no, entonces un posible atacante puede probar con todos los posibles mensajes, determinar si ya est\'a almacenado en la nube y descubrir la 
-informaci\'on para un usuario espec\'ifico. 
+Para combatir el problema de la confidencialidad, proponemos el uso de la criptografía, a cada usuario se le proporcionará una llave con la que puede cifrar y descifrar archivos, pero no podemos usar criptografía de manera tan simple ya que si dos usuarios cifran el mismo archivo daría como resultado dos archivos cifrados distintos, entonces al hacer la comparación de ambos archivos no habría forma de atacar el problema de la duplicación de archivos. Así que nos encontramos con otro problema, pues evitamos que los archivos estén expuestos a adversarios, pero seguimos con el problema de archivos duplicados.\\
 
-Bellare, Keelveedhi y Ristenpart, propusieron  un protocolo denominado DupLESS~\cite{Bellare}, el cual ofrece una soluci\'on para el escenario descrito anteriomente, es decir, cuando el espacio de mensajes es pequ\~no.  Este protocolo combina varias herramientas criptográficas de tal forma que se pueda tener un control de las llaves relacionadas con los archivos y los usuarios sin comprometer el contenido e integridad de la información, de esta manera si dos usuarios quieren cifrar el mismo archivo obtendrán la misma llave. Por consiguiente, al cifrar los archivos obtendríamos como resultado el mismo archivo cifrado, esta vez al hacer la comparación se detectará la duplicación de archivos y únicamente se guardará una copia del archivo, ahorrando espacio de memoria y costos de infraestructura. \\
+ Por lo tanto, nos basaremos en el protocolo denominado DupLESS ~\cite{Bellare} el cual combina varias herramientas criptográficas de tal forma que se pueda tener un control de las llaves relacionadas con los archivos y los usuarios sin comprometer el contenido e integridad de la información, de esta manera si dos usuarios quieren cifrar el mismo archivo obtendrán la misma llave. Por consiguiente, al cifrar los archivos obtendríamos como resultado el mismo archivo cifrado, esta vez al hacer la comparación se detectará la duplicación de archivos y únicamente se guardará una copia del archivo, ahorrando espacio de memoria y costos de infraestructura. \\
 
-En el presente trabajo terminal, se implementar\'a el protocolo DupLESS, para garantizar la confidencialidad de la informaci\'on y detectar duplicados en la nube, considerando un 
-espacio de mensajes peque\~no. 
-
-
+Como se observa en la siguiente figura ~\ref{fig:1-3-1} varios usuarios realizan peticiones para subir archivos, pero se puede notar que algunos son iguales, por lo que pasan por un proceso de eliminación de duplicados antes descrito y finalmente se almacena una copia de cada uno. \\
 
 
 
 
 %La eliminación de duplicación de datos es una técnica que avanza favorablemente y da como resultado la disminución drástica de la cantidad de información duplicada en la nube, cuando esta se elimina del almacenamiento. En general, la eliminación de duplicados compara la información nueva que se requiere almacenar con la información que ya se tiene archivada y elimina las duplicaciones en la nube reduciendo la asignación de almacenamiento dentro de esta, esta disminución en la nube puede reducir las necesidades de almacenamiento en hasta un \textit{80\%} para archivos y copias de seguridad que los usuarios resguardan en la nube como se ilustra en la figura ~\ref{fig:1-3-1}. Las ventajas de no tener duplicados en la nube incluyen una mayor capacidad de almacenamiento y ahorro presupuestario, al igual que la minimización del ancho de banda para menos costosa y más rápida la repetición de la información fuera de la reserva simplificando y mejorando la gestión del almacenamiento de datos  ~\cite{rededup}. 
 
+\begin{figure}[H]
+\centering
+	\includegraphics[width=10cm, height=5cm]{./images/Deduplicacion.jpg}
+	\caption{Eliminación de Duplicados}
+	\label{fig:1-3-1}
+\end{figure}
 
 %Una posible solución para la protección a los datos y eliminación de duplicaciones, es echar mano de la criptografía. Ciencia que se encarga del estudio de técnicas para transformar la información a una forma que no pueda entenderse a simple vista; sin embargo, el objetivo de la Criptografía no es sólo mantener los datos secretos, sino también protegerlos contra la modificación o manipulación y comprobar la fuente de los mismos ~\cite{fundamentos}. \\   \\
 %Está ciencia que mantiene la información segura se encuentra dividida en dos grandes tipos: \textbf{Criptografía Simétrica} y \textbf{Criptografía Asimétrica}.  \\
@@ -146,7 +140,6 @@ espacio de mensajes peque\~no.
 
 
 \section{Objetivos. } % (fold)
-A continuaci\'on se describir\'an los objetivos que se pretende alcanzar, durante el desarrollo del presente trabajo terminal. 
 
     \subsection{Objetivo General.} % (fold)
     Desarrollar un protocolo criptográfico para evitar la duplicación de archivos almacenados en la nube, garantizando la privacidad de los usuarios contra adversarios cuando el espacio de mensajes es pequeño, utilizando algoritmos criptográficos para su implementación. 
@@ -161,18 +154,21 @@ A continuaci\'on se describir\'an los objetivos que se pretende alcanzar, durant
  	\end{itemize}
 
 \section{Organización del documento. }
-El resto del presente documento detalla el proceso de implementaci\'on del  protocolo criptogr\'afico DedupLESS y est\'a conformado como se describe a continuaci\'on
+
+El presente documento que detalla todo el proceso de creación de este protocolo criptográfico está conformado por 6 diferentes capítulos los cuáles son: 
+
 \begin{itemize}
-%	\item Capítulo 1 \textbf{Introducción} \\
-%                     En este capítulo se expone cuál es el contexto en el que este trabajo terminal se desarrollará, así mismo se describe cuá a sido la problemática detectada a partir del análisis del contexto en el cuál se desarrola la investigación y finalmente se muestran cuales son los objetivos tanto general como específicos de este trabajo terminal, es decir, cuál es la finalidad de éste protocolo criptográfico. 
+	\item Capítulo 1 \textbf{Introducción} \\
+                     En este capítulo se expone cuál es el contexto en el que este trabajo terminal se desarrollará, así mismo se describe cuá a sido la problemática detectada a partir del análisis del contexto en el cuál se desarrola la investigación y finalmente se muestran cuales son los objetivos tanto general como específicos de este trabajo terminal, es decir, cuál es la finalidad de éste protocolo criptográfico. 
+
 	\item Capítulo 2 \textbf{Marco Teórico} \\
 El contenido de este capítulo abordará temas estrechamente relacionados con la criptografía y la seguridad de la información. También, este capítulo contiene información acerca de los 2 tipos de criptografía que existen mencionando los diferentes esquemas de cifrado y los modos de operación que son utilizados por algunos de estos. De igual forma se describe con detalle los servicios que ofrece el cómputo nube. 
 
 	\item Capítulo 3 \textbf{Protocolos criptográficos para evitar duplicados} \\
-	Este cap\'itulo muestra una comparativa entre los distintos protocolos criptogr\'aficos que garantizan confidencialidad y la detecci\'on de duplicados.  También el capítulo contiene la explicación del protocolo criptográfico Dupless, el cuál provee de toda la investigación y posteriormente el desarrollo de este trabajo terminal.
+	Este capitulo muestra la comparativa realizada entre sistemas o prototipos, contedrá aquellos elementos en relación con la criptoggrafía. También el capítulo contiene la explicación del protocolo criptográfico Dupless, el cuál provee de toda la investigación y posteriormente el desarrollo de este trabajo terminal.
 
 	\item Capítulo 4 \textbf{Análisis} \\
-	Aqu\'i se describe  el análisis del protocolo criptográfico, el cuál se compone de la realización de un estudio de factibilidad y análisis de riesgos para la realización de este proyecto, asimismo se muestra cuál será la arquitectura de trabajo terminal, la descripción de todos los procesos que involucran la creación de este protocolo, el modelo de entidades que comprende diagrama entidad relación y el diagrama de clases para su implementación. Al final de este capítulo se podran encontrar los requerimientos de este protocolo criptográfico tanto funcionales como no funcionales y las reglas de negocio que lo componen.
+	Como otro capítulo más de este documento se encuentra el análisis del protocolo criptográfico, el cuál se compone de la realización de un estudio de factibilidad y análisis de riesgos para la realización de este proyecto, asimismo se muestra cuál será la arquitectura de trabajo terminal, la descripción de todos los procesos que involucrán la creación de este protocolo, el modelo de entidades que comprende diagrama entidad relación y el diagrama de clases para su implementación. Al final de este capítulo se podran encontrar los requerimientos de este protocolo criptográfico tanto funcionales como no funcionales y las reglas de negocio que lo componen.
 
 	\item Capítulo 5 \textbf{Diseño} \\
 	El capítulo de diseño tiene como contenido la especificación de la plataforma del protocolo, es decir, la especificación de recursos necesarios para poder llevar a cabo su implementación con las herramientas necesarias, y también todos los casos de usos que involucran el funcionamiento de dicho protocolo.

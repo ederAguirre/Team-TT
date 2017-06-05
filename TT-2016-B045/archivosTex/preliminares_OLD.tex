@@ -1,10 +1,6 @@
 %\chapter{Preliminares. } % (fold)
-\chapter{Marco Teórico}
-El contenido de este capítulo abordará temas estrechamente relacionados con la criptograf\'ia.  Se abordará información acerca de los 2 tipos de criptografía que existen, criptograf\'ia sim\'etrica y asim\'etrica. En el caso de la criptograf\'ia sim\'etrica se describir\'an dos primitivas criptogr\'aficas, los cifradores por bloque y las funciones hash. 
-Respecto a la criptograf\'ia asim\'etrica o de clave p\'ublica, se hablar\'a sobre el algoritmo de cifrado RSA, firmas digitales y firmas a ciegas, todas \'estas primitivas  juegan un papel fundamental para el funcionamiento de este proyecto. De igual forma se describe con detalle los servicios que ofrece el cómputo nube, haciendo énfasis en un servicio en particular que es el almacenamiento que se utilizará para la implementación de este protocolo criptográfico. 
-%Un tópico de gran importancia dentro de este protocolo son las funciones hash criptográficas, dichas funciones son mencionadas en este capítulo, al igual que las firmas digitales, firmas a ciegas y firmas digitales con RSA ya que estas j.  
 
-
+El contenido de este capítulo abordará temas estrechamente relacionados con la criptográfia, la seguridad de la información y las implicaciones que ésta podría traer si se encuentra corrompida por algún adversario. Se abordará información acerca de los 2 tipos de criptografía que existen, exlicando con detalle las características de los diferentes esquemas de cifrado y los modos de operación que son utilizados por algunos de estos. Un tópico de gran importancia dentro de este protocolo son las funciones hash criptográficas, dichas funciones son mencionadas en este capítulo, al igual que las firmas digitales, firmas a ciegas y firmas digitales con RSA ya que estas juegan un papel fundamental para el funcionamiento de este proyecto.  De igual forma se describe con detalle los servicios que ofrece el cómputo nube, haciendo énfasis en un servicio en particular que es el almacenamiento que se utilizará para la implementación de este protocolo criptográfico. 
 
 
 
@@ -129,42 +125,41 @@ RSA. \\
 \item Inicialmente es necesario generar aleatoriamente dos números primos grandes, a los que llamaremos \textit{p} y \textit{q}.
 \item A continuación calcularemos \textit{n} como producto de \textit{p} y \textit{q: n = p * q}
 \item Se calcula \textit{$ \phi : \phi (n)=(p-1)(q-1)$}
-\item Se elige al azar un entero $e$, tal que $mcd(e, \phi(n))=1$, es decir $e$ es 
-primo relativo con $\phi(n)$. 
-%\item Se calcula un número natural $e$ de manera que $mcd(e, \fi(n))=1$ , es decir $e$ debe ser primo relativo de $\phi(n)$. 
-\item  Se calcula $d$ tal que  $ed \bmod \phi (n)=1$. 
+\item Se calcula un número natural \textit{e} de manera que \textit{MCD(e, fi(n))=1} , es decir \textit{e} debe ser primo relativo de \textit{$\phi(n)$}.
+\item Mediante el algoritmo extendido de Euclides se calcula \textit{$d: e.d mod \phi (n)=1$} Puede calcularse \textit{$d=((Y* \phi (n))+1)/e$} para \textit{Y=1,2,3,…} hasta encontrar un \textit{d} entero.
 \item El par de números \textit{(e,n)} son la clave pública.
 \item El par de números \textit{(d,n)} son la clave privada.
 \end{itemize} 
-\textbf{Cifrado y descifrado.}
-Despu\'es de que un usuario tenga su par de llaves, ser\'a posible realizar las operaciones para cifrar y descifrar como se muestra a continuaci\'on
-% El cifrado y descifrado RSA se realiza en el campo de los numeros enteros \textit{Zn} y los cálculos modulares desempeñan un papel central. RSA cifra el texto en claro \textit{x}, donde consideramos que la cadena de bits que representa \textit{x} es un elemento en \textit{Zn = 0,1, ..., n-1} . Como consecuencia, el valor binario del texto en claro \textit{x} debe ser menor que \textit{n}. Lo mismo ocurre con el texto cifrado. El cifrado con la clave pública y el descifrado con la clave privada son los siguientes:
-
+\textbf{Cifrado y descifrado.} El cifrado y descifrado RSA se realiza en el campo de los numeros enteros \textit{Zn} y los cálculos modulares desempeñan un papel central. RSA cifra el texto en claro \textit{x}, donde consideramos que la cadena de bits que representa \textit{x} es un elemento en \textit{Zn = 0,1, ..., n-1} . Como consecuencia, el valor binario del texto en claro \textit{x} debe ser menor que \textit{n}. Lo mismo ocurre con el texto cifrado. El cifrado con la clave pública y el descifrado con la clave privada son los siguientes:
 
 \begin{itemize}
-\item Cifrado: la función de cifrado es $C = M^e \bmod n$.
+\item Cifrado: la función de cifrado es \textit{C = $M^{e}$ mod n}.
 
-\item Descifrado: la función de descifrado es $M = C^d \bmod n$.
+\item Descifrado: la función de descifrado es \textit{M = $C^{d}$ mod n}  ~\cite{paar}.
 \end{itemize} 
-\noindent
-{\bf Ejemplo.} El primer paso es calcular las llaves p\'ublica y privada. Si se consideran los primos  $p = 11$ y $q = 23$ entonces $n = 11 * 23 = 253$ y  $ \phi = ( 11 - 1 ) * ( 23 - 1 ) = 220 $.
-\noindent
-Si se escoge $e=3$, es f\'acil verificar que $mcd ( 220, 3 ) = 1$. En tanto que $d=147$ 
-que $3 * 147 \bmod 220 =1$.  Por lo tanto, la clave p\'ublica ser\'a  $(e,n) = (3,253)$ y 
-la clave privada  $(d,n) = (147,253)$.\\ 
-%donde: \textit{( 11 - 1 ) = 10}   y   \textit{( 22 - 1 ) = 22 }\\
 
-%\textit{e = 3} \\
-%
-%\textit{MCD ( 220, 3 ) = 1} \\
-%
-%\textit{d = inv (3, 220) = 147 } \\
+Ejemplo:\\
+
+\textbf{Calculamos las llaves: }\\
+
+Tomaremos los numeros:    \textit{p = 11} y \textit{q = 23}. \\ 
+
+\textit{n = 11 * 23 = 253} \\ 
+
+\textit{$ \phi = ( 11 - 1 ) * ( 23 - 1 ) = 220 $}\\
+
+donde: \textit{( 11 - 1 ) = 10}   y   \textit{( 22 - 1 ) = 22 }\\
+
+\textit{e = 3} \\
+
+\textit{MCD ( 220, 3 ) = 1} \\
+
+\textit{d = inv (3, 220) = 147 } \\
 
 
-%Clave pública:    \textit{ } \\
-%
-%Clave privada:   \textit { (d,n) = (147,253) } \\
-\noindent
+Clave pública:    \textit{ (e,n) = (3,253) } \\
+
+Clave privada:   \textit { (d,n) = (147,253) } \\
 
 \textbf{ Cifrado: }\\
 
@@ -203,7 +198,7 @@ Obtenemos el mensaje cifrado \textit{ C = 13 64 216 157 106 6 27 0 27} \\
 
 \textbf{Descifrado: } \\
 
-Tenemos el texto cifrado, \textit{ C = 13 64 216 157 106 6 27 0 27} \\
+Tenemos el texto cifrdo, \textit{ C = 13 64 216 157 106 6 27 0 27} \\
 
 \textit{$ 13^{147} \mod 253 = 18$} \\
 
@@ -223,7 +218,7 @@ Tenemos el texto cifrado, \textit{ C = 13 64 216 157 106 6 27 0 27} \\
 
 \textit{$ 27^{147} \mod 253 = 3$} \\
 
-Obtenemos el mensaje descifrado, \textit{ M = 18 4 6 20 17 8 3 0 3} \\
+Obtenemos el mensaje descifrdo, \textit{ M = 18 4 6 20 17 8 3 0 3} \\
 
 % https://cs.uns.edu.ar/~ldm/mypage/data/ss/info/ejemplo-rsa.pdf
 
@@ -232,7 +227,7 @@ Obtenemos el mensaje descifrado, \textit{ M = 18 4 6 20 17 8 3 0 3} \\
 \section{Firma digital}
 
 Una \textit{firma digital} es un mecanismo de autenticación que permite al creador de un mensaje fijar un código que actúa como una firma. La firma es formada tomando el hash del mensaje y cifrar el mensaje con clave privada del creador. La firma garantiza el origen y la integridad del mensaje ~\cite{modes}. \\
-El estándar de la firma digital \textit{(Digital Signature Standard)} es un estándar \textit{NIST (National Institute Standards of Technology) }que utiliza el algoritmo de hash seguro (SHA). El desarrollo más importante del trabajo sobre criptografía de clave pública es la firma digital. La firma digital proporciona un conjunto de capacidades de seguridad que sería difícil de aplicar en cualquier otra forma ~\cite{modes}. \\
+El estándar de la firma digital \textit{(Digital Signature Standard)} es un estándar NIST que utiliza el algoritmo de hash seguro (SHA). El desarrollo más importante del trabajo sobre criptografía de clave pública es la firma digital. La firma digital proporciona un conjunto de capacidades de seguridad que sería difícil de aplicar en cualquier otra forma ~\cite{modes}. \\
 La autenticación de mensajes protege dos partes que intercambian mensajes de terceros. Sin embargo, no protege a los dos partidos uno contra el otro. Varias formas de disputa entre los dos son posibles ~\cite{modes}. \\
 Los algoritmos de firma son los siguientes \textit{DSA}, \textit{ECDSA} y \textit{firmas basadas con RSA}.
 En situaciones donde no existe una completa confianza entre el emisor y el receptor, se necesita algo más que la autenticación. La solución más atractiva para este problema es la firma digital. La firma digital es análoga a la firma manuscrita. Debe tener las siguientes propiedades:
@@ -245,29 +240,27 @@ En situaciones donde no existe una completa confianza entre el emisor y el recep
 
 Así, la función de firma digital incluye la función de autenticación ~\cite{modes}.\\
 
-Bob quiere enviar un mensaje a Alice y ella quiere estar segura de que realmente el mensaje provenga de Bob, por lo tanto, Bob debe firmar el mensaje y para lograr este objetivo se realizan 3 procesos, el primero es el de generación de llaves donde Bob obtiene su par de llaves pública $(pk)$ y privada $(sk)$, en el segundo proceso Bob firma el mesnaje con la siguiente función: $ s = sig_{sk} (x) $ donde $s$ es el mensae firmado, $x$ es el mensaje y $sig$ es la función para firmar, Bob envía $pk$ y $s$ a Alice, el tercer proceso consiste en la verificación de la firma, Alice recibe los archivos de Bob y realiza las siguientes operaciones: $ ver_{pk} (x,s) = true/false $ donde $ver$ es la función para verificar ~\cite{paar}.\\
-
-%El esquema de firma digital es el siguiente:\\
+El esquema de firma digital es el siguiente:\\
 
 
-%\textbf{Bob}\\
-%\textit{Calcula sus llaves privada y pública.} \\
+\textbf{Bob}\\
+\textit{Calcula sus llaves privada y pública.} \\
 
-%\textit{$ sk = d $} clave privada.\\
+\textit{$ sk = d $} clave privada.\\
 
-%\textit{$ pk = (n, e) $} clave pública. \\
+\textit{$ pk = (n, e) $} clave pública. \\
 
-%\textit{Publica su llave pública.} \\
-%\textit{Firmar} \\
+\textit{Publica su llave pública.} \\
+\textit{Firmar} \\
 
-%\textit{$ s = sig_{sk} (x) $}\\
+\textit{$ s = sig_{sk} (x) $}\\
 
-%\textit{Envía el mensaje con la firma.} \\
+\textit{Envía el mensaje con la firma.} \\
 
-%\textbf{Alice}\\
-%\textit{Verificar} \\
+\textbf{Alice}\\
+\textit{Verificar} \\
 
-%\textit{$ ver_{pk} (x,s) = true/false $}  \\ 
+\textit{$ ver_{pk} (x,s) = true/false $}  ~\cite{paar}\\ 
 
 %==================================================================================================================================================================
 
@@ -278,7 +271,7 @@ El esquema de firma con RSA se basa en el cifrado RSA. Su seguridad se basa en l
 \textbf{Bob}\\
 \textit{Calcular las claves con RSA} \\
 
-$ sk = d$ clave privada.\\
+\textit{$ sk = d $} clave privada.\\
 
 \textit{$ pk = (n, e) $} clave pública. \\
 \textit{Firmar} \\
@@ -296,7 +289,7 @@ Si \textit{$ x ' \equiv x \mod n$} la firma es valida\\
 
 Si \textit{$ x ' \not\equiv x \mod n$} la firma es invalida\\ 
 
-Como puede verse en el protocolo, Bob calcula la firma s para un mensaje x que ha sido cifrado con RSA usando su $sk$ (clave privada). Bob es la única persona que puede tener la \textit{sk}, y por lo tanto la propiedad de $sk$ lo autentica como el autor del mensaje firmado. Bob agrega la firma $s$ al mensaje $x$ y envía ambos a Alice. Alice recibe el mensaje firmado y descifra con RSA usando la $pk$ (clave pública) de Bob, produciendo $x2$. Si $x$ y $x2$ coinciden, Alice sabe dos cosas importantes: Primero, el autor del mensaje estaba en posesión de la $sk$ de Bob, y si Bob hubiera tenido acceso a la $sk$, fue Bob quien firmó el mensaje. Esto se llama autenticación de mensajes. En segundo lugar, el mensaje no se ha cambiado durante el camino, por lo que se da la integridad del mensaje~\cite{paar}, por ejemplo.\\
+Como puede verse en el protocolo, Bob calcula la firma s para un mensaje x que ha sido cifrado con RSA usando su sk (clave privada). Bob es la única persona que puede tener la sk, y por lo tanto la propiedad de sk lo autentica como el autor del mensaje firmado. Bob agrega la firma s al mensaje x y envía ambos a Alice. Alice recibe el mensaje firmado y descifra con RSA usando la pk (clave pública) de Bob, produciendo x2. Si x y x2 coinciden, Alice sabe dos cosas importantes: Primero, el autor del mensaje estaba en posesión de la sk de Bob, y si Bob hubiera tenido acceso a la sk, fue Bob quien firmó el mensaje. Esto se llama autenticación de mensajes. En segundo lugar, el mensaje no se ha cambiado durante el camino, por lo que se da la integridad del mensaje~\cite{paar}, por ejemplo.\\
 
 \textbf{Bob}\\
 \textit{Calcular las claves con RSA} \\
@@ -342,87 +335,7 @@ Ahora bien, al dividir \textit{s(z)} entre \textit{b}, obtendremos \textit{s(m)}
 
 \textit{(m) = s(z)/b = (($m^{d}$ mod n) * b)/b = $m^{d}$ mod n} \\
 
-Al finalizar el protocolo, \textit{B} no conoce el mensaje m ni la frma asociada a él \textit{s(m)} que ahora posee \textit{A} ~\cite{ciegas}. \\
-
-A continuación se presenta un ejemplo.
-\begin{itemize}
-
-\item Alice quiere que Bob le firme un mensaje con un valor de $ m = 65 $\\
-
-\item Para ello conoce la llave pública de Bob con los valores de $ e = 7 $ y $ n = 299 $\\
-
-\item Alice calcula un factor de ocultamiento que cumpla que su $mcd$ sea igual con 1\\
-
-\item Para ello emplea el algoritmo de Euclides del cuál obtenemos lo siguiente:\\
-	\begin{itemize}
-
-	\item $ 299 = 60 * 4 + 59 $
-
-	\item $ 60 = 59 * 1 + 1 $
-
-	\item $ 59 = 1 * 59 + 0 $ \\
-
-	Recordemos que cuando el número a sumar sea 0 el resto anterior sera el maximo comun divisor de esos dos numeros, por lo tanto el factor de ocultamiento tiene un valor de $60$ \\
-	
-	\end{itemize}
-
-\item Alice emplea el algoritmo extendido de Euclides puede encontrar el inverso del factor de ocultamiento de la siguiente forma:
-	\begin{itemize}
-
-	\item $ 59 = 299 - 60(4) $
-
-	\item $ 1 = 60 -59(1) $
-
-	\item $ 1 = 60 - [ 299 - 60(4) ] $
-
-	\item $ 1 = 60(5) + 299(-1)  ->  1 = ax+ by $
-
-	\item $ a^{-1} \mod b = x   ->  60^{-1} \mod 299 = 5 $ \\
-
-	El inverso del factor de ocultamiento tiene un valor de $ 5 $.
-
-	\end{itemize}
- \item Una vez obtenido este resultado puede ocultar este mensaje y posteriormente se lo va a enviar a Bob
-
-	\begin{itemize}
-
-	\item $ z = (65 * 60^{7}) \mod 7 $
-
-	\item $ z = (65 * 226) \mod 7 $
-
-	\item $ z = 39 $
-
-	\end{itemize}
-
-\item Bob recibe el mensaje oculto, y lo cifrara con su llave privada que tiene un valor de $ 151 $
-
-	\begin{itemize}
-
-	\item $ s(z) = 39^{151} \mod 299 $
-
-	\item $ s(z) = 104 $
-
-	\end{itemize}
-
-\item Se lo envía a Alice, se podría decir que en este paso ha firmado ciegamente.
-
-\item Alice quita el factor de ocultamiento y ahora obtiene su documento firmado.
-
-	\begin{itemize}
-
-	\item $ S = ( 104 * 5 ) \mod 299 $
-
-	\item $ S = 221 $ \\
-
-	Este valor obtenido es el mismo que si Bob firmara un mesnaje con su llave privada.
-
-	\item $ 65^{151} \mod 299 = 221 $
-
-	\end{itemize}
-
-\end{itemize}
-
-%Firma a ciegas con RSA(Chaum)  YouTube
+Al finalizar el protocolo, \textit{B} no conoce el mensaje m ni la frma asociada a él \textit{s(m)} que ahora posee \textit{A} ~\cite{ciegas} \\
 
 %==================================================================================================================================================================
 
