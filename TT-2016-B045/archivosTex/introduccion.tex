@@ -70,24 +70,37 @@ Debido a los limitados recursos financieros y altos gastos de almacenamiento de 
 %Ahora bien, la información que circula en dispositivos electrónicos es mayor a la memoria disponible que ofrecen estos, a medida que el volumen de información aumenta, también lo hace la demanda para los servicios de almacenamiento en línea ~\cite{Bellare}. Un gran incremento en el uso de estos servicios implica tener más infraestructura y personal para que los sistemas de almacenamiento tengan más capacidad y puedan cubrir la demanda que se presenta en el mercado. Si bien el almacenamiento logró dar buenos resultados al cliente en sus primeras etapas, ahora la preocupación por el incremento de infraestructura para seguir dando esos resultados se ha incrementado considerablemente  ~\cite{Keelveedhi}.
 %\\ 
 
-Para entender un poco más acerca de la problemática a la que se enfrenta el almacenamiento en la nube,  en la figura ~\ref{fig:1-2-1} se puede apreciar un estudio realizado por EFE/Cisco, en el año 2014. En su cuarto informe anual Índice Global sobre la nube (2013-2018),  se puede observar c\'omo el almacenamiento se ha ido incrementado. \\
+Para entender un poco más acerca de la problemática a la que se enfrenta el almacenamiento en la nube,  en la figura ~\ref{fig:1-1-1} se puede apreciar un estudio realizado por EFE/Cisco, en el año 2014. En su cuarto informe anual Índice Global sobre la nube (2013-2018),  se puede observar c\'omo el almacenamiento se ha ido incrementado. \\
 
 \begin{figure}[H]
 \centering
 	\includegraphics[width=13cm, height=5cm]{./images/crecimientoNube.jpg}
 	\caption{Crecimiento global del tráfico en la nube}
-	\label{fig:1-2-1}
+	\label{fig:1-1-1}
 \end{figure}
 
-Una de las principales razones del incremento en el tamaño en la estructura de almacenamiento de servicios en línea es la duplicación de archivos, es decir, existen muchas copias en la nube de un mismo archivo que se encuentra presente en diferentes cuentas de usuarios. Un ejemplo: el usuario registrado e identificado dentro de la nube como \textit{Usuario A}, el día de hoy desea almacenar un archivo \textbf{Archivo F} que corresponde a la especificación de los requisitos para la obtención de una beca escolar. Este usuario para no extraviar o modificar el archivo lo almacena en la nube y ahí queda disponible para cuando él lo solicite. Ahora este usuario comparte este archivo mediante un dispositivo \textit{USB} a su amigo ya que este también desea conocer los requisitos para solicitar una beca escolar, este amigo el cuál es otro usuario registrado e identificado dentro de la nube como \textit{Usuario B} también quiere almacenar este archivo \textbf{Archivo F} en la nube, ya que requiere utilizar el espacio de memoria en su dispositivo \textit{USB} para otras actividades y no desea perder los requisitos para la solicitud de su beca escolar. Ahora en la nube se encuentran almacenados 2 copias del \textbf{Archivo F} por dos diferentes usuarios identificados como \textit{Usuario A} y \textit{Usuario B}, ambos almacenaron el mismo archivo en el mismo lugar, sin darse cuenta que ahora este archivo se encuentra duplicado en la nube. \\
+Una de las principales razones del incremento en el tamaño en la estructura de almacenamiento de servicios en línea es la duplicación de archivos, es decir, existen muchas copias en la nube de un mismo archivo que se encuentra presente en diferentes cuentas de usuarios, para ello presentamos el siguiente ejemplo ilustrado en la Figura ~\ref{fig:1-1-2}
 
-Sin embargo, en este escenario es f\'acil detectar los duplicados. Como se observa en la  Figura ~\ref{fig:1-3-1} varios usuarios realizan peticiones para subir archivos, pero se puede notar que algunos son iguales, por lo que pasan por un proceso de eliminación de duplicados antes descrito y finalmente se almacena una copia de cada uno. \\
+\begin{figure}[H]
+\centering
+	\includegraphics[width=15cm, height=7cm]{./images/duplicacion.jpg}
+	\caption{Duplicación de Archivos en la Nube}
+	\label{fig:1-1-2}
+\end{figure}
+
+
+El usuario registrado e identificado dentro de la nube como \textit{Usuario A}, el día de hoy desea almacenar un archivo \textbf{Archivo F} que corresponde a la especificación de los requisitos para la obtención de una beca escolar. Este usuario para no extraviar o modificar el archivo lo almacena en la nube y ahí queda disponible para cuando él lo solicite. Ahora este usuario comparte este archivo mediante un dispositivo \textit{USB} a su amigo ya que este también desea conocer los requisitos para solicitar una beca escolar, este amigo el cuál es otro usuario registrado e identificado dentro de la nube como \textit{Usuario B} también quiere almacenar este archivo \textbf{Archivo F} en la nube, ya que requiere utilizar el espacio de memoria en su dispositivo \textit{USB} para otras actividades y no desea perder los requisitos para la solicitud de su beca escolar. 
+
+
+Ahora en la nube se encuentran almacenados 2 copias del \textbf{Archivo F} por dos diferentes usuarios identificados como \textit{Usuario A} y \textit{Usuario B}, ambos almacenaron el mismo archivo en el mismo lugar, sin darse cuenta que ahora este archivo se encuentra duplicado en la nube. \\
+
+Sin embargo, en este escenario es f\'acil detectar los duplicados. Como se observa en la  Figura ~\ref{fig:1-1-3} varios usuarios realizan peticiones para subir archivos, pero se puede notar que algunos son iguales, por lo que pasan por un proceso de eliminación de duplicados antes descrito y finalmente se almacena una copia de cada uno. \\
 
 \begin{figure}[H]
 \centering
 	\includegraphics[width=10cm, height=5cm]{./images/Deduplicacion.jpg}
 	\caption{Eliminación de Duplicados}
-	\label{fig:1-3-1}
+	\label{fig:1-1-3}
 \end{figure}
 
 

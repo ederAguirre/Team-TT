@@ -23,15 +23,15 @@
 \BOOKMARK [2][-]{subsection.4.1.2}{Factibilidad operativa}{section.4.1}% 23
 \BOOKMARK [2][-]{subsection.4.1.3}{Facctibilidad econ\363mica}{section.4.1}% 24
 \BOOKMARK [2][-]{subsection.4.1.4}{An\341lisis de riesgos}{section.4.1}% 25
-\BOOKMARK [3][-]{section*.10}{Escalas de impacto de un riesgo}{subsection.4.1.4}% 26
+\BOOKMARK [3][-]{section*.11}{Escalas de impacto de un riesgo}{subsection.4.1.4}% 26
 \BOOKMARK [1][-]{section.4.2}{Arquitectura del sistema. }{chapter.4}% 27
 \BOOKMARK [1][-]{section.4.3}{Descripci\363n de procesos. }{chapter.4}% 28
 \BOOKMARK [2][-]{subsection.4.3.1}{Descripci\363n del proceso subir archivo.}{section.4.3}% 29
-\BOOKMARK [3][-]{section*.12}{Participantes}{subsection.4.3.1}% 30
+\BOOKMARK [3][-]{section*.13}{Participantes}{subsection.4.3.1}% 30
 \BOOKMARK [2][-]{subsection.4.3.2}{Descripci\363n del proceso Descargar archivo.}{section.4.3}% 31
-\BOOKMARK [3][-]{section*.14}{Participantes}{subsection.4.3.2}% 32
+\BOOKMARK [3][-]{section*.15}{Participantes}{subsection.4.3.2}% 32
 \BOOKMARK [2][-]{subsection.4.3.3}{Descripci\363n del proceso eliminar archivo.}{section.4.3}% 33
-\BOOKMARK [3][-]{section*.16}{Participantes}{subsection.4.3.3}% 34
+\BOOKMARK [3][-]{section*.17}{Participantes}{subsection.4.3.3}% 34
 \BOOKMARK [1][-]{section.4.4}{Modelo de entidades. }{chapter.4}% 35
 \BOOKMARK [2][-]{subsection.4.4.1}{Diagrama de Entidad Relaci\363n. }{section.4.4}% 36
 \BOOKMARK [2][-]{subsection.4.4.2}{Diagrama de clases. }{section.4.4}% 37
@@ -42,33 +42,33 @@
 \BOOKMARK [1][-]{section.5.1}{Especificaci\363n de Plataforma}{chapter.5}% 42
 \BOOKMARK [1][-]{section.5.2}{Casos de Uso}{chapter.5}% 43
 \BOOKMARK [2][-]{subsection.5.2.1}{CUSLL1 Generar las llaves del servidor de llaves}{section.5.2}% 44
-\BOOKMARK [3][-]{section*.25}{Descripci\363n completa}{subsection.5.2.1}% 45
-\BOOKMARK [3][-]{section*.26}{Atributos importantes}{subsection.5.2.1}% 46
-\BOOKMARK [3][-]{section*.27}{Trayectorias del Caso de Uso}{subsection.5.2.1}% 47
+\BOOKMARK [3][-]{section*.26}{Descripci\363n completa}{subsection.5.2.1}% 45
+\BOOKMARK [3][-]{section*.27}{Atributos importantes}{subsection.5.2.1}% 46
+\BOOKMARK [3][-]{section*.28}{Trayectorias del Caso de Uso}{subsection.5.2.1}% 47
 \BOOKMARK [2][-]{subsection.5.2.2}{CUSLL2 Generar firma ciega \(y\). }{section.5.2}% 48
-\BOOKMARK [3][-]{section*.28}{Descripci\363n completa}{subsection.5.2.2}% 49
-\BOOKMARK [3][-]{section*.29}{Atributos importantes}{subsection.5.2.2}% 50
-\BOOKMARK [3][-]{section*.30}{Trayectorias del Caso de Uso}{subsection.5.2.2}% 51
+\BOOKMARK [3][-]{section*.29}{Descripci\363n completa}{subsection.5.2.2}% 49
+\BOOKMARK [3][-]{section*.30}{Atributos importantes}{subsection.5.2.2}% 50
+\BOOKMARK [3][-]{section*.31}{Trayectorias del Caso de Uso}{subsection.5.2.2}% 51
 \BOOKMARK [2][-]{subsection.5.2.3}{CUCL1 Subir archivo}{section.5.2}% 52
-\BOOKMARK [3][-]{section*.31}{Descripci\363n completa}{subsection.5.2.3}% 53
-\BOOKMARK [3][-]{section*.32}{Atributos importantes}{subsection.5.2.3}% 54
-\BOOKMARK [3][-]{section*.33}{Trayectorias del Caso de Uso}{subsection.5.2.3}% 55
+\BOOKMARK [3][-]{section*.32}{Descripci\363n completa}{subsection.5.2.3}% 53
+\BOOKMARK [3][-]{section*.33}{Atributos importantes}{subsection.5.2.3}% 54
+\BOOKMARK [3][-]{section*.34}{Trayectorias del Caso de Uso}{subsection.5.2.3}% 55
 \BOOKMARK [2][-]{subsection.5.2.4}{CUCL3 Descargar archivos.}{section.5.2}% 56
-\BOOKMARK [3][-]{section*.34}{Descripci\363n completa}{subsection.5.2.4}% 57
-\BOOKMARK [3][-]{section*.35}{Atributos importantes}{subsection.5.2.4}% 58
-\BOOKMARK [3][-]{section*.36}{Trayectorias del Caso de Uso}{subsection.5.2.4}% 59
+\BOOKMARK [3][-]{section*.35}{Descripci\363n completa}{subsection.5.2.4}% 57
+\BOOKMARK [3][-]{section*.36}{Atributos importantes}{subsection.5.2.4}% 58
+\BOOKMARK [3][-]{section*.37}{Trayectorias del Caso de Uso}{subsection.5.2.4}% 59
 \BOOKMARK [2][-]{subsection.5.2.5}{CUCL4 Eliminar archivos cifrado.}{section.5.2}% 60
-\BOOKMARK [3][-]{section*.37}{Descripci\363n completa}{subsection.5.2.5}% 61
-\BOOKMARK [3][-]{section*.38}{Atributos importantes}{subsection.5.2.5}% 62
-\BOOKMARK [3][-]{section*.39}{Trayectorias del Caso de Uso}{subsection.5.2.5}% 63
+\BOOKMARK [3][-]{section*.38}{Descripci\363n completa}{subsection.5.2.5}% 61
+\BOOKMARK [3][-]{section*.39}{Atributos importantes}{subsection.5.2.5}% 62
+\BOOKMARK [3][-]{section*.40}{Trayectorias del Caso de Uso}{subsection.5.2.5}% 63
 \BOOKMARK [2][-]{subsection.5.2.6}{CUCL6 Iniciar Sesi\363n.}{section.5.2}% 64
-\BOOKMARK [3][-]{section*.40}{Descripci\363n completa}{subsection.5.2.6}% 65
-\BOOKMARK [3][-]{section*.41}{Atributos importantes}{subsection.5.2.6}% 66
-\BOOKMARK [3][-]{section*.42}{Trayectorias del Caso de Uso}{subsection.5.2.6}% 67
+\BOOKMARK [3][-]{section*.41}{Descripci\363n completa}{subsection.5.2.6}% 65
+\BOOKMARK [3][-]{section*.42}{Atributos importantes}{subsection.5.2.6}% 66
+\BOOKMARK [3][-]{section*.43}{Trayectorias del Caso de Uso}{subsection.5.2.6}% 67
 \BOOKMARK [2][-]{subsection.5.2.7}{CUCL7 Registrar usuario.}{section.5.2}% 68
-\BOOKMARK [3][-]{section*.43}{Descripci\363n completa}{subsection.5.2.7}% 69
-\BOOKMARK [3][-]{section*.44}{Atributos importantes}{subsection.5.2.7}% 70
-\BOOKMARK [3][-]{section*.45}{Trayectorias del Caso de Uso}{subsection.5.2.7}% 71
+\BOOKMARK [3][-]{section*.44}{Descripci\363n completa}{subsection.5.2.7}% 69
+\BOOKMARK [3][-]{section*.45}{Atributos importantes}{subsection.5.2.7}% 70
+\BOOKMARK [3][-]{section*.46}{Trayectorias del Caso de Uso}{subsection.5.2.7}% 71
 \BOOKMARK [1][-]{section.5.3}{Diagramas de secuencia}{chapter.5}% 72
 \BOOKMARK [2][-]{subsection.5.3.1}{Registrar Usuario}{section.5.3}% 73
 \BOOKMARK [2][-]{subsection.5.3.2}{Iniciar Sesi\363n}{section.5.3}% 74
