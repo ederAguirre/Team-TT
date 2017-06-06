@@ -2,23 +2,20 @@
 
 \bibitem{dupless}
 M.~Bellare, S.~Keelveedhi, and T.~Ristenpart.
-\newblock Dupless: Server-aided encryption for deduplicated storage.
+\newblock Dupless: Cifrado asistido por servidor para almacenamiento sin
+  duplicados.
 \newblock {\em {IACR} Cryptology ePrint Archive}, 2013:429, 2013.
 
 \bibitem{Keelveedhi}
 R.~Bellare, Keelveedhi.
-\newblock {\em Message-locked encryption and secure deduplication.}, volume
-  7881.
+\newblock {\em Cifrado por bloqueo de Mensajes y eliminación segura de
+  duplicados}, volume 7881.
 \newblock EUROCRYPT, 2013.
-
-\bibitem{Bellare}
-R.~Bellare, Keelveedhi.
-\newblock Dupless: Server-aided encryption for deduplicated storage., 2013:429.
 
 \bibitem{abs}
 T.~C. y. P.~A. Cooley~J.
-\newblock Abs: the apportioned backup system.
-\newblock MIT Laboratory for Computer, 2004.
+\newblock Abs: El sistema de respaldo asignado.
+\newblock MIT Laboratory for Computer, 2004. Disponible.
 
 \bibitem{menezes}
 A.~Menezes, P.~C. van Oorschot, and S.~A. Vanstone.
@@ -27,8 +24,8 @@ A.~Menezes, P.~C. van Oorschot, and S.~A. Vanstone.
 
 \bibitem{paar}
 C.~Paar and J.~Pelzl.
-\newblock {\em Understanding Cryptography - {A} Textbook for Students and
-  Practitioners}.
+\newblock {\em Entender la Criptografía - {A} Libro de texto para estudiantes
+  y practicantes}.
 \newblock Springer, 2010.
 
 \bibitem{ciegas}
@@ -40,15 +37,16 @@ G.~Z.~C. Patricia.
 
 \bibitem{donceur}
 D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
-\newblock {\em Reclaiming space from duplicate files in a serverless
-  distributed file system.}
+\newblock {\em Recuperación de espacio de archivos duplicados en un sistema de
+  archivos distribuido sin servidor.}
 \newblock ICDCS, 2002.
 
 \bibitem{sime}
-s/a.
+S/A.
 \newblock Cifrado simetrico.
-\newblock Guía de Gnu Privacy Guard, 2015.
-\newblock \url{https://www.gnupg.org/gph/es/manual/c190.html#AEN201}.
+\newblock \textit{Guía de Gnu Privacy Guard}, 2015.
+\newblock Disponible en:
+  \url{https://www.gnupg.org/gph/es/manual/c190.html#AEN201}.
 
 \bibitem{bloques}
 T.~O. Sergio.
@@ -57,36 +55,36 @@ T.~O. Sergio.
 
 \bibitem{sommerville}
 I.~Sommerville.
-\newblock {\em Software Engineering, 6. Auflage}.
+\newblock {\em Ingeniería de Software, 6. Auflage}.
 \newblock Pearson Studium, 2001.
 
 \bibitem{modes}
 W.~Stallings.
-\newblock {\em Cryptography and Network Security: Principles and Practice}.
+\newblock {\em Criptografía y Seguridad en la red: Principios y Práctica}.
 \newblock Pearson Education, 5a edition, 2002.
 
 \bibitem{stinson}
 D.~R. Stinson.
-\newblock {\em Cryptography - theory and practice}.
+\newblock {\em Criptografía, Teoría y Práctica}.
 \newblock Discrete mathematics and its applications series. {CRC} Press, 1995.
 
 \bibitem{tahoe}
 H.~D. y. W.~N. Wilcox-O´Hearn~Z.
-\newblock {\em Tahoe: The least-authority}.
+\newblock {\em Tahoe: La última autoridad}.
 \newblock In Proceedings of the 4th ACM, 2008.
 
 \bibitem{cripto}
 E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
-\newblock Fundamentos de criptografía.
+\newblock $"fundamentos de criptografía."$.
 \newblock Universidad Nacional Autónoma de México, 2012.
-\newblock
-  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-de-criptografia}.
+\newblock Disponible en:\url{
+  http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/11-concepto-de-criptografia}.
 
 \bibitem{ataques}
 E.~A.~M. y~M.C. Ma. Jaquelina López~Barrientos.
-\newblock Fundamentos de seguridad informática.
+\newblock $"fundamentos de seguridad informática."$.
 \newblock Universidad Nacional Autónoma de México, 2012.
-\newblock
-  \url{http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/14-ataques/142-ataques-a-los-metodos-de-cifrado}.
+\newblock Disponible en: \url{
+  http://redyseguridad.fi-p.unam.mx/proyectos/criptografia/criptografia/index.php/1-panorama-general/14-ataques/142-ataques-a-los-metodos-de-cifrado}.
 
 \end{thebibliography}

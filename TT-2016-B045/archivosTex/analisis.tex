@@ -2,10 +2,6 @@
 El capítulo de análisis dentro de este documento, contiene todo el proceso que corresponde a la etapa de análisis de la metodología en cascada. Dicho análisis comprende la presentación del estudio de factibilidad de este proyecto, factibilidad técnica, factibilidad operativa y económica, además de un análisis de riesgos posibles en la realización de este proyecto. Asimismo, se presenta la arquitectura que tendrá el protocolo criptográfico, la descripción de todos los procesos involucrados en el funcionamiento de este protocolo junto con los actores correspondientes a cada proceso. Como parte final de este capítulo, se encontrarán los requerimientos funcionales que este protocolo debe cubrir y de igual forma los requerimientos funcionales que estarán presentes dentro del proyecto. 
 
 
-
-
-
-
 \section{Estudio de Factibilidad}
 
 Como se expuso anteriormente, el protocolo criptográfico que se presenta en este trabajo terminal da como resultados grandes e importantes beneficios en cuanto a la optimización de espacio de memoria en la nube y garantiza la seguridad e integridad de los datos de usuarios registrados en la nube. Hasta ahora se tiene muy claro que este trabajo terminal, evitará la duplicación de archivos en la nube garantizando la integridad y confidencialidad tanto de los archivos almacenados como de los usuarios de la nube, pero aún queda por establecer cuán viable es la realización de este protocolo en cuanto a facilidades técnicas y operativas.
@@ -101,22 +97,59 @@ S.O. Windows 10 Pro & 1\\ \hline
 
 
 \subsection{Factibilidad operativa}
-El uso e implantación de este protocolo criptográfico, tiene como principal objetivo el eliminar las duplicaciones de archivos que se almacenan en la nube y de igual manera el evitar los ataques de adversarios por fuerza bruta a la información de los usuarios en la nube, por lo cual resulta factible la operación del proyecto, ya que se esta proponiendo una solución de bajo costo con grandes eneficios.
+El uso e implantación de este protocolo criptográfico, tiene como principal objetivo el eliminar las duplicaciones de archivos que se almacenan en la nube y de igual manera el evitar los ataques de adversarios por fuerza bruta a la información de los usuarios en la nube, por lo cual resulta factible la operación del proyecto, ya que se esta proponiendo una solución de bajo costo con grandes eneficios.\\
 Hoy en día va en aumento el número de usuarios de la nube, ya sean empresas, organizaciones, personas, etc. todos estos usuarios buscan su información rapido y de fácil acceso en cualquier lugar con una conexión a internet, y esto hace que también caumente la cantidad de información almacenada que en ocasiones está replicada en uno o mas usuarios.
 Este protocolo pretende atender al problema del crecimiento en la infraestructura de la nube ofreciendo una solución para contrarestarlo y de esa manera más usuarios podrán tener acceso a la nube sin necesidad de aumentar a la infraestructura de esta.
 
 \subsection{Factibilidad económica}
-El estudio de factibilidad económica nos permite analizar los costo - beneficios monetarios que se obtendrán con el desarrollo del proyecto, ya que dicho protocolo en un largo plazo podría comenzar en producción industrial para su comercialización y districución en el mercado de las tecnologías de la información, ya que proveerá de servicios en el cómputo nube que hoy en día las empresas están optando por invertir en el y optimizar sus recursos y procesos del negocio. 
+El estudio de factibilidad económica nos permite analizar los costo - beneficios monetarios que se obtendrán con el desarrollo del proyecto, ya que dicho protocolo en un largo plazo podría comenzar en producción industrial para su comercialización y districución en el mercado de las tecnologías de la información, ya que proveerá de servicios en el cómputo nube que hoy en día las empresas están optando por invertir en el y optimizar sus recursos y procesos del negocio. \\
 
 En cuanto al análisis de el gasto económico que se requiere para la implementación y la realización de pruebas del protocolo, existe un beneficio ya que todos los componentes para el desarrollo del sistema son libres, es decir que no se realizará la adquisición de licencias de desarrollo ni programas para la implementación. 
 \\ El servidor que nos proveerá del almacenamiento en la nube de nombre \textbf{ownCloud.org} es de libre acceso y no existe restricción alguna para la utilización de este. Nos permite una libre manipulación y configuración de tal modo que podamos cumplir nuestros objetivos.
 
+%%==================================================================================================================================
+\section{Modelo del Proceso de Desarrollo del Software}
 
-\subsection{Análisis de riesgos} 
+Para desarrollo de este trabajo terminal, se tomó como referencia el \textbf{Modelo de proceso de desarrollo en cascada con retroalimentación} ver Figura ~\ref{fig:4-5-1} . 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm, height=7cm]{./images/cascada.jpg}
+\caption{Modelo de proceso de desarrollo de software en Cascada con retroalimentación}
+\label{fig:4-5-1} 
+\end{figure} 
+
+Dicho modelo fué tomado como desarrollo para este protocolo ya que: 
+
+  \begin{itemize}
+	\item Es un modelo lineal con retroalimentación, por tanto es más fácil implementar dada la complejidad que involucra el desarrollo de este protocolo, ya que se puede retroceder a la etapa anterior para corregir errores y optimizar los procesos.
+	\item La cantidad de recursos que se necesitan para implementar este modelo en el protocolo es mínimo.
+	\item La documentación del protocolo se produce en cada etapa del desarrollo del modelo de cascada, y debido a que este modelo es con retroalimentación, hace que la comprensión y el desarrollo de este proyecto sea más fácil de implementar con un procedimiento sencillo.
+	\item Después de la etapa de codificación del protocolo, las pruebas se realizan para comprobar el correcto funcionamiento de éste.
+	\item Es menos probable que se presenten errores al momento de avanzar a la siguente etapa, ya que la fase posterior comienza hasta el término de la fase anterior inmediata ~\cite{sommerville}. 
+\end{itemize}
+
+Este modelo comprende 5 fases primordiales para el proceso del desarrollo de software, sin embargo en este trabajo terminal se hará enfásis en las fases 1 a 4, y este protocolo será presentado hasta la integración y primeras fases de funcionamiento, y la última fase de operación y mantenimiento se contempla después de un periodo de tiempo en el que el sistema se pone en producción .\\ \\
+Dichas fases son las siguientes: 
+
+\begin{enumerate}
+	\item \textbf{Análisis y definición de requerimientos.} Los servicios, restricciones y metas del sistema se definen a partir de las consultas con los usuarios. Entonces, se definen en detalle y sirven como una especificación del sistema.
+	\item \textbf{Diseño del sistema del software.} El proceso de diseño del sistema divide los requerimientos en sistemas hardware o software. Establece una arquitectura completa del sistema. El diseño del software identifica y describe las abstracciones fundamentales del sistema software y sus relaciones.
+	\item \textbf{Implementación y prueba de unidades.} Durante esta etapa, el diseño del software se lleva a cabo como un conjunto o unidades de programas. La prueba de unidades implica verificar que cada una cumpla su especificación. 
+	\item \textbf{Integración y pruebas del sistema.} Los programas o las unidades individuales de programas se integran y prueban como un sistema completo para asegurar que se cumplan los requerimientos del software. Después de las puebas, el sistema software se entrega al cliente. 
+	\item \textbf{Funcionamiento y mantenimiento.} Por lo general, esta fase es la más larga del ciclo de vida. El sistema se instala y se pone en funcionamiento práctico. El mantenimiento implica corregir errores no descubiertos en las etapas anteriores del ciclo de vida, mejorar la implementación de las unidades del sistema y resaltar los servicios del sistema una vez que se descubren nuevos requerimientos ~\cite{sommerville}. 
+
+\end{enumerate}
+
+
+
+
+%%==============================================================================================================================
+\section{Análisis de riesgos} 
 
 El análisis de riesgos consiste en identificar los riesgos que este sistema puede tener en su implementación y desarrollo. Este análisis realizado a este trabajo terminal, se llevó a cabo bajo la metodología de análisis de riesgos presentada por Ian Sommerville en el libro Ingeniería del software ~\cite{sommerville}, dicho autor presenta los posibles riesgos identificados en un sistema y 3 indicadores (Prioridad, Probabilidad e Impacto) fundamentales para llevar a cabo la gestión de riesgos y así tener presente cuales son los riesgos más destacados en el proyecto para dimensionar las consecuencias que estos podrían traer consigo si llegaran a ocurrir. Para elaborar este análisis de riesgos, se evaluaron los impactos que estos riesgos pueden traer, mediante 5 escalas de impacto de un riesgo, dichas escalas son: 
 
-\subsubsection{Escalas de impacto de un riesgo}
+\subsection{Escalas de impacto de un riesgo}
 \begin{longtable}{| p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.3cm} | p{2.5cm} | p{2.5cm} |}
 
 % aquí añadimos el encabezado de la primera hoja.
