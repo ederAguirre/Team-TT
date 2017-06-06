@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {4.1}Estudio de Factibilidad}{26}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Factibilidad t\IeC {\'e}cnica}{26}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Factibilidad operativa}{28}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Facctibilidad econ\IeC {\'o}mica}{29}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Factibilidad econ\IeC {\'o}mica}{29}{subsection.4.1.3}
 \contentsline {subsection}{\numberline {4.1.4}An\IeC {\'a}lisis de riesgos}{29}{subsection.4.1.4}
 \contentsline {subsubsection}{Escalas de impacto de un riesgo}{29}{section*.11}
 \contentsline {section}{\numberline {4.2}Arquitectura del sistema. }{33}{section.4.2}

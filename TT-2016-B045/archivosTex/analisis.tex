@@ -105,7 +105,7 @@ El uso e implantación de este protocolo criptográfico, tiene como principal ob
 Hoy en día va en aumento el número de usuarios de la nube, ya sean empresas, organizaciones, personas, etc. todos estos usuarios buscan su información rapido y de fácil acceso en cualquier lugar con una conexión a internet, y esto hace que también caumente la cantidad de información almacenada que en ocasiones está replicada en uno o mas usuarios.
 Este protocolo pretende atender al problema del crecimiento en la infraestructura de la nube ofreciendo una solución para contrarestarlo y de esa manera más usuarios podrán tener acceso a la nube sin necesidad de aumentar a la infraestructura de esta.
 
-\subsection{Facctibilidad económica}
+\subsection{Factibilidad económica}
 El estudio de factibilidad económica nos permite analizar los costo - beneficios monetarios que se obtendrán con el desarrollo del proyecto, ya que dicho protocolo en un largo plazo podría comenzar en producción industrial para su comercialización y districución en el mercado de las tecnologías de la información, ya que proveerá de servicios en el cómputo nube que hoy en día las empresas están optando por invertir en el y optimizar sus recursos y procesos del negocio. 
 
 En cuanto al análisis de el gasto económico que se requiere para la implementación y la realización de pruebas del protocolo, existe un beneficio ya que todos los componentes para el desarrollo del sistema son libres, es decir que no se realizará la adquisición de licencias de desarrollo ni programas para la implementación. 
@@ -117,7 +117,7 @@ En cuanto al análisis de el gasto económico que se requiere para la implementa
 El análisis de riesgos consiste en identificar los riesgos que este sistema puede tener en su implementación y desarrollo. Este análisis realizado a este trabajo terminal, se llevó a cabo bajo la metodología de análisis de riesgos presentada por Ian Sommerville en el libro Ingeniería del software ~\cite{sommerville}, dicho autor presenta los posibles riesgos identificados en un sistema y 3 indicadores (Prioridad, Probabilidad e Impacto) fundamentales para llevar a cabo la gestión de riesgos y así tener presente cuales son los riesgos más destacados en el proyecto para dimensionar las consecuencias que estos podrían traer consigo si llegaran a ocurrir. Para elaborar este análisis de riesgos, se evaluaron los impactos que estos riesgos pueden traer, mediante 5 escalas de impacto de un riesgo, dichas escalas son: 
 
 \subsubsection{Escalas de impacto de un riesgo}
-\begin{longtable}{| p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.7cm} |}
+\begin{longtable}{| p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.3cm} | p{2.5cm} | p{2.5cm} |}
 
 % aquí añadimos el encabezado de la primera hoja.
 \hline
@@ -150,7 +150,7 @@ El análisis de riesgos consiste en identificar los riesgos que este sistema pue
 \end{longtable}
 
 
-\begin{longtable}{| p{1cm} | p{4cm} | p{2cm} | p{2.5cm} | p{2cm} | p{4cm} |}
+\begin{longtable}{| p{1cm} | p{4cm} | p{2cm} | p{2.5cm} | p{2cm} | p{3.5cm} |}
 
 % aquí añadimos el encabezado de la primera hoja.
 \hline
@@ -239,66 +239,136 @@ R9 & Sobre estimación de insumos & Los insumos utilizados en el proyecto están
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=18cm, height=11cm]{./images/Arqui.jpg}
-\caption{Arquitectura general del sistema.}
+\includegraphics[width=17cm, height=10cm]{./images/Arqui.jpg}
+\caption{Arquitectura general del Protocolo}
 
 \end{figure}
+
+En este apartado se presenta la arquitectura general del protocolo criptográfico, dicha arquitectura tiene como base de desarrollo al protocolo Dupless que se menciona en este documento. Dupless provee a esta arquitectura la implementación de un servidor de llaves $KS$ para evitar los duplicados en la Nube garantizando la confidencialidad e integridad de toda la información almacenada por los usuarios del protocolo. Esta arquitectura se compone de 3 importantes entidades que son: 
+\begin{itemize}
+	\item \textbf{Servidor de Llaves $KS$: } Dicha entidad será la responsable de proveer firmas para generar claves específicas para cifrar cada archivo diferente $M$ a almacenar por un usuario en la Nube.
+	\item \textbf{Cliente: } Esta entidad corresponde al lado del usuario, el cuál almacenará, descargará y consultará archivos en la Nube, además de realizar procedimientos necesarios para la gestión de un archivo $M$. 
+	\item \textbf{La Nube: } La entidad Nube, es el almacenamiento en línea en el cuál se estarán gestionando archivos por diferentes usuarios que tienen acceso a este servicio. De igual manera, esta entidad será la encargada de detectar los duplicados generados por usuarios.
+\end{itemize}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=16cm, height=11cm]{./images/Paso01.jpg}
-\caption{Arquitectura del sistema paso 1.}
+\includegraphics[width=15cm, height=8cm]{./images/Paso01.jpg}
+\caption{Arquitectura del Protocolo paso 1.}
 
 \end{figure}
+\begin{itemize}
+	\item \textbf{Generación de claves de Usuario: } El protocolo genera al usuario a través del algoritmo de clave pública RSA un par de claves: \textit{pública} $(pk)$ y \textit{privada} $(sk)$ las cuales serán almacenadas en un certificado digital para su uso posterior. Dicha generación se realiza cuando un usuario se registra por primera vez al protocolo criptográfico. Estas claves servirán a dicho usuario para poder realizar cualquier procedimiento de gestión de archivos en la Nube. 
+	\item \textbf{Generación de claves del Servidor $KS$: } El protocolo genera al servidor de llaves su propio par de claves, una \textit{pública} \textit{(e)} que puede distribuirse libremente entre varios usuarios y una \textit{privada} \textit{(d)}que permanece sólo en el servidor de llaves. Dichas claves son generadas a través del algoritmo de clave pública RSA. 
+	\item Posteriormente, cuando el usuario desea  almacenar un archivo $M$ en la nube comienza un proceso el cuál se muestra a continuación: 
+		\begin{enumerate}
+			\item El protocolo obtiene del servidor $KS$ la clave pública \textit{e} y se realiza una comparación con \textit{e $\leq$ N}, $N$ fue el producto de los 2 números primos utilizados en la generación de llaves del servidor. Si la comparación no se cumple, el protocolo envía un error.
+			\item Se elige un número entero aleatorio, tal que $r<N$.
+			\item El usuario genera la función hash $H(M)$ del archivo $M$ 
+			\item El cliente realiza la operación \textit{x ← h $\cdot$ r$^e$ $\bmod$ N}, ya que así se mantiene oculto el mensaje que firmará el servidor. 
+			\item La $x$ obtenida de la operación anterior, es enviada al servidor $KS$ para realizar la firma a ciegas.
+		\end{enumerate}
+\end{itemize}
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm, height=13cm]{./images/Paso02.jpg}
-\caption{Arquitectura del sistema paso 2.}
+\caption{Arquitectura del Protocolo paso 2.}
 
 \end{figure}
+
+El cliente envía al servidor $KS$ el archivo $x$ que se requiere firmar para continuar con el proceso de almacenameitno de archivo.\\ \\
+El servidor recibe a \textit{x} que corresponde a la función hash del archivo $M$. Para poder realizar la firma, es necesario que el servidor realice una operación con su llave privada $d$. Dicha firma es a ciegas ya que el servidor no conoce el contenido del archivo $M$ ni el usuario que esta solicitando dicha firma. \\ \\
+El proceso se puede representar de la siguiente manera: \hspace{2cm} \textit{y ← x$^d$ $\bmod$ N} \\ \\
+Posteriormete, el servidor envía al cliente la firma obtenida $y$
+
+
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm, height=10cm]{./images/Paso03.jpg}
-\caption{Arquitectura del sistema paso 3.}
-
+\caption{Arquitectura del Protocolo paso 3.}
 \end{figure}
+
+Ahora que el cliente recibió la firma $y$ generada por el servidor $KS$ puede continuar con el proceso de almacenamiento de archivo. \\ \\
+Lo que hace el cliente es obtener el valor de $z$, y se lleva a cabo de la siguiente manera: \hspace{2cm} \textit{z ← y $\cdot$ r$^{-1}$ $\bmod$ N}.  
+
+
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm, height=10cm]{./images/Paso3_5.jpg}
-\caption{Arquitectura del sistema paso 4.}
+\caption{Arquitectura del Protocolo paso 4.}
 
 \end{figure}
+
+Para continuar con el almacenamiento de un archivo $M$, es necesario realizar una verificación de la procedencia de la firma realizada en el servidor $KS$. En este paso se corrobora la firma, es decir, verifica que efectivamente sea el servidor de llaves $KS$ la entidad que realizo la firma a ciegas al archivo $M$ que el cliente estaba solicitando. También en este paso se asegura que el archivo firmado por el servidor $KS$ sea el que el cliente envió para su solicitud de almacenamiento. \\ \\
+La verificación se lleva a cabo de la siguiente manera: 
+\begin{itemize}
+\item Se realiza la operación $z^e \bmod N $, para eliminar el factor de ocultamiento realizado por el cliente. Así se comprueba que la misma función hash generada en el cliente es igual a la que estaba bajo el factor de ocultamiento, si estas son iguales entonces se verifica que efectivamente el servidor $KS$ fue el responsable de la firma $y$ obtenida. 
+\item Si se realiza la operación \textit{z $^e$ $\bmod$ N} y el resultado en la comparación de las funciones hash no es el mismo, entonces el servidor no llevó a cabo correctamente el proceso de firmado.
+
+\end{itemize}
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm, height=11cm]{./images/Paso04.jpg}
-\caption{Arquitectura del sistema paso 5.}
+\caption{Arquitectura del Protocolo paso 5.}
 
 \end{figure}
+
+Para continuar, el cliente ya verificó la procedencia de la firma y obtuvo la clave $z$ que será la utilizada para llevar a cabo el proceso de cifrado. \\ \\
+En este paso, el cliente se encarga del cifrado llamado $C1$ del archivo original $M$ junto con la clave generada $z$ a través del proceso entre el cliente y el servidor $KS$. De igual manera, realiza el cifrado llamado $C2$ de la clave $z$ junto con la clave privada $pk$ del usuario que desea almacenar un archivo. Dichas operaciones se representan de la sigueinte manera: 
+
+\begin{itemize}
+	\item $C1$ ← $E_{z}(M)$
+	\item $C2$ ← $E_{pk}(z)$
+\end{itemize}
+
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm, height=13cm]{./images/Paso05.jpg}
-\caption{Arquitectura del sistema paso 6.}
+\caption{Arquitectura del Protocolo paso 6.}
 
 \end{figure}
+
+El siguiente paso es realizar una función hash al archivo cifrado que se obtuvo en el paso anterior.\\ \\ 
+
+Dicha función hash $H(C1)$ corresponde al cifrado del archivo $M$, con esta función se obtiene un identificador del archivo $M$, el cuál servirá para detectar los posibles duplicados del archivo $M$ en la Nube.
+
+\begin{itemize}
+	\item Si dicho identificador se encuentra ya almacenado en la Nube: Se procede al almacenamiento del cifrado $C2$ correspondiente a la clave privada del usuario que llevó a cabo todo el proceso, actualizando y asociando la lista de archivos que ahora el usuario tiene registrados en la Nube.
+	\item Si el identificador no se encontró en el almacenamiento de la Nube: Se procede a almacenar el cifrado $C1$ y cifrado $C2$, actualizando y asociando la lista de archivos que ahora el usuario tiene registrados en la Nube.
+\end{itemize}
+
+
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm, height=10cm]{./images/Paso06.jpg}
-\caption{Arquitectura del sistema paso 7.}
+\caption{Arquitectura del Protocolo paso 7.}
 
 \end{figure}
+
+En este caso de la detección de duplicados, se encontró una copia almacenada del archivo $M$ por lo que sólo se almacena el cifrado $C2$ correspondiente a la clave privada del usuario que llevó a cabo todo el proceso y se actualiza la lista de archivos que ahora el usuario tiene registrados en la Nube.
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=16cm, height=10cm]{./images/Paso07.jpg}
-\caption{Arquitectura del sistema paso 8.}
+\caption{Arquitectura del Protocolo paso 8.}
 
 \end{figure}
+
+
+En este caso de la detección de duplicados, no se encontró ninguna almacenada del archivo $M$ por lo que se almacena el cifrado $C1$ y el cifrado $C2$  y se actualiza la lista de archivos que ahora el usuario tiene registrados en la Nube.\\ \\
 
 %=============================================================================================================================================================
 \section{Descripción de procesos. }
