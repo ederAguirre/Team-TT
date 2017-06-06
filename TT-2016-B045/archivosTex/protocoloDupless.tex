@@ -65,66 +65,69 @@ Los proveedores de servicios de almacenamiento en la nube como lo son: Dropbox, 
 \end{figure}
 
 
-Sin embargo, si los clientes cifran convencionalmente sus archivos es decir usando la criptografía estándar (Simétrica y Asimétrica), se pierde ese ahorro de espacio. El cifrado de archivos con bloqueo de mensajes (Cifrado convergente) en adelante \textit{CE}) resuelve esta problemática. Sin embargo, está inherentemente sujeto a ataques de fuerza bruta que pueden recuperar archivos que caen en un conjunto conocido.\\
+Ahora bien, si los clientes cifran convencionalmente sus archivos es decir usando la criptografía estándar (Simétrica y Asimétrica), se pierde ese ahorro de espacio. El cifrado convergente en adelante (\textit{CE}) resuelve esta problemática. Sin embargo, está inherentemente sujeto a ataques de fuerza bruta.\\
 
-El protocolo criptográfico \textit{Dupless} propone una arquitectura que proporciona almacenamiento sin duplicados, seguro y resistente a ataques por fuerza bruta. En DupLESS, los clientes cifran sus archivos con claves basadas en mensajes obtenidos
-desde un servidor de llaves a través de una función llamada \textit{OPRF[(Oblivious Pseudorandom Function) Función Pseudoaleatoria de Poca Memoria] } para la comunicación entre el usuario . Esto permite a los clientes almacenar datos cifrados con un servicio existente, y que este servicio realice la eliminación de duplicados en su nombre garantizando la confidencialidad. Dupless demuestra que el cifrado para el almacenamiento sin duplicados puede lograr ahorros de rendimiento y espacio cerca de utilizar el servicio de almacenamiento con datos de texto sin formato ~\cite{dupless}. \\
+El protocolo criptográfico \textit{DupLESS} contiene una arquitectura que proporciona almacenamiento sin duplicados, seguro y resistente a ataques por fuerza bruta. En DupLESS, los clientes cifran sus archivos con claves basadas en mensajes, obtenidos
+desde un servidor de llaves a través de una función llamada \textit{OPRF[(Oblivious Pseudorandom Function) Función Pseudoaleatoria de Poca Memoria] }. Esto permite a los clientes almacenar datos cifrados en na servicio de almacenamiento, y en este servicio se realiza la eliminación de archivos duplicados garantizando la confidencialidad del cliente. Dupless demuestra que el cifrado para el almacenamiento sin duplicados puede lograr ahorros de rendimiento y espacio ~\cite{dupless}. \\
 
 
 
-\textbf{Diseño} \\
+%\textbf{Diseño} \\
 
-El protocolo criptográfico para la eliminación de duplicados DupLESS, está diseñado para proporcionar una solución para evitar ataques por fuerza bruta. En DupLESS, los usuarios cifran sus archivos con la ayuda de un servidor de claves en adelante \textit{(KS)} que está separado del servicio de almacenamiento en línea en adelante \textit{Nube}. Los usuarios se autentican en el $KS$, pero no pierden la información sobre sus datos. Mientras que el $KS$ permanezca inaccesible para los atacantes, el protocolo puede garantizar una alta seguridad de la información. Si en algún momento el $KS$ y la Nube están comprometidos, Dupless conserva la actual garantía $MLE[(Message Locked Encryption) Cifrado por Bloqueo de Mensaje]$ de seguridad para mensajes que no se pueden anunciar.\\ 
+%El protocolo criptográfico para la eliminación de duplicados DupLESS, está diseñado para proporcionar una solución para evitar ataques por fuerza bruta. En DupLESS, los usuarios cifran sus archivos con la ayuda de un servidor de claves en adelante \textit{(KS)} que está separado del servicio de almacenamiento en línea en adelante \textit{Nube}. Los usuarios se autentican en el $KS$, pero no pierden la información sobre sus datos. Mientras que el $KS$ permanezca inaccesible para los atacantes, el protocolo puede garantizar una alta seguridad de la información. Si en algún momento el $KS$ y la Nube están comprometidos, Dupless conserva la actual garantía $MLE[(Message Locked Encryption) Cifrado por Bloqueo de Mensaje]$ de seguridad para mensajes que no se pueden anunciar.\\ 
 
-Dupless está diseñado para implementarse de forma transparente con los sistemas en la Nube que hasta ahora se encuentran en funcionamiento como son Amazon, Dropbox, Google Drive, etc., por lo que DupLESS funciona como una capa sobre las interfaces de los sistemas en la Nube mencionados. Esto también significa que DupLESS pretende ser lo más compatible posible con los comandos existentes en las API's de estos sistemas en la Nube existentes, para que así Dupless no tenga ningún conocimiento sobre los sistemas que implementan estas API's, y logre dar un rendimiento muy cercano al de usar la Nube sin ningún cifrado obteniendo el mismo nivel de disponibilidad que hasta ahora estos sistemas proporcionan. \\
+%Dupless está diseñado para implementarse de forma transparente con los sistemas en la Nube que hasta ahora se encuentran en funcionamiento como son Amazon, Dropbox, Google Drive, etc., por lo que DupLESS funciona como una capa sobre las interfaces de los sistemas en la Nube mencionados. Esto también significa que DupLESS pretende ser lo más compatible posible con los comandos existentes en las API's de estos sistemas en la Nube existentes, para que así Dupless no tenga ningún conocimiento sobre los sistemas que implementan estas API's, y logre dar un rendimiento muy cercano al de usar la Nube sin ningún cifrado obteniendo el mismo nivel de disponibilidad que hasta ahora estos sistemas proporcionan. \\
 
 
 \textbf{Funcionamiento}\\
 
-DupLESS contempla que un ataque por fuerza bruta a un texto cifrado dentro de un esquema de tipo CE puede tratarse utilizando un servidor de llaves $KS$ para derivar llaves a partir de un archivo, en lugar de establecer llaves con funciones hash de los archivos. Para poder acceder al KS, se debe de realizar el procedimiento de autenticación a los usuarios del protocolo, esto detiene a los atacantes externos. El aumento de los costos a los ataques, disminuye los ataques por fuerza bruta hacia los usuarios comprometidos y ahora el $KS$ puede funcionar como un único punto de control para implementar medidas de limitación de velocidad. \\
+DupLESS contempla que un ataque por fuerza bruta a un texto cifrado dentro de un esquema de tipo CE puede tratarse utilizando un servidor de llaves $KS$ para derivar llaves a partir de un archivo, en lugar de establecer llaves con funciones hash de los archivos. Para poder acceder al $KS$, se debe de realizar el procedimiento de autenticación a los usuarios, esto detiene a los atacantes externos. El aumento de los costos a los ataques, disminuye los ataques por fuerza bruta hacia los usuarios.\\
 
-Para poder implementar un esquema seguro y que evite la duplicación de archivos, Dupless crea un servidor de llaves $KS$ el cuál proveerá de llaves para el cifrado de un archivo, dicho servidor se comunica con el cliente a través de un protocolo llamado $OPRF$, este protocolo proveerá de algoritmos para la autenticación de usuarios y el cifrado convergente de los archivos que se van a almacenar, dicho protocolo funciona de la siguiente manera: \\ 
+%Para poder implementar un esquema seguro y que evite la duplicación de archivos, Dupless crea un servidor de llaves $KS$ el cuál proveerá de llaves para el cifrado de un archivo, dicho servidor se comunica con el cliente a través de un protocolo llamado $OPRF$, este protocolo proveerá de algoritmos para la autenticación de usuarios y el cifrado convergente de los archivos que se van a almacenar, dicho protocolo funciona de la siguiente manera: \\ 
 
-Un esquema que consta de cinco algoritmos (Kg, EvC, EvS, Vf, Ev), los últimos dos deterministas: 
+DupLESS implementa un esquema que consta de cinco algoritmos (Kg, EvC, EvS, Vf, Ev), los últimos dos deterministas: 
 
 \begin{itemize}
 \item \textit{Generación de claves Kg: } \\
-(pk, sk) \$ ← Kg. Este algoritmo genera una llave pública \textit{pk= (e,n)} que puede distribuirse libremente entre varios usuarios, y una clave privada \textit{sk = (d,n)} que permanece sólo en el servidor de llaves. Dichas claves serán parte del servidor, son generadas a través del algoritmo de clave pública RSA.
 
+$(pk, sk) \stackrel{ \$ }{\longleftarrow} Kg$. 
+
+Este algoritmo genera una llave pública \textit{pk= (e,n)} que puede distribuirse libremente entre varios usuarios, y una clave privada \textit{sk = (d,n)} que permanece sólo en el servidor de llaves. Estas llaves son generadas utilizando el algoritmo de RSA.
 
 \item \textit{EvC: }\\ 
 La evaluación de este protocolo comienza del lado del cliente: 
 \begin {enumerate}
 \item Se obtiene del servidor la clave pública \textit{e} y se realiza una comparación con \textit{e $\leq$ N}, $N$ fue el producto de 2 números primos utilizado en la generación de llaves del servidor. Si la comparación no se cumple, el protocolo envía un error.
-\item Se elige un número aleatorio entero $r<N$.
+\item Se elige un número aleatorio entero $r \stackrel{ \$ }{\longleftarrow} Z_{N}$.
 \item Se realiza una función hash al archivo que se desea almacenar en Nube, es decir \textit{h ← H(M)} 
 \item Ahora se multiplica la función hash del mensaje $M$ por el número aleatorio elevado a la llave pública del servidor (\textit{r$^e$}) y se almacena en \textbf{x}, es decir \textit{x ← h $\cdot$ r$^e$ $\bmod$ N}
-\item Esta \textbf{x} es enviada al servidor de llaves, en donde será firmada por éste sin saber su contenido ni procedencia, es decir realizar una firma a ciegas del mensaje a cargar.
-\item La firma realizada por el servidor es recibida en el cliente y se realiza la siguiente operación \hspace{2cm} \textit{z ← y $\cdot$ r$^{-1}$ $\bmod$ N}
+\item Esta \textbf{x} es enviada al servidor de llaves, en donde será firmada por éste sin saber su contenido ni procedencia, es decir realizará una firma a ciegas del mensaje.
+\item La firma realizada por el servidor es recibida en el cliente y se realiza la siguiente operación \hspace{2cm} \textit{z ← y $\cdot$ r$^{-1}$ $\bmod$ N} donde $z$ es la llave con la cual se cifrará el mensaje.
 
 
 \end{enumerate}
 \item \textit{EvS: }\\ 
-Del lado del servidor, se recibe la entrada \textit{x} que corresponde a la función hash del archivo enviada por el lado del cliente. El servidor sólo realiza una operación la cuál es la firma con la llave privada del servidor. Dicha firma es a ciegas ya que el servidor no conoce el contenido del archivo ni la procedencia de quien lo esta enviando. Dicha firma se realiza de la siguiente manera: \hspace{2cm} \textit{y ← x$^d$ $\bmod$ N}
+Del lado del servidor, se recibe la entrada \textit{x} que corresponde al factor de ocultamiento del archivo enviada por el lado del cliente. El servidor sólo realiza una operación la cuál es la firma con la llave privada del servidor. Dicha firma es a ciegas ya que el servidor no conoce el contenido del archivo ni la procedencia de quien lo está enviando. Dicha firma se realiza de la siguiente manera: \hspace{2cm} \textit{y ← x$^d$ $\bmod$ N}
 
 
 \item \textit{Vf: }\\
 
-Este algoritmo de verificación se encarga de corroborar la firma realizada por el servidor, es decir, verifica que efectivamente sea el servidor de llaves $KS$ la entidad que realizo la firma a ciegas que el cliente estaba solicitando. Además de que también este algoritmo asegura que el archivo firmado por el servidor $KS$ sea el que el cliente envió para su solicitud de almacenamiento. 
+Este algoritmo de verificación se encarga de corroborar la firma realizada por el servidor, es decir, verifica que efectivamente sea el servidor de llaves $KS$ la entidad que realizó la firma a ciegas que el cliente estaba solicitando. Además, este algoritmo asegura que el archivo firmado por el servidor $KS$ sea el que el cliente envió. 
 Dicho algoritmo opera de la siguiente manera: 
 \begin{itemize}
-\item Realiza la operación $z^e \bmod N $. Dicha operación se realiza para eliminar el factor de ocultamiento realizado por el cliente. De esta manera se puede llegar hasta la comprobación de la misma función hash generada en el cliente, si ésta es igual a la que estaba bajo el factor de ocultamiento, el algoritmo comprueba que el $KS$ firmó correctamente y envía un 1. 
-\item Si el algoritmo realizó la operación \textit{z $^e$ $\bmod$ N} y el resultado en la comparación de las funciones hash no es el mismo, entonces el servidor no llevó a cabo correctamente el proceso de firmado y arroja un error 0. 
+\item Realiza la operación $z^e \bmod N $. Dicha operación se realiza para eliminar el factor de ocultamiento realizado por el cliente. De esta manera se puede llegar hasta la comprobación de la misma función hash generada en el cliente, si ésta es igual a la que estaba bajo el factor de ocultamiento, el algoritmo comprueba que el $KS$ firmó correctamente. 
+\item Si el algoritmo realizó la operación \textit{z $^e$ $\bmod$ N} y el resultado en la comparación de las funciones hash no es el mismo, entonces el servidor no llevó a cabo correctamente el proceso de firmado y arroja un error. 
 
 \end{itemize}
 
 \item \textit{Ev: }\\
-Como último algoritmo se encuentra Ev, dicho algoritmo se encarga del proceso de cifrado $C1$ del archivo original $M$ junto con la clave generada $z$ a través del proceso entre el cliente y el servidor $KS$. También realiza el cifrado $C2$ de la clave $z$ junto con la clave privada del usuario que desea almacenar un archivo. Dichas operaciones son las siguientes: 
+Como último algoritmo se encuentra $Ev$, dicho algoritmo se encarga del proceso de cifrado $C1$ del archivo original $M$ junto con la clave generada $z$ a través del proceso entre el cliente y el servidor $KS$. También realiza el cifrado $C2$ de la clave $z$ junto con la clave pública del usuario que desea almacenar un archivo. Dichas operaciones son las siguientes: 
 
 \begin{itemize}
 \item C1 ← $E_{z}(M)$
 \item C2 ← $E_{pk}(z)$
 \end{itemize}
+
 
 
 \end{itemize}
