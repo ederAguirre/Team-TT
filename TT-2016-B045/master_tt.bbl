@@ -38,6 +38,12 @@ G.~Z.~C. Patricia.
 \newblock Master's thesis, Centro de Investigación y de Estudios Avanzados del
   Instituto Politécnico Nacional, 2005.
 
+\bibitem{donceur}
+D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
+\newblock {\em Reclaiming space from duplicate files in a serverless
+  distributed file system.}
+\newblock ICDCS, 2002.
+
 \bibitem{sime}
 s/a.
 \newblock Cifrado simetrico.

@@ -9,9 +9,11 @@ En este capítulo se pretende establecer mediante un análisis, la comparativa r
 
 \section{Estado del Arte. }
 
-Una solución para tener privacidad y evitar duplicación la proporcionó John R. Douceur, la cual dice que teniendo a M que será el contenido de un archivo de aquí en adelante denominado el mensaje, el cliente primero calcula una clave K ← H(M) mediante la aplicación de una función de hash criptográfica H al mensaje y luego calcula el texto cifrado C ← E(K, M) a través de un esquema de cifrado simétrico determinista. El derivado del mensaje K se almacena por separado cifrándolo con una llave por cliente. Un segundo cliente B cifra el mismo archivo M que producirá el mismo C, evitando la duplicación ~\cite{donceur}. \\
-El cifrado convergente consiste en una solución que ocupan los sistemas que se muestran abajo, esta solución pretende dar seguridad y evitar duplicados, esta consiste en que si un usuario quiere subir un archivo para generar su llave debe calcular el hash de dicho archivo, el resultado será su llave para poder cifrarlo, así de esta manera si otro usuario quiere subir el mismo archivo obtendrá la misma llave y así el resultado de los archivos cifrados será el mismo y se podrá evitar así el duplicado en la nube. Pero tiene un problema importante en la parte de la seguridad, ya que no es resistente a ataques por fuerza bruta, esto quiere decir que, si un usuario quiere robar un archivo, para poder descifrarlo necesita el hash del mensaje que se cifro, pero este lo puede obtener realizando varias pruebas con archivos diferentes hasta encontrar un archivo que dé el mismo hash y entonces poder descifrar el archivo correctamente.
-\\
+Una solución para tener privacidad y evitar duplicación es el $cifrado convergente$ que la proporcionó John R. Douceur, la cual dice que teniendo a $M$ que será el contenido de un archivo de aquí en adelante denominado el mensaje, el cliente primero calcula una clave $K ← H(M)$ mediante la aplicación de una función de hash criptográfica $H$ al mensaje y luego calcula el texto cifrado $C ← E(K, M)$ a través de un esquema de cifrado simétrico determinista. El derivado del mensaje $K$ se almacena por separado cifrándolo con una llave por cliente. Un segundo cliente $B$ cifra el mismo archivo $M$ que producirá el mismo $C$, evitando la duplicación ~\cite{donceur}. Existen sistemas que aplican esta herramienta de cifrado para proteger la información, a continuación, se presenta una tabla comparativa de algunos de estos. \\
+
+
+%El cifrado convergente consiste en una solución que ocupan los sistemas que se muestran abajo, esta solución pretende dar seguridad y evitar duplicados, esta consiste en que si un usuario quiere subir un archivo para generar su llave debe calcular el hash de dicho archivo, el resultado será su llave para poder cifrarlo, así de esta manera si otro usuario quiere subir el mismo archivo obtendrá la misma llave y así el resultado de los archivos cifrados será el mismo y se podrá evitar así el duplicado en la nube. Pero tiene un problema importante en la parte de la seguridad, ya que no es resistente a ataques por fuerza bruta, esto quiere decir que, si un usuario quiere robar un archivo, para poder descifrarlo necesita el hash del mensaje que se cifro, pero este lo puede obtener realizando varias pruebas con archivos diferentes hasta encontrar un archivo que dé el mismo hash y entonces poder descifrar el archivo correctamente.
+
 
 \begin{tabular}{ |p{8cm}|p{8cm}| }
 \hline
@@ -23,11 +25,7 @@ El cifrado convergente consiste en una solución que ocupan los sistemas que se 
 \hline
 {AES-128} & {Criptografía asimétrica} \\
 \hline
-{Modo de operación CTR } & {Codificado en c++} \\
-\hline
 {Cifrado convergente} & {Cifrado convergente} \\
-\hline
-{Árbol Merkle} & {Huella digital} \\
 \hline
 {RSA de 2048 bits (256 bytes) } & { rsync } \\
 \hline
@@ -37,11 +35,19 @@ El cifrado convergente consiste en una solución que ocupan los sistemas que se 
 %\item DupLESS\\
 %Este protocolo usa un servicio de almacenamiento en la nube, además implementa una interfaz sencilla con operaciones como guardar, recuperar o borrar un archivo. Es más adecuado para aplicaciones backup y busca proteger la confidencialidad de datos de los clientes, para ello usa seguridad semántica. Además, promete capacidad de resistencia ante fallos, protección contra un servidor malintencionado, evitar duplicación de archivos y compatibilidad con diferentes sistemas operativos~\cite{Bellare}.
 \item TahoeFS\\
-Tahoe es un sistema para el almacenamiento seguro distribuido. Usa las funciones de control de acceso, criptografía, confidencialidad, integridad y eliminación para tolerancia a fallos. Se ha desplegado en un servicio de copia de seguridad comercial y es actualmente operacional. La aplicación es de código abierto ~\cite{tahoe}.
+
+Tahoe es un sistema para el almacenamiento seguro distribuido. Usa las funciones de control de acceso, criptografía, confidencialidad, integridad y eliminación para tolerancia a fallos. Se ha desplegado en un servicio de copia de seguridad comercial y es actualmente operacional. La aplicación es de código abierto. Se basa en la restricción de permisos a la información y clasifica a los archivos en mutables e inmutables. Un archivo inmutable se crea exactamente una vez y se puede leer varias veces. Para crear un archivo inmutable, un cliente elige una clave de cifrado simétrico, utiliza esa clave para cifrar el archivo. Usa una la técnica de cifrado convergente.
+Un archivo mutable permite las operaciones de leer y escribir, para esto utiliza RSA de 2048 bits para la generación de llaves, cada archivo mutable se asocia con un único par de llaves. Escritores autorizados tienen acceso a la llave privada, por lo que hacen las firmas digitales en las nuevas versiones del archivo que escriben, esta firma digital nos ayuda a saber quién hizo la última modificación al archivo.
+Para ambos tipos de archivos se utiliza un SHA 256 para generar un Hash del archivo en cuestión, y se utiliza un cifrador por bloques AES 128 bits ~\cite{tahoe}. \\
+
+
 %\item Flud Backup\\
 %El proyecto Flud Backup está actualmente inactivo, sin embargo, se crearon diversas versiones para Ubuntu y Fedora donde usan paquetes distribuidos y un sistema de confianza. Prometen que los datos que se copian deben ser indestructibles y copias de seguridad descentralizadas~\cite{flud}.
+
 \item ABS\\
-Proporciona un recurso fiable de copia de seguridad de colaboración, aprovechando estos recursos independientes distribuidos. Con ABS, la adquisición y mantenimiento de hardware especializado de copia de seguridad es innecesaria. ABS hace un uso eficiente de los recursos de red y almacenamiento de información mediante el uso de técnicas, como cifrado convergente, almacenamiento, procesos de verificación y control de versiones eficientes de codificación ~\cite{abs}.
+
+Proporciona un recurso fiable de copia de seguridad de colaboración, aprovechando estos recursos independientes distribuidos. Con ABS, la adquisición y mantenimiento de hardware especializado de copia de seguridad es innecesaria. ABS hace un uso eficiente de los recursos de red y almacenamiento de información mediante el uso de técnicas, como cifrado convergente, almacenamiento, procesos de verificación y control de versiones eficientes de codificación, para lograr esto hace uso de herramientas criptográficas como firmas digitales, SHA 256 para calcular el Hash, para el cifrado se ocupa criptografía asimétrica ~\cite{abs}.
+
 %Promete el almacenamiento de datos seguro y eficiente, privacidad y seguridad, esto a través de tablas hash distribuidas, firmas de clave privadas, control de versiones y cifrado convergente. 
 %Además es tolerante a fallas catastróficas a nodos y permite unir nodos y restaurar operaciones sin pérdida de datos
 \end{itemize}
