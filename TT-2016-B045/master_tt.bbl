@@ -2,19 +2,18 @@
 
 \bibitem{dupless}
 M.~Bellare, S.~Keelveedhi, and T.~Ristenpart.
-\newblock Dupless: Cifrado asistido por servidor para almacenamiento sin
-  duplicados.
+\newblock Dupless: Server-aided encryption for deduplicated storage.
 \newblock {\em {IACR} Cryptology ePrint Archive}, 2013:429, 2013.
 
 \bibitem{Keelveedhi}
 R.~Bellare, Keelveedhi.
-\newblock {\em Cifrado por bloqueo de Mensajes y eliminación segura de
-  duplicados}, volume 7881.
+\newblock {\em Message-locked encryption and secure deduplication.}, volume
+  7881.
 \newblock EUROCRYPT, 2013.
 
 \bibitem{abs}
 T.~C. y. P.~A. Cooley~J.
-\newblock Abs: El sistema de respaldo asignado.
+\newblock Abs: the apportioned backup system.
 \newblock MIT Laboratory for Computer, 2004. Disponible.
 
 \bibitem{menezes}
@@ -24,8 +23,8 @@ A.~Menezes, P.~C. van Oorschot, and S.~A. Vanstone.
 
 \bibitem{paar}
 C.~Paar and J.~Pelzl.
-\newblock {\em Entender la Criptografía - {A} Libro de texto para estudiantes
-  y practicantes}.
+\newblock {\em Understanding Cryptography - {A} Textbook for Students and
+  Practitioners}.
 \newblock Springer, 2010.
 
 \bibitem{ciegas}
@@ -37,8 +36,8 @@ G.~Z.~C. Patricia.
 
 \bibitem{donceur}
 D.~J. R., A.~A., B.~W. J., S.~D., and T.~M.
-\newblock {\em Recuperación de espacio de archivos duplicados en un sistema de
-  archivos distribuido sin servidor.}
+\newblock {\em Reclaiming space from duplicate files in a serverless
+  distributed file system.}
 \newblock ICDCS, 2002.
 
 \bibitem{sime}
@@ -55,22 +54,22 @@ T.~O. Sergio.
 
 \bibitem{sommerville}
 I.~Sommerville.
-\newblock {\em Ingeniería de Software, 6. Auflage}.
+\newblock {\em Software Engineering, 6. Auflage}.
 \newblock Pearson Studium, 2001.
 
 \bibitem{modes}
 W.~Stallings.
-\newblock {\em Criptografía y Seguridad en la red: Principios y Práctica}.
+\newblock {\em Cryptography and Network Security: Principles and Practice}.
 \newblock Pearson Education, 5a edition, 2002.
 
 \bibitem{stinson}
 D.~R. Stinson.
-\newblock {\em Criptografía, Teoría y Práctica}.
+\newblock {\em Cryptography - theory and practice}.
 \newblock Discrete mathematics and its applications series. {CRC} Press, 1995.
 
 \bibitem{tahoe}
 H.~D. y. W.~N. Wilcox-O´Hearn~Z.
-\newblock {\em Tahoe: La última autoridad}.
+\newblock {\em Tahoe: The least-authority}.
 \newblock In Proceedings of the 4th ACM, 2008.
 
 \bibitem{cripto}
