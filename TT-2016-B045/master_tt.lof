@@ -44,3 +44,15 @@
 \contentsline {figure}{\numberline {5.16}{\ignorespaces Diagrama de secuencias de descargar un archivo de la nube no encontrado.\relax }}{84}{figure.caption.69}
 \contentsline {figure}{\numberline {5.17}{\ignorespaces Diagrama de secuencias de eliminar un archivo de la nube.\relax }}{85}{figure.caption.70}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Librer\IeC {\'\i }as de Python (Cifrado)\relax }}{92}{figure.caption.71}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Obtenci\IeC {\'o}n de Clave de Cifrado\relax }}{92}{figure.caption.72}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Objeto de Tipo AES\relax }}{93}{figure.caption.73}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces M\IeC {\'e}todo Encrypt\relax }}{93}{figure.caption.74}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Escribir Cifrado en Archivo Temporal\relax }}{93}{figure.caption.75}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Librer\IeC {\'\i }as de Python (Descifrado)\relax }}{94}{figure.caption.76}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Obtenci\IeC {\'o}n de Clave de Descifrado\relax }}{94}{figure.caption.77}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Obtenci\IeC {\'o}n del cifrado\relax }}{94}{figure.caption.78}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Objeto de Tipo AES\relax }}{94}{figure.caption.79}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces M\IeC {\'e}todo Decrypt\relax }}{94}{figure.caption.80}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Escribir Archivo Original en la Ruta Inicial\relax }}{95}{figure.caption.81}
+\addvspace {10\p@ }

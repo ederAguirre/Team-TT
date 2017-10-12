@@ -33,7 +33,7 @@ def main():
   outf = open(fname, "wb")
   outf.write(plaintext)
   outf.close()
-  print "Mensaje Descifrado.... "
+  print "Archivo Descifrado.... "
   #print plaintext
 
 
