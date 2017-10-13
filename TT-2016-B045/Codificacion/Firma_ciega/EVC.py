@@ -46,6 +46,10 @@ x1 = pow(r,e,n)
 x = (h * x1) % n
 print "x: ", x
 
+f_h = open("h(m)", "w")
+f_h.write(str(h))
+f_h.close()
+
 f_x = open("x", "w")
 f_x.write(str(x))
 f_x.close()

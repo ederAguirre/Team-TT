@@ -22,7 +22,7 @@ def inv_mult(a,n):
     return i
 
 
-def gen_rsa():
+def gen_rsa(usuario):
     e1 = 60930653384725765076332500645556642152211806415934766914695520823273026175616848699473936010624731806269142093271913689159213872865076416589044315502632688917901661349440933320674987852270733473960723266314414642607492951577749038396798784104542574870595087423906384652288903187482471046260836989527934228913249366654703107866541602432023727251827
     RSAkey = RSA.generate(1024)
     phi = (RSAkey.p -1)*(RSAkey.q-1)
@@ -41,9 +41,11 @@ def gen_rsa():
     #   print "Funciona"
     #else:
     #   print "Murio"
-    f_n = open("key_n.PEM", "w")
-    f_e = open("key_e.PEM", "w")
-    f_d = open("key_d.PEM", "w")
+    nom = ''
+    nom = str(usuario)
+    f_n = open("key_n_"+nom+".PEM", "w")
+    f_e = open("key_e_"+nom+".PEM", "w")
+    f_d = open("key_d_"+nom+".PEM", "w")
     f_n.write(str(RSAkey.n))
     f_n.close()
     f_d.write(str(d))
