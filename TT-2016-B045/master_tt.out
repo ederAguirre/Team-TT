@@ -81,9 +81,12 @@
 \BOOKMARK [2][-]{subsection.5.4.1}{Mensajes}{section.5.4}% 81
 \BOOKMARK [0][-]{chapter.6}{Desarrollo}{}% 82
 \BOOKMARK [1][-]{section.6.1}{Descripci\363n General del Desarrollo del Protocolo}{chapter.6}% 83
-\BOOKMARK [1][-]{section.6.2}{Aplicaci\363n Criptogr\341fica \(Cifrado / Descifrado\)}{chapter.6}% 84
-\BOOKMARK [2][-]{subsection.6.2.1}{Cifrado}{section.6.2}% 85
-\BOOKMARK [2][-]{subsection.6.2.2}{Descifrado}{section.6.2}% 86
-\BOOKMARK [0][-]{chapter.7}{Lista de acr\363nimos}{}% 87
-\BOOKMARK [1][-]{section.7.1}{Definiciones, acr\363nimos y abreviaturas}{chapter.7}% 88
-\BOOKMARK [0][-]{section.7.1}{Bibliograf\355a}{}% 89
+\BOOKMARK [1][-]{section.6.2}{Servidor de Llaves}{chapter.6}% 84
+\BOOKMARK [1][-]{section.6.3}{Aplicaci\363n Criptogr\341fica \(Cifrado / Descifrado\)}{chapter.6}% 85
+\BOOKMARK [2][-]{subsection.6.3.1}{Cifrado}{section.6.3}% 86
+\BOOKMARK [2][-]{subsection.6.3.2}{Descifrado}{section.6.3}% 87
+\BOOKMARK [1][-]{section.6.4}{Interfaz Web}{chapter.6}% 88
+\BOOKMARK [2][-]{subsection.6.4.1}{Registrar un Nuevo Usuario}{section.6.4}% 89
+\BOOKMARK [0][-]{chapter.7}{Lista de acr\363nimos}{}% 90
+\BOOKMARK [1][-]{section.7.1}{Definiciones, acr\363nimos y abreviaturas}{chapter.7}% 91
+\BOOKMARK [0][-]{section.7.1}{Bibliograf\355a}{}% 92
