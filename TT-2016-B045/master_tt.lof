@@ -44,30 +44,5 @@
 \contentsline {figure}{\numberline {5.16}{\ignorespaces Diagrama de secuencias de descargar un archivo de la nube no encontrado.\relax }}{84}{figure.caption.69}
 \contentsline {figure}{\numberline {5.17}{\ignorespaces Diagrama de secuencias de eliminar un archivo de la nube.\relax }}{85}{figure.caption.70}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Librer\IeC {\'\i }as de Python (Servidor)\relax }}{92}{figure.caption.71}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Accediendo a datos del Servidor\relax }}{92}{figure.caption.72}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces TCP Handler\relax }}{93}{figure.caption.73}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Conexi\IeC {\'o}n de Clientes\relax }}{93}{figure.caption.74}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Librer\IeC {\'\i }as de Python (Cifrado)\relax }}{94}{figure.caption.75}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Obtenci\IeC {\'o}n de Clave de Cifrado\relax }}{94}{figure.caption.76}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Objeto de Tipo AES\relax }}{95}{figure.caption.77}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces M\IeC {\'e}todo Encrypt\relax }}{95}{figure.caption.78}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Escribir Cifrado en Archivo Temporal\relax }}{95}{figure.caption.79}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Librer\IeC {\'\i }as de Python (Descifrado)\relax }}{95}{figure.caption.80}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Obtenci\IeC {\'o}n de Clave de Descifrado\relax }}{96}{figure.caption.81}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Obtenci\IeC {\'o}n del cifrado\relax }}{96}{figure.caption.82}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Objeto de Tipo AES\relax }}{96}{figure.caption.83}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces M\IeC {\'e}todo Decrypt\relax }}{96}{figure.caption.84}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Escribir Archivo Original en la Ruta Inicial\relax }}{97}{figure.caption.85}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Vista Registrar Usuario\relax }}{98}{figure.caption.86}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Validaci\IeC {\'o}n Usuarios\relax }}{99}{figure.caption.87}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Lista de Archivos\relax }}{99}{figure.caption.88}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Lista de Directorios y Subcarpetas\relax }}{99}{figure.caption.89}
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Seleccionar Archivo\relax }}{100}{figure.caption.90}
-\contentsline {figure}{\numberline {6.21}{\ignorespaces Funci\IeC {\'o}n para Subir Archivo\relax }}{100}{figure.caption.91}
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Seleccionar Archivo\relax }}{100}{figure.caption.92}
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Conexi\IeC {\'o}n con Sockets\relax }}{101}{figure.caption.93}
-\contentsline {figure}{\numberline {6.24}{\ignorespaces Factor de Ocultamiento\relax }}{102}{figure.caption.94}
-\contentsline {figure}{\numberline {6.25}{\ignorespaces C\IeC {\'a}lculo de Llave Z\relax }}{102}{figure.caption.95}
-\contentsline {figure}{\numberline {6.26}{\ignorespaces Cifrado de Archivo\relax }}{103}{figure.caption.96}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Mapa de navegaci\IeC {\'o}n\relax }}{97}{figure.caption.77}
 \addvspace {10\p@ }

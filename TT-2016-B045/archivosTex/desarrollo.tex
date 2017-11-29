@@ -19,21 +19,28 @@ Para lograrlo, el protocolo criptográfico se compone de diversos módulos que a
 
 \section{Servidor de Llaves}
 El módulo Servidor de llaves tiene una función muy importante dentro del funcionamiento del protocolo criptográfico, ya que sin dicho servidor los usuarios no podrían conectarse para poder utilizar el servicio de almacenamiento seguro. 
-En éste módulo participan: 
+
+\subsubsection{Objetivo}
+\begin{itemize}
+	\item Generar llaves certificadas para cifrar los archivos.
+	\item Brindar seguridad ante ataques por fuerza bruta.
+\end{itemize}
+
+\subsubsection{Entradas}
 \begin{itemize}
 	\item El factor de ocultamiento (Proporcionado por el cliente)
 	\item La clave privada del servidor \textit{d} , generada mediante el algoritmo RSA. 
-	\end{itemize}
+\end{itemize}
 
 El desarrollo de éste módulo, fué realizado mediante el lenguaje de programación Python en su versión 2.7. \\
-Las librerías utilizadas para llevar a cabo la implementación de éste móludo son: 
+Las librerías utilizadas para llevar acabo la implementación de éste módulo son: 
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=9cm, height=2.3cm]{./images/servidor/01.jpg}
-			\caption{Librerías de Python (Servidor)}
-			\label{fig:6-1-1} 
-			\end{figure}
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+			import SocketServer
+			import threading
+			import time
+			from rsagen import *
+\end{lstlisting}
 
 Para crear el socket utilizado en el servidor, ocupamos el modulo \textbf{socket} de Python, el cuál importamos desdse la librería \textbf{SocketServer}, dicho módulo simplifica la tarea de escribir servidores de red montados en el lenguaje de programación python. \\ La librería \textbf{threading} construye interfaces de subprocesamiento de nivel superior en la parte superior del thread.\\
 La librería \textbf{time} disponible en Python proporciona funciones para trabajar con los tiempos y para convertir representaciones. \\
@@ -43,240 +50,351 @@ Finalmente,\textbf{ rsagen} es una implementación de Python RSA pura. Es compat
 Una vez que importamos las bibliotecas pertinentes, se generan las llaves del servidor, tanto la pública \textit{(e)}, como la privada \textit{(d)}, para esto usamos el método \textit{gen\_rsa(usuario)}, es decir utilizamos RSA para la generación de llaves y para ello hacemos uso de \textit{rsagen}, donde ya viene la implementación de dicho algoritmo. \\ 
 
 Posteriormente leemos el archivo \textit{n} y la llave privada \textit{d} del servidor.
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=12cm, height=2.5cm]{./images/servidor/02.jpg}
-			\caption{Accediendo a datos del Servidor}
-			\label{fig:6-1-2} 
-			\end{figure}
+
+	\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+	usuario = 'server'
+	gen_rsa(usuario)
+	n = int(open("key_n_server.PEM", "r").read())
+	d = int((open("key_d_server.PEM", "r").read())
+	\end{lstlisting}
 
 Para continuar, creamos un TCP Handler el cual utiliza el protocolo TCP de Internet, que proporciona transmisiones continuas de datos entre el cliente y el servidor.
+
  
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm, height=1cm]{./images/servidor/03.jpg}
-			\caption{TCP Handler}
-			\label{fig:6-1-3} 
-			\end{figure}
-
-En la función handle mientras \textit{data} sea distinto de \textit{“Salir”} intentará recibir la información, imprimirá en pantalla \textit{“Nuevo Cliente Conectado”} 
-
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=14cm, height=10cm]{./images/servidor/04.jpg}
-			\caption{Conexión de Clientes}
-			\label{fig:6-1-4} 
-			\end{figure}
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+#creo mi TCP Handler
+class MiTcpHandler(SocketServer.BaseRequestHandler):
+\end{lstlisting}
 
 
+Ya que tenemos la conexión entre las dos partes ahora estamos listos para recibir los datos enviados por el cliente, lo que vamos a recibir se le llama factor de ocultamiento  \textit{x} esto nos ayuda a que el servidor quien va a realizar una firma a ciegas no sepa que es lo que este firmando, y no se entere de la información manejada, ya que tenemos este factor ahora si, el servidor se dispone a realizar la firma a ciegas \textit{y} para que pueda continuar con la creación de la llave para poder cifrar los archivos
 
-\section{Aplicación Criptográfica (Cifrado / Descifrado)}
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+       def handle(self):
+        data= ""
+        while data != "salir":
+            #intento recibir informacion
+            try:
+                data= self.request.recv(65536)
+                print data
+                x = int(data)
+                print "x:", x
+                y = pow(x,d,n)
+				#Devolvemos el mensaje al cliente
+                print "y:", y
+                self.request.send(str(y))
+                time.sleep(0.1)
+			 #espero 0.1 segundos antes de leer neuvamente
+            #si hubo un error lo digo y termino el handle
+            except:
+                print "El cliente D/C o hubo un error"
+                data="salir"
+\end{lstlisting}
 
-Éste módulo del protocolo es de suma importancia para ofrecer la seguridad de los archivos como se menciona anteriormente, ya que en éste módulo se lleva a cabo para blindar un archivo, es decir cifrarlo.  En este módulo participan: 
+Obteniendo la firma a ciegas \textit{y} se la enviamos a nuestro cliente para que pueda continuar en la creación de la llave \textit{z}, esto se ve explicado mas adelante cuando se explique la interfaz.
 
-	\begin{itemize}
-	\item El archivo que se almacenará en la nube.
-	\item La clave para poder cifrarlo, que en este caso es la llave \textit{(z)} generada por el cliente en el módulo anterior. 
-	\end{itemize}
-El desarrollo de éste módulo, fue realizado como el módulo anterior en el lenguaje de programación Python versión 2.7.3. Además de que para la implementación del algoritmo de cifrado AES se utilizó principalmente la biblioteca criptográfica Pycripto 2.3. 
 
+
+%En la función handle mientras \textit{data} sea distinto de \textit{“Salir”} intentará recibir la información, imprimirá en pantalla \textit{“Nuevo Cliente Conectado”} 
+
+			%\begin{figure}[H]
+			%\centering
+			%\includegraphics[width=14cm, height=10cm]{./images/servidor/04.jpg}
+			%\caption{Conexión de Clientes}
+			%\label{fig:6-1-4} 
+			%\end{figure}
+
+
+
+\section{Aplicación Criptográfica (Cifrado/Descifrado)}
+
+%Éste módulo del protocolo es de suma importancia para ofrecer la seguridad de los archivos como se menciona anteriormente, ya que en éste módulo se lleva a cabo para blindar un archivo, es decir cifrarlo. 
+%El desarrollo de éste módulo fue realizado en el lenguaje de programación Python versión 2.7.3. Además de que para la implementación del algoritmo de cifrado AES se utilizó principalmente la biblioteca criptográfica Pycripto 2.3. 
 
 \subsection{Cifrado}
 Éste algoritmo que forma parte de la aplicación criptográfica, se lleva a cabo del lado del cliente, dicho algoritmo de cifrado se encargará de brindar la seguridad a los archivos que los usuarios deseen almacenar en la nube. \\
-El cifrado de archivos se lleva a cabo bajo la utilización del algoritmo de cifrado \textbf{AES} que proveé la librería criptográfica \textbf{PyCripto 2.3} propia del lenguaje \textbf{Python}. Ésta libreria poseé la seguridad necesaria para satisfacer a los requerimientos del protocolo criptográfico.  \\ 
+El cifrado de archivos se lleva a cabo bajo la utilización del algoritmo de cifrado \textbf{AES} que proveé la librería criptográfica \textbf{PyCripto 2.3} propia del lenguaje \textbf{Python}. Ésta librería poseé la seguridad necesaria para satisfacer a los requerimientos del protocolo criptográfico.  \\ 
+
+\subsubsection{Objetivo}
+Proteger la información que se almacenará en la nube.
+
+\subsubsection{Entradas}
+	\begin{itemize}
+		\item El archivo que se almacenará en la nube.
+		\item La clave para poder cifrarlo, que en este caso es la llave \textit{(z)} generada por el cliente en el módulo anterior. 
+	\end{itemize}
+
 La implementación del algoritmo, se llevó a cabo de la siguiente manera: 
 
-	\begin{itemize}
-		\item Las librerías utilizadas para llevar a cabo el cifrado de archivos son las siguientes
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm, height=1.5cm]{./images/cifrado/01.jpg}
-			\caption{Librerías de Python (Cifrado)}
-			\label{fig:6-2-1} 
-			\end{figure} 
-		Siendo \textbf{haslib, Crypto.Cipher.AES, Crypto.Util.Counter, hmac} librerías criptográficas, es decir, utilizadas para llevar a cabo operaciones relacionadas con la implementación del algoritmo de cifrado \textit{AES} en sus 3 tipos de tamaños de claves \textit{(128, 192, 256 bits)}.\\ \\ 
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+import base64
+import hashlib, Crypto.Cipher.AES, Crypto.Util.Counter
+import hmac
+import tkFileDialog
+\end{lstlisting}
+
+Siendo \textbf{haslib, Crypto.Cipher.AES, Crypto.Util.Counter, hmac} librerías criptográficas, es decir, utilizadas para llevar a cabo operaciones relacionadas con la implementación del algoritmo de cifrado \textit{AES} en sus 3 tipos de tamaños de claves \textit{(128, 192, 256 bits)}.\\ \\ 
+
 La librería \textbf{tkFileDialog} utilizada para cuando el usuario desee elegir desde su PC un archivo para almacenarlo en la nube, se abra un panel de archivos, permitiendo acceder a sus carpetas personales, y de manera gráfica, dicho usuario pueda elegir el archivo con solo darle un clic. \\ \\ 
+
 \textbf{Base 64} Una librería utilizada para convertir las salidas del algoritmo \textit{AES} a caracteres dentro del \textit{código ASCII}, ya que \textit{AES} involucra funciones que obtienen a la salida caracteres en el sistema hexadecimal y son difíciles de procesar en su forma original para su uso posterior. 
 
+\begin{itemize}
 
-		\item Para poder comenzar el proceso de cifrado, es necesario obtener la clave que se utilizará para llevar a cabo el proceso. \\ Dicha clave se obtiene de la siguiente manera: 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm, height=1cm]{./images/cifrado/02.jpg}
-			\caption{Obtención de Clave de Cifrado}
-			\label{fig:6-2-2} 
-			\end{figure} 
-	Abrimos el archivo \textbf{key\_z} y almacenamos su contenido en la variable \textbf{contentK}. Éste archivo contiene la clave que se necesita para poder cifrar el archivo que el usuario desea, dicha \textit{clave (z)} fue generada y escrita en este archivo en el módulo anterior. 
+	\item Para poder comenzar el proceso de cifrado, es necesario obtener la clave que se utilizará para llevar a cabo el proceso. \\ Dicha clave se obtiene de la siguiente manera: 
 
-		\item Se crea un objeto de tipo \textit{AES} que almacenamos en la variable \textbf{cipher}, el cual contiene como parámetros la clave que obtuvo del archivo  \textbf{key\_z}, el modo de operación que se utilizará \textbf{(CTR)}, etc.
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=15cm, height=1cm]{./images/cifrado/03.jpg}
-			\caption{Objeto de Tipo AES}
-			\label{fig:6-2-3} 
-			\end{figure} 
+	\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+	contentK = open("key_z", "rb"), read()
+	\end{lstlisting}
 
-		\item Para cifrar el archivo, mandamos llamar al método \textbf{\textit{encrypt(m)}} \textit{(m almacena el contenido del archivo que se desea cifrar)} y almacenamos el resultado de dicho método en la variable \textbf{ctext.}
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm, height=1cm]{./images/cifrado/04.jpg}
-			\caption{Método Encrypt}
-			\label{fig:6-2-4} 
-			\end{figure} 
+Abrimos el archivo \textbf{key\_z} y almacenamos su contenido en la variable \textbf{contentK}. Éste archivo contiene la clave que se necesita para poder cifrar el archivo que el usuario desea, dicha \textit{clave (z)} fue generada y escrita en este archivo en el módulo anterior. 
 
-		\item Para finalizar, mandamos escribir a un archivo temporal el cifrado que obtuvimos en la variable \textbf{ctext.}
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=13cm, height=1.5cm]{./images/cifrado/05.jpg}
-			\caption{Escribir Cifrado en Archivo Temporal}
-			\label{fig:6-2-4} 
-			\end{figure} 
+	\item Se crea un objeto de tipo \textit{AES} que almacenamos en la variable \textbf{cipher}, el cual contiene como parámetros la clave que obtuvo del archivo  \textbf{key\_z}, el modo de operación que se utilizará \textbf{(CTR)}, etc.
+			
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+cipher = Crypto.Cipher.AES.new(contentK, Crypto.Cipher.AES.MODE_CTR, counter=ctr)
+\end{lstlisting}
+
+	\item Para cifrar el archivo, mandamos llamar al método \textbf{\textit{encrypt(m)}} \textit{(m almacena el contenido del archivo que se desea cifrar)} y almacenamos el resultado de dicho método en la variable \textbf{ctext.} y esta variable contiene el archivo cifrado por completo
+			
+	\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+		ctext = cipher.encrypt(m)
+	\end{lstlisting}
 
 
-	\end{itemize}
+
+\end{itemize}
 
 
 \subsection{Descifrado}
 Éste algoritmo que forma parte de la aplicación criptográfica, al igual que el cifrado, se lleva a cabo del lado del cliente, éste algoritmo será el encargado de que los usuarios puedan recuperar sus archivos originales, es decir, tomar de la nube aquel archivo que se encuentre cifrado y posteriormente descifrarlo para poder acceder a este archivo en su forma original. \\
 El descifrado de archivos se lleva a cabo bajo la utilización del algoritmo de descifrado \textbf{AES} que, al igual que el cifrado lo proveé la librería criptográfica \textbf{PyCripto 2.3} propia del lenguaje \textbf{Python}.   \\ 
+
+\subsubsection{Objetivo}
+Descifrar los archivos almacenados de forma íntegra.
+
+\subsubsection{Entradas}
+	\begin{itemize}
+		\item El archivo que se almacenó en la nube.
+		\item La clave para poder descifrarlo, que en este caso es la llave \textit{(z)} generada por el cliente.
+	\end{itemize}
+
 La implementación del algoritmo, se llevó a cabo de la siguiente manera: 
 
 \begin{itemize}
 	\item Las librerías utilizadas para llevar a cabo el descifrado de archivos son las siguientes: 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=8.5cm, height=1cm]{./images/descifrado/01.jpg}
-			\caption{Librerías de Python (Descifrado)}
-			\label{fig:6-3-1} 
-			\end{figure} 
+			
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+		import Crypto.Cipher.AES
+		import Crypto.Util.Counter
+\end{lstlisting}
+
 Siendo \textbf{Crypto.Cipher.AES, Crypto.Util.Counter}, librerías criptográficas, es decir, utilizadas para llevar a cabo operaciones relacionadas con la implementación del algoritmo de descifrado \textit{AES} en sus 3 tipos de tamaños de claves \textit{(128, 192, 256 bits)}. 
 
 	\item Al igual que en el proceso de cifrado, para comenzar dicho proceso es necesario obtener la clave que se utilizará para el descifrado. Dicha clave se obtiene de la siguiente manera:  
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm, height=1cm]{./images/cifrado/02.jpg}
-			\caption{Obtención de Clave de Descifrado}
-			\label{fig:6-3-2} 
-			\end{figure} 
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+    file_d = open("llaves_clientes/key_d_"+nom_user+".PEM", "rb").read()
+
+\end{lstlisting}
 
 Abrimos el archivo \textbf{key\_z} y almacenamos su contenido en la variable \textbf{contentK}. 
 
 		\item El siguiente paso, es abrir el archivo temporal que se generó al momento de cifrar el archivo del usuario. 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm, height=1cm]{./images/descifrado/03.jpg}
-			\caption{Obtención del cifrado}
-			\label{fig:6-3-3} 
-			\end{figure} 
+			
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+	textcifrado = open("./tempc", "rb"), read()
+\end{lstlisting}
 
 Una vez dentro del archivo, almacenamos el cifrado en la variable \textbf{textcifrado} para utilizarlo posteriormente. 
 
 		\item Creamos un objeto \textit{AES} que almacenamos en la variable \textbf{ciphe}r, el cual contiene como parámetros la llave que obtuvo del archivo \textbf{key\_z }, el modo de operación que se utilizará para el descifrado\textbf{(CTR)}, etc.
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=15cm, height=1cm]{./images/cifrado/03.jpg}
-			\caption{Objeto de Tipo AES}
-			\label{fig:6-3-4} 
-			\end{figure} 
+			
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+cipher = Crypto.Cipher.AES.new(contentK, Crypto.Cipher.AES.MODE_CTR, counter = ctr)
+\end{lstlisting}
 
 
 		\item Desciframos el archivo, mandamos llamar al método \textbf{\textit{decrypt(textcifrado)}}  y almacenamos el resultado de dicho método en la variable \textbf{plaintext}
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=9cm, height=1cm]{./images/descifrado/05.jpg}
-			\caption{Método Decrypt}
-			\label{fig:6-3-5} 
-			\end{figure} 
+		
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+	plaintext = cipher.decrypt(textcifrado)
+\end{lstlisting}
 
 		\item Para finalizar, mandamos escribir a un archivo \textbf{fname} \textit{(Es el nombre del archivo original del usuario)} el archivo tal y como estaba antes de cifrarlo. 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=10cm, height=1.5cm]{./images/descifrado/06.jpg}
-			\caption{Escribir Archivo Original en la Ruta Inicial}
-			\label{fig:6-3-6} 
-			\end{figure} 
+			
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue}]
+		outf = open(fname, "wb")
+		outf.write(plaintext)
+		outf.close()
+\end{lstlisting}
 
 \end{itemize}
 
 \section{Interfaz Web}
-En ésta sección, se encuentra el detalle de la implementación de los módulos anteriores dentro de una interfaz web. Dicha interfaz se desarrolló bajo el lenguaje de programación Python en su versión 2.7. Para que la interfaz web pudiera llevarse a cabo de manera conjunta con éste lenguaje de programación,  fué necesario la implementción de un Framework basado en Python, dicho Framework se llama \textit{Django} en su versión 1.8 con compatibilidad con el Sistema Operativo Linux. \textit{Django} proveé de muchas herramientas web basadas en Python, lo cuál hizo posible la compatibilidad entre los módulos anteriormente desarrollados y una interfaz web que fuera intuitiva y fácil de manejar para los usuarios.  \\ 
 
-Dentro de la interfaz web, existen diferentes módulos que la conforman. Dichos módulos son: 
+En ésta sección, se encuentra el detalle de la implementación de los módulos anteriores dentro de una interfaz web.\\
+Dicha interfaz se desarrolló bajo el sistema operativo Linux. Esto debido a que presenta varias ventajas, es un sistema operativo de software libre, por ende no es necesario comprar una licencia para instalarlo y utilizarlo en un equipo informático. Es un sistema multitarea, multiusuario, compatible con \textit{UNIX}, y proporciona una interfaz de comandos y una interfaz gráfica.\\
+También elegimos como manejador de base de datos de la interfaz \textit{SQLite}.\\
+\textit{SQLite} es una herramienta de software libre, que permite almacenar información en dispositivos empotrados de una forma sencilla, eficaz, potente, rápida y en equipos con pocas capacidades de hardware. Además agrega extensiones que facilitan su uso en cualquier ambiente de desarrollo. Esto permite que \textit{SQLite} soporte desde las consultas más básicas hasta las más complejas del lenguaje SQL, y lo más importante es que se puede usar tanto en dispositivos móviles como en sistemas de escritorio, sin necesidad de realizar procesos complejos de importación y exportación de datos, ya que existe compatibilidad entre las diversas plataformas disponibles, haciendo que la portabilidad entre dispositivos y plataformas sea transparente.\\
+Sin embargo la mayor parte de la codificación fue desarrollada e implementada en \textit{Django}, éste es un framework para aplicaciones web gratuito y open source, escrito en \textit{Python}.\\
+\textit{Python} es un lenguaje de programación poderoso y fácil de aprender. Cuenta con estructuras de datos eficientes y de alto nivel y un enfoque simple pero efectivo a la programación orientada a objetos. Un lenguaje ideal para desarrollo rápido de aplicaciones en diversas áreas y sobre la mayoría de las plataformas.\\
+Lo cuál hizo posible la compatibilidad entre los módulos desarrollados y una interfaz web que fuera intuitiva,segura y fácil de manejar para los usuarios.\\ 
 
+%Todas estas herramientas en conjunto nos han permitido tener una aplicación web funcional, segura y eficaz. 
+
+%En ésta sección, se encuentra el detalle de la implementación de los módulos anteriores dentro de una interfaz web. Dicha interfaz se desarrolló bajo el lenguaje de programación Python en su versión 2.7. Para que la interfaz web pudiera llevarse a cabo de manera conjunta con éste lenguaje de programación,  fué necesario la implementción de un Framework basado en Python, dicho Framework se llama \textit{Django} en su versión 1.8 con compatibilidad con el Sistema Operativo Linux. \textit{Django} proveé de muchas herramientas web basadas en Python, lo cuál hizo posible la compatibilidad entre los módulos anteriormente desarrollados y una interfaz web que fuera intuitiva y fácil de manejar para los usuarios.  \\ 
+
+\section{Mapa de Navegación}
+En la figura  ~\ref{fig:6-1-1} se muestra el mapa de navegación de la aplicación web.
+
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=14cm, height=7.5cm]{./images/MapaDeNavegacion.jpg}
+			\caption{Mapa de navegación}
+			\label{fig:6-1-1} 
+			\end{figure}
+
+Dentro de la interfaz web, existen diferentes módulos que la conforman. \\ Dichos módulos son: 
 
 \subsection{Registrar un Nuevo Usuario} 
-Éste módulo que compone a la interfaz, se encargará de poder llevar a cabo el registro en la plataforma de nuevos usuarios de nuestro protocolo criptográfico. En dicho módulo participará el usuario activamente con la interfaz, la cuál le solicitará datos personales como \textbf{Nombre, Apellidos, Correo electrónico, Contraseña}. Con ésta información, la plataforma renera un par de claves de usuario (Con el algoritmo de generación de claves RSA) para que estas sean utilizadas en el proceso de carga y descarga de archivos. \\ 
+Éste módulo que compone a la interfaz, se encargará de poder llevar a cabo el registro en la plataforma de nuevos usuarios de nuestro protocolo criptográfico. En dicho módulo participará el usuario activamente con la interfaz, la cuál le solicitará datos personales como \textbf{Nombre, Apellidos, Correo electrónico, Contraseña}. Con ésta información, la plataforma generará un par de claves de usuario (Con el algoritmo de generación de claves RSA) para que estas sean utilizadas en el proceso de carga y descarga de archivos. \\ 
 
 A continuación, se muestra a detalle como es que se lleva a cabo el registro de un usuario dentro de la interfaz web: \\ 
 
-En este fragmento de código podemos observar la clase RegisterView que se encarga de crear un usuario, lo que hace es obtener los datos del formulario que ha llenado el usuario en la página y crea un objeto user para poder identificarlo como usuario, ya que su registro fue exitoso se crean sus llaves certificadas.
+En este fragmento de código podemos observar la clase \textbf{\textit{RegisterView}} que se encarga de crear un usuario, lo que hace es obtener los datos del formulario que ha llenado el usuario en la página y crea un objeto \textbf{\textit{user}} para poder identificarlo como usuario, una vez que su registro haya sido exitoso se crean sus llaves certificadas.
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=15cm, height=8.5cm]{./images/Interfaz/01.jpg}
-			\caption{Vista Registrar Usuario}
-			\label{fig:6-4-1} 
-			\end{figure} 
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+	class RegisterView(FormView):
+		template_name = 'nube/register.html'
+		form_class = RegistrationForm
 
-Para que un usuario pueda iniciar sesión es necesario que la información que ingreso en la plataforma sea validada por el sistema ya que debe estar registrada en él.
-Para esto tenemos la clase llamada \textbf{LoginView} donde se obtienen los datos del usuario y se valida con los datos que ya existen en la base de datos. Si los datos del usuario se encuentran almacenados, la plataforma redireccionará a la página del perfil del usuario. En caso contrario, la plataforna regresará al index.
+		def form_valid(self, form):
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=15cm, height=8.6cm]{./images/Interfaz/02.jpg}
-			\caption{Validación Usuarios}
-			\label{fig:6-4-2} 
-			\end{figure} 
+			user= User.objects.create_user(
+			username = form.cleaned_data["username"],
+			password = form.cleaned_data['password1'],
+			email = form.cleaned_data['email']
+			)
 
-Para poder listar todos los archivos que tiene almacenados el usuario que ha iniciado sesión, realizamos un ciclo for para recorrer el arregloque contiene los nombres de los archivos que se encuentran en el directorio.
+			nom_user = user.username
+			gen_rsa(nom_user)
+			return super(RegisterView, self).form_valid(form)
+		def get_success_url(self):
+			return reverse('register-success')
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=5cm, height=1.5cm]{./images/Interfaz/03.jpg}
-			\caption{Lista de Archivos}
-			\label{fig:6-4-3} 
-			\end{figure} 
+class RegisterSuccessView(TemplateView):
+	template_name = 'nube/success.html'
 
-Dicho arreglo que se recorrió, fué creado en las vistas, ahí tenemos una función de donde obtenemos la ruta donde se encuentran almacenados los archivos y con ayuda de la función \textit{os.walk} podemos obtener la lista de los directorios y subcarpetas que existen en éste.
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=17cm, height=4cm]{./images/Interfaz/04.jpg}
-			\caption{Lista de Directorios y Subcarpetas}
-			\label{fig:6-4-4} 
-			\end{figure} 
+class IndexView(TemplateView):
+	template_name = 'nube/index.html'
+\end{lstlisting}
 
-Para poder seleccionar el archivo que se va a subir, en el html mandamos a llamar el formulario creado para poder \textit{cargar un archivo} como se ve en la siguiente imagen.
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=17cm, height=4cm]{./images/Interfaz/05.jpg}
-			\caption{Seleccionar Archivo}
-			\label{fig:6-4-5} 
-			\end{figure} 
+Para que un usuario pueda iniciar sesión es necesario que la información que ingresó en la plataforma sea validada por el sistema ya que debe estar registrada en él.
+Para esto tenemos la clase llamada \textbf{\textit{LoginView}} donde se obtienen los datos del usuario y se valida con los datos que ya existen en la base de datos. Si los datos del usuario se encuentran almacenados, la plataforma redireccionará a la página del perfil del usuario. En caso contrario, la plataforna regresará al index.
+
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+from nube.models import Document
+from os import walk
+from glob import glob
+from nube.Cliente import *
+from criptoleslie import config
+from nube.forms import RegistrationForm, LoginForm, UploadForm
+
+nom_user = ""
+
+class LoginView(FormView):
+	template_name = 'nube/login.html'
+	form_class = LoginForm
+
+	@method_decorator(csrf_protect)
+	def dispatch(self, *args, **kwargs):
+		return super(LoginView, self).dispatch(*args, **kwargs)
+
+	def form_valid(self, form):
+		login(self.request, form.get_user())
+		return super(LoginView, self).form_valid(form)
+
+	def get_success_url(self):
+		try:
+			return config.LOGIN.REDIRECT_URL
+		except:
+			return "/profile/"
+
+class LogoutView(View):
+\end{lstlisting}
+
+Para poder listar todos los archivos que tiene almacenados el usuario que ha iniciado sesión, realizamos un ciclo for para recorrer el arreglo que contiene los nombres de los archivos que se encuentran en el directorio.
+
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+		{% for lstFiles in form %}
+			{{ lstFils.i }}
+		{% endfor %}
+\end{lstlisting}
+
+Dicho arreglo que se recorrió, fué creado en las vistas, ahí tenemos una función de donde obtenemos la ruta donde se encuentran almacenados los archivos y con ayuda de la función \textbf{\textit{os.walk}} podemos obtener la lista de los directorios y subcarpetas que existen en éste.
+
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
+def lista(request):
+	path = '/home/jhonatan/pycharmProjects/CriptoLeslie/criptoleslie/Cifrados/'
+	lstFiles = []
+
+	lstDir = os.walk(path) 
+
+	for root, dirs, files in lstDir:
+		for fichero in files:
+			(nombreFichero, extension) = os.path.splitext(fichero)
+			lstFiles.append(nombreFichero + extension)
+
+	print(lstFiles)
+	print('LISTADO FINALIZADO')
+	return render(request, 'nube/profiile.html', {'lstFiles': lstFiles})
+\end{lstlisting}
+
+Para poder seleccionar el archivo que se va a subir, en el html mandamos a llamar el formulario creado para poder \textit{cargar un archivo}.
+
+\begin{lstlisting}[language=HTML,frame=single, keywordstyle=\color{blue},breaklines=true]
+<div class="row" id="content-container">
+	<div class="page-header">
+		<h2></h2>
+	</div>
+	<div class="jumbotron content">
+		<form acion="" method="post" enctype="multipart/form-data">{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Subir">
+		</form>
+	</div>
+</div>
+\end{lstlisting}
 
 
-Este método fue implementado para crear el documento y guardarlo en la base de datos. Se crea un objeto de tipo documento donde obtenemos el nombre del archivo que fue previamente llenado desde el formulario por el cliente y se almacena este objeto en la base de datos con la línea \textit{newdoc.save(form)}.
-En la siguiente línea \textit{(subir\_arch…)}, se manda a llamar la función \textit{subir archivo} que es la que se encarga de cifrar el archivo.
+Este método fue implementado para crear el documento y guardarlo en la base de datos. Se crea un objeto de tipo documento donde obtenemos el nombre del archivo que fue previamente llenado desde el formulario por el cliente y se almacena en la base de datos con la línea \textbf{\textit{newdoc.save(form)}}.
+En la siguiente línea \textbf{\textit{(subir\_arch…)}}, se manda a llamar la función \textbf{\textit{subir archivo}} que es la que se encarga de cifrar el archivo.
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=17cm, height=4cm]{./images/Interfaz/06.jpg}
-			\caption{Función para Subir Archivo}
-			\label{fig:6-4-6} 
-			\end{figure} 
-
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+def upload_file(request):
+	if request.method == 'POST':
+	   form = UploadForm(request.POST, request.FILES)
+	   if form.is_valid():
+		newdoc = Document(filename=request.POST['filename'], docfile=request.FILES['docfile'])
+		newdoc.save(form)
+		subir_arch(neewdoc.filename, nom_user)
+		return redirect("profile")
+	else:
+		form= UploadForm()
+	return render(request, 'nube/upload.html', {'form': form})
+\end{lstlisting}
 
 
 
 A continuación, se explica con detalle la parte del cifrado de archivos. \\
 Para empezar, importamos algunas bibliotecas criptográficas, como son:
 
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=8cm, height=1.5cm]{./images/Interfaz/07.jpg}
-			\caption{Seleccionar Archivo}
-			\label{fig:6-4-7} 
-			\end{figure} 
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+	import Crypto.Cipher.AES, Crypto.Util.Counter
+	import hmac
+	from rsagen import *
+\end{lstlisting}
 
 
 \begin{itemize}
@@ -288,42 +406,74 @@ Para empezar, importamos algunas bibliotecas criptográficas, como son:
 
 
 
-En ésta parte de la codificación, se tiene la implementación de la función \textit{subir archivos}, donde lo primero que hacemos es abrir las llaves del servidor y crear una conexión con ayuda de sockets entre nuestro cliente y el servidor.
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=17cm, height=7cm]{./images/Interfaz/08.jpg}
-			\caption{Conexión con Sockets}
-			\label{fig:6-4-8} 
-			\end{figure}
+En ésta parte de la codificación, se tiene la implementación de la función \textbf{\textit{subir archivos}}, donde lo primero que hacemos es abrir las llaves del servidor y crear una conexión con ayuda de sockets entre nuestro cliente y el servidor.
+		
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
+def subir_arch(filename,nom_user):
+    n = int(open("llaves_servidor/key_n_server.PEM", "r").read())
+    e = int(open("llaves_servidor/key_e_server.PEM", "r").read())
+    host, port = "localhost" , 9999
+    sock= socket.socket()
+    sock.connect((host,port))
+\end{lstlisting}
 
 
+Una vez creada la conexión  entre cliente - servidor, se obtiene el archivo que se va a subir, esto gracias a que cuando se manda a llamar la función, ésta pasa por parámetros el nombre del archivo y del usuario. Con esto se logra abrir el archivo y se le aplica una función hash de \textbf{\textit{SHA256 (h(m))}} y se opera con la llave pública del servidor \textit{(e)}, a esto se le llama \textit{factor de ocultamiento (x)}, con este factor se puede llevar a cabo una firma a ciegas por parte de nuestro servidor, éste factor se le envía al servidor por medio de  sockets.
 
-Una vez creada la conexión  entre cliente - servidor, se obtiene el archivo que se va a subir, esto gracias a que cuando se manda a llamar la función, ésta pasa por parámetros el nombre del archivo y del usuario. Con esto se logra abrir el archivo y se le aplica una función hash de \textit{SHA256 (h(m))} y se opera con la llave pública del servidor \textit{(e)}, a esto se le llama \textit{factor de ocultamiento (x)}, con este factor se puede llevar a cabo una firma a ciegas por parte de nuestro servidor, éste factor se le envía al servidor por medio de  sockets.
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
+ while mensaje != "salir":
+	 r = randint(0,n)
+	m = str(open(filename, "rb").read())
+	 h = int(hashlib.sha256(m).hexdigest(), 16)
+           print "h(m): ", h
+           x1 = pow(r,e,n)
+           x = (h * x1) % n
+           print "x: ", x
+           f_x = open("x", "w")
+          f_x.write(str(x))
+          f_x.close()
+          mensaje = open("x", "r").read() 
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=17cm, height=8cm]{./images/Interfaz/09.jpg}
-			\caption{Factor de Ocultamiento}
-			\label{fig:6-4-9} 
-			\end{figure}
+	  try:
+           	 sock.send(mensaje)
 
-Una vez realizada la firma a ciegas \textit{(y)} la envía al cliente por medio de sockets, el cuál procede a calcular la llave \textit{z} (que sirve para cifrar los archivos). Y se crea un archivo con dicha llave, ya que esta llave es demasiado grande para que funcione en AES, es por ello que se debe de sacar un hash con \textit{SHA256} para que quede del tamaño permitido por \textit{AES (128 bits)} y de igual manera creamos un archivo con la llave.
+	except:
+           	 print "no se mando el mensaje"
+            	mensaje="salir"
+\end{lstlisting}
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=17cm, height=9cm]{./images/Interfaz/10.jpg}
-			\caption{Cálculo de Llave Z}
-			\label{fig:6-4-10} 
-			\end{figure}
+Una vez realizada la firma a ciegas \textit{(y)} la envía al cliente por medio de sockets, el cuál procede a calcular la llave \textit{z} (que sirve para cifrar los archivos). Y se crea un archivo con dicha llave, ya que esta llave es demasiado grande para que funcione en \textit{AES}, es por ello que se debe de sacar un hash con \textit{SHA256} para que quede del tamaño permitido por \textit{AES (128 bits)} y de igual manera creamos un archivo con la llave.
 
-Para cifrar el archivo se guarda el contenido de la llave \textit{z} y es utilizada para generar un vector de inicialización usando una función \textit{SHA256}, dicho vector se almacena en un archivo para que pueda ser utilizado posteriormente a la hora de descifrar el archivo, posteriormente se cifra el archivo con ayuda de las funciones definidas en las bibliotecas criptográficas que se mencionan anteriormente, y se le indica el tamaño de la llave de \textit{128 bits}, con un modo de operación \textit{CTR} y con la función \textit{encrypt()} se cifra el archivo, éste archivo se almacena en una carpeta y se le pone el nombre original pero agregandole una  extensión \textit{.aes}
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
+print "z: ", z_long
+        f_z = open("llaves_clientes/key_z_"+filename2+"_"+nom_user+".PEM", "w")
+        f_z.write(str(z_long))
+        f_z.close()
+        check = pow(z_long,e,n)
+        print "check: ", check
+        print "h: ", h % n
 
-			\begin{figure}[H]
-			\centering
-			\includegraphics[width=17cm, height=9cm]{./images/Interfaz/11.jpg}
-			\caption{Cifrado de Archivo}
-			\label{fig:6-4-10} 
-			\end{figure}
+        kz = str(open("llaves_clientes/key_z_"+filename2+"_"+nom_user+".PEM", "rb").read())
+        z = hashlib.sha256(kz).hexdigest()[:16]
+        wz =  open("llaves_clientes/key_z_"+filename2+"_"+nom_user+".PEM", "w")
+        wz.write(str(z))
+        wz.close()
+\end{lstlisting}
 
+Para cifrar el archivo se guarda el contenido de la llave \textit{z} y es utilizada para generar un vector de inicialización usando una función \textit{SHA256}, dicho vector se almacena en un archivo para que pueda ser utilizado posteriormente a la hora de descifrar el archivo, posteriormente se cifra el archivo con ayuda de las funciones definidas en las bibliotecas criptográficas que se mencionan anteriormente, y se le indica el tamaño de la llave de \textit{128 bits}, con un modo de operación \textit{CTR} y con la función \textbf{\textit{encrypt()}} se cifra el archivo, éste archivo se almacena en una carpeta y se le pone el nombre original pero agregandole una  extensión \textit{.aes}
+
+\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
+        contentK = open("llaves_clientes/key_z_"+filename2+"_"+nom_user+".PEM", "rb").read()
+        iv = hmac.new(contentK, m, hashlib.sha256).hexdigest()[:32]  
+        escribeIV = open("llaves_clientes/vector_"+filename2+"_"+nom_user+".txt","wb")
+        escribeIV.write(iv)
+        escribeIV.close()
+        ctr = Crypto.Util.Counter.new(128, initial_value=long(iv, 16))
+        cipher = Crypto.Cipher.AES.new(contentK, Crypto.Cipher.AES.MODE_CTR, counter=ctr)
+        ctext = cipher.encrypt(m)
+        fc1 = str(ctext)
+        print ""
+        print "Mensaje Cifrado... C1 "
+\end{lstlisting}
 
 
