@@ -92,8 +92,59 @@
 \BOOKMARK [3][-]{section*.75}{Objetivo}{subsection.6.3.2}% 92
 \BOOKMARK [3][-]{section*.76}{Entradas}{subsection.6.3.2}% 93
 \BOOKMARK [1][-]{section.6.4}{Interfaz Web}{chapter.6}% 94
-\BOOKMARK [1][-]{section.6.5}{Mapa de Navegaci\363n}{chapter.6}% 95
-\BOOKMARK [2][-]{subsection.6.5.1}{Registrar un Nuevo Usuario}{section.6.5}% 96
-\BOOKMARK [0][-]{chapter.7}{Lista de acr\363nimos}{}% 97
-\BOOKMARK [1][-]{section.7.1}{Definiciones, acr\363nimos y abreviaturas}{chapter.7}% 98
-\BOOKMARK [0][-]{section.7.1}{Bibliograf\355a}{}% 99
+\BOOKMARK [1][-]{section.6.5}{Mapa de Navegaci\363n. }{chapter.6}% 95
+\BOOKMARK [2][-]{subsection.6.5.1}{Registrar un Nuevo Usuario. }{section.6.5}% 96
+\BOOKMARK [2][-]{subsection.6.5.2}{Iniciar Sesi\363n de un usuario. }{section.6.5}% 97
+\BOOKMARK [2][-]{subsection.6.5.3}{Subir un archivo. }{section.6.5}% 98
+\BOOKMARK [3][-]{section*.78}{Cifrar un archivo.}{subsection.6.5.3}% 99
+\BOOKMARK [3][-]{section*.79}{Duplicaci\363n.}{subsection.6.5.3}% 100
+\BOOKMARK [2][-]{subsection.6.5.4}{Descargar un archivo}{section.6.5}% 101
+\BOOKMARK [3][-]{section*.80}{Descifrar un archivo}{subsection.6.5.4}% 102
+\BOOKMARK [2][-]{subsection.6.5.5}{Eliiminar un archivo}{section.6.5}% 103
+\BOOKMARK [1][-]{section.6.6}{Funcionamiento de la Interfaz Web}{chapter.6}% 104
+\BOOKMARK [2][-]{subsection.6.6.1}{Pantalla Principal}{section.6.6}% 105
+\BOOKMARK [2][-]{subsection.6.6.2}{Pantalla Registro de Usuario}{section.6.6}% 106
+\BOOKMARK [2][-]{subsection.6.6.3}{Registrandote por primera vez}{section.6.6}% 107
+\BOOKMARK [2][-]{subsection.6.6.4}{Pantalla de la Base de Datos}{section.6.6}% 108
+\BOOKMARK [2][-]{subsection.6.6.5}{Pantalla Inicio de Sesi\363n}{section.6.6}% 109
+\BOOKMARK [2][-]{subsection.6.6.6}{Pantalla Tabla Cipher}{section.6.6}% 110
+\BOOKMARK [2][-]{subsection.6.6.7}{Pantalla Tabla Hashes}{section.6.6}% 111
+\BOOKMARK [2][-]{subsection.6.6.8}{Pantalla del Perfil del usuario}{section.6.6}% 112
+\BOOKMARK [2][-]{subsection.6.6.9}{Pantalla Subir Archivo}{section.6.6}% 113
+\BOOKMARK [2][-]{subsection.6.6.10}{Pantalla Elegir archivo a Subir}{section.6.6}% 114
+\BOOKMARK [2][-]{subsection.6.6.11}{Pantalla del primer caso: Cuando Subimos un Archivo Nuevo}{section.6.6}% 115
+\BOOKMARK [3][-]{section*.92}{Pantalla de Perfil Actualizado}{subsection.6.6.11}% 116
+\BOOKMARK [3][-]{section*.94}{Pantalla Tabla Hashes Actualizada}{subsection.6.6.11}% 117
+\BOOKMARK [3][-]{section*.96}{Pantalla Tabla Cipher Actualizada}{subsection.6.6.11}% 118
+\BOOKMARK [2][-]{subsection.6.6.12}{Pantalla Subir Otro Archivo Nuevo}{section.6.6}% 119
+\BOOKMARK [3][-]{section*.99}{Pantalla Tabla Cipher Actualizada }{subsection.6.6.12}% 120
+\BOOKMARK [3][-]{section*.101}{Pantalla Tabla Hashes Actualizada }{subsection.6.6.12}% 121
+\BOOKMARK [2][-]{subsection.6.6.13}{Pantalla segundo caso: Cuando otro usuario sube el mismo archivo con el mismo nombre.}{section.6.6}% 122
+\BOOKMARK [3][-]{section*.103}{Inicio de Sesi\363n con otro usuario}{subsection.6.6.13}% 123
+\BOOKMARK [3][-]{section*.105}{Perfil de Usuario}{subsection.6.6.13}% 124
+\BOOKMARK [3][-]{section*.107}{Subir Archivo}{subsection.6.6.13}% 125
+\BOOKMARK [3][-]{section*.109}{Tabla Cipher actualizada}{subsection.6.6.13}% 126
+\BOOKMARK [3][-]{section*.111}{Tabla Hashes actualizada}{subsection.6.6.13}% 127
+\BOOKMARK [3][-]{section*.113}{Perfil Actualizado}{subsection.6.6.13}% 128
+\BOOKMARK [3][-]{section*.115}{Tabla Cipher actualizada}{subsection.6.6.13}% 129
+\BOOKMARK [3][-]{section*.117}{Tabla Hashes actualizada}{subsection.6.6.13}% 130
+\BOOKMARK [2][-]{subsection.6.6.14}{Perfil de usuario1 actualizado con distintos formatos de archivos}{section.6.6}% 131
+\BOOKMARK [3][-]{section*.120}{Perfil de usuario2 actualizado con distintos formatos de archivos}{subsection.6.6.14}% 132
+\BOOKMARK [3][-]{section*.122}{Tabla Cipher actualizada}{subsection.6.6.14}% 133
+\BOOKMARK [3][-]{section*.124}{Tabla Hashes actualizada}{subsection.6.6.14}% 134
+\BOOKMARK [2][-]{subsection.6.6.15}{Descargar Archivo}{section.6.6}% 135
+\BOOKMARK [3][-]{section*.127}{Seleccionando Archivo}{subsection.6.6.15}% 136
+\BOOKMARK [3][-]{section*.129}{Archivo Descargado}{subsection.6.6.15}% 137
+\BOOKMARK [3][-]{section*.131}{Archivo Descargado en la Carpeta}{subsection.6.6.15}% 138
+\BOOKMARK [3][-]{section*.133}{Archivos Descargados del usuario 1 en la Carpeta}{subsection.6.6.15}% 139
+\BOOKMARK [3][-]{section*.135}{Archivos Descargados del usuario 2 en la Carpeta}{subsection.6.6.15}% 140
+\BOOKMARK [2][-]{subsection.6.6.16}{Eliminar Archivo}{section.6.6}% 141
+\BOOKMARK [3][-]{section*.138}{Seleccionando Archivo a eliminar}{subsection.6.6.16}% 142
+\BOOKMARK [3][-]{section*.140}{Tabla Cipher con Archivo eliminado de usuario 1}{subsection.6.6.16}% 143
+\BOOKMARK [3][-]{section*.142}{Pantalla archivos actualizados}{subsection.6.6.16}% 144
+\BOOKMARK [3][-]{section*.144}{Tabla Cipher con Archivo eliminado de usuario 2}{subsection.6.6.16}% 145
+\BOOKMARK [3][-]{section*.146}{Pantalla archivos actualizados de usuario 2}{subsection.6.6.16}% 146
+\BOOKMARK [3][-]{section*.148}{Tabla Hashes con Archivo eliminado de los dos usuarios}{subsection.6.6.16}% 147
+\BOOKMARK [0][-]{chapter.7}{Lista de acr\363nimos}{}% 148
+\BOOKMARK [1][-]{section.7.1}{Definiciones, acr\363nimos y abreviaturas}{chapter.7}% 149
+\BOOKMARK [0][-]{section.7.1}{Bibliograf\355a}{}% 150
