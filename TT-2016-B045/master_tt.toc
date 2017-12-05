@@ -95,57 +95,59 @@
 \contentsline {section}{\numberline {6.4}Interfaz Web}{96}{section.6.4}
 \contentsline {section}{\numberline {6.5}Mapa de Navegaci\IeC {\'o}n. }{97}{section.6.5}
 \contentsline {subsection}{\numberline {6.5.1}Registrar un Nuevo Usuario. }{98}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Iniciar Sesi\IeC {\'o}n de un usuario. }{99}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.2}Iniciar Sesi\IeC {\'o}n de un usuario.}{98}{subsection.6.5.2}
 \contentsline {subsection}{\numberline {6.5.3}Subir un archivo. }{100}{subsection.6.5.3}
 \contentsline {subsubsection}{Cifrar un archivo.}{101}{section*.78}
 \contentsline {subsubsection}{Duplicaci\IeC {\'o}n.}{104}{section*.79}
-\contentsline {subsection}{\numberline {6.5.4}Descargar un archivo}{107}{subsection.6.5.4}
+\contentsline {subsection}{\numberline {6.5.4}Descargar un archivo}{106}{subsection.6.5.4}
 \contentsline {subsubsection}{Descifrar un archivo}{107}{section*.80}
-\contentsline {subsection}{\numberline {6.5.5}Eliiminar un archivo}{109}{subsection.6.5.5}
-\contentsline {section}{\numberline {6.6}Funcionamiento de la Interfaz Web}{111}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Pantalla Principal}{111}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.5.5}Eliminar un archivo}{108}{subsection.6.5.5}
+\contentsline {section}{\numberline {6.6}Funcionamiento de la Interfaz Web}{110}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Pantalla Principal}{110}{subsection.6.6.1}
 \contentsline {subsection}{\numberline {6.6.2}Pantalla Registro de Usuario}{111}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3}Registrandote por primera vez}{112}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.3}Registrandote por primera vez}{111}{subsection.6.6.3}
 \contentsline {subsection}{\numberline {6.6.4}Pantalla de la Base de Datos}{112}{subsection.6.6.4}
-\contentsline {subsection}{\numberline {6.6.5}Pantalla Inicio de Sesi\IeC {\'o}n}{113}{subsection.6.6.5}
+\contentsline {subsection}{\numberline {6.6.5}Pantalla Inicio de Sesi\IeC {\'o}n}{112}{subsection.6.6.5}
 \contentsline {subsection}{\numberline {6.6.6}Pantalla Tabla Cipher}{113}{subsection.6.6.6}
-\contentsline {subsection}{\numberline {6.6.7}Pantalla Tabla Hashes}{114}{subsection.6.6.7}
+\contentsline {subsection}{\numberline {6.6.7}Pantalla Tabla Hashes}{113}{subsection.6.6.7}
 \contentsline {subsection}{\numberline {6.6.8}Pantalla del Perfil del usuario}{114}{subsection.6.6.8}
-\contentsline {subsection}{\numberline {6.6.9}Pantalla Subir Archivo}{115}{subsection.6.6.9}
+\contentsline {subsection}{\numberline {6.6.9}Pantalla Subir Archivo}{114}{subsection.6.6.9}
 \contentsline {subsection}{\numberline {6.6.10}Pantalla Elegir archivo a Subir}{115}{subsection.6.6.10}
-\contentsline {subsection}{\numberline {6.6.11}Pantalla del primer caso: Cuando Subimos un Archivo Nuevo}{116}{subsection.6.6.11}
+\contentsline {subsection}{\numberline {6.6.11}Pantalla del primer caso: Cuando Subimos un Archivo Nuevo}{115}{subsection.6.6.11}
 \contentsline {subsubsection}{Pantalla de Perfil Actualizado}{116}{section*.92}
-\contentsline {subsubsection}{Pantalla Tabla Hashes Actualizada}{117}{section*.94}
+\contentsline {subsubsection}{Pantalla Tabla Hashes Actualizada}{116}{section*.94}
 \contentsline {subsubsection}{Pantalla Tabla Cipher Actualizada}{117}{section*.96}
-\contentsline {subsection}{\numberline {6.6.12}Pantalla Subir Otro Archivo Nuevo}{118}{subsection.6.6.12}
+\contentsline {subsection}{\numberline {6.6.12}Pantalla Subir Otro Archivo Nuevo}{117}{subsection.6.6.12}
 \contentsline {subsubsection}{Pantalla Tabla Cipher Actualizada }{118}{section*.99}
-\contentsline {subsubsection}{Pantalla Tabla Hashes Actualizada }{119}{section*.101}
+\contentsline {subsubsection}{Pantalla Tabla Hashes Actualizada }{118}{section*.101}
 \contentsline {subsection}{\numberline {6.6.13}Pantalla segundo caso: Cuando otro usuario sube el mismo archivo con el mismo nombre.}{119}{subsection.6.6.13}
 \contentsline {subsubsection}{Inicio de Sesi\IeC {\'o}n con otro usuario}{119}{section*.103}
-\contentsline {subsubsection}{Perfil de Usuario}{120}{section*.105}
+\contentsline {subsubsection}{Perfil de Usuario}{119}{section*.105}
 \contentsline {subsubsection}{Subir Archivo}{120}{section*.107}
-\contentsline {subsubsection}{Tabla Cipher actualizada}{121}{section*.109}
+\contentsline {subsubsection}{Tabla Cipher actualizada}{120}{section*.109}
 \contentsline {subsubsection}{Tabla Hashes actualizada}{121}{section*.111}
-\contentsline {subsubsection}{Perfil Actualizado}{122}{section*.113}
+\contentsline {subsubsection}{Perfil Actualizado}{121}{section*.113}
 \contentsline {subsubsection}{Tabla Cipher actualizada}{122}{section*.115}
-\contentsline {subsubsection}{Tabla Hashes actualizada}{123}{section*.117}
+\contentsline {subsubsection}{Tabla Hashes actualizada}{122}{section*.117}
 \contentsline {subsection}{\numberline {6.6.14}Perfil de usuario1 actualizado con distintos formatos de archivos}{123}{subsection.6.6.14}
-\contentsline {subsubsection}{Perfil de usuario2 actualizado con distintos formatos de archivos}{124}{section*.120}
+\contentsline {subsubsection}{Perfil de usuario2 actualizado con distintos formatos de archivos}{123}{section*.120}
 \contentsline {subsubsection}{Tabla Cipher actualizada}{124}{section*.122}
-\contentsline {subsubsection}{Tabla Hashes actualizada}{125}{section*.124}
+\contentsline {subsubsection}{Tabla Hashes actualizada}{124}{section*.124}
 \contentsline {subsection}{\numberline {6.6.15}Descargar Archivo}{125}{subsection.6.6.15}
-\contentsline {subsubsection}{Seleccionando Archivo}{126}{section*.127}
+\contentsline {subsubsection}{Seleccionando Archivo}{125}{section*.127}
 \contentsline {subsubsection}{Archivo Descargado}{126}{section*.129}
-\contentsline {subsubsection}{Archivo Descargado en la Carpeta}{127}{section*.131}
+\contentsline {subsubsection}{Archivo Descargado en la Carpeta}{126}{section*.131}
 \contentsline {subsubsection}{Archivos Descargados del usuario 1 en la Carpeta}{127}{section*.133}
-\contentsline {subsubsection}{Archivos Descargados del usuario 2 en la Carpeta}{128}{section*.135}
+\contentsline {subsubsection}{Archivos Descargados del usuario 2 en la Carpeta}{127}{section*.135}
 \contentsline {subsection}{\numberline {6.6.16}Eliminar Archivo}{128}{subsection.6.6.16}
-\contentsline {subsubsection}{Seleccionando Archivo a eliminar}{129}{section*.138}
+\contentsline {subsubsection}{Seleccionando Archivo a eliminar}{128}{section*.138}
 \contentsline {subsubsection}{Tabla Cipher con Archivo eliminado de usuario 1}{129}{section*.140}
-\contentsline {subsubsection}{Pantalla archivos actualizados}{130}{section*.142}
+\contentsline {subsubsection}{Pantalla archivos actualizados}{129}{section*.142}
 \contentsline {subsubsection}{Tabla Cipher con Archivo eliminado de usuario 2}{130}{section*.144}
-\contentsline {subsubsection}{Pantalla archivos actualizados de usuario 2}{131}{section*.146}
+\contentsline {subsubsection}{Pantalla archivos actualizados de usuario 2}{130}{section*.146}
 \contentsline {subsubsection}{Tabla Hashes con Archivo eliminado de los dos usuarios}{131}{section*.148}
-\contentsline {chapter}{\numberline {7}Lista de acr\IeC {\'o}nimos}{132}{chapter.7}
-\contentsline {section}{\numberline {7.1}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{132}{section.7.1}
-\contentsline {chapter}{Bibliograf\'ia}{134}{section.7.1}
+\contentsline {chapter}{\numberline {7}Conclusiones}{132}{chapter.7}
+\contentsline {chapter}{\numberline {8}Trabajo a Futuro}{133}{chapter.8}
+\contentsline {chapter}{\numberline {9}Lista de acr\IeC {\'o}nimos}{134}{chapter.9}
+\contentsline {section}{\numberline {9.1}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{134}{section.9.1}
+\contentsline {chapter}{Bibliograf\'ia}{136}{section.9.1}

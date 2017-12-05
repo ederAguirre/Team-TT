@@ -94,13 +94,13 @@
 \BOOKMARK [1][-]{section.6.4}{Interfaz Web}{chapter.6}% 94
 \BOOKMARK [1][-]{section.6.5}{Mapa de Navegaci\363n. }{chapter.6}% 95
 \BOOKMARK [2][-]{subsection.6.5.1}{Registrar un Nuevo Usuario. }{section.6.5}% 96
-\BOOKMARK [2][-]{subsection.6.5.2}{Iniciar Sesi\363n de un usuario. }{section.6.5}% 97
+\BOOKMARK [2][-]{subsection.6.5.2}{Iniciar Sesi\363n de un usuario.}{section.6.5}% 97
 \BOOKMARK [2][-]{subsection.6.5.3}{Subir un archivo. }{section.6.5}% 98
 \BOOKMARK [3][-]{section*.78}{Cifrar un archivo.}{subsection.6.5.3}% 99
 \BOOKMARK [3][-]{section*.79}{Duplicaci\363n.}{subsection.6.5.3}% 100
 \BOOKMARK [2][-]{subsection.6.5.4}{Descargar un archivo}{section.6.5}% 101
 \BOOKMARK [3][-]{section*.80}{Descifrar un archivo}{subsection.6.5.4}% 102
-\BOOKMARK [2][-]{subsection.6.5.5}{Eliiminar un archivo}{section.6.5}% 103
+\BOOKMARK [2][-]{subsection.6.5.5}{Eliminar un archivo}{section.6.5}% 103
 \BOOKMARK [1][-]{section.6.6}{Funcionamiento de la Interfaz Web}{chapter.6}% 104
 \BOOKMARK [2][-]{subsection.6.6.1}{Pantalla Principal}{section.6.6}% 105
 \BOOKMARK [2][-]{subsection.6.6.2}{Pantalla Registro de Usuario}{section.6.6}% 106
@@ -145,6 +145,8 @@
 \BOOKMARK [3][-]{section*.144}{Tabla Cipher con Archivo eliminado de usuario 2}{subsection.6.6.16}% 145
 \BOOKMARK [3][-]{section*.146}{Pantalla archivos actualizados de usuario 2}{subsection.6.6.16}% 146
 \BOOKMARK [3][-]{section*.148}{Tabla Hashes con Archivo eliminado de los dos usuarios}{subsection.6.6.16}% 147
-\BOOKMARK [0][-]{chapter.7}{Lista de acr\363nimos}{}% 148
-\BOOKMARK [1][-]{section.7.1}{Definiciones, acr\363nimos y abreviaturas}{chapter.7}% 149
-\BOOKMARK [0][-]{section.7.1}{Bibliograf\355a}{}% 150
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 148
+\BOOKMARK [0][-]{chapter.8}{Trabajo a Futuro}{}% 149
+\BOOKMARK [0][-]{chapter.9}{Lista de acr\363nimos}{}% 150
+\BOOKMARK [1][-]{section.9.1}{Definiciones, acr\363nimos y abreviaturas}{chapter.9}% 151
+\BOOKMARK [0][-]{section.9.1}{Bibliograf\355a}{}% 152

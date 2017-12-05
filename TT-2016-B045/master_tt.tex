@@ -30,6 +30,7 @@
 %\usepackage{usecases}
 \usepackage{casouso_estilo} 
 \usepackage{listings}
+\usepackage{grffile}
 
 
 \AtBeginDocument{%
@@ -116,6 +117,50 @@
 	}
 \end{titlepage}
 
+\begin{titlepage}
+	\parbox{2cm}{
+	\begin{picture}(18,4)
+	    \put(-21,240){\includegraphics[width=2cm,height=3cm]{./images/IPN.jpg}}
+	    \put(0,-280){\includegraphics[width=0.5cm,height=18.3cm]{./images/lineaAzul.jpg}}
+	    \put(-37,-335){\includegraphics[width=3cm,height=3cm]{./images/ESCOM.jpg}}
+	    \end{picture}}
+	\parbox{14cm}{\vspace{1cm} 
+	    
+	    {\fontsize{19}{30} \textbf{  INSTITUTO POLIT\'ECNICO NACIONAL}}
+	    \begin{center}
+	    {\fontsize{16}{20} \textbf{Escuela Superior de C\'omputo}}\vspace{1cm}\\
+	   % {\fontsize{18}{20} \textbf{ESCOM}}\vspace{2cm}\\
+	%\end{center}
+	%\begin{center}
+   { \fontsize{14}{20} TT: 2016-B045 \hspace{6.5cm} 8 de Diciembre de 2017}\vspace{2cm}
+	   %{ \fontsize{14}{20}  \begin{flushleft} TT: 2016-B045 \end{flushleft} \begin{flushright} 8 de Diciembre de 2017\end {flushright} }\vspace{2cm}
+	
+	%\begin{center}
+	    %{\fontsize{14}{20} \textit{Trabajo Terminal}}\vspace{1cm}\\
+	    {\fontsize{16}{20} \textbf{``Protocolo criptográfico para el almacenamiento sin duplicados en la nube, resistente a ataques por fuerza bruta.''}}\vspace{1cm}\\
+	    %{\fontsize{14}{20} \textit{2016-B045}}\vspace{1cm}\\
+	    
+	    {\fontsize{14}{20} \textit{Presentan}}\\
+	    {\fontsize{14}{20} \textbf{Eder Jonathan Aguirre Cruz$^{1}$\\ Diana Leslie González Olivier$^{2}$ \\ \vspace{.2cm} Jhonatan Saulés Cortés$^{3}$ }}\vspace{1cm}\\
+	    {\fontsize{14}{20} \textit{Directora}}\\
+	    {\fontsize{14}{20} \textbf{Dra. Sandra D\'\i az Santiago}}   \vspace{1cm}
+	    \end{center}
+	{\fontsize{14}{20}\textbf{Resumen-}En el presente trabajo terminal se desarrolló un protocolo que evita la duplicación de archivos en la nube resistente a ataques por fuerza bruta, garantizando la privacidad de los usuarios. Se usaron diversas herramientas criptográficas que permitieron la implementación del mismo en una interfaz web.}\vspace{1cm}\\
+         {\fontsize{14}{20}\textbf{Palabras Clave-}Criptografía, Almacenamiento y seguridad en la nube, Privacidad, Academia de ciencias de la computación.}\vspace{1cm}\\
+	{\fontsize{14}{20} \textit{ $^{1}$ejacb\_0895@hotmail.com}}\\
+	{\fontsize{14}{20} \textit{ $^{2}$dianaleslie.olivier@gmail.com}}\\
+	{\fontsize{14}{20} \textit{ $^{3}$jsaulesc0518@gmail.com}}\\
+	    
+	}
+\end{titlepage}
+
+\newpage
+{\fontsize{14}{20} \textbf{Advertencia}}\vspace{2cm}\\
+{\fontsize{14}{20} \textit{“Este documento contiene información desarrollada por la Escuela Superior de Cómputo del Instituto Politécnico Nacional, a partir de datos y documentos con derecho de propiedad y por lo tanto, su uso quedará restringido a las aplicaciones que explícitamente se convengan.”}}\vspace{1cm}\\
+{\fontsize{14}{20} La aplicación no convenida exime a la escuela su responsabilidad técnica y da lugar a las consecuencias legales que para tal efecto se determinen.}\vspace{1cm}\\
+{\fontsize{14}{20} Información adicional sobre este reporte técnico podrá obtenerse en:}\vspace{1cm}\\
+{\fontsize{14}{20}La Subdirección Académica de la Escuela Superior de Cómputo del Instituto Politécnico Nacional, situada en Av.Juan de Dios Bátiz s/n Teléfono: 57296000, ext. 52000.}
+
 \frontmatter
 %----------------------------INDICE------------------------------------------------------------------------------------------
 \tableofcontents
@@ -147,7 +192,7 @@
 %------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Diseño}
 
-\cfinput{archivosTex/diseño}
+\cfinput{archivosTex/diseno}
 
 %------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Desarrollo}
@@ -156,8 +201,17 @@
 
 %------------------------------------------------------------------------------------------------------------------------------------
 
+\chapter{Conclusiones}
 
+\cfinput{archivosTex/conclusiones}
 
+%------------------------------------------------------------------------------------------------------------------------------------
+
+\chapter{Trabajo a Futuro}
+
+\cfinput{archivosTex/futuro}
+
+%------------------------------------------------------------------------------------------------------------------------------------
 
 
 \chapter{Lista de acrónimos}

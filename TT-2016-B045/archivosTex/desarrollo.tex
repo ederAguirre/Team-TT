@@ -42,9 +42,9 @@ Las librerías utilizadas para llevar acabo la implementación de éste módulo 
 			from rsagen import *
 \end{lstlisting}
 
-Para crear el socket utilizado en el servidor, ocupamos el modulo \textbf{socket} de Python, el cuál importamos desdse la librería \textbf{SocketServer}, dicho módulo simplifica la tarea de escribir servidores de red montados en el lenguaje de programación python. \\ La librería \textbf{threading} construye interfaces de subprocesamiento de nivel superior en la parte superior del thread.\\
-La librería \textbf{time} disponible en Python proporciona funciones para trabajar con los tiempos y para convertir representaciones. \\
-Finalmente,\textbf{ rsagen} es una implementación de Python RSA pura. Es compatible con el cifrado,  el descifrado, la firma, verificación de firmas y la generación de claves de acuerdo con PKCS \# 1 versión 1.5. Se puede utilizar como una biblioteca de Python, así como en la línea de comandos.
+Para crear el socket utilizado en el servidor, ocupamos el modulo \textbf{socket} de Python, el cuál importamos desde la librería \textbf{SocketServer}, dicho módulo simplifica la tarea de escribir servidores de red montados en el lenguaje de programación python. \\ La librería \textbf{threading} construye interfaces de subprocesamiento de nivel superior en la parte superior del thread.\\
+La librería \textbf{time} disponible en Python proporciona funciones para trabajar con los tiempos y para convertir representaciones.\\
+Finalmente,\textbf{ rsagen} es una implementación de Python del algoritmo RSA puro. Es compatible con el cifrado,  el descifrado, la firma, verificación de firmas y la generación de claves de acuerdo con PKCS \# 1 versión 1.5. Se puede utilizar como una biblioteca de Python, así como en la línea de comandos.
 \\ \\ 
 
 Una vez que importamos las bibliotecas pertinentes, se generan las llaves del servidor, tanto la pública \textit{(e)}, como la privada \textit{(d)}, para esto usamos el método \textit{gen\_rsa(usuario)}, es decir utilizamos RSA para la generación de llaves y para ello hacemos uso de \textit{rsagen}, donde ya viene la implementación de dicho algoritmo. \\ 
@@ -67,7 +67,7 @@ class MiTcpHandler(SocketServer.BaseRequestHandler):
 \end{lstlisting}
 
 
-Ya que tenemos la conexión entre las dos partes ahora estamos listos para recibir los datos enviados por el cliente, lo que vamos a recibir se le llama factor de ocultamiento  \textit{x} esto nos ayuda a que el servidor quien va a realizar una firma a ciegas no sepa que es lo que este firmando, y no se entere de la información manejada, ya que tenemos este factor ahora si, el servidor se dispone a realizar la firma a ciegas \textit{y} para que pueda continuar con la creación de la llave para poder cifrar los archivos
+Ya que tenemos la conexión entre las dos partes ahora estamos listos para recibir los datos enviados por el cliente, a lo que vamos a recibir se le llama factor de ocultamiento  \textit{x} esto nos ayuda a que el servidor que es quien va a realizar una firma a ciegas, no sepa que es lo que este firmando y no se entere de la información manejada, ya que tenemos éste factor ahora si, el servidor se dispone a realizar la firma a ciegas \textit{y} para que pueda continuar con la creación de la llave para poder cifrar los archivos.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},showstringspaces=false]
        def handle(self):
@@ -91,7 +91,7 @@ Ya que tenemos la conexión entre las dos partes ahora estamos listos para recib
                 data="salir"
 \end{lstlisting}
 
-Obteniendo la firma a ciegas \textit{y} se la enviamos a nuestro cliente para que pueda continuar en la creación de la llave \textit{z}, esto se ve explicado mas adelante cuando se explique la interfaz.
+Cuando obtenemos la firma a ciegas \textit{y} se la enviamos a nuestro cliente para que pueda continuar con el proceso de la creación de la llave \textit{z}, esto se explicará más adelante en la sección de la interfaz web.
 
 
 
@@ -157,7 +157,7 @@ Abrimos el archivo \textbf{key\_z} y almacenamos su contenido en la variable \te
 cipher = Crypto.Cipher.AES.new(contentK2, Crypto.Cipher.AES.MODE_CTR, counter=ctr)
 \end{lstlisting}
 
-	\item Para cifrar el archivo, mandamos llamar al método \textbf{\textit{encrypt(m)}} \textit{(m almacena el contenido del archivo que se desea cifrar)} y almacenamos el resultado de dicho método en la variable \textbf{ctext.} y esta variable contiene el archivo cifrado por completo
+	\item Para cifrar el archivo, mandamos llamar al método \textbf{\textit{encrypt(m)}} \textit{(m almacena el contenido del archivo que se desea cifrar)} y almacenamos el resultado de dicho método en la variable \textbf{ctext.} y esta variable contiene el archivo cifrado por completo.
 			
 	\begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true,showstringspaces=false]
 		ctext = cipher.encrypt(m)
@@ -169,8 +169,8 @@ cipher = Crypto.Cipher.AES.new(contentK2, Crypto.Cipher.AES.MODE_CTR, counter=ct
 
 
 \subsection{Descifrado}
-Éste algoritmo que forma parte de la aplicación criptográfica, al igual que el cifrado, se lleva a cabo del lado del cliente, éste algoritmo será el encargado de que los usuarios puedan recuperar sus archivos originales, es decir, tomar de la nube aquel archivo que se encuentre cifrado y posteriormente descifrarlo para poder acceder a este archivo en su forma original. \\
-El descifrado de archivos se lleva a cabo bajo la utilización del algoritmo de descifrado \textbf{AES} que, al igual que el cifrado lo proveé la librería criptográfica \textbf{PyCripto 2.3} propia del lenguaje \textbf{Python}.   \\ 
+Éste algoritmo que forma parte de la aplicación criptográfica, al igual que el cifrado, se lleva a cabo del lado del cliente,este algoritmo será el encargado de que los usuarios puedan recuperar sus archivos originales, es decir, tomar de la nube aquel archivo que se encuentre cifrado y posteriormente descifrarlo para poder acceder a este archivo en su forma original. \\
+El descifrado de archivos se lleva a cabo bajo la utilización del algoritmo de descifrado \textbf{AES} que, al igual que el cifrado lo proveé la librería criptográfica \textbf{PyCripto 2.3} propia del lenguaje \textbf{Python}.\\ 
 
 \subsubsection{Objetivo}
 Descifrar los archivos almacenados de forma íntegra.
@@ -206,7 +206,7 @@ Siendo \textbf{Crypto.Cipher.AES, Crypto.Util.Counter}, librerías criptográfic
     contentK2 = open("llaves_clientes/key_z_"+filename+"_"+nom_user+".PEM", "rb").read()
 \end{lstlisting}
 
-Abrimos el archivo \textbf{key\_z} y almacenamos su contenido en la variable \textbf{contentK}. 
+Abrimos el archivo \textbf{key\_z} y almacenamos su contenido en la variable \textbf{contentK2}. 
 
 		\item El siguiente paso, es buscar en la base de datos el archivo que se va a descifrar y se guarda en una variable. 
 			
@@ -217,20 +217,20 @@ Abrimos el archivo \textbf{key\_z} y almacenamos su contenido en la variable \te
 
 Una vez dentro del archivo, almacenamos el cifrado en la variable \textbf{textcifrado} para utilizarlo posteriormente. 
 
-		\item Creamos un objeto \textit{AES} que almacenamos en la variable \textbf{ciphe}r, el cual contiene como parámetros la llave que obtuvo del archivo \textbf{key\_z }, el modo de operación que se utilizará para el descifrado\textbf{(CTR)}, etc.
+		\item Creamos un objeto \textit{AES} que almacenamos en la variable \textbf{cipher}, el cual contiene como parámetros la llave que obtuvo del archivo \textbf{key\_z }, el modo de operación que se utilizará para el descifrado\textit{(CTR)}, etc.
 			
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true,showstringspaces=false]
 cipher = Crypto.Cipher.AES.new(contentK, Crypto.Cipher.AES.MODE_CTR, counter=ctr)
 \end{lstlisting}
 
 
-		\item Desciframos el archivo, mandamos llamar al método \textbf{\textit{decrypt(textcifrado)}}  y almacenamos el resultado de dicho método en la variable \textbf{plaintext}
+		\item Para descifrar el archivo, mandamos llamar al método \textbf{\textit{decrypt(textcifrado)}}  y almacenamos el resultado de dicho método en la variable \textbf{plaintext}
 		
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true,showstringspaces=false]
     	return cipher.decrypt(textcifrado)
 \end{lstlisting}
 
-		\item Para finalizar, mandamos escribir a un archivo \textbf{fname} \textit{(Es el nombre del archivo original del usuario)} el archivo tal y como estaba antes de cifrarlo. 
+		\item Finalmente, escribimos un archivo \textbf{fname} \textit{(Es el nombre del archivo original del usuario)}, el archivo tal y como estaba antes de cifrarlo. 
 			
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true,showstringspaces=false]
 	plaintext = descifrado(contentK2, textcifrado, iv)
@@ -244,10 +244,10 @@ cipher = Crypto.Cipher.AES.new(contentK, Crypto.Cipher.AES.MODE_CTR, counter=ctr
 
 \section{Interfaz Web}
 
-En ésta sección, se encuentra el detalle de la implementación de los módulos anteriores dentro de una interfaz web.\\
-Dicha interfaz se desarrolló bajo el sistema operativo Linux. Esto debido a que presenta varias ventajas, es un sistema operativo de software libre, por ende no es necesario comprar una licencia para instalarlo y utilizarlo en un equipo informático. Es un sistema multitarea, multiusuario, compatible con \textit{UNIX}, y proporciona una interfaz de comandos y una interfaz gráfica.\\
+En ésta sección, se explica a detalle de la implementación de los módulos anteriores implementados dentro de una interfaz web.\\
+Dicha interfaz se desarrolló bajo el sistema operativo Linux. Esto debido a que presenta varias ventajas, ya que es un sistema operativo de software libre, por ende no es necesario comprar una licencia para instalarlo y utilizarlo en un equipo informático. Es un sistema multitarea, multiusuario, compatible con \textit{UNIX}, y proporciona una interfaz de comandos y una interfaz gráfica.\\
 También elegimos como manejador de base de datos de la interfaz \textit{SQLite}.\\
-\textit{SQLite} es una herramienta de software libre, que permite almacenar información en dispositivos empotrados de una forma sencilla, eficaz, potente, rápida y en equipos con pocas capacidades de hardware. Además agrega extensiones que facilitan su uso en cualquier ambiente de desarrollo. Esto permite que \textit{SQLite} soporte desde las consultas más básicas hasta las más complejas del lenguaje SQL, y lo más importante es que se puede usar tanto en dispositivos móviles como en sistemas de escritorio, sin necesidad de realizar procesos complejos de importación y exportación de datos, ya que existe compatibilidad entre las diversas plataformas disponibles, haciendo que la portabilidad entre dispositivos y plataformas sea transparente.\\
+\textit{SQLite} es una herramienta de software libre, que permite almacenar información en dispositivos empotrados de una forma sencilla, eficaz, potente, rápida y en equipos con pocas capacidades de hardware. Además agrega extensiones que facilitan su uso en cualquier ambiente de desarrollo. Esto permite que soporte desde las consultas más básicas hasta las más complejas del lenguaje SQL, y lo más importante es que se puede usar tanto en dispositivos móviles como en sistemas de escritorio, sin necesidad de realizar procesos complejos de importación y exportación de datos, ya que existe compatibilidad entre las diversas plataformas disponibles.\\
 Sin embargo la mayor parte de la codificación fue desarrollada e implementada en \textit{Django}, éste es un framework para aplicaciones web gratuito y open source, escrito en \textit{Python}.\\
 \textit{Python} es un lenguaje de programación poderoso y fácil de aprender. Cuenta con estructuras de datos eficientes y de alto nivel y un enfoque simple pero efectivo a la programación orientada a objetos. Un lenguaje ideal para desarrollo rápido de aplicaciones en diversas áreas y sobre la mayoría de las plataformas.\\
 Lo cuál hizo posible la compatibilidad entre los módulos desarrollados y una interfaz web que fuera intuitiva,segura y fácil de manejar para los usuarios.\\ 
@@ -269,11 +269,11 @@ En la figura  ~\ref{fig:6-1-1} se muestra el mapa de navegación de la aplicaci�
 Dentro de la interfaz web, existen diferentes módulos que la conforman. \\ Dichos módulos son: 
 
 \subsection{Registrar un Nuevo Usuario. } 
-Éste módulo que compone a la interfaz, se encargará de poder llevar a cabo el registro en la plataforma de nuevos usuarios de nuestro protocolo criptográfico. En dicho módulo participará el usuario activamente con la interfaz, la cuál le solicitará datos personales como \textbf{Nombre, Apellidos, Correo electrónico, Contraseña}. Con ésta información, la plataforma generará un par de claves de usuario (Con el algoritmo de generación de claves RSA) para que estas sean utilizadas en el proceso de carga y descarga de archivos. \\ 
+Éste módulo que compone a la interfaz, se encargará de poder llevar a cabo el registro en la plataforma de nuevos usuarios de nuestro protocolo criptográfico. En dicho módulo participará el usuario activamente con la interfaz, la cuál le solicitará datos personales como \textbf{Nombre, Apellidos, Correo electrónico, Contraseña}. Con ésta información, la plataforma generará un par de claves de usuario (Con el algoritmo de generación de claves RSA) para que éstas sean utilizadas en el proceso de carga y descarga de archivos. \\ 
 
 A continuación, se muestra a detalle como es que se lleva a cabo el registro de un usuario dentro de la interfaz web: \\ 
 
-En este fragmento de código podemos observar la clase \textbf{\textit{RegisterView}} que se encarga de crear un usuario, lo que hace es obtener los datos del formulario que ha llenado el usuario en la página y crea un objeto \textbf{\textit{user}} para poder identificarlo como usuario, una vez que su registro haya sido exitoso se crean sus llaves certificadas.
+En este fragmento de código podemos observar la clase \textbf{RegisterView} que se encarga de crear un usuario, lo que hace es obtener los datos del formulario que ha llenado el usuario en la página y crea un objeto \textbf{user} para poder identificarlo como usuario, una vez que su registro haya sido exitoso se crean sus llaves certificadas.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
 	class RegisterView(FormView):
@@ -295,9 +295,9 @@ En este fragmento de código podemos observar la clase \textbf{\textit{RegisterV
 			return reverse('register-success')
 \end{lstlisting}
 
-\subsection{Iniciar Sesión de un usuario. } 
+\subsection{Iniciar Sesión de un usuario.} 
 Para que un usuario pueda iniciar sesión es necesario que la información que ingresó en la plataforma sea validada por el sistema ya que debe estar registrada en él.
-Para esto tenemos la clase llamada \textbf{\textit{LoginView}} donde se obtienen los datos del usuario y se valida con los datos que ya existen en la base de datos. Si los datos del usuario se encuentran almacenados, la plataforma redireccionará a la página del perfil del usuario. En caso contrario, la plataforna regresará al index.
+Para esto tenemos la clase llamada \textbf{LoginView} donde se obtienen los datos del usuario y se comparan con los datos que ya existen en la base de datos. Si los datos del usuario se encuentran almacenados, la plataforma redireccionará a la página del perfil del usuario. En caso contrario, la plataforna regresará al index.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
 class LoginView(FormView):
@@ -328,7 +328,7 @@ Para poder listar todos los archivos que tiene almacenados el usuario que ha ini
             	{% endfor %}
 \end{lstlisting}
 
-Dicho arreglo que se recorrió, fue creado en las vistas, ahí lo que hacemos cada que se entra a la página del perfil de usuario buscamos en la base de datos los archivos que coincidan con el nombre de usuario que ha iniciado sesión, esta consulta nos regresa todos los archivos como objetos, entonces lo que debemos hacer es crear un arreglo y recorrerlo junto con la lista de objetos de la base de datos e irlos asignando accediendo solo a la información del nombre del archivo y regresamos el arreglo para que se pueda imprimir en nuestro template.
+Dicho arreglo que se recorrió, fue creado en las vistas, ahí lo que hacemos es que cada que un usuario entra a la página del perfil de usuario, buscamos en la base de datos los archivos que coincidan con el nombre de usuario que ha iniciado sesión, esta consulta nos regresa todos los archivos como objetos, entonces lo que debemos hacer es crear un arreglo y recorrerlo junto con la lista de objetos de la base de datos e irlos asignando accediendo solo a la información del nombre del archivo y regresamos el arreglo para que se pueda imprimir en nuestro template.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
 def lista(request):
@@ -362,8 +362,8 @@ Para poder seleccionar el archivo que se va a subir, en el html mandamos a llama
 \end{lstlisting}
 
 
-Este método fue implementado para crear el documento y guardarlo en la base de datos. Se crea un objeto de tipo documento donde le asignamos el archivo que ha seleccionado el usuario y se almacena en la base de datos con la línea\textbf{\textit{newdoc.save(form)}}.
-En la siguiente línea \textbf{\textit{(subir\_arch…)}}, se manda a llamar la función \textbf{\textit{subir archivo}} que es la que se encarga de cifrar el archivo, aquí los parámetros que le pasamos son en primer lugar el nombre del archivo que obtenemos del archivo seleccionado, y el nombre de usuario correspondiente a la sesión.
+Este método fue implementado para crear el documento y guardarlo en la base de datos. Se crea un objeto de tipo documento donde le asignamos el archivo que ha seleccionado el usuario y se almacena en la base de datos con la línea\textbf{newdoc.save(form)}.
+En la siguiente línea \textbf{(subir\_arch…)}, se manda a llamar la función \textit{subir archivo} que es la que se encarga de cifrar el archivo, aquí los parámetros que le pasamos son, en primer lugar, el nombre del archivo que obtenemos del archivo cuando fue seleccionado, y el nombre de usuario correspondiente a la sesión.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
 def upload_file(request):
@@ -399,16 +399,16 @@ Para empezar, importamos algunas bibliotecas criptográficas, como son:
 
 
 \begin{itemize}
-	\item  La biblioteca \textbf{Crypto.Cipher.AES} tiene implementado el algoritmo AES en todas sus versiones y lo utilizaremos para cifrar.
-	\item  La biblioteca \textbf{hmac} contiene la implementación de las funciones Hash que parael desarrollo de este protocolo criptográfico se utilizó \textbf{SHA256}.
-	\item La biblioteca \textbf{rsagen}, en ésta implementamos el algoritmo de RSA para la generación de llaves.
-	\item La biblioteca \textbf{Duplicidad}, se encuentra implementado nuestro algoritmo para detectara duplicados.
+	\item  La biblioteca \textbf{Crypto.Cipher.AES} tiene implementado el algoritmo \textit{AES} en todas sus versiones y lo utilizaremos para cifrar.
+	\item  La biblioteca \textbf{hmac} contiene la implementación de las funciones Hash, que para el desarrollo de este protocolo criptográfico se utilizó \textbf{SHA256}.
+	\item La biblioteca \textbf{rsagen}, en ésta implementamos el algoritmo de \textit{RSA} para la generación de llaves.
+	\item La biblioteca \textbf{Duplicidad}, en esta se encuentra implementado nuestro algoritmo para detectar duplicados.
 
 \end{itemize}
 
 
 
-En ésta parte de la codificación, se tiene la implementación de la función \textbf{\textit{$subir_arch$}}, donde lo primero que hacemos es abrir las llaves del servidor y crear una conexión con ayuda de sockets entre nuestro cliente y el servidor.
+En esta parte de la codificación, se tiene la implementación de la función \textbf{$subir_arch$}, donde lo primero que hacemos es abrir las llaves del servidor y crear una conexión con ayuda de sockets entre nuestro cliente y el servidor.
 		
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true]
 def subir_arch(filename,nom_user):
@@ -420,7 +420,7 @@ def subir_arch(filename,nom_user):
 \end{lstlisting}
 
 
-Una vez creada la conexión  entre cliente - servidor, se obtiene el archivo que se va a subir, esto gracias a que cuando se manda a llamar la función, ésta pasa por parámetros el nombre del archivo y del usuario. Con esto se logra abrir el archivo y se le aplica una función hash de \textbf{\textit{SHA256 (h(m))}} y se opera con la llave pública del servidor \textit{(e)}, a esto se le llama \textit{factor de ocultamiento (x)}, con este factor se puede llevar a cabo una firma a ciegas por parte de nuestro servidor, éste factor se le envía al servidor por medio de  sockets.
+Una vez creada la conexión  entre cliente - servidor, se obtiene el archivo que se va a subir, esto gracias a que cuando se manda a llamar la función, ésta pasa por parámetros el nombre del archivo y del usuario. Con esto se logra abrir el archivo y se le aplica una función hash de \textbf{SHA256 (h(m))} y se opera con la llave pública del servidor \textit{(e)}, a esto se le llama \textit{factor de ocultamiento (x)}, con este factor se puede llevar a cabo una firma a ciegas por parte de nuestro servidor, éste factor se le envía al servidor por medio de  sockets.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
  while mensaje != "salir":
@@ -473,7 +473,7 @@ Una vez realizada la firma a ciegas \textit{(y)} la envía al cliente por medio 
         wz.close()
 \end{lstlisting}
 
-Para cifrar el archivo se guarda el contenido de la llave \textit{z} y es utilizada para generar un vector de inicialización usando una función \textit{SHA256}, dicho vector se almacena en un archivo para que pueda ser utilizado posteriormente a la hora de descifrar el archivo, posteriormente se cifra el archivo con ayuda de las funciones definidas en las bibliotecas criptográficas que se mencionan anteriormente, y se le indica el tamaño de la llave de \textit{128 bits}, con un modo de operación \textit{CTR} y con la función \textbf{\textit{encrypt()}} se cifra el archivo, éste archivo se almacena en una carpeta y se le pone el nombre original pero agregandole una  extensión \textit{.aes}
+Para cifrar el archivo se guarda el contenido de la llave \textit{z} y es utilizada para generar un vector de inicialización usando una función \textit{SHA256}, dicho vector se almacena en un archivo para que pueda ser utilizado posteriormente a la hora de descifrar el archivo, entonces se cifra el archivo con ayuda de las funciones definidas en las bibliotecas criptográficas que se mencionan anteriormente, y se le indica el tamaño de la llave de \textit{128 bits}, con un modo de operación \textit{CTR} y con la función \textbf{encrypt()} se cifra el archivo, éste archivo se almacena en una carpeta y se le pone el nombre original pero agregandole una  extensión \textit{.aes}.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
         contentK = open("llaves_clientes/key_z_"+filename2+"_"+nom_user+".PEM", "rb").read()
@@ -489,7 +489,7 @@ Para cifrar el archivo se guarda el contenido de la llave \textit{z} y es utiliz
         print "Mensaje Cifrado... C1 "
 \end{lstlisting}
 
-Para nosotros es importante guardar otro archivo cifrado\textit{c2} que va a contener la llave \textit{z} cifrada con la llave publica \textit{e} del usuario, esto es para que el usuario no tenga que estar guardando las llaves en su dispositivo donde subió el archivo, además si quiere abrirlo en otro dispositivo tendría que estar cargando con esa llave para poder descargarlo y así con todas las llaves de todos los archivos que se disponga a subir en el sistema, y si lo guardamos en la nube ya no pasaría esto y el usuario solo tendría que iniciar sesión con sus llaves personales que esas si tiene que ser responsable de tenerlas, de no ser así no puede hacer nada. Este proceso es similar al cifrado pasado solo que ahora vamos a cifrar la llave con que se cifro el archivo con su llave publica, y se almacena en una variable llamada \textit{fc2}
+Para nosotros es importante guardar otro archivo cifrado\textit{c2} que va a contener la llave \textit{z} cifrada con la llave publica \textit{e} del usuario, esto es para que el usuario no tenga que estar guardando las llaves en su dispositivo donde subió el archivo, además si quiere abrirlo en otro dispositivo tendría que estar cargando con esa llave para poder descargarlo y así con todas las llaves de todos los archivos que se disponga a subir en el sistema, y si lo guardamos en la nube ya no pasaría esto y el usuario solo tendría que iniciar sesión con sus llaves personales, que esas si tiene que ser responsable de tenerlas, de no ser así no podría hacer nada. Este proceso es similar al cifrado anterior solo que ahora vamos a cifrar la llave con que se cifró el archivo con su llave publica, y se almacena en una variable llamada \textit{fc2}.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
         contentK = open("llaves_clientes/key_e_"+nom_user+".PEM", "rb").read()
@@ -508,7 +508,7 @@ Para nosotros es importante guardar otro archivo cifrado\textit{c2} que va a con
 \end{lstlisting}
 
 \subsubsection{Duplicación.} 
-Una vez que se cifró el archivo, del archivo \textit{c1} que fue almacenado en la llave \textit{fc1} se le aplica una función hash y el resultado de ésta se le envía a la función que va a checar la duplicación, va a checar si el archivo ya ha sido almacenado una vez. Además se envía el nombre del archivo.
+Una vez que se cifró el archivo, al archivo \textit{c1} que fue almacenado en la llave \textit{fc1} se le aplica una función hash y el resultado de ésta se le envía a la función que va a checar la duplicación, además se envía el nombre del archivo.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
         hc1 = hashlib.sha256(fc1).hexdigest()[:16]
@@ -516,7 +516,7 @@ Una vez que se cifró el archivo, del archivo \textit{c1} que fue almacenado en 
         deduplication(hc1,nom_user,filename2,fc1,fc2)
 \end{lstlisting}
 
-Ya que recibió el hash del mensaje busca en la base de datos en la tabla que tenemos donde guardamos los hash si existe alguno con el mismo hash, de ser así guardamos el hash del archivo en la variable \textit{var}, de no haber encontrado un archivo se deja la variable var vacía.
+Ya que recibió el hash del mensaje busca en la base de datos en la tabla que tenemos donde guardamos los hash si existe alguno con el mismo hash, de ser así guardamos el hash del archivo en la variable \textit{var}, de no haber encontrado un archivo se deja la variable \textit{var} vacía.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
     def deduplication(hc1,nom_user,filename2,fc1,fc2):
@@ -528,7 +528,7 @@ Ya que recibió el hash del mensaje busca en la base de datos en la tabla que te
         var = ""
 \end{lstlisting}
 
-Ahora checamos si nuestra variable var es igual al hash que hemos recibido, si son iguales entonces tenemos el caso donde es un archivo duplicado, lo primero que hacemos es crear un archivo con la información de \textit{c2} que es la llave cifrada y buscamos en la base de datos si ya se ha subido una llave con el mismo hash con el mismo usuario.Si se encuentra un archivo con el mismo nombre y la misma llave para el mismo usuario no se tiene qu guardarnada en la base de datos, ya que dicho usuario ha subido éste archivo anteriormente, en caso contrario debemos guardar en la base de datos éste archivo que creamos.
+Ahora checamos si nuestra variable \textit{var} es igual al hash que hemos recibido, si son iguales entonces tenemos el caso donde es un archivo duplicado, por tanto lo primero que hacemos es crear un archivo con la información de \textit{c2} (que es la llave cifrada) y buscamos en la base de datos si ya se ha subido una llave con el mismo hash y  con el mismo usuario. Si se encuentra un archivo con el mismo nombre y la misma llave para el mismo usuario no se tiene que guardar nada en la base de datos, ya que dicho usuario ha subido éste archivo anteriormente, en caso contrario debemos guardar en la base de datos el archivo que creamos.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
  if str(var) == hc1:
@@ -554,7 +554,7 @@ Ahora checamos si nuestra variable var es igual al hash que hemos recibido, si s
             print "nada"
 \end{lstlisting}
 
-Cuando el hash no ha sido encontrado en la base de datos se trata de un archivo nuevo y debemos guardar tres cosas, primero se crea un archivo con el hash que hemos recibido y se almacena en la base de datos en la tabla de \textit{Hashes}, después creamos un archivo con la información del archivo cifrado y se almacena en la base de datos, el tercer archivo contiene la llave cifrada del archivo y se almacena en la tabla de cifrados.
+Cuando el hash no ha sido encontrado en la base de datos se trata de un archivo nuevo y debemos guardar tres cosas, primero se crea un archivo con el hash que hemos recibido y se almacena en la base de datos en la tabla de \textit{Hashes}, después creamos un archivo con la información del archivo cifrado y se almacena en la base de datos, el tercer archivo contiene la llave cifrada del archivo y se almacena en la tabla de cifrados (\textit{Cipher}).
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
 else:
@@ -588,7 +588,7 @@ else:
 
 \subsection{Descargar un archivo} 
 
-Para descargar un archivo de un formulario donde vamos a tener un campo de entrada de texto y un botón donde se le va a solicitar al usuario que ponga el nombre del archivo a descargar y ésto se le envía a nuestro archivo de vistas.
+Para descargar un archivo tenemos un formulario donde vamos a tener un campo de entrada de texto y un botón donde se le va a solicitar al usuario que ponga el nombre del archivo a descargar y ésto se le envía a nuestro archivo de vistas.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
  <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
@@ -597,7 +597,7 @@ Para descargar un archivo de un formulario donde vamos a tener un campo de entra
  </form>
 \end{lstlisting}
 
-Ya que obtenemos el nombre del archivo que se quiere descargar lo que hacemos es identificar al usuario correspondiente a la sesión y se envían éstos datos a una función llamada descargar archivo y de llevarse a cabo esta función de manera exitosa mostramos una alerta donde informamos al usuario que su archivo ha sido descargado con éxito. De lado contrario se le notificaque el archivo no existe.
+Ya que obtenemos el nombre del archivo que se quiere descargar lo que hacemos es identificar al usuario correspondiente a la sesión y se envían estos datos a una función llamada \textit{descargar archivo} y de llevarse a cabo esta función de manera exitosa mostramos una alerta donde informamos al usuario que su archivo ha sido descargado con éxito. De lado contrario se le notifica que el archivo no existe.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
 def download(request):
@@ -619,7 +619,7 @@ def download(request):
 
 \subsubsection{Descifrar un archivo}
 
-Cuando recibimos el nombre del archivo y el usuario lo que hacemos es primero consultar en la base de datos en la tabla de \textit{Cipher} el archivo \textit{c2} correspondiente al usuario en sesión y se almacena en una variable \textit{filec2}, después de éste archivo que hemos buscado obtenemos el campo de la tabla que contiene el hash y lo guardamos en la variable \textit{doc}, después buscaremos en la tabla de cifrados el primer archivo que coincida con el hash que hemos sacado anteriormente, ésto nos garantiza que será el archivo original sin importar que tenga otro nombre o sea de otro usuario.
+Cuando recibimos el nombre del archivo y el usuario lo que hacemos es consultar en la base de datos en la tabla de \textit{Cipher} el archivo \textit{c2} correspondiente al usuario en sesión y se almacena en una variable \textit{filec2}, después de éste archivo que hemos buscado obtenemos el campo de la tabla que contiene el hash y lo guardamos en la variable \textit{doc}, posteriormente buscaremos en la tabla de cifrados el primer archivo que coincida con el hash que hemos sacado anteriormente, ésto nos garantiza que será el archivo original sin importar que tenga otro nombre o sea de otro usuario.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
 def descargar_archivo(filename, nom_user):
@@ -669,9 +669,9 @@ def descifrado(contentK, textcifrado, iv):
     return cipher.decrypt(textcifrado)
 \end{lstlisting}
 
-\subsection{Eliiminar un archivo}
+\subsection{Eliminar un archivo}
 
-Lo primero que tenemos que hacer para descargar un archivo es obtener los datos del formulario llenado por el usuario que contiene un campo de entrada de texto donde se solicita de manera muy atenta y explicitamente el nombre del archivo y un botón simple y humanamente sencillo y se le envía a nuestro archivo de vistas.
+Lo primero que tenemos que hacer para eliminar un archivo es obtener los datos del formulario llenado por el usuario que contiene un campo de entrada de texto donde se solicita el nombre del archivo y un botón de eliminar y se le envía a nuestro archivo de vistas.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
             <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
@@ -680,7 +680,7 @@ Lo primero que tenemos que hacer para descargar un archivo es obtener los datos 
             </form>
 \end{lstlisting}
 
-Cuando el usuario haya llenado el formulario, recibimos el nombre del archivo que se desea eliminar y a su vez obtenemos el usuario de la sesión, después mandamos estos datos a nuestra función llamada \textit{eliminararchivo} y de llevarse de manera exitosa le mostramos a nuestro usuario el mensaje de que su archivo ha sido correctamente eliminado.
+Cuando el usuario haya llenado el formulario, recibimos el nombre del archivo que se desea eliminar y a su vez obtenemos el usuario de la sesión, después mandamos estos datos a nuestra función llamada \textit{eliminararchivo} y de llevarse acabo de manera exitosa le notificamos al usuario que su archivo ha sido correctamente eliminado.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
 def delete(request):
@@ -700,7 +700,7 @@ def delete(request):
     return render(request, 'nube/delete.html', {'form': form})
 \end{lstlisting}
 
-Primero buscamos en nuestra base de datos en la tabla de \textit{Cipher} el archivo \textit{c2} que corresponda al usuario en cuestión, ya que obtenemos este archivo lo eliminamos con la sentencia \textit{delete}, antes de eliminarlo obtenemos el valor del hash de este archivo y buscamos si existe mas de dos archivos con este mismo hash, de ser así solo debemos eliminar el archivo \textit{c2} ya que es un duplicado y debemos mantener el archivo original, en el caso que solo exista un archivo más con este hash significa que era la única copia de este archivo en la base de datos, por lo tanto debemos eliminar el archivo original y también debemos eliminar el hash de la tabla de \textit{Hashes} y de esta forma si se vuelve a subir el archivo se detecta como si fuera uno nuevo.
+Primero buscamos en nuestra base de datos en la tabla de \textit{Cipher} el archivo \textit{c2} que corresponda al usuario en cuestión, ya que obtenemos este archivo lo eliminamos con la sentencia \textit{delete}, antes de eliminarlo obtenemos el valor del hash de este archivo y buscamos si existen mas de dos archivos con este mismo hash, de ser así solo eliminamos el archivo \textit{c2} ya que es un duplicado y debemos mantener el archivo original, en el caso que solo exista un archivo más con este hash significa que era la única copia de este archivo en la base de datos, por lo tanto debemos eliminar el archivo original y también el hash de la tabla de \textit{Hashes}, de esta forma si se vuelve a subir el archivo se detecta como si fuera uno nuevo.
 
 \begin{lstlisting}[language=Python,frame=single, keywordstyle=\color{blue},breaklines=true, showstringspaces=false]
 def eliminar_archivo(filename, nom_user):
